@@ -13,6 +13,7 @@ public class PrimoUtilities {
 
         }
         logger.info("Pimo encontrado "+i);
+        logger.severe("Error");
         return true;
     }
 

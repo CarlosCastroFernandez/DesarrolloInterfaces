@@ -12,6 +12,7 @@ public class Main {
         System.out.println(PrimoUtilities.esPrimo(5));
         System.out.println(PrimoUtilities.esPrimo(4));
 
+
         var p=PrimoUtilities.primoIntervalo(1,10);
 
 
