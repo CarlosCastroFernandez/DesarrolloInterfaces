@@ -9,6 +9,18 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+        byte numero=0;
+        byte numero2=0;
+        for(byte i=0;i<args.length;i++){
+           if(i==0){
+               numero=Byte.parseByte(args[i]);
+           }else if(i==1){
+               numero2=Byte.parseByte(args[i]);
+           }
+        }
+        if(numero!=0&&numero2!=0){
+            System.out.println("Enhorabuena");
+        }
         System.out.println(PrimoUtilities.esPrimo(5));
         System.out.println(PrimoUtilities.esPrimo(4));
 
