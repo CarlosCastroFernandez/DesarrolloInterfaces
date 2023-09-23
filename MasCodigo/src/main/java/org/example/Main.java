@@ -19,8 +19,8 @@ public class Main {
         System.out.println(i2);
         System.out.println(i2.tamaño());
 
-        Persona p1=new Persona("Carlos","Castro");
-        Persona p2=new Persona("Naomi","Camuña");
+        Persona p1=new Persona("Carlos","Castro",12);
+        Persona p2=new Persona("Naomi","Camuña",13);
         p2.setApellido("Loca");
 
         Persona p3=Persona.builder().nombre("Pepe").build();
