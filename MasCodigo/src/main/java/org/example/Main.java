@@ -2,7 +2,9 @@ package org.example;
 
 import clases.Error;
 import clases.Persona;
+import ventanas.ventana;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +36,8 @@ public class Main {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
+            ventana v=new ventana();
+
         }
 
      /*   try {
