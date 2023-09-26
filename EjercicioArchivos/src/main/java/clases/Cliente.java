@@ -60,6 +60,8 @@ public class Cliente {
             throw new RuntimeException(ex);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
+        }catch(NullPointerException e){
+            System.err.println("Este cliente no esta en la lista de datos de clientes");
         }
 
         return textitoCopy;
