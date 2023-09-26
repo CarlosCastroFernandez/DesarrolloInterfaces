@@ -29,7 +29,10 @@ public class Main {
         Boolean variable = false;
         while (!variable) {
             try {
-                String apellido=sc.nextLine();
+                System.out.println("Dime su apellido pleased");
+                String apellido=sc.nextLine().toLowerCase();
+                apellido.strip();
+                apellido=apellido.toUpperCase().charAt(0)+ apellido.substring(1,apellido.length());
                 Persona p1 = new Persona("Carlos", apellido, 12);
                 variable = true;
             } catch (Error e) {
