@@ -64,6 +64,6 @@ public class Cliente {
             System.err.println("Este cliente no esta en la lista de datos de clientes");
         }
 
-        return textitoCopy;
+        return "(Texto que se supone que debe de ir en el template de cliente concreto):\n"+textitoCopy;
     }
 }
