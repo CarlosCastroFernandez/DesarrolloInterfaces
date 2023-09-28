@@ -2,37 +2,42 @@ package metodos;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FuncionesEstaticas {
 
-    public static void clienteOutput(ArrayList<String> nombre){
+    public static void clienteOutput(File datosClientes,File template){
         File datos=new File("./Carpeta");
-        File principal=new File(datos.getParent()+File.separator+datos.getName()+File.separator+"Template.txt");
-        File csv=new File(datos.getParent()+File.separator+datos.getName()+File.separator+"datosClientes.csv");
+        File salida=new File(datos.getParent()+File.separator+"salida");
+        File principal=template;
+        File csv=datosClientes;
         String numeros="0123456789";
         Integer tamaño=1;
         Integer filas=0;
+        String numeroGuardado="";
         String textitoCopy="";
         String textito="";
         String[]filaGuardada;
         Integer contadorcito=0;
+        File[]hijos=salida.listFiles();
+        BufferedReader leer2 = null;
 
-        for(int i=0;i<nombre.size();i++) {
-            while (!(nombre.get(i)).contains(tamaño + "")) {
-                tamaño++;
-            }
-
-
+        for(int i=0;i<hijos.length;i++) {
+            numeroGuardado=hijos[i].getName();
+            numeroGuardado=numeroGuardado.substring(numeroGuardado.indexOf("-")+1,numeroGuardado.indexOf("."));
             try {
-                BufferedReader leer2 = new BufferedReader(new FileReader(datos.getParent() + File.separator + datos.getName() + File.separator + csv.getName()));
+                leer2 = new BufferedReader(new FileReader(csv));
                 String textazo = leer2.readLine();
-                while (!textazo.contains(tamaño + "")) {
-                    textazo = leer2.readLine();
+                String numeroComparador=textazo.substring(0,textazo.indexOf(","));
+                while(!(numeroComparador.equals(numeroGuardado))){
+                    textazo= leer2.readLine();
+                    numeroComparador=textazo.substring(0,textazo.indexOf(","));
+
                 }
-                if (textazo.contains(tamaño + "") && textazo != null) {
-                    filaGuardada = textazo.split(",");
-                    BufferedReader leer3 = new BufferedReader(new FileReader(datos.getParent() + File.separator + datos.getName() + File.separator + principal.getName()));
+                filaGuardada = textazo.split(",");
+
+                BufferedReader leer3 = new BufferedReader(new FileReader(principal));
                     while ((textito = leer3.readLine()) != null) {
                         contadorcito = 0;
                         for (int q = 0; q < textito.length(); q++) {
@@ -41,7 +46,7 @@ public class FuncionesEstaticas {
                                 Integer numeroG = Integer.parseInt(textito.charAt(q) + "");
                                 textitoCopy += textito.replace("%%" + numeroG + "%%", filaGuardada[numeroG - 1]) + "\n";
 
-                            } else if (i == textito.length() - 1 && contadorcito == 0) {
+                            } else if (q == textito.length() - 1 && contadorcito == 0) {
                                 textitoCopy += textito + "\n";
 
 
@@ -50,8 +55,8 @@ public class FuncionesEstaticas {
                         }
                     }
 
-                }
-                FileWriter escrituraCliente=new FileWriter(datos.getParent()+File.separator+"salida"+File.separator+nombre.get(i));
+
+                FileWriter escrituraCliente=new FileWriter(datos.getParent()+File.separator+"salida"+File.separator+hijos[i].getName());
                 escrituraCliente.write(textitoCopy);
                 escrituraCliente.flush();
                 escrituraCliente.close();

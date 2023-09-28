@@ -16,11 +16,8 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        ArrayList<String>nombres=new ArrayList<>();
-        nombres.add("Template-1.txt");
-        nombres.add("Template-2.txt");
-        nombres.add("Template-3.txt");
-        FuncionesEstaticas.clienteOutput(nombres);
+
+        FuncionesEstaticas.clienteOutput(new File("./Carpeta/datosClientes.csv"),new File("./Carpeta/Template.txt"));
         FuncionesEstaticas.SalidaOBorrado();
     }
 
