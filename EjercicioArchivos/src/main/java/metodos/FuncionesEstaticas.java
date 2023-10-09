@@ -1,5 +1,7 @@
 package metodos;
 
+import errores.MarcadorIncompatible;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,6 +54,13 @@ public class FuncionesEstaticas {
                                 contadorcito++;
                                 Integer numeroG = Integer.parseInt(textito.charAt(q) + "");
                                 textitoCopy += textito.replace("%%" + numeroG + "%%", filaGuardada[numeroG - 1]) + "\n";
+                                if(textitoCopy.contains(""+numeroG)){
+                                    try {
+                                        throw new MarcadorIncompatible("Marcador incompatible en archivo Template.txt");
+                                    } catch (MarcadorIncompatible e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
 
                             } else if (q == textito.length() - 1 && contadorcito == 0) {
                                 textitoCopy += textito + "\n";
