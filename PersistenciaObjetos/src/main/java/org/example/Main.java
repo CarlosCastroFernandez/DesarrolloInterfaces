@@ -14,9 +14,11 @@ public class Main {
 
         //Antes de guardar el archivo dataBase.properties en resources hay que comprobar
         /*que este todo guardado ya que dentro de esta carpeta no se puede modificar
-        *por lo tanto toda la parte del config.put sobra si ya esta guardado en resources           */
+        *por lo tanto toda la parte del config.put sobra si ya esta guardado en resources
+        * solamente se podria leer y sin pner la ruta entera en el inputStream
+        * ya que se hace automaticamente solamente con el nombre del archivo con los metodos de abajo          */
 
-        /*InputStream is=Main.class.getClassLoader().getResourceAsStream("./src/main/resources/dataBase.properties");
+       InputStream is=Main.class.getClassLoader().getResourceAsStream("dataBase.properties");
         Properties config=new Properties();
         try {
             config.load(is);
@@ -24,7 +26,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        config.put("version","1.0");
+        config.put("hola","1.0");
         try {
             config.store(new FileWriter("./dataBase.properties"),"Añadida la version");
         } catch (IOException e) {
@@ -35,7 +37,7 @@ public class Main {
         System.out.println(config.get("port"));
         System.out.println(config.get("user"));
         System.out.println(config.get("password"));
-        System.out.println(config.get("version"));*/
+        System.out.println(config.get("version"));
 
         clase dam2=new clase();
         Alumno fer=new Alumno();
@@ -53,6 +55,7 @@ public class Main {
         ArrayList<Alumno> clase2=new ArrayList<Alumno>();
         clase2 = leerClase();
         dam2.setAlumnos(clase2);
+        System.out.println(dam2);
         System.out.println(clase2);
         //Mapeo de objetos
         var mapper=new ObjectMapper();

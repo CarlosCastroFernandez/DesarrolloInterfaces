@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ventanas.Principal">
+  <grid id="27dc6" binding="panel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="8e421" binding="panelFormulario" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="West"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="473ed" binding="panelOrden" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none" title=""/>
+            <children>
+              <component id="9750b" class="javax.swing.JLabel" binding="labelTarea">
+                <constraints/>
+                <properties>
+                  <text value="Tarea"/>
+                </properties>
+              </component>
+              <component id="cb5a9" class="javax.swing.JTextField" binding="textTarea">
+                <constraints/>
+                <properties>
+                  <columns value="10"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="115e7" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d6da4" class="javax.swing.JLabel" binding="labelPrioridad">
+                <constraints/>
+                <properties>
+                  <text value="Prioridad"/>
+                </properties>
+              </component>
+              <hspacer id="5c305">
+                <constraints/>
+              </hspacer>
+              <vspacer id="63631">
+                <constraints/>
+              </vspacer>
+              <component id="3aed3" class="javax.swing.JComboBox" binding="comboBox">
+                <constraints/>
+                <properties>
+                  <model>
+                    <item value="Baja"/>
+                    <item value="Media"/>
+                    <item value="Alta"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="92164" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="bae8" class="javax.swing.JLabel" binding="labelEstado">
+                <constraints/>
+                <properties>
+                  <text value="Estado"/>
+                </properties>
+              </component>
+              <component id="dc853" class="javax.swing.JTextField" binding="txtEstado">
+                <constraints/>
+                <properties>
+                  <columns value="10"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="38012" layout-manager="GridBagLayout">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ee52d" class="javax.swing.JLabel" binding="labelDescripcion">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <text value="Descripcion"/>
+                </properties>
+              </component>
+              <scrollpane id="683f1">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="ef43c" class="javax.swing.JTextArea" binding="txtArea">
+                    <constraints/>
+                    <properties>
+                      <columns value="20"/>
+                      <lineWrap value="true"/>
+                      <rows value="10"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="d5580" binding="botonAñadir" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="975a0" class="javax.swing.JButton" binding="añadirButton" default-binding="true">
+                <constraints/>
+                <properties>
+                  <text value="Añadir"/>
+                </properties>
+              </component>
+              <hspacer id="ae950">
+                <constraints/>
+              </hspacer>
+              <vspacer id="78c3c">
+                <constraints/>
+              </vspacer>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <scrollpane id="5bad5">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="5685f" class="javax.swing.JTable" binding="tabla">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="d8c9f" class="javax.swing.JLabel" binding="labelInfo">
+        <constraints border-constraint="South"/>
+        <properties>
+          <text value="info"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
