@@ -91,10 +91,10 @@ public class VentanaCalculadora extends JFrame {
     public VentanaCalculadora(){
     this.setContentPane(panelPrincipal);
     this.setTitle("Calculadora");
-    this.setLocationRelativeTo(null);
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     this.setSize(300,250);
     this.setResizable(false);
+    this.setLocationRelativeTo(null);
     this.setVisible(true);
     operacion=0.0;
     guardado="";
@@ -112,16 +112,18 @@ public class VentanaCalculadora extends JFrame {
     });
     botonSumar.addActionListener(e -> {
         guardado+="+";
-
+        botonComa.setEnabled(true);
         metodoSignos();
 
     });
 
     botonRestar.addActionListener(e -> {
         guardado+="-";
+        botonComa.setEnabled(true);
         metodoSignos();
     });
     botonIgual.addActionListener(e -> {
+        botonComa.setEnabled(false);
         resultadoObtenido();
 
 
@@ -172,10 +174,12 @@ public class VentanaCalculadora extends JFrame {
     });
     botonMultiplicar.addActionListener(e -> {
         guardado+="x";
+        botonComa.setEnabled(true);
         metodoSignos();
     });
     botonDividir.addActionListener(e -> {
         guardado+="/";
+        botonComa.setEnabled(true);
         metodoSignos();
     });
     botonCe.addActionListener(e -> {
@@ -224,13 +228,16 @@ public class VentanaCalculadora extends JFrame {
      * pase los datos de su longitud.
      */
     private void estructuraBotonComa() {
-        if(labelEscritura.getText().contains("+")&&labelEscritura.getText().lastIndexOf(",")==0){
-            datos=labelEscritura.getText().split("\\+");
-            labelEscritura.setText(guardado);
-            if(datos.length>2){
-                labelEscritura.setEnabled(false);
+        byte contador=0;
+        for(int i=0;i<guardado.length();i++){
+            if(guardado.charAt(i)=='.'){
+                contador++;
+            }
+            if(contador==2){
+                botonComa.setEnabled(false);
             }
         }
+
         if(labelEscritura.getText()!=""){
             labelEscritura.setText(guardado);
         }
