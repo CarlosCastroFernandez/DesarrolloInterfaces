@@ -67,7 +67,7 @@ public class DataBase {
             Statement st = DataBase.getConexion().createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tareas");
             while (rs.next()) {
-                salida.add(new Tarea(rs));
+                salida.add(new TareaAdapter().loadFromResulSet(rs));
             }
             System.out.println(salida.size());
         } catch (SQLException e) {

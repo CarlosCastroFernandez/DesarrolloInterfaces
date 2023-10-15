@@ -1,11 +1,15 @@
 package ui;
 
-import dominio.DataBase;
-import dominio.Tarea;
+import dominio.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.crypto.Data;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class Ventana extends JFrame {
@@ -38,19 +42,38 @@ public class Ventana extends JFrame {
         }*/
         table1.doLayout();
 
-        ArrayList<Tarea>tareas= DataBase.getAllTarea();
+
+        TareaDAOImp dao=  new TareaDAOImp(DBConecction.getConexion());
+
+        ArrayList<Tarea> tareas=dao.loadAllByResponsable(1L);
         fillTable(tareas);
+        Tarea tarita=new Tarea("Peter Pan","Fast",21L,"Trabajo","Peter pan y sus amigos");
+        dao.save(tarita);
 
         DataBase.closeConexion();
 
+        table1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int fila=table1.getSelectedRow();
+                String id= (String) table1.getValueAt(fila,0);
+                Tarea t=dao.load(Long.valueOf( id));
+                if(t!=null){
+                    JOptionPane.showMessageDialog(null,t);
+                }
+            }
+        });
     }
 
     private void fillTable(ArrayList<Tarea>tareas) {
         DataBase.getAllTarea().forEach((t)->System.out.println(t));
-
-        tareas.forEach((t)->{
-            data.addRow(t.toArrayString());
-        });
+        for(int i=0;i<tareas.size();i++){
+            TareaAdapter tareaAdapter=new TareaAdapter(tareas.get(i));
+            data.addRow(tareaAdapter.toArrayString());
+        }
+        /*tareas.forEach((t)->{
+            data.addRow(new TareaAdapter(t).toArrayString());
+        });*/
     }
 
 }
