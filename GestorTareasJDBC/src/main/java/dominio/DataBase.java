@@ -1,5 +1,8 @@
 package dominio;
 
+import tarea.Tarea;
+import tarea.TareaAdapter;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Logger;

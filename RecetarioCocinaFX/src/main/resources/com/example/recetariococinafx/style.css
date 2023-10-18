@@ -1,0 +1,12 @@
+.ventana{
+    -fx-background-image: url("imagenes/fondo.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+
+}
+#titulo{
+    -fx-font-size: 30px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+
+}

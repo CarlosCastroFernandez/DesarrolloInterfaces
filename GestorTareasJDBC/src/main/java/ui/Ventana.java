@@ -1,21 +1,22 @@
 package ui;
 
 import dominio.*;
+import tarea.Tarea;
+import tarea.TareaAdapter;
+import tarea.TareaDAOImp;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
-import javax.xml.crypto.Data;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.sql.Connection;
 import java.util.ArrayList;
 
 public class Ventana extends JFrame {
     private JPanel panel1;
     private JTable table1;
+    private JLabel info;
     private DefaultTableModel data;
+
+    private ArrayList<Tarea> tareas;
     public Ventana(){
         this.setContentPane(panel1);
 
@@ -45,14 +46,14 @@ public class Ventana extends JFrame {
 
         TareaDAOImp dao=  new TareaDAOImp(DBConecction.getConexion());
 
-        ArrayList<Tarea> tareas=dao.loadAllByResponsable(1L);
+         tareas=dao.loadAll();
         fillTable(tareas);
         Tarea tarita=new Tarea("Peter Pan","Fast",21L,"Trabajo","Peter pan y sus amigos");
         dao.save(tarita);
 
         DataBase.closeConexion();
 
-        table1.addMouseListener(new MouseAdapter() {
+        /*table1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila=table1.getSelectedRow();
@@ -62,7 +63,16 @@ public class Ventana extends JFrame {
                     JOptionPane.showMessageDialog(null,t);
                 }
             }
-        });
+        });*/
+        table1.getSelectionModel().addListSelectionListener(ev ->showDetails(ev));
+    }
+
+    private void showDetails(ListSelectionEvent ev) {
+        if(!ev.getValueIsAdjusting()){
+            Tarea selected=tareas.get(table1.getSelectedRow());
+            info.setText(selected.toString());
+
+        }
     }
 
     private void fillTable(ArrayList<Tarea>tareas) {

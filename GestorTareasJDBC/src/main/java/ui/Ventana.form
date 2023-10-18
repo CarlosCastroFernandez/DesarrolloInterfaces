@@ -18,7 +18,7 @@
           </component>
         </children>
       </scrollpane>
-      <component id="caac9" class="javax.swing.JLabel">
+      <component id="caac9" class="javax.swing.JLabel" binding="info">
         <constraints border-constraint="South"/>
         <properties>
           <text value="Label"/>
