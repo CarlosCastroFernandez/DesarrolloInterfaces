@@ -31,6 +31,7 @@ public class ProfesorDAOImp implements ProfesorDAO{
 
             if(rs.next()){
                 profesor=new Profesor(dni, contrasenha);
+                profesor.setId(rs.getInt("id"));
                 profesor.setDni(dni);
                 profesor.setNombre(rs.getString("nombre"));
                 profesor.setPassword(rs.getString("contraseña"));
@@ -71,8 +72,6 @@ public class ProfesorDAOImp implements ProfesorDAO{
             pst.setString(6, profesor.getPassword());
             pst.setInt(7,profesor.getTelefono());
             Integer fila=pst.executeUpdate();
-            pst.close();
-            conexion.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

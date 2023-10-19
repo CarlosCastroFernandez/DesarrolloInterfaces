@@ -5,6 +5,7 @@ import exception.DNIInvalido;
 import exception.NombreConNumero;
 
 public class Usuario {
+     private Integer id;
      private String nombre;
      private String apellido1;
      private String apellido2;
@@ -28,6 +29,13 @@ public class Usuario {
      }
      public Integer getTelefono() {
           return telefono;
+     }
+     public Integer getId() {
+          return id;
+     }
+
+     public void setId(Integer id) {
+          this.id = id;
      }
      public void setTelefono(Integer telefono) {
           this.telefono = telefono;
