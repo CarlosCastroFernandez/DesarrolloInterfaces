@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a8a0a54-be2d-4547-8f89-771d2fe187fb" name="Changes" comment="Se añade error si no hay marcador">
+      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/UsuarioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/UsuarioDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/clases/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/clases/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/VentanaUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/DBConecction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/PedidoDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/UsuarioDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/errores/ContraseñaInvalida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/errores/UsuarioNoExiste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/utils/PedidoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/utils/UsuarioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/ventana-usuario.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/clases/Receta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/com/example/recetariococinafx/RecetarioCocina.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/com/example/recetariococinafx/recetario-cocina.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/imagenes/receta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CesurInterfaces/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CesurInterfaces/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/Tarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/Tarea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfacesGraficas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfacesGraficas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/login.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2W0tEZluMMpEDSpmNeSN3JBJANz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/bubac/Desktop/CARLOS/SEGUNDODAM/DesarrolloInterfaces/InterfacesGraficas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a8a0a54-be2d-4547-8f89-771d2fe187fb" name="Changes" comment="" />
+      <created>1695881215643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695881215643</updated>
+      <workItem from="1695881217685" duration="9000" />
+      <workItem from="1695885633645" duration="170000" />
+      <workItem from="1695885931014" duration="2054000" />
+      <workItem from="1695888709470" duration="10000" />
+      <workItem from="1695890202121" duration="344000" />
+      <workItem from="1695894281818" duration="360000" />
+      <workItem from="1695902756515" duration="1018000" />
+      <workItem from="1695907221159" duration="6053000" />
+      <workItem from="1695936771480" duration="623000" />
+      <workItem from="1695979685172" duration="448000" />
+      <workItem from="1696587128794" duration="126000" />
+      <workItem from="1696587451237" duration="967000" />
+      <workItem from="1696883811442" duration="681000" />
+      <workItem from="1696920001581" duration="16000" />
+      <workItem from="1696931226080" duration="895000" />
+      <workItem from="1697575966733" duration="25000" />
+    </task>
+    <task id="LOCAL-00001" summary="Final de Codigo">
+      <option name="closed" value="true" />
+      <created>1695913427685</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695913427685</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Documentacion">
+      <option name="closed" value="true" />
+      <created>1696883837070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696883837070</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Se añade error si no hay marcador">
+      <option name="closed" value="true" />
+      <created>1696884441333</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696884441333</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Se añade error si no hay marcador">
+      <option name="closed" value="true" />
+      <created>1696931238863</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696931238863</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final de Codigo" />
+    <MESSAGE value="Documentacion" />
+    <MESSAGE value="Se añade error si no hay marcador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se añade error si no hay marcador" />
+  </component>
+</project>

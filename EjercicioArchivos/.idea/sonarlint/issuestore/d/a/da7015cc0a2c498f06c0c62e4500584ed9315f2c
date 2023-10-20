@@ -1,0 +1,55 @@
+
+g	java:S112="FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ûé´±±1
+g	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8Ûé´±±1
+g	java:S112T"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8ãÎ»±±1
+d
+java:S1192"GDefine a constant instead of duplicating this literal "salida" 4 times.(²¨Ş¸8Üé´±±1
+W
+java:S1141:"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8åÎ»±±1
+h
+java:S1301l"KReplace this "switch" statement by "if" statements to increase readability.(ü‹¢ï8İé´±±1
+>
+java:S16438"Use a StringBuilder instead.(­††Îüÿÿÿÿ8Şé´±±1
+>
+java:S1643B"Use a StringBuilder instead.(‹È˜ñıÿÿÿÿ8Şé´±±1
+?
+java:S1643¯"Use a StringBuilder instead.(›¡­Òşÿÿÿÿ8Şé´±±1
+i
+java:S20951"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(°™Ô 8–Å±±1
+j
+java:S2095¥"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(êì¢ø8øí´±±1
+j
+java:S2095K"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(¼ó›øÿÿÿÿ8–Å±±1
+n
+java:S2095'"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¦ª¶–ıÿÿÿÿ8–Å±±1
+U
+java:S2589©"7Remove this expression which always evaluates to "true"(Ú‘”¿8ùí´±±1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(÷µÚ8ıí´±±1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(›ÌÌ…8şí´±±1
+a
+java:S2147S"DCombine this catch with the one at line 81, which has the same body.(Ãôş•8ˆî´±±1
+L	java:S106V"+Replace this use of System.err by a logger.(õ´ÁÃúÿÿÿÿ8”î´±±1
+j	java:S100`"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûŠñ8”î´±±1
+L	java:S106d"+Replace this use of System.out by a logger.(Ü¥÷Äşÿÿÿÿ8™î´±±1
+T
+java:S6126d"2Replace this String concatenation with Text block.(Ü¥÷Äşÿÿÿÿ8™î´±±1
+L	java:S106i"+Replace this use of System.out by a logger.(ô¡ƒ±ûÿÿÿÿ8šî´±±1
+>	java:S131l""Add a default case to this switch.(ü‹¢ï8›î´±±1
+W	java:S899p";Do something with the "boolean" value returned by "delete".(¤×¢º8œî´±±1
+k
+java:S4042p"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(¤×¢º8œî´±±1
+d	java:S899‰"BDo something with the "boolean" value returned by "createNewFile".(¯åËúÿÿÿÿ8Ÿî´±±1
+d	java:S899Œ"BDo something with the "boolean" value returned by "createNewFile".(™Æ¢ìùÿÿÿÿ8 î´±±1
+F	java:S108")Either remove or fill this block of code.(ï­£Ä8 î´±±1
+K
+java:S1481"-Remove this unused "contador" local variable.(–¨ß£8¢î´±±1
+M
+java:S1481Ÿ"*Remove this unused "texto" local variable.(ııƒÑıÿÿÿÿ8¢î´±±1
+_	java:S899¬"BDo something with the "boolean" value returned by "createNewFile".(®ªÇ«8§î´±±1
+_	java:S899µ"BDo something with the "boolean" value returned by "createNewFile".(®ªÇ«8©î´±±1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Â–Å±±1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Â–Å±±1

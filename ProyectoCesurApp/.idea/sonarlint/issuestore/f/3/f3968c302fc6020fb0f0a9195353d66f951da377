@@ -1,0 +1,35 @@
+
+X	java:S125	"<This block of commented-out lines of code should be removed.(×¨ä¼8µì¨ ´1
+]	java:S125"<This block of commented-out lines of code should be removed.(ÔŒ†€øÿÿÿÿ8¶ì¨ ´1
+X	java:S125"<This block of commented-out lines of code should be removed.(òò€Œ8¶ì¨ ´1
+]	java:S125"<This block of commented-out lines of code should be removed.(¶Éê™ıÿÿÿÿ8¶ì¨ ´1
+X	java:S125"<This block of commented-out lines of code should be removed.(½‘Ñ³8¶ì¨ ´1
+X	java:S125#"<This block of commented-out lines of code should be removed.(é£ª8¶ì¨ ´1
+]	java:S1256"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¶ì¨ ´1
+X	java:S1259"<This block of commented-out lines of code should be removed.(™¬ò8·ì¨ ´1
+]	java:S125K"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8·ì¨ ´1
+O
+java:S1128"2Remove this unused import 'clase.ActividadDiaria'.(Ïè8·ì¨ ´1
+M
+java:S1128"+Remove this unused import 'clase.Profesor'.(ë€Âùÿÿÿÿ8·ì¨ ´1
+Z
+java:S1128"8Remove this unused import 'exception.ApellidoConNumero'.(Ëõê‘ıÿÿÿÿ8·ì¨ ´1
+T
+java:S1128"2Remove this unused import 'exception.DNIInvalido'.(ÎßğØşÿÿÿÿ8·ì¨ ´1
+S
+java:S1128"6Remove this unused import 'exception.NombreConNumero'.(ï«ğ8·ì¨ ´1
+V
+java:S1128"9Remove this unused import 'exception.UsuarioInexistente'.(²µèƒ8·ì¨ ´1
+K
+java:S1128
+")Remove this unused import 'clase.Alumno'.(†ˆÅøÿÿÿÿ8·ì¨ ´1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8·ì¨ ´1
+Y
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8¸ì¨ ´1
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8¸ì¨ ´1
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8¸ì¨ ´1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¸ì¨ ´1

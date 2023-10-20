@@ -1,0 +1,9 @@
+
+g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¾Š·ù³1
+g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¾Š·ù³1
+g	java:S112N"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¾Š·ù³1
+r	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¥›Ùýÿÿÿÿ8¾Š·ù³1
+£
+java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‘ÝŸüÿÿÿÿ8ÒŠ·ù³1
+X
+java:S2696,"6Make the enclosing method "static" or remove this set.(Û£€©úÿÿÿÿ8ÕŠ·ù³1

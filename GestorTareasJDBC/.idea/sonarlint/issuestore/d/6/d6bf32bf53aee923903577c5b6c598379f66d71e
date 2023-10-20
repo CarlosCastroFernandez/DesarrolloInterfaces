@@ -1,0 +1,7 @@
+
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÒÆ¾Ôıÿÿÿÿ8—’¬›²1
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¥¿‰üşÿÿÿÿ8˜’¬›²1
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(­ÏËì8Òèéá³1

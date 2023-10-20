@@ -1,0 +1,43 @@
+
+g	java:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ä¶ôù¯1
+g	java:S112^"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ä¶ôù¯1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ÿı Öøÿÿÿÿ8Ä¶ôù¯1
+q
+java:S2095W"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(İÅ™‘úÿÿÿÿ8Ù¶ôù¯1
+t	java:S116"XRename this field "aÃ±adirButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñŠ™Í8Ú¶ôù¯1
+x	java:S116"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÌôŞıÿÿÿÿ8Ú¶ôù¯1
+N
+java:S2387","menuBar" is the name of a field in "Frame".(ëùĞ³ûÿÿÿÿ8Ü¶ôù¯1
+G	java:S106N"+Replace this use of System.out by a logger.(ûşªÓ8ê¶ôù¯1
+L	java:S106X"+Replace this use of System.out by a logger.(è†Šúÿÿÿÿ8í¶ôù¯1
+]	java:S125\"<This block of commented-out lines of code should be removed.(şĞåäúÿÿÿÿ8î¶ôù¯1
+L	java:S106k"+Replace this use of System.out by a logger.(Ş²Ç¦ÿÿÿÿÿ8ğ¶ôù¯1
+L	java:S106l"+Replace this use of System.out by a logger.(Ş‡ñÛüÿÿÿÿ8ğ¶ôù¯1
+F	java:S106m"+Replace this use of System.out by a logger.(Æû®I8ñ¶ôù¯1
+G	java:S106n"+Replace this use of System.out by a logger.(ƒÑÛ8ñ¶ôù¯1
+L	java:S106o"+Replace this use of System.out by a logger.(´Æ™îøÿÿÿÿ8ñ¶ôù¯1
+L	java:S106y"+Replace this use of System.out by a logger.(‹§áùÿÿÿÿ8ó¶ôù¯1
+L	java:S106z"+Replace this use of System.out by a logger.(°÷§‹ıÿÿÿÿ8ó¶ôù¯1
+L	java:S106{"+Replace this use of System.out by a logger.(®ˆã¼úÿÿÿÿ8ô¶ôù¯1
+F	java:S106|"+Replace this use of System.out by a logger.(òëº38ô¶ôù¯1
+T
+java:S1128"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8õ¶ôù¯1
+W
+java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8õ¶ôù¯1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ï¢øù¯1
+P
+java:S1068"3Remove this unused "panelFormulario" private field.(õÈÙı8õ¶ôù¯1
+P
+java:S1068".Remove this unused "panelOrden" private field.(ÄéˆÀøÿÿÿÿ8õ¶ôù¯1
+K
+java:S1068".Remove this unused "labelTarea" private field.(˜šš•8õ¶ôù¯1
+Q
+java:S1068"/Remove this unused "labelEstado" private field.(ã¨Ï¶üÿÿÿÿ8ö¶ôù¯1
+O
+java:S1068"2Remove this unused "labelPrioridad" private field.(¢¯òï8ö¶ôù¯1
+Q
+java:S1068"4Remove this unused "labelDescripcion" private field.(÷ÊÚ°8ö¶ôù¯1
+R
+java:S1068"0Remove this unused "botonAÃ±adir" private field.(çÌôŞıÿÿÿÿ8ö¶ôù¯1

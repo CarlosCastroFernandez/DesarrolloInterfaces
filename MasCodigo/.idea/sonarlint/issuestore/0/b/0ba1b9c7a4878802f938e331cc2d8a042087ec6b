@@ -1,0 +1,22 @@
+
+C
+java:S5411"(Use a primitive boolean expression here.(€ÄÉÜÿÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Š”ã
+L
+java:S1854$"6Remove this useless assignment to local variable "p1".(ÖøÊ¿
+J
+java:S1854*"5Remove this useless assignment to local variable "v".(÷—â
+?	java:S106"+Replace this use of System.out by a logger.(÷Å‘Y
+@	java:S106"+Replace this use of System.out by a logger.(à««Ë
+@	java:S106"+Replace this use of System.out by a logger.(Ãš‘ò
+@	java:S106 "+Replace this use of System.out by a logger.(ŒÈ••
+?
+java:S2201"")The return value of "strip" must be used.(Ü‡­Ë
+=
+java:S1481$"'Remove this unused "p1" local variable.(ÖøÊ¿
+E	java:S106("+Replace this use of System.err by a logger.(ïù¯¯ûÿÿÿÿ
+;
+java:S1481*"&Remove this unused "v" local variable.(÷—â
+Q	java:S125."<This block of commented-out lines of code should be removed.(½‘Ñ³
+C
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ

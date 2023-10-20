@@ -1,0 +1,13 @@
+
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(äÀÅç
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(èžñÇøÿÿÿÿ
+b
+java:S1871#"LThis branch's code block is the same as the block for the branch on line 32.(¬ô€†
+?
+java:S1940#")Use the opposite operator ("!=") instead.(¬ô€†
+?
+java:S1940#")Use the opposite operator ("!=") instead.(¬ô€†
+?
+java:S1940#")Use the opposite operator ("!=") instead.(¬ô€†

@@ -1,0 +1,6 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—¿áò³1
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÆÎ „üÿÿÿÿ8ÿâäò³1
+G
+java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8¡¿áò³1

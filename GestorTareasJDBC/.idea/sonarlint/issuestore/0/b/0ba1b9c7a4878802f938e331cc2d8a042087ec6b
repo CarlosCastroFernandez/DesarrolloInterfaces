@@ -1,0 +1,10 @@
+
+W
+java:S1854"5Remove this useless assignment to local variable "v".(Þ´¹²ùÿÿÿÿ8«¨çð±1
+L	java:S106"+Replace this use of System.out by a logger.(‚ÞÏ¥ýÿÿÿÿ8¬¨çð±1
+H
+java:S1481"&Remove this unused "v" local variable.(Þ´¹²ùÿÿÿÿ8­¨çð±1
+O
+java:S1128"-Remove this unused import 'dominio.DataBase'.(ƒ¸ßƒûÿÿÿÿ8®¨çð±1
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8®¨çð±1

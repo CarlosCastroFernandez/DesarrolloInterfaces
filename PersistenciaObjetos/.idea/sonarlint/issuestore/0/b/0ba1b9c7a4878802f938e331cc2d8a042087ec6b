@@ -1,0 +1,31 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã°‚®1
+g	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã°‚®1
+g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã°‚®1
+g	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã°‚®1
+g	java:S112S"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‘Ã°‚®1
+g	java:S112^"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‘Ã°‚®1
+g	java:S112`"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‘Ã°‚®1
+v
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(“ôš8‘Ã°‚®1
+j
+java:S2095"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(×¾•ıÿÿÿÿ8¡Ã°‚®1
+W
+java:S18547":Remove this useless assignment to local variable "clase2".(“ôš8¤Ã°‚®1
+L	java:S106"+Replace this use of System.out by a logger.(‚ŞÏ¥ıÿÿÿÿ8¥Ã°‚®1
+O
+java:S1135"2Complete the task associated to this TODO comment.(©¥–Å8¦Ã°‚®1
+L	java:S106#"+Replace this use of System.out by a logger.(î¶µÀùÿÿÿÿ8ªÃ°‚®1
+L	java:S106$"+Replace this use of System.out by a logger.(˜ÒÏŒøÿÿÿÿ8«Ã°‚®1
+G	java:S106%"+Replace this use of System.out by a logger.(âß†8«Ã°‚®1
+L	java:S106&"+Replace this use of System.out by a logger.(îîöİşÿÿÿÿ8¬Ã°‚®1
+L	java:S106'"+Replace this use of System.out by a logger.(üËŒ™úÿÿÿÿ8¬Ã°‚®1
+L	java:S106("+Replace this use of System.out by a logger.(ªªüŒúÿÿÿÿ8¬Ã°‚®1
+G	java:S1064"+Replace this use of System.out by a logger.(²áÑš8¯Ã°‚®1
+G	java:S106:"+Replace this use of System.out by a logger.(§ÈŸ°8¯Ã°‚®1
+L	java:S106;"+Replace this use of System.out by a logger.(úúìˆûÿÿÿÿ8°Ã°‚®1
+L	java:S106@"+Replace this use of System.out by a logger.(Ú¥§şÿÿÿÿ8ÀÃ°‚®1
+F	java:S106F"+Replace this use of System.out by a logger.(ê¼äo8ÀÃ°‚®1
+G	java:S106G"+Replace this use of System.out by a logger.(Ë®ó8ÁÃ°‚®1
+a
+java:S2147_"DCombine this catch with the one at line 93, which has the same body.(ıàÑÎ8ÅÃ°‚®1
