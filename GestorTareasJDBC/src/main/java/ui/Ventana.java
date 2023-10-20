@@ -4,6 +4,8 @@ import dominio.*;
 import tarea.Tarea;
 import tarea.TareaAdapter;
 import tarea.TareaDAOImp;
+import usuario.Usuario;
+import usuario.UsuarioDAOImp;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -11,9 +13,17 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class Ventana extends JFrame {
+    private final TareaDAOImp dao = new TareaDAOImp(DBConecction.getConexion());
     private JPanel panel1;
     private JTable table1;
     private JLabel info;
+    private JButton pruebaButton;
+    private JTextField txtDescripcion;
+    private JTextField txtTarea;
+    private JTextField txtPrioridad;
+    private JLabel txtCategoria;
+    private JComboBox comboPrioridad;
+    private JComboBox comboCategoria;
     private DefaultTableModel data;
 
     private ArrayList<Tarea> tareas;
@@ -43,15 +53,12 @@ public class Ventana extends JFrame {
         }*/
         table1.doLayout();
 
-
-        TareaDAOImp dao=  new TareaDAOImp(DBConecction.getConexion());
-
-         tareas=dao.loadAll();
+        tareas= dao.loadAll();
         fillTable(tareas);
+
         Tarea tarita=new Tarea("Peter Pan","Fast",21L,"Trabajo","Peter pan y sus amigos");
         dao.save(tarita);
 
-        DataBase.closeConexion();
 
         /*table1.addMouseListener(new MouseAdapter() {
             @Override
@@ -64,7 +71,23 @@ public class Ventana extends JFrame {
                 }
             }
         });*/
-        table1.getSelectionModel().addListSelectionListener(ev ->showDetails(ev));
+        table1.getSelectionModel().addListSelectionListener( (ev) -> showDetails(ev) );
+        pruebaButton.addActionListener(e -> guardarTarea());
+    }
+
+    private void guardarTarea() {
+        Tarea t=new Tarea();
+        Usuario u=(new UsuarioDAOImp(DBConecction.getConexion()).load(1L));
+        t.setUsuario(u);
+        t.setUsuario_id(u.getId());
+        t.setCategoria((String) comboCategoria.getSelectedItem());
+        t.setDescripcion(txtDescripcion.getText());
+        t.setPrioridad((String) comboPrioridad.getSelectedItem());
+        t.setTitulo(txtTarea.getText());
+        t=dao.save(t);
+        tareas= dao.loadAll();
+        fillTable(tareas);
+
     }
 
     private void showDetails(ListSelectionEvent ev) {

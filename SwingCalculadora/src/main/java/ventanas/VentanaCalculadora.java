@@ -1,9 +1,7 @@
 package ventanas;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.awt.*;
 
 /**
  * Clase con nombre VentanaCalculadora donde se muestra una ventana ya que se hereda
@@ -72,6 +70,8 @@ public class VentanaCalculadora extends JFrame {
     private JButton boton4;
     /** Variable global llamada boton8 que contiene un JButton y representa el numero 8*/
     private JButton boton8;
+    /** Boton que pone el numero de forma negativa*/
+    private JButton botonNegativo;
     /** Variable global de String donde se va concatenando los numeros y los signos*/
     private String guardado;
     /** Variable global de Double llamada valor1 donde se almacena un primer numero para ser calculado posteriormente*/
@@ -92,13 +92,19 @@ public class VentanaCalculadora extends JFrame {
     this.setContentPane(panelPrincipal);
     this.setTitle("Calculadora");
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    this.setSize(300,250);
+    this.setSize(500,500);
     this.setResizable(false);
     this.setLocationRelativeTo(null);
     this.setVisible(true);
     operacion=0.0;
     guardado="";
 
+    datos =new String[10];
+
+    botonNegativo.addActionListener(e->{
+        guardado+="-";
+        labelEscritura.setText(guardado);
+    });
     boton7.addActionListener(e -> {
 
         guardado+="7";
@@ -118,13 +124,14 @@ public class VentanaCalculadora extends JFrame {
     });
 
     botonRestar.addActionListener(e -> {
-        guardado+="-";
+        guardado+=" - ";
         botonComa.setEnabled(true);
         metodoSignos();
     });
     botonIgual.addActionListener(e -> {
         botonComa.setEnabled(false);
         resultadoObtenido();
+        botonComa.setEnabled(true);
 
 
     });
@@ -187,39 +194,85 @@ public class VentanaCalculadora extends JFrame {
         labelEscritura.setText("");
         guardado="";
     });
-}
+
+    }
 
     /** Metodo que no recibe nada por parametros y no devuelve nada pero que sirve para calcular
      * el valor de las operaciones realzadas.*/
     private void resultadoObtenido() {
         if(labelEscritura.getText().contains("+")){
             datos=labelEscritura.getText().split("\\+");
-            valor1=Double.parseDouble(datos[0]);
-            valor2=Double.parseDouble(datos[1]);
-            operacion=valor1+valor2;
-            txtResultado.setText(operacion.toString());
-        }else if(labelEscritura.getText().contains("-")){
-            datos=labelEscritura.getText().split("-");
-            valor1=Double.parseDouble(datos[0]);
-            valor2=Double.parseDouble(datos[1]);
-            operacion=valor1-valor2;
-            txtResultado.setText(operacion.toString());
+            try{
+                valor1=Double.parseDouble(datos[0]);
+                valor2=Double.parseDouble(datos[1]);
+                operacion=valor1+valor2;
+                txtResultado.setText(operacion.toString());
+            }catch(ArrayIndexOutOfBoundsException e){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error");
+            }catch (NumberFormatException e1){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error,Numero Mal Transcrito");
+            }
+        }else if(labelEscritura.getText().contains(" - ")){
+            datos=labelEscritura.getText().split(" - ");
+            try{
+                valor1=Double.parseDouble(datos[0]);
+                valor2=Double.parseDouble(datos[1]);
+                operacion=valor1-valor2;
+                txtResultado.setText(operacion.toString());
+            }catch(ArrayIndexOutOfBoundsException e){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error");
+            }catch (NumberFormatException e1){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error,Numero Mal Transcrito");
+            }
         }else if(labelEscritura.getText().contains("/")){
             datos=labelEscritura.getText().split("/");
-            valor1=Double.parseDouble(datos[0]);
-            valor2=Double.parseDouble(datos[1]);
-            operacion=valor1/valor2;
-            txtResultado.setText(operacion.toString());
+            try{
+                valor1=Double.parseDouble(datos[0]);
+                valor2=Double.parseDouble(datos[1]);
+                operacion=valor1/valor2;
+                txtResultado.setText(operacion.toString());
+            }catch(ArrayIndexOutOfBoundsException e){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error");
+            }catch (NumberFormatException e1){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error,Numero Mal Transcrito");
+            }
         }else if(labelEscritura.getText().contains("x")){
             datos=labelEscritura.getText().split("x");
-            valor1=Double.parseDouble(datos[0]);
-            valor2=Double.parseDouble(datos[1]);
-            operacion=valor1*valor2;
-            txtResultado.setText(operacion.toString());
+            try{
+                valor1=Double.parseDouble(datos[0]);
+                valor2=Double.parseDouble(datos[1]);
+                operacion=valor1*valor2;
+                txtResultado.setText(operacion.toString());
+            }catch(ArrayIndexOutOfBoundsException e){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error");
+            }catch (NumberFormatException e1){
+                txtResultado.setForeground(new Color(255,0,0));
+                txtResultado.setText("Error,Numero Mal Transcrito");
+            }
+
+        }else if(labelEscritura.getText().contains("-")) {
+            txtResultado.setForeground(new Color(0,0,0));
+            txtResultado.setText("Error");
+
         }
+
         datos=new String[0];
-        guardado=operacion.toString();
-        labelEscritura.setText(operacion.toString());
+        if(txtResultado.getText().contains("")){
+            labelEscritura.setText("");
+            guardado="";
+        }else{
+            labelEscritura.setText(operacion.toString());
+            guardado=operacion.toString();
+        }
+
+
     }
 
     /**
@@ -262,28 +315,31 @@ public class VentanaCalculadora extends JFrame {
      */
 
     private void restriccionNumeros() {
-        if(labelEscritura.getText().contains("+")||labelEscritura.getText().equals("")){
+        if(labelEscritura.getText().equals("")){
+            labelEscritura.setText(guardado);
+        }
+        if(labelEscritura.getText().contains("+")){
             labelEscritura.setText(guardado);
             datos=labelEscritura.getText().split("\\+");
 
             if(datos.length>2){
                 labelEscritura.setEnabled(false);
             }
-        } else if(labelEscritura.getText().contains("-")||labelEscritura.getText().equals("")){
+        } else if(labelEscritura.getText().contains(" - ")){
             labelEscritura.setText(guardado);
-            datos=labelEscritura.getText().split("-");
+            datos=labelEscritura.getText().split(" - ");
 
             if(datos.length>2){
                 labelEscritura.setEnabled(false);
             }
-        }else if(labelEscritura.getText().contains("x")||labelEscritura.getText().equals("")){
+        }else if(labelEscritura.getText().contains("x")){
             labelEscritura.setText(guardado);
             datos=labelEscritura.getText().split("x");
 
             if(datos.length>2){
                 labelEscritura.setEnabled(false);
             }
-        }else if(labelEscritura.getText().contains("/")||labelEscritura.getText().equals("")){
+        }else if(labelEscritura.getText().contains("/")){
             labelEscritura.setText(guardado);
             datos=labelEscritura.getText().split("/");
 

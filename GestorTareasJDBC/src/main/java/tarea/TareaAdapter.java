@@ -24,7 +24,10 @@ public class TareaAdapter {
     }
     public String[]toArrayString(){
         return new String[]{
-                String.valueOf(t.getId()),t.getTitulo(),t.getPrioridad(), String.valueOf(t.getUsuario_id()),t.getCategoria(),t.getDescripcion()
+                String.valueOf(t.getId()),t.getTitulo(),t.getPrioridad(),
+                (t.getUsuario()==null)?"-":t.getUsuario().getNombre(),
+                t.getCategoria(),
+                t.getDescripcion()
         };
     }
 }

@@ -1,5 +1,6 @@
 package tarea;
 
+import lombok.extern.java.Log;
 import tarea.Tarea;
 import tarea.TareaAdapter;
 import tarea.TareaDAO;
@@ -7,7 +8,7 @@ import usuario.UsuarioDAOImp;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+@Log
 public class TareaDAOImp implements TareaDAO {
     private static Connection connection;
     private final static String queryLoadAll="SELECT * FROM tareas";
@@ -80,18 +81,31 @@ public class TareaDAOImp implements TareaDAO {
 
     @Override
     public Tarea save(Tarea t) {
+        Tarea salida=null;
+        if(t.getUsuario()==null){
+            return null;
+        }
         try {
-            PreparedStatement pst=connection.prepareStatement(querySave);
+            PreparedStatement pst=connection.prepareStatement(querySave,Statement.RETURN_GENERATED_KEYS);
+            log.info(querySave);
+            log.info(t.toString());
             pst.setString(1,t.getTitulo());
             pst.setString(2,t.getPrioridad());
-            pst.setLong(3,t.getUsuario_id());
+            pst.setLong(3,t.getUsuario().getId());
             pst.setString(4,t.getCategoria());
             pst.setString(5,t.getDescripcion());
             int filas=pst.executeUpdate();
+            if(filas==1){
+              ResultSet rs=  pst.getGeneratedKeys();
+              rs.next();
+                salida=t;
+                salida.setId(rs.getLong(1));
+                log.info("Tarea insertada");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return salida;
     }
 
     @Override
