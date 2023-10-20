@@ -83,6 +83,7 @@ public class VentanaCalculadora extends JFrame {
     private String[]datos;
     /** Variable global de Double donde se almacena el resultado de las operaciones*/
     private Double operacion;
+    private Byte contador;
 
     /**
      * Constructor de la clase VentanaCalculadora donde se diseña la ventana
@@ -98,6 +99,7 @@ public class VentanaCalculadora extends JFrame {
     this.setVisible(true);
     operacion=0.0;
     guardado="";
+     contador=0;
 
     datos =new String[10];
 
@@ -190,6 +192,7 @@ public class VentanaCalculadora extends JFrame {
         metodoSignos();
     });
     botonCe.addActionListener(e -> {
+        contador++;
         txtResultado.setText("");
         labelEscritura.setText("");
         guardado="";
@@ -200,6 +203,7 @@ public class VentanaCalculadora extends JFrame {
     /** Metodo que no recibe nada por parametros y no devuelve nada pero que sirve para calcular
      * el valor de las operaciones realzadas.*/
     private void resultadoObtenido() {
+        txtResultado.setForeground(new Color(0,0,0));
         if(labelEscritura.getText().contains("+")){
             datos=labelEscritura.getText().split("\\+");
             try{
@@ -258,18 +262,20 @@ public class VentanaCalculadora extends JFrame {
             }
 
         }else if(labelEscritura.getText().contains("-")) {
-            txtResultado.setForeground(new Color(0,0,0));
+            txtResultado.setForeground(new Color(255,0,0));
             txtResultado.setText("Error");
 
         }
 
         datos=new String[0];
-        if(txtResultado.getText().contains("")){
+        System.out.println(txtResultado.getText());
+        if(txtResultado.getText().contains("")&&contador<1){
             labelEscritura.setText("");
-            guardado="";
-        }else{
-            labelEscritura.setText(operacion.toString());
             guardado=operacion.toString();
+
+        }else{
+            contador=0;
+           guardado="";
         }
 
 

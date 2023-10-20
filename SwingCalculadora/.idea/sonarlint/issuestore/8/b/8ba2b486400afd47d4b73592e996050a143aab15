@@ -1,21 +1,19 @@
 
+i
+java:S1192Õ"FDefine a constant instead of duplicating this literal "Error" 5 times.(ŠÈ£Àûÿÿÿÿ8¢ûç´1
+z
+java:S1192Ø"\Define a constant instead of duplicating this literal "Error,Numero Mal Transcrito" 4 times.(±Œ›8¢ûç´1
 _
-java:S4973ñ"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8Ÿ°É±1
+java:S4973§"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8£ûç´1
 _
-java:S4973¦"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8Ÿ°É±1
+java:S4973ß"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8£ûç´1
 r
-java:S1450N"URemove the "valor1" field and declare it as a local variable in the relevant methods.(ÄãŒ‚8·°É±1
+java:S1450N"URemove the "valor1" field and declare it as a local variable in the relevant methods.(ÄãŒ‚8Äûç´1
 r
-java:S1450P"URemove the "valor2" field and declare it as a local variable in the relevant methods.(±şğ¸8·°É±1
+java:S1450P"URemove the "valor2" field and declare it as a local variable in the relevant methods.(±şğ¸8Åûç´1
 u
-java:S3776ˆ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(æìê´üÿÿÿÿ8À°É±1
-T
-java:S1128"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8Ã°É±1
-W
-java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8Ã°É±1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ã°É±1
+java:S3776Ê"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¯÷‘«úÿÿÿÿ8Ğûç´1
 O
-java:S1068"2Remove this unused "panelEscritura" private field.(©±—Š8Ã°É±1
+java:S1068"2Remove this unused "panelEscritura" private field.(©±—Š8Ûûç´1
 M
-java:S1068"0Remove this unused "panelBotones" private field.(×Ö˜Ñ8Ã°É±1
+java:S1068"0Remove this unused "panelBotones" private field.(×Ö˜Ñ8Ûûç´1
