@@ -106,10 +106,14 @@ public class VentanaCalculadora extends JFrame {
     operacion=0.0;
     guardado="";
      contador=0;
+     txtResultado.setBackground(new Color(40,40,40));
+     txtResultado.setEditable(false);
+
 
     datos =new String[10];
 
     botonNegativo.addActionListener(e->{
+        txtResultado.setEditable(true);
         guardado+="-";
         labelEscritura.setText(guardado);
     });
@@ -491,7 +495,8 @@ public class VentanaCalculadora extends JFrame {
     /** Metodo que no recibe nada por parametros y no devuelve nada pero que sirve para calcular
      * el valor de las operaciones realzadas.*/
     private void resultadoObtenido() {
-        txtResultado.setForeground(new Color(0,0,0));
+        txtResultado.setForeground(new Color(255,255,255));
+        txtResultado.setEditable(true);
         if(labelEscritura.getText().contains("+")){
             datos=guardado.split("\\+");
             try{
@@ -567,6 +572,7 @@ public class VentanaCalculadora extends JFrame {
 
 
         }
+        txtResultado.setEditable(false);
 
 
 

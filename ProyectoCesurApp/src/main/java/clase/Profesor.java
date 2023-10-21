@@ -34,7 +34,16 @@ public class Profesor extends Usuario{
     public ArrayList<Alumno> getAlumnos() {
         return alumnos;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public void setListaAlumnos(ArrayList<Alumno> ventanaProfesor) {
         this.alumnos = ventanaProfesor;
+
     }
+
 }
+

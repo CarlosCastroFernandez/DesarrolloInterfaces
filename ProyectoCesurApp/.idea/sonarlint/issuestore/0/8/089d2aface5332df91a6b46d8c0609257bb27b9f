@@ -1,23 +1,19 @@
 
-g	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’Œà¸´1
-g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“Œà¸´1
-g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“Œà¸´1
-g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“Œà¸´1
-g	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“Œà¸´1
-g	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8“Œà¸´1
+g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šë–›µ1
+g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ë–›µ1
+g	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ë–›µ1
+g	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ë–›µ1
+g	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ë–›µ1
+g	java:S112P"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8›ë–›µ1
 l
-java:S2095B"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ïèöˆ8ÏÉô¸´1
+java:S2095@"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ù•8ÑÌ—›µ1
 G
-java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8¥Œà¸´1
+java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8«ë–›µ1
 a
-java:S21473"DCombine this catch with the one at line 49, which has the same body.(†·»–8¨Œà¸´1
+java:S21470"DCombine this catch with the one at line 46, which has the same body.(†·»–8·ë–›µ1
 f
-java:S21475"DCombine this catch with the one at line 51, which has the same body.(­íÉçûÿÿÿÿ8¨Œà¸´1
+java:S21472"DCombine this catch with the one at line 48, which has the same body.(­íÉçûÿÿÿÿ8·ë–›µ1
 a
-java:S21477"DCombine this catch with the one at line 53, which has the same body.(¹³£ç8¨Œà¸´1
+java:S21474"DCombine this catch with the one at line 50, which has the same body.(¹³£ç8·ë–›µ1
 f
-java:S21479"DCombine this catch with the one at line 55, which has the same body.(İ»øøÿÿÿÿ8©Œà¸´1
-U
-java:S1854J"8Remove this useless assignment to local variable "fila".(°¥ŞÇ8´Œà¸´1
-F
-java:S1481J")Remove this unused "fila" local variable.(°¥ŞÇ8¸Œà¸´1
+java:S21476"DCombine this catch with the one at line 52, which has the same body.(İ»øøÿÿÿÿ8·ë–›µ1

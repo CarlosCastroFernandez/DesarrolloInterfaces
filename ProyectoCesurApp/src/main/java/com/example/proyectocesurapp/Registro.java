@@ -55,7 +55,7 @@ public class Registro implements Initializable {
         try {
             Profesor profe=new Profesor(nombre,apellido1,apellido2,contraseña,email,dni,telefono);
             ProfesorDAOImp dao=new ProfesorDAOImp(DBConnection.getConnection());
-            dao.injection(profe);
+             profe=dao.injection(profe);
         } catch (NombreConNumero e) {
             throw new RuntimeException(e);
         } catch (ApellidoConNumero e) {

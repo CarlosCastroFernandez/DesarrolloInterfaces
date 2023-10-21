@@ -4,10 +4,7 @@ import clase.Profesor;
 import exception.*;
 import lombok.extern.java.Log;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Log
 public class ProfesorDAOImp implements ProfesorDAO{
@@ -61,9 +58,10 @@ public class ProfesorDAOImp implements ProfesorDAO{
     }
 
     @Override
-    public void injection(Profesor profesor) {
+    public Profesor injection(Profesor profesor) {
+        Profesor profe=null;
         try {
-            PreparedStatement pst=conexion.prepareStatement(registerTeacher);
+            PreparedStatement pst=conexion.prepareStatement(registerTeacher, Statement.RETURN_GENERATED_KEYS);
             pst.setString(1,profesor.getDni());
             pst.setString(2,profesor.getCorreo());
             pst.setString(3,profesor.getNombre());
@@ -72,8 +70,15 @@ public class ProfesorDAOImp implements ProfesorDAO{
             pst.setString(6, profesor.getPassword());
             pst.setInt(7,profesor.getTelefono());
             Integer fila=pst.executeUpdate();
+            if(fila==1){
+                ResultSet rs=pst.getGeneratedKeys();
+                rs.next();
+                profe=profesor;
+                profe.setId(rs.getInt(1));
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return profe;
     }
 }

@@ -103,6 +103,20 @@ public class Usuario {
           this.correo = correo;
      }
 
+     @Override
+     public String toString() {
+          return "Usuario{" +
+                  "id=" + id +
+                  ", nombre='" + nombre + '\'' +
+                  ", apellido1='" + apellido1 + '\'' +
+                  ", apellido2='" + apellido2 + '\'' +
+                  ", password='" + password + '\'' +
+                  ", correo='" + correo + '\'' +
+                  ", dni='" + dni + '\'' +
+                  ", telefono=" + telefono +
+                  '}';
+     }
+
      public void setDni(String dni) throws DNIInvalido {
           String letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
           for(byte i=0;i<dni.length();i++) {

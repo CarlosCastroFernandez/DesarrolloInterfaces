@@ -5,5 +5,5 @@ import exception.UsuarioInexistente;
 
 public interface ProfesorDAO {
     public Profesor loadTeacher(String dni, String contrasenha) throws UsuarioInexistente;
-    public void injection(Profesor profesor);
+    public Profesor injection(Profesor profesor);
 }

@@ -10,9 +10,9 @@ java:S1319C"pThe return type of this method should be an interface such as "Lis
 ~
 java:S14888"\Immediately return this expression instead of assigning it to the temporary variable "fila".(íà•…şÿÿÿÿ8©Ëâğ±1
 d
-java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(Õßã¥8ÀËâğ±1
-d
 java:S2095F"GUse try-with-resources or close this "Statement" in a "finally" clause.(Õßã¥8ÀËâğ±1
+d
+java:S2095+"GUse try-with-resources or close this "Statement" in a "finally" clause.(Õßã¥8ÀËâğ±1
 \
 java:S1118
 ":Add a private constructor to hide the implicit public one.(êà™¿ùÿÿÿÿ8ÃËâğ±1

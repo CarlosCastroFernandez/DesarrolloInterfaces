@@ -8,6 +8,8 @@ r	java:S1176"QRename this local variable to match the regular expression '^[a-
 java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢¤ Ø8³Ÿ© ´1
 £
 java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‘İŸüÿÿÿÿ8´Ÿ© ´1
+V
+java:S1854:"9Remove this useless assignment to local variable "profe".(Ğ†–ä8¨Ğ›µ1
 f
 java:S2147="DCombine this catch with the one at line 59, which has the same body.(İ»øøÿÿÿÿ8¹Ÿ© ´1
 f

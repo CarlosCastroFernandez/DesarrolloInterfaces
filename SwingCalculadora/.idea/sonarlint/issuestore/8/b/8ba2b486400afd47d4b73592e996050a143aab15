@@ -1,22 +1,24 @@
 
 i
-java:S1192Ø"FDefine a constant instead of duplicating this literal "Error" 5 times.(ŠÈ£Àûÿÿÿÿ8êÛŸè´1
+java:S1192ø"FDefine a constant instead of duplicating this literal "Error" 5 times.(ŠÈ£Àûÿÿÿÿ8À¾ßšµ1
 z
-java:S1192Û"\Define a constant instead of duplicating this literal "Error,Numero Mal Transcrito" 4 times.(±Œ›8ëÛŸè´1
+java:S1192û"\Define a constant instead of duplicating this literal "Error,Numero Mal Transcrito" 4 times.(±Œ›8Á¾ßšµ1
 _
-java:S4973¬"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8îÛŸè´1
-_
-java:S4973ä"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8îÛŸè´1
+java:S4973‡"<Strings and Boxed types should be compared using "equals()".(›‹Ã“şÿÿÿÿ8Ä¾ßšµ1
 r
-java:S1450N"URemove the "valor1" field and declare it as a local variable in the relevant methods.(ÄãŒ‚8§ÜŸè´1
+java:S1450Q"URemove the "valor1" field and declare it as a local variable in the relevant methods.(ÄãŒ‚8í¾ßšµ1
 r
-java:S1450P"URemove the "valor2" field and declare it as a local variable in the relevant methods.(±şğ¸8¨ÜŸè´1
+java:S1450S"URemove the "valor2" field and declare it as a local variable in the relevant methods.(±şğ¸8î¾ßšµ1
+t
+java:S3776b"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(©«¬ÿıÿÿÿÿ8ğ¾ßšµ1
 u
-java:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¯÷‘«úÿÿÿÿ8³ÜŸè´1
-M	java:S106"+Replace this use of System.out by a logger.(ı­æÿÿÿÿÿ8½ÜŸè´1
+java:S3776í"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¯÷‘«úÿÿÿÿ8Œ¿ßšµ1
+M	java:S106¯"+Replace this use of System.out by a logger.(ı­æÿÿÿÿÿ8‘¿ßšµ1
 _
-java:S1117¢"<Rename "contador" which hides the field declared at line 86.(àÚÁ›ÿÿÿÿÿ8„ˆ£è´1
+java:S1117Å"<Rename "contador" which hides the field declared at line 90.(àÚÁ›ÿÿÿÿÿ8’¿ßšµ1
+Q
+java:S1128"4Remove this unused import 'java.net.http.WebSocket'.(•ÅâŞ8•¿ßšµ1
 O
-java:S1068"2Remove this unused "panelEscritura" private field.(©±—Š8ÅÜŸè´1
+java:S1068"2Remove this unused "panelEscritura" private field.(©±—Š8•¿ßšµ1
 M
-java:S1068"0Remove this unused "panelBotones" private field.(×Ö˜Ñ8ÅÜŸè´1
+java:S1068"0Remove this unused "panelBotones" private field.(×Ö˜Ñ8•¿ßšµ1
