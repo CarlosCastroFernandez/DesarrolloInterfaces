@@ -2,6 +2,9 @@ package ventanas;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.http.WebSocket;
 
 /**
  * Clase con nombre VentanaCalculadora donde se muestra una ventana ya que se hereda
@@ -84,6 +87,7 @@ public class VentanaCalculadora extends JFrame {
     /** Variable global de Double donde se almacena el resultado de las operaciones*/
     private Double operacion;
     private Byte contador;
+    private String copia;
 
     /**
      * Constructor de la clase VentanaCalculadora donde se diseña la ventana
@@ -120,6 +124,7 @@ public class VentanaCalculadora extends JFrame {
     });
     botonSumar.addActionListener(e -> {
         guardado+="+";
+        labelEscritura.setText(guardado);
         botonComa.setEnabled(true);
         metodoSignos();
 
@@ -127,10 +132,45 @@ public class VentanaCalculadora extends JFrame {
 
     botonRestar.addActionListener(e -> {
         guardado+=" - ";
+        labelEscritura.setText(guardado);
         botonComa.setEnabled(true);
         metodoSignos();
     });
     botonIgual.addActionListener(e -> {
+        copia=guardado;
+        if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("+")){
+            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
+        } else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains(" - ")){
+            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
+        }else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("x")){
+            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
+        }else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("/")){
+            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
+        } else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("+")){
+            copia="("+guardado.substring(0,guardado.indexOf("+"))+")";
+            copia+=guardado.substring(guardado.indexOf("+"));
+        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains(" - ")){
+            copia="("+guardado.substring(0,guardado.indexOf(" - "))+")";
+            copia+=guardado.substring(guardado.indexOf(" - "));
+        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("x")) {
+            copia = "(" + guardado.substring(0, guardado.indexOf("x")) + ")";
+            copia += guardado.substring(guardado.indexOf("x"));
+        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("/")) {
+            copia = "(" + guardado.substring(0, guardado.indexOf("/")) + ")";
+            copia += guardado.substring(guardado.indexOf("/"));
+        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("+")){
+            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
+
+        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains(" - ")){
+            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
+
+        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("x")){
+            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
+
+        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("/")){
+            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
+
+        }
         botonComa.setEnabled(false);
         resultadoObtenido();
         botonComa.setEnabled(true);
@@ -183,29 +223,275 @@ public class VentanaCalculadora extends JFrame {
     });
     botonMultiplicar.addActionListener(e -> {
         guardado+="x";
+        labelEscritura.setText(guardado);
         botonComa.setEnabled(true);
         metodoSignos();
     });
     botonDividir.addActionListener(e -> {
         guardado+="/";
+        labelEscritura.setText(guardado);
         botonComa.setEnabled(true);
         metodoSignos();
     });
     botonCe.addActionListener(e -> {
         contador++;
+        botonComa.setEnabled(true);
         txtResultado.setText("");
         labelEscritura.setText("");
         guardado="";
     });
+        buttonColours();
+
 
     }
+
+    private void buttonColours() {
+        botonComa.setBackground(new Color(0,0,255));
+        boton8.setBackground(new Color(0,255,0));
+        boton1.setBackground(new Color(0,255,0));
+        boton2.setBackground(new Color(0,255,0));
+        boton3.setBackground(new Color(0,255,0));
+        boton4.setBackground(new Color(0,255,0));
+        boton5.setBackground(new Color(0,255,0));
+        boton6.setBackground(new Color(0,255,0));
+        boton7.setBackground(new Color(0,255,0));
+        boton9.setBackground(new Color(0,255,0));
+        boton0.setBackground(new Color(0,255,0));
+        botonCe.setBackground(new Color(255,0,0));
+        botonNegativo.setBackground(new Color(0,0,255));
+        botonIgual.setBackground(new Color(0,0,255));
+        botonSumar.setBackground(new Color(0,0,255));
+        botonRestar.setBackground(new Color(0,0,255));
+        botonDividir.setBackground(new Color(0,0,255));
+        botonMultiplicar.setBackground(new Color(0,0,255));
+
+
+        boton7.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton7.setBackground(new Color(0,100,0));
+            }
+        });
+        boton7.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton7.setBackground(new Color(0,255,0));
+            }
+        });
+        boton8.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton8.setBackground(new Color(0,100,0));
+            }
+        });
+        boton8.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton8.setBackground(new Color(0,255,0));
+            }
+        });
+        boton9.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton9.setBackground(new Color(0,100,0));
+            }
+        });
+        boton9.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton9.setBackground(new Color(0,255,0));
+            }
+        });
+        boton0.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton0.setBackground(new Color(0,100,0));
+            }
+        });
+        boton0.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton0.setBackground(new Color(0,255,0));
+            }
+        });
+        boton1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton1.setBackground(new Color(0,100,0));
+            }
+        });
+        boton1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton1.setBackground(new Color(0,255,0));
+            }
+        });
+        boton2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton2.setBackground(new Color(0,100,0));
+            }
+        });
+        boton2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton2.setBackground(new Color(0,255,0));
+            }
+        });
+        boton3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton3.setBackground(new Color(0,100,0));
+            }
+        });
+        boton3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton3.setBackground(new Color(0,255,0));
+            }
+        });
+        boton4.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton4.setBackground(new Color(0,100,0));
+            }
+        });
+        boton4.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton4.setBackground(new Color(0,255,0));
+            }
+        });
+        boton5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton5.setBackground(new Color(0,100,0));
+            }
+        });
+        boton5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton5.setBackground(new Color(0,255,0));
+            }
+        });
+        boton6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton6.setBackground(new Color(0,100,0));
+            }
+        });
+        boton6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton6.setBackground(new Color(0,255,0));
+            }
+        });
+        botonCe.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonCe.setBackground(new Color(100,0,0));
+            }
+        });
+        botonCe.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonCe.setBackground(new Color(255,0,0));
+            }
+        });
+        botonSumar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonSumar.setBackground(new Color(0,0,100));
+            }
+        });
+        botonSumar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonSumar.setBackground(new Color(0,0,255));
+            }
+        });
+        botonRestar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonRestar.setBackground(new Color(0,0,100));
+            }
+        });
+        botonRestar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonRestar.setBackground(new Color(0,0,255));
+            }
+        });
+        botonMultiplicar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonMultiplicar.setBackground(new Color(0,0,100));
+            }
+        });
+        botonMultiplicar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonMultiplicar.setBackground(new Color(0,0,255));
+            }
+        });
+
+        botonDividir.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonDividir.setBackground(new Color(0,0,100));
+            }
+        });
+        botonDividir.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonDividir.setBackground(new Color(0,0,255));
+            }
+        });
+        botonIgual.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonIgual.setBackground(new Color(0,0,100));
+            }
+        });
+        botonIgual.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonIgual.setBackground(new Color(0,0,255));
+            }
+        });
+        botonComa.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonComa.setBackground(new Color(0,0,100));
+            }
+        });
+        botonComa.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonComa.setBackground(new Color(0,0,255));
+            }
+        });
+        botonNegativo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                botonNegativo.setBackground(new Color(0,0,100));
+            }
+        });
+        botonNegativo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                botonNegativo.setBackground(new Color(0,0,255));
+            }
+        });
+    }
+
 
     /** Metodo que no recibe nada por parametros y no devuelve nada pero que sirve para calcular
      * el valor de las operaciones realzadas.*/
     private void resultadoObtenido() {
         txtResultado.setForeground(new Color(0,0,0));
         if(labelEscritura.getText().contains("+")){
-            datos=labelEscritura.getText().split("\\+");
+            datos=guardado.split("\\+");
             try{
                 valor1=Double.parseDouble(datos[0]);
                 valor2=Double.parseDouble(datos[1]);
@@ -219,7 +505,7 @@ public class VentanaCalculadora extends JFrame {
                 txtResultado.setText("Error,Numero Mal Transcrito");
             }
         }else if(labelEscritura.getText().contains(" - ")){
-            datos=labelEscritura.getText().split(" - ");
+            datos=guardado.split(" - ");
             try{
                 valor1=Double.parseDouble(datos[0]);
                 valor2=Double.parseDouble(datos[1]);
@@ -233,7 +519,7 @@ public class VentanaCalculadora extends JFrame {
                 txtResultado.setText("Error,Numero Mal Transcrito");
             }
         }else if(labelEscritura.getText().contains("/")){
-            datos=labelEscritura.getText().split("/");
+            datos=guardado.split("/");
             try{
                 valor1=Double.parseDouble(datos[0]);
                 valor2=Double.parseDouble(datos[1]);
@@ -247,7 +533,7 @@ public class VentanaCalculadora extends JFrame {
                 txtResultado.setText("Error,Numero Mal Transcrito");
             }
         }else if(labelEscritura.getText().contains("x")){
-            datos=labelEscritura.getText().split("x");
+            datos=guardado.split("x");
             try{
                 valor1=Double.parseDouble(datos[0]);
                 valor2=Double.parseDouble(datos[1]);
@@ -269,14 +555,17 @@ public class VentanaCalculadora extends JFrame {
 
         datos=new String[0];
         System.out.println(txtResultado.getText());
-        if(txtResultado.getText().contains("")&&contador<1){
-            labelEscritura.setText("");
+        if(contador<1){
+            labelEscritura.setText(copia);
             guardado=operacion.toString();
-
         }else{
             contador=0;
-           guardado="";
+            labelEscritura.setText(copia);
+            guardado=operacion.toString();
+
+
         }
+
 
 
     }
@@ -296,10 +585,10 @@ public class VentanaCalculadora extends JFrame {
                 botonComa.setEnabled(false);
             }
         }
+        labelEscritura.setText(guardado);
 
-        if(labelEscritura.getText()!=""){
-            labelEscritura.setText(guardado);
-        }
+
+
     }
 
     /**
