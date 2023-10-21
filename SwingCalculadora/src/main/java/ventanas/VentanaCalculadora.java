@@ -511,7 +511,7 @@ public class VentanaCalculadora extends JFrame {
             try{
                 valor1=Double.parseDouble(datos[0]);
                 valor2=Double.parseDouble(datos[1]);
-                operacion=valor1-valor2;
+                operacion=(valor1)-(valor2);
                 txtResultado.setText(operacion.toString());
             }catch(ArrayIndexOutOfBoundsException e){
                 txtResultado.setForeground(new Color(255,0,0));
