@@ -86,7 +86,9 @@ public class VentanaCalculadora extends JFrame {
     private String[]datos;
     /** Variable global de Double donde se almacena el resultado de las operaciones*/
     private Double operacion;
+    /** Variable que se utiliza para saber cuando paso cuando se hace click en el botonCe*/
     private Byte contador;
+    /** Variable que se utiliza para copiar lo que hay en guardado y mostrarlo en el labelEscritura*/
     private String copia;
 
     /**
