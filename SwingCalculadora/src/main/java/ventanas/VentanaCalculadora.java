@@ -140,36 +140,36 @@ public class VentanaCalculadora extends JFrame {
     });
     botonIgual.addActionListener(e -> {
         copia=guardado;
-        if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("+")){
+        if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("+")){
             copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
-        } else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains(" - ")){
+        } else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains(" - ")){
             copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
-        }else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("x")){
+        }else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("x")){
             copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
-        }else if(copia.indexOf("-")==0&&copia.lastIndexOf("-")!=-1&&copia.contains("/")){
+        }else if(guardado.indexOf("-")!=guardado.lastIndexOf("-")&&guardado.contains("/")){
             copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
-        } else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("+")){
+        } else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("+")){
             copia="("+guardado.substring(0,guardado.indexOf("+"))+")";
             copia+=guardado.substring(guardado.indexOf("+"));
-        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains(" - ")){
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains(" - ")){
             copia="("+guardado.substring(0,guardado.indexOf(" - "))+")";
             copia+=guardado.substring(guardado.indexOf(" - "));
-        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("x")) {
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("x")) {
             copia = "(" + guardado.substring(0, guardado.indexOf("x")) + ")";
             copia += guardado.substring(guardado.indexOf("x"));
-        }else if(copia.contains("-")&&copia.indexOf("-")==0&&copia.contains("/")) {
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("/")) {
             copia = "(" + guardado.substring(0, guardado.indexOf("/")) + ")";
             copia += guardado.substring(guardado.indexOf("/"));
-        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("+")){
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("+")){
             copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
 
-        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains(" - ")){
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains(" - ")){
             copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
 
-        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("x")){
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("x")){
             copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
 
-        }else if(copia.contains("-")&&copia.indexOf("-")!=0&&copia.contains("/")){
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("/")){
             copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
 
         }
