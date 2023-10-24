@@ -195,6 +195,7 @@
             </constraints>
             <properties>
               <horizontalTextPosition value="0"/>
+              <preferredSize width="78" height="30"/>
               <text value="7"/>
               <verticalAlignment value="0"/>
             </properties>

@@ -14,6 +14,6 @@ public class HelloController {
     protected void onHelloButtonClick() {
         var ventana = new FileChooser();
        File ruta= ventana.showOpenDialog(null);
-        System.out.println(ruta);
+       System.out.println(ruta.getParent()+File.separator+ruta.getName());
     }
 }

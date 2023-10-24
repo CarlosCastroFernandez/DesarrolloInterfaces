@@ -1,26 +1,36 @@
 
-g	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢ç‡¼´1
-g	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£ç‡¼´1
-g	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£ç‡¼´1
-g	java:S112j"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8£ç‡¼´1
+g	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜å‹İµ1
+g	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜å‹İµ1
+g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™å‹İµ1
+g	java:S112l"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™å‹İµ1
 i
-java:S20953"GUse try-with-resources or close this "Statement" in a "finally" clause.(‰ğ—Çıÿÿÿÿ8¶ç‡¼´1
+java:S20955"GUse try-with-resources or close this "Statement" in a "finally" clause.(‰ğ—Çıÿÿÿÿ8°å‹İµ1
 l
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ªß¥Æ8µç‡¼´1
-v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(·šö8¶ç‡¼´1
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ğù‹Õüÿÿÿÿ8¶ç‡¼´1
-v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(È—¥ù8¶ç‡¼´1
-v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(åŸ§ñ8¶ç‡¼´1
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ªß¥Æ8°å‹İµ1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(·šö8±å‹İµ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ğù‹Õüÿÿÿÿ8±å‹İµ1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(È—¥ù8²å‹İµ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ø¼•âÿÿÿÿÿ8²å‹İµ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¦“‹†úÿÿÿÿ8‹ŞŒİµ1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(åŸ§ñ8²å‹İµ1
 
-java:S1186z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø»¢ß8·ç‡¼´1
+java:S1186|"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø»¢ß8²å‹İµ1
 b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(·šö8¹ç‡¼´1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(·šö8¶å‹İµ1
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ğù‹Õüÿÿÿÿ8ºç‡¼´1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ğù‹Õüÿÿÿÿ8·å‹İµ1
 b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È—¥ù8ºç‡¼´1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(È—¥ù8·å‹İµ1
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ø¼•âÿÿÿÿÿ8·å‹İµ1
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¦“‹†úÿÿÿÿ8·å‹İµ1
 b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(åŸ§ñ8ºç‡¼´1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(åŸ§ñ8ŞŒİµ1
 D
-java:S3010"'Remove this assignment of "connection".(á„š8ºç‡¼´1
-L	java:S106:"+Replace this use of System.out by a logger.(İÇùÔüÿÿÿÿ8Àç‡¼´1
+java:S3010"'Remove this assignment of "connection".(á„š8¸å‹İµ1
+L	java:S106<"+Replace this use of System.out by a logger.(İÇùÔüÿÿÿÿ8Àå‹İµ1
+L
+java:S1068"*Remove this unused "update" private field.(ø¼•âÿÿÿÿÿ8Åå‹İµ1
+L
+java:S1068"*Remove this unused "delete" private field.(¦“‹†úÿÿÿÿ8£ŞŒİµ1

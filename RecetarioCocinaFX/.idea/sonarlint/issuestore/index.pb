@@ -9,5 +9,9 @@ N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 P
  src/main/java/clases/Receta.java,7\7\779c4f76ec4ca42bae073ce4d165302a625b8e45
-p
-@src/main/java/com/example/recetariococinafx/RecetarioCocina.java,d\c\dc3bc883d6e906ed38bdf42c1819d7e54d0722cc
+P
+ src/main/java/clases/Sesion.java,a\7\a7d18ba51f00c10cb4cf504213260895a085d863
+{
+Ksrc/main/java/com/example/recetariococinafx/VentanaSecundaryController.java,c\4\c4fa16c0c6995622ed4c744d431325d379d8c843
+z
+Jsrc/main/java/com/example/recetariococinafx/RecetarioCocinaController.java,9\2\92a82c62e164c4c71acd9352502c41d802a3ff89

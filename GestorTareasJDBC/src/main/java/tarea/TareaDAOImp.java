@@ -15,6 +15,8 @@ public class TareaDAOImp implements TareaDAO {
     private final static String queryLoad="select * from tareas where id=?";
     private final static String querySave="insert into tareas(titulo,prioridad,usuario_id,categoria,descripcion)\n"+
             "VALUES (?,?,?,?,?)";
+    private final static String update="";
+    private final static String delete="";
 
     private final static String queryLoadAllByResponsable="SELECT * FROM tareas WHERE usuario_id=?";
     public TareaDAOImp(Connection c){

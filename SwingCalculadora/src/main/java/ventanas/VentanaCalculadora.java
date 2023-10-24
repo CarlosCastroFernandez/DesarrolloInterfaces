@@ -108,8 +108,7 @@ public class VentanaCalculadora extends JFrame {
      contador=0;
      txtResultado.setBackground(new Color(40,40,40));
      txtResultado.setEditable(false);
-
-
+     
     datos =new String[10];
 
     botonNegativo.addActionListener(e->{
@@ -143,43 +142,7 @@ public class VentanaCalculadora extends JFrame {
         metodoSignos();
     });
     botonIgual.addActionListener(e -> {
-        copia=guardado;
-        if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("+")){
-            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
-        } else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains(" - ")){
-            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
-        }else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("x")){
-            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
-        }else if(guardado.indexOf("-")!=guardado.lastIndexOf("-")&&guardado.contains("/")){
-            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
-        } else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("+")){
-            copia="("+guardado.substring(0,guardado.indexOf("+"))+")";
-            copia+=guardado.substring(guardado.indexOf("+"));
-        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains(" - ")){
-            copia="("+guardado.substring(0,guardado.indexOf(" - "))+")";
-            copia+=guardado.substring(guardado.indexOf(" - "));
-        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("x")) {
-            copia = "(" + guardado.substring(0, guardado.indexOf("x")) + ")";
-            copia += guardado.substring(guardado.indexOf("x"));
-        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("/")) {
-            copia = "(" + guardado.substring(0, guardado.indexOf("/")) + ")";
-            copia += guardado.substring(guardado.indexOf("/"));
-        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("+")){
-            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
-
-        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains(" - ")){
-            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
-
-        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("x")){
-            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
-
-        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("/")){
-            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
-
-        }
-        botonComa.setEnabled(false);
-        resultadoObtenido();
-        botonComa.setEnabled(true);
+        operationInProcess();
 
 
     });
@@ -249,6 +212,46 @@ public class VentanaCalculadora extends JFrame {
         buttonColours();
 
 
+    }
+
+    private void operationInProcess() {
+        copia=guardado;
+        if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("+")){
+            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
+        } else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains(" - ")){
+            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
+        }else if(guardado.indexOf("-")==0&&guardado.lastIndexOf("-")!=-1&&guardado.contains("x")){
+            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
+        }else if(guardado.indexOf("-")!=guardado.lastIndexOf("-")&&guardado.contains("/")){
+            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
+        } else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("+")){
+            copia="("+guardado.substring(0,guardado.indexOf("+"))+")";
+            copia+=guardado.substring(guardado.indexOf("+"));
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains(" - ")){
+            copia="("+guardado.substring(0,guardado.indexOf(" - "))+")";
+            copia+=guardado.substring(guardado.indexOf(" - "));
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("x")) {
+            copia = "(" + guardado.substring(0, guardado.indexOf("x")) + ")";
+            copia += guardado.substring(guardado.indexOf("x"));
+        }else if(guardado.contains("-")&&guardado.indexOf("-")==0&&guardado.contains("/")) {
+            copia = "(" + guardado.substring(0, guardado.indexOf("/")) + ")";
+            copia += guardado.substring(guardado.indexOf("/"));
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("+")){
+            copia=guardado.substring(0,guardado.indexOf("+")+1)+"(-"+guardado.substring(guardado.indexOf("+")+2)+")";
+
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains(" - ")){
+            copia=guardado.substring(0,guardado.indexOf(" - ")+3)+"("+guardado.substring(guardado.indexOf(" - ")+2)+")";
+
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("x")){
+            copia=guardado.substring(0,guardado.indexOf("x")+1)+"(-"+guardado.substring(guardado.indexOf("x")+2)+")";
+
+        }else if(guardado.contains("-")&&guardado.indexOf("-")!=0&&guardado.contains("/")){
+            copia=guardado.substring(0,guardado.indexOf("/")+1)+"(-"+guardado.substring(guardado.indexOf("/")+2)+")";
+
+        }
+        botonComa.setEnabled(false);
+        resultadoObtenido();
+        botonComa.setEnabled(true);
     }
 
     private void buttonColours() {

@@ -13,4 +13,5 @@ public class Pedido {
     private String fecha;
     private Integer usuarioId;
     private Integer total;
+    private Usuario usuario;
 }

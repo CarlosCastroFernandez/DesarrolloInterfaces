@@ -11,6 +11,7 @@ import java.sql.SQLException;
 public class UsuarioDAOImp implements UsuarioDAO {
 private static Connection conexion;
 private static String loadByPersonal="select * from usuario where email=?";
+    private static String load="select * from usuario where id=?";
     public UsuarioDAOImp(Connection conn){
         conexion=conn;
     }
@@ -25,6 +26,25 @@ private static String loadByPersonal="select * from usuario where email=?";
             if(rs.next()){
                 u=new Usuario(rs.getInt("id"),rs.getString("nombre")
                 ,rs.getString("email"),rs.getString("contraseña"));
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return u;
+    }
+
+    @Override
+    public Usuario load(Integer id) {
+        Usuario u=null;
+        try {
+            PreparedStatement pst=conexion.prepareStatement(load);
+            pst.setInt(1,id);
+
+            ResultSet rs=pst.executeQuery();
+            if(rs.next()){
+                u=new Usuario(rs.getInt("id"),rs.getString("nombre")
+                        ,rs.getString("email"),rs.getString("contraseña"));
 
             }
         } catch (SQLException e) {

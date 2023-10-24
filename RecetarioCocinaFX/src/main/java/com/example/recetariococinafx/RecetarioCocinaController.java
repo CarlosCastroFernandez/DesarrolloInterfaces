@@ -1,22 +1,25 @@
 package com.example.recetariococinafx;
 
 import clases.Receta;
-import javafx.beans.Observable;
+import clases.Sesion;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
+import javafx.util.StringConverter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RecetarioCocina implements Initializable {
+public class RecetarioCocinaController implements Initializable {
     @javafx.fxml.FXML
     private ImageView imagen;
     @javafx.fxml.FXML
@@ -51,6 +54,17 @@ public class RecetarioCocina implements Initializable {
     private TableColumn<Receta, String> cTipo;
     @javafx.fxml.FXML
     private Label labelInfo;
+    @javafx.fxml.FXML
+    private MenuItem menuItemSalir;
+    @javafx.fxml.FXML
+    private MenuItem menuItemAcercaDe;
+    @javafx.fxml.FXML
+    private ComboBox comboRecetas;
+    @javafx.fxml.FXML
+    private ToggleGroup run;
+    @javafx.fxml.FXML
+    private ImageView carita;
+    private MediaPlayer mediaPlayer;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -81,9 +95,20 @@ public class RecetarioCocina implements Initializable {
         comboBox.getItems().add("Dificil");
         comboBox.getItems().addAll("Basica","Hard","Pro");
         comboBox.getSelectionModel().selectFirst();*/
+        Media sonido=new Media(HelloApplication.class.getClassLoader().getResource("com/example/recetariococinafx/audio/clic.wav").toExternalForm());
+        mediaPlayer=new MediaPlayer(sonido);
         ObservableList<String> datos = FXCollections.observableArrayList();
         datos.addAll("Fácil", "Medio", "Difícil","Moderada");
         comboBox.setItems(datos);
+        comboBox.valueProperty().addListener((observable,s,t1 )->{
+            String imagen="neutral.png";
+            if(t1=="Fácil") imagen="feliz.png";
+            else if(t1=="Difícil")imagen="muerto.png";
+
+            carita.setImage(new Image("/com/example/recetariococinafx/imagenes/"+imagen));
+            mediaPlayer.seek(new Duration(0));
+            mediaPlayer.play();
+        });
         barraSlider.setValue(60);
         barraSlider.valueProperty().addListener((observableValue, number, t1) -> labelNumeroDuracion.setText(t1.intValue() + " min"));
         txtNombre.textProperty().addListener((ob,vold,vnew)->labelInfo.setText("Antiguo: "+vold+" nuevo: "+vnew));
@@ -96,6 +121,7 @@ public class RecetarioCocina implements Initializable {
                     comboBox.getSelectionModel().select(nuevo.getDificultad());
                 }
         );
+
 
        /* lista.getItems().addAll("Desayuno", "Segundo Desayuno", "Almuerzo", "Sobre Almuerzo", "Merienda",
                 "Cena", "Sobre Cena", "Post Cena");*/
@@ -129,6 +155,28 @@ public class RecetarioCocina implements Initializable {
         tabla.getItems().add(new Receta("Sopa de pollo casera", "Cena", 40, "Difícil"));
         tabla.getItems().add(new Receta("Pancakes con sirope de arce", "Desayuno", 25, "Moderada"));
 
+        comboRecetas.setConverter(new StringConverter<Receta>() {
+
+
+            @Override
+            public String toString(Receta receta) {
+                if(receta!=null){
+                    return receta.getNombre();
+                }else{
+                    return null;
+                }
+
+            }
+
+            @Override
+            public Receta fromString(String s) {
+                return null;
+            }
+        });
+        comboRecetas.setItems(tabla.getItems());
+
+
+
     }
 
     @javafx.fxml.FXML
@@ -139,5 +187,27 @@ public class RecetarioCocina implements Initializable {
     @javafx.fxml.FXML
     public void click(Event event) {
         System.out.println(tabla.getSelectionModel().getSelectedItem());
+    }
+
+    @javafx.fxml.FXML
+    public void salir(ActionEvent actionEvent) {
+        System.exit(0);
+    }
+
+    @javafx.fxml.FXML
+    public void acercaDe(ActionEvent actionEvent) {
+        Alert alerta=new Alert(Alert.AlertType.INFORMATION);
+        alerta.setHeaderText("El Creador");
+        alerta.setContentText("Creado por Carlos Castro");
+        alerta.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void mostrarReceta(ActionEvent actionEvent) {
+        System.out.println(comboRecetas.getSelectionModel().getSelectedItem());
+        tabla.getSelectionModel().select((Receta) comboRecetas.getSelectionModel().getSelectedItem());
+        Sesion.setRecetaActual((Receta)comboRecetas.getSelectionModel().getSelectedItem());
+        HelloApplication.loadFXML("ventanaSecundary.fxml");
+
     }
 }

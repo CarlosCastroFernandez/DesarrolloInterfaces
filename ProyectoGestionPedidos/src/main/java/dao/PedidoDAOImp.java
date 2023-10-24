@@ -30,6 +30,7 @@ public class PedidoDAOImp implements PedidoDAO {
                 pedido.setFecha(rs.getString("fecha"));
                 pedido.setUsuarioId(rs.getInt("usuario"));
                 pedido.setTotal(rs.getInt("total"));
+                pedido.setUsuario(new UsuarioDAOImp(DBConecction.conexion()).load(pedido.getUsuarioId()));
                 salida.add(pedido);
             }
         } catch (SQLException e) {

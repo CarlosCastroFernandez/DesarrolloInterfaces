@@ -36,7 +36,7 @@ public class VentanaUsuario implements Initializable {
             return new SimpleStringProperty(id);
         }));
         cUsuario.setCellValueFactory((fila->{
-            String usuarioId=String.valueOf( fila.getValue().getUsuarioId());
+            String usuarioId=String.valueOf( fila.getValue().getUsuario().getNombre());
             return new SimpleStringProperty(usuarioId);
         }));
         cFecha.setCellValueFactory((fila->{

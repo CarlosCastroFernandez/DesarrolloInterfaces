@@ -10,3 +10,12 @@
     -fx-font-weight: bold;
 
 }
+.table-view.table-cell{
+    -fx-border-color: transparente;
+    -fx-padding: 5px 20px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: blue;
+    -fx-text-background-color: red;
+}
