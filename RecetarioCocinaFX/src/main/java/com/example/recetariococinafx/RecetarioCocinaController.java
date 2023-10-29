@@ -65,6 +65,9 @@ public class RecetarioCocinaController implements Initializable {
     @javafx.fxml.FXML
     private ImageView carita;
     private MediaPlayer mediaPlayer;
+    private ObservableList<Receta>obs;
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -73,17 +76,18 @@ public class RecetarioCocinaController implements Initializable {
 
     @javafx.fxml.FXML
     public void añadir(ActionEvent actionEvent) {
-        Receta receta=new Receta();
+        Sesion.setRecetaNueva(new Receta());
         String nombre=txtNombre.getText();
         Integer min= (int) barraSlider.getValue();
         String dificultad=(String)comboBox.getSelectionModel().getSelectedItem();
         String listas=lista.getSelectionModel().getSelectedItem();
-        receta.setNombre(nombre);
-        receta.setDificultad(dificultad);
-        receta.setTipo(listas);
-        receta.setDuracion(min);
-        tabla.getItems().add(receta);
-        labelInfo.setText(receta.toString());
+         Sesion.getRecetaNueva().setNombre(nombre);
+        Sesion.getRecetaNueva().setDificultad(dificultad);
+        Sesion.getRecetaNueva().setTipo(listas);
+        Sesion.getRecetaNueva().setDuracion(min);
+        obs.add(Sesion.getRecetaNueva());
+        tabla.getItems().add(Sesion.getRecetaNueva());
+        labelInfo.setText(Sesion.getRecetaNueva().toString());
 
 
     }
@@ -131,7 +135,10 @@ public class RecetarioCocinaController implements Initializable {
         lista.setItems(datosLista);
         lista.getSelectionModel().select(0);
 
-        cNombre.setCellValueFactory((fila) -> new SimpleStringProperty(fila.getValue().getNombre()));
+        cNombre.setCellValueFactory((fila) ->{
+            String nombre=fila.getValue().getNombre();
+            return new SimpleStringProperty(fila.getValue().getNombre());
+        });
         cDificultad.setCellValueFactory((fila ->{
             String nombre =fila.getValue().getDificultad();
             return new SimpleStringProperty(nombre);
@@ -144,6 +151,7 @@ public class RecetarioCocinaController implements Initializable {
             String tipo=fila.getValue().getTipo();
             return new SimpleStringProperty(tipo);
         }));
+
         tabla.getItems().add(new Receta("Tacos de carne asada", "Almuerzo", 45, "Fácil"));
         tabla.getItems().add(new Receta("Huevos revueltos con tocino", "Desayuno", 15, "Moderada"));
         tabla.getItems().add(new Receta("Sándwich de jamón y queso", "Merienda", 10, "Fácil"));
@@ -154,6 +162,20 @@ public class RecetarioCocinaController implements Initializable {
         tabla.getItems().add(new Receta("Batido de frutas", "Merienda", 5, "Fácil"));
         tabla.getItems().add(new Receta("Sopa de pollo casera", "Cena", 40, "Difícil"));
         tabla.getItems().add(new Receta("Pancakes con sirope de arce", "Desayuno", 25, "Moderada"));
+        if(Sesion.getRecetaNueva()!=null){
+            tabla.getItems().add(Sesion.getRecetaNueva());
+        }
+        obs=FXCollections.observableArrayList();
+
+        for(int i=0;i<tabla.getItems().size();i++){
+            obs.add(tabla.getItems().get(i));
+        }
+        if(Sesion.getRecetaActual()!=null){
+            tabla.getItems().clear();
+           obs.set(Sesion.getPosicion(),Sesion.getRecetaActual());
+           tabla.setItems(obs);
+        }
+
 
         comboRecetas.setConverter(new StringConverter<Receta>() {
 
@@ -206,8 +228,13 @@ public class RecetarioCocinaController implements Initializable {
     public void mostrarReceta(ActionEvent actionEvent) {
         System.out.println(comboRecetas.getSelectionModel().getSelectedItem());
         tabla.getSelectionModel().select((Receta) comboRecetas.getSelectionModel().getSelectedItem());
-        Sesion.setRecetaActual((Receta)comboRecetas.getSelectionModel().getSelectedItem());
+        Integer numero=tabla.getSelectionModel().getFocusedIndex();
+        Sesion.setPosicion(numero);
+        Receta r=(Receta)comboRecetas.getSelectionModel().getSelectedItem();
+        Sesion.setRecetaActual(r);
+
         HelloApplication.loadFXML("ventanaSecundary.fxml");
+
 
     }
 }

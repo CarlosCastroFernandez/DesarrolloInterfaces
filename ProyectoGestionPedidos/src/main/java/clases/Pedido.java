@@ -14,4 +14,9 @@ public class Pedido {
     private Integer usuarioId;
     private Integer total;
     private Usuario usuario;
+
+    @Override
+    public String toString() {
+        return codigo+"-----"+fecha+"-----"+usuario.getNombre()+"-----"+total+"€";
+    }
 }
