@@ -1,9 +1,13 @@
-package com.example.proyectogestionpedidos;import clases.Itempedido;
+package com.example.proyectogestionpedidos;
+
+import clases.Itempedido;
 import clases.Session;
 import dao.DBConecction;
 import dao.ItemPedidoDAOImp;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -23,6 +27,8 @@ public class VentanaPedido implements Initializable {
     private TableColumn <Itempedido,String>cCantidad;
     @javafx.fxml.FXML
     private TableColumn <Itempedido,String>cProducto;
+    @javafx.fxml.FXML
+    private Button botonVolver;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,5 +51,11 @@ public class VentanaPedido implements Initializable {
 
 
 
+    }
+
+    @javafx.fxml.FXML
+    public void volver(ActionEvent actionEvent) {
+        Session.setPedido(null);
+        HelloApplication.cambioVentana("ventana-usuario.fxml");
     }
 }
