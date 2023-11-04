@@ -1,2 +1,8 @@
 
-L	java:S1064"+Replace this use of System.out by a logger.(‰ÙÀÿùÿÿÿÿ8­å»Üµ1
+Q
+java:S3740"/Provide the parametrized type for this generic.(œ•˜âùÿÿÿÿ8˜œ˜ÿ·1
+t
+java:S1450"RRemove the "obs" field and declare it as a local variable in the relevant methods.(ıù­Àüÿÿÿÿ8±œ˜ÿ·1
+U
+java:S1611D"8Remove the parentheses around the "observable" parameter(»‚8·œ˜ÿ·1
+J	java:S108I")Either remove or fill this block of code.(Ñˆ¿‘úÿÿÿÿ8¸œ˜ÿ·1

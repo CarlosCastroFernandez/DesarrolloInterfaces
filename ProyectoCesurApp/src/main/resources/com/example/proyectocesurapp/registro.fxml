@@ -5,16 +5,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane prefHeight="401.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectocesurapp.Registro">
    <top>
       <VBox alignment="CENTER" prefHeight="78.0" prefWidth="424.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="labelTitulo" text="Registro" />
+            <ImageView fx:id="imagen" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#changeImage" pickOnBounds="true" preserveRatio="true" />
          </children>
       </VBox>
    </top>

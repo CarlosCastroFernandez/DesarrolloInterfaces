@@ -7,6 +7,7 @@ import exception.ApellidoConNumero;
 import exception.DNIInvalido;
 import exception.NombreConNumero;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -15,10 +16,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
 public class Registro implements Initializable {
@@ -42,6 +50,8 @@ public class Registro implements Initializable {
     private Button botonCancelar;
     @javafx.fxml.FXML
     private TextField txtDNI;
+    @javafx.fxml.FXML
+    private ImageView imagen;
 
     @javafx.fxml.FXML
     public void registrarse(ActionEvent actionEvent) {
@@ -94,6 +104,31 @@ public class Registro implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+    }
+
+    @javafx.fxml.FXML
+    public void changeImage(Event event) {
+        FileChooser file=new FileChooser();
+        File ruta= file.showOpenDialog(null);
+        if(ruta!=null){
+            File carpeta=new File("imagenes de Carlos");
+            if(!carpeta.exists()){
+                try {
+                    carpeta.mkdir();
+                    Path origen= Path.of(ruta.getAbsolutePath());
+                    Path destino= Path.of("./imagenes de Carlos");
+                    Path destinoArchivo=destino.resolve("carlos.jpg");
+                    Files.copy(origen,destinoArchivo, StandardCopyOption.REPLACE_EXISTING);
+                    imagen.setImage(new Image("file:"+destinoArchivo));
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+
 
     }
 }

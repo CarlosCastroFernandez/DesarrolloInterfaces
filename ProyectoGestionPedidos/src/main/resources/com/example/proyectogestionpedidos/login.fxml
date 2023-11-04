@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="416.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogestionpedidos.Login">
+<BorderPane prefHeight="416.0" prefWidth="431.0" styleClass="fondo" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogestionpedidos.Login">
    <center>
       <VBox alignment="CENTER" prefHeight="339.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelTitulo" prefHeight="32.0" prefWidth="299.0" text="GESTION DE  PEDIDOS">
+            <Label fx:id="labelTitulo" prefHeight="32.0" prefWidth="299.0" text="GESTION DE  PEDIDOS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" />
                </VBox.margin>
@@ -28,7 +28,7 @@
             </Label>
             <HBox alignment="TOP_CENTER" prefHeight="37.0" prefWidth="370.0">
                <children>
-                  <Label fx:id="labelUsuario" text="Usuario">
+                  <Label fx:id="labelUsuario" text="Usuario" textFill="WHITE">
                      <padding>
                         <Insets right="10.0" />
                      </padding>
@@ -51,7 +51,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="370.0">
                <children>
-                  <Label fx:id="labelPassword" alignment="TOP_LEFT" text="Contraseña">
+                  <Label fx:id="labelPassword" alignment="TOP_LEFT" text="Contraseña" textFill="WHITE">
                      <opaqueInsets>
                         <Insets right="20.0" />
                      </opaqueInsets>

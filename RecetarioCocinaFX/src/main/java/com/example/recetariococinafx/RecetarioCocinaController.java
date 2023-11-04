@@ -66,13 +66,12 @@ public class RecetarioCocinaController implements Initializable {
     private ImageView carita;
     private MediaPlayer mediaPlayer;
     private ObservableList<Receta>obs;
-
-
-
     @javafx.fxml.FXML
-    public void initialize() {
+    private ContextMenu contextMenu;
+    @javafx.fxml.FXML
+    private MenuItem pruebaMenu;
 
-    }
+
 
     @javafx.fxml.FXML
     public void añadir(ActionEvent actionEvent) {
@@ -123,8 +122,19 @@ public class RecetarioCocinaController implements Initializable {
                     barraSlider.setValue(nuevo.getDuracion());
                     lista.getSelectionModel().select(nuevo.getTipo());
                     comboBox.getSelectionModel().select(nuevo.getDificultad());
+
                 }
+
         );
+        tabla.setOnMousePressed(mouseEvent -> {
+            if(mouseEvent.isSecondaryButtonDown()){
+                Receta receta=tabla.getSelectionModel().getSelectedItem();
+                if(receta!=null){
+                    contextMenu.show(tabla,mouseEvent.getScreenX(),mouseEvent.getScreenY());
+                }
+            }
+        });
+
 
 
        /* lista.getItems().addAll("Desayuno", "Segundo Desayuno", "Almuerzo", "Sobre Almuerzo", "Merienda",
@@ -208,7 +218,8 @@ public class RecetarioCocinaController implements Initializable {
 
     @javafx.fxml.FXML
     public void click(Event event) {
-        System.out.println(tabla.getSelectionModel().getSelectedItem());
+
+
     }
 
     @javafx.fxml.FXML

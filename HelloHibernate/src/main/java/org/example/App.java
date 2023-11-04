@@ -23,9 +23,20 @@ public class App
         configuration.configure();
         SessionFactory sf= configuration.buildSessionFactory();
         Usuario u=new Usuario();
-        u.setNombre("Samuel");
-        u.setEmail("samu@samu.samu");
-        try(Session s=sf.openSession()){
+        u.setNombre("Santiago");
+        u.setEmail("Santi@Santi.santi");
+        sf.inSession(session -> { //SOLO PARA LEER PERO NO CAMBIA BBDDD
+            Query<Usuario> q=session.createQuery("from Usuario where id=id",Usuario.class);
+            q.setParameter("id",1);
+            q.getResultList().forEach(System.out::println);
+        });
+        /*sf.inTransaction(session -> {
+            Usuario usuario=session.get(Usuario.class,1);
+            System.out.println(usuario);
+            usuario.setEmail("sdffdsfbgg");
+
+        });*/
+        /*try(Session s=sf.openSession()){
             Transaction t= s.beginTransaction();
             s.persist(u);
             t.commit();
@@ -33,6 +44,6 @@ public class App
             ArrayList<Usuario>listaUsuario= (ArrayList<Usuario>) q.getResultList();
 
             System.out.println(listaUsuario);
-        }
+        }*/
     }
 }

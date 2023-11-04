@@ -36,3 +36,15 @@ t
 Dsrc/main/java/com/example/proyectogestionpedidos/VentanaUsuario.java,3\0\3033ed705e355ace968c7e79f3e725d306bdc780
 S
 #src/main/java/dao/PedidoDAOImp.java,8\0\803ede45b3e4e7fad68699e3267a60f9f40474f1
+Q
+!src/main/java/clases/Session.java,5\9\592afc12146c8fb66bbba098b0c8a4176b38ce43
+T
+$src/main/java/clases/Itempedido.java,6\c\6c3584a0c644f499ca32bf17ed60be9768fc9e71
+R
+"src/main/java/clases/Producto.java,c\e\ce96c1f0fd452e12d11e9e72d961ce37c1115ff4
+U
+%src/main/java/dao/ProductoDAOImp.java,e\4\e411340f665225b1e1bf2df6c37b1c875a5bbde1
+W
+'src/main/java/dao/ItemPedidoDAOImp.java,c\7\c7093cb61c87555d499ce31cb478ca6811298fa4
+s
+Csrc/main/java/com/example/proyectogestionpedidos/VentanaPedido.java,2\f\2f92589fa7bdd494fc2cd1bd766eb6f7a98acc9d

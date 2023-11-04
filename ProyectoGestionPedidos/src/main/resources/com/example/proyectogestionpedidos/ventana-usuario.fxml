@@ -5,20 +5,42 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="450.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogestionpedidos.VentanaUsuario">
+<BorderPane prefHeight="450.0" prefWidth="549.0" styleClass="repartidor" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogestionpedidos.VentanaUsuario">
    <top>
       <VBox alignment="CENTER" prefHeight="57.0" prefWidth="549.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelBienvenido" text="Bienvenido:" />
-            <Label text="Lista De Tus Pedidos" />
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                  <items>
+                    <MenuItem fx:id="salir" mnemonicParsing="false" onAction="#salidaInicio" text="LogOut" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="labelBienvenido" styleClass="l" text="Bienvenido:" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="Snap ITC" size="24.0" />
+               </font></Label>
+            <Label text="Lista De Tus Pedidos">
+               <font>
+                  <Font name="Snap ITC" size="24.0" />
+               </font></Label>
             <VBox spacing="10.0">
                <children>
-                  <Label text="Busqueda Por Pedidos:" />
-                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Seleccion" />
+                  <Label text="Busqueda Por Pedidos:">
+                     <font>
+                        <Font name="Snap ITC" size="14.0" />
+                     </font></Label>
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Seleccion" style="-fx-background-color: #51b8dd;" stylesheets="@../../../estilo.css" />
                </children>
                <VBox.margin>
                   <Insets left="20.0" />
@@ -30,20 +52,26 @@
    <center>
       <HBox alignment="CENTER" prefHeight="343.0" prefWidth="538.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listaPedidos" prefHeight="393.0" prefWidth="354.0">
+            <ListView fx:id="listaPedidos" prefHeight="281.0" prefWidth="480.0" stylesheets="@../../../estilo.css">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </ListView>
-            <Button fx:id="botonVer" mnemonicParsing="false" onAction="#verPedido" prefHeight="25.0" prefWidth="149.0" text="Ver Pedido" />
-            <Button fx:id="botonListar" mnemonicParsing="false" onAction="#listarAllPedidos" prefHeight="25.0" prefWidth="160.0" text="Listar Pedidos">
+            <Button fx:id="botonVer" mnemonicParsing="false" onAction="#verPedido" prefHeight="33.0" prefWidth="297.0" style="-fx-background-color: #51b8dd;" text="Ver Pedido">
+               <font>
+                  <Font name="Snap ITC" size="11.0" />
+               </font></Button>
+            <Button fx:id="botonListar" mnemonicParsing="false" onAction="#listarAllPedidos" prefHeight="33.0" prefWidth="320.0" style="-fx-background-color: #51b8dd;" text="Listar Pedidos">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
+               <font>
+                  <Font name="Snap ITC" size="11.0" />
+               </font>
             </Button>
          </children>
          <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
       </HBox>
    </center>
