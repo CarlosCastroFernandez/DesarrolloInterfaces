@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="522.0" styleClass="fondito" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoswithhibernate.AñadirEditarView">
+   <top>
+      <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                  <items>
+                    <MenuItem fx:id="menuVolver" mnemonicParsing="false" onAction="#volver" text="Volver" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuFuera" mnemonicParsing="false" onAction="#logOut" text="LogOut" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label text="¿Añadir o Editar un Pedido?">
+               <font>
+                  <Font name="Snap ITC" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="479.0" prefWidth="247.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane hgap="85.0">
+               <children>
+                  <Label text="Cantidad">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font></Label>
+                  <Label text="Productos">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font></Label>
+               </children>
+            </FlowPane>
+            <HBox prefHeight="41.0" prefWidth="206.0" spacing="10.0">
+               <children>
+                  <Spinner fx:id="spinnerCantidad" />
+                  <ComboBox fx:id="comboBoxProductos" prefWidth="150.0" promptText="Productos" />
+               </children>
+            </HBox>
+            <FlowPane alignment="CENTER" hgap="50.0" prefHeight="40.0" prefWidth="247.0" vgap="10.0">
+               <children>
+                  <TextField fx:id="textTotal" promptText="Total">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font></TextField>
+                  <Button fx:id="botonAñadir" mnemonicParsing="false" onAction="#añadir" text="Añadir/Editar">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font></Button>
+               </children>
+            </FlowPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" left="100.0" right="100.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

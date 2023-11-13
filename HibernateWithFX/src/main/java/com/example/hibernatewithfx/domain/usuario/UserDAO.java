@@ -10,13 +10,21 @@ import java.util.ArrayList;
 public class UserDAO implements DAO<User> {
     @Override
     public ArrayList<User> getAll() {
-        return null;
+        ArrayList<User>usuarios=new ArrayList<>();
+        try(Session s=HibernateUtil.getSesionFactory().openSession()){
+            Query<User>q=s.createQuery("from User", User.class);
+            usuarios= (ArrayList<User>) q.getResultList();
+        }
+        return usuarios;
     }
 
     @Override
     public User get(Long id) {
-
-        return null;
+        User usuario=new User();
+        try(Session s=HibernateUtil.getSesionFactory().openSession()){
+            usuario=s.get(User.class,id);
+        }
+        return usuario;
     }
 
     @Override
@@ -42,6 +50,7 @@ public class UserDAO implements DAO<User> {
             try{
                 usuarioValido= q.getSingleResult();
             }catch(Exception e){
+               e.printStackTrace();
             }
             System.out.println(usuarioValido);
         }

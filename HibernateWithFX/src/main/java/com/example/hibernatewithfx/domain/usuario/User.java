@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,7 +19,21 @@ public class User implements Serializable {
     private String username;
     @Column (name="contraseña")
     private String password;
-    @OneToMany(mappedBy = "user")
-    private ArrayList<Game>games=new ArrayList<>();
+    @Transient
+    private Long gamesQuantity;
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+    private List<Game> games=new ArrayList<>();
 
+    public Long getGamesQuantity() {
+        gamesQuantity=(long)(games.size());
+        return gamesQuantity;
+    }
+    public void addGames(Game g){
+        g.setUser(this);
+        games.add(g);
+    }
+    public void removeGame(Game g){
+        games.remove(g);
+        g.setUser(null);
+    }
 }
