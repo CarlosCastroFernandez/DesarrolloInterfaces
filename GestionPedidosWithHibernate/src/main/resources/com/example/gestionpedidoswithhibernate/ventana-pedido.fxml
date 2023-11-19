@@ -33,16 +33,16 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="botonVolver" mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #51b8dd;" text="Volver">
-                     <font>
-                        <Font name="Snap ITC" size="12.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="botonEditar" mnemonicParsing="false" onAction="#editar" style="-fx-background-color: #51b8dd;" text="Editar">
                      <font>
                         <Font name="Snap ITC" size="12.0" />
                      </font></Button>
                   <Button fx:id="botonBorrar" mnemonicParsing="false" onAction="#borrarItem" style="-fx-background-color: #51b8dd;" text="Borrar">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botonAñadir" mnemonicParsing="false" onAction="#añadirProducto" style="-fx-background-color: #51b8dd;" text="Añadir">
                      <font>
                         <Font name="Snap ITC" size="12.0" />
                      </font>
@@ -60,6 +60,7 @@
                 <Menu mnemonicParsing="false" text="Menu">
                   <items>
                     <MenuItem fx:id="salir" mnemonicParsing="false" onAction="#salidaInicio" text="LogOut" />
+                        <MenuItem mnemonicParsing="false" onAction="#volver" text="Volver" />
                   </items>
                 </Menu>
               </menus>

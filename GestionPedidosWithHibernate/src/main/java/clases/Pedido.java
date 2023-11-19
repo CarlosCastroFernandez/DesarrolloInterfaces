@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "pedido")
-public class Pedido implements Serializable {
+public class Pedido implements Serializable,Comparable<Pedido> {
     /** Identificador del pedido**/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,4 +39,32 @@ public class Pedido implements Serializable {
     public String toString() {
         return codigo+"-----"+fecha+"-----"+usuario.getNombre()+"-----"+total+"€";
     }
+
+    @Override
+    public int compareTo(Pedido o) {
+        if(!this.codigo.equals(o.codigo)){
+            return this.codigo.compareTo(o.codigo);
+        }else{
+            return 0;
+        }
+
+    }
+
+    public int compareTotal(Pedido o) {
+        if(!this.total.equals(o.total)){
+            return this.total.compareTo(o.total);
+        }else{
+            return 0;
+        }
+
+    }
+    public int compareFecha(Pedido o) {
+        if(!this.fecha.equals(o.fecha)){
+            return this.fecha.compareTo(o.fecha);
+        }else{
+            return 0;
+        }
+
+    }
+
 }

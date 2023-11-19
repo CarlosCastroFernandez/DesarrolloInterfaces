@@ -1,5 +1,5 @@
 .fondo{
-    -fx-background-image: url("/fondo.png");
+    -fx-background-image: url("/ImagenLogIn.jpg");
     -fx-background-size:cover;
     -fx-background-position: center center;
 }

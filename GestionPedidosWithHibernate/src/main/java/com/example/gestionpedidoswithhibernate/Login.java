@@ -49,8 +49,14 @@ public class Login implements Initializable {
             Session.setUsuario(consulta.consultaPersonal(email,contraseña));
             HelloApplication.cambioVentana("ventana-usuario.fxml");
         } catch (UsuarioNoExiste e) {
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setHeaderText("Usuario Invalido");
+            alerta.showAndWait();
            e.printStackTrace();
         } catch (ContraseñaInvalida e) {
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setHeaderText("Contraseña Incorrecta");
+            alerta.showAndWait();
            e.printStackTrace();
         }
 

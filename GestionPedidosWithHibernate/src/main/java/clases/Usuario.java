@@ -24,19 +24,6 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER)
     private List<Pedido> pedidos;  // Lista de pedidos asociados al usuario
 
-    /**
-     * Constructor de la clase Usuario.
-     *
-     * @param id          Identificador único del usuario.
-     * @param nombre      Nombre del usuario.
-     * @param email       Correo electrónico del usuario.
-     * @param contraseña  Contraseña del usuario.
-     */
-    public Usuario(Integer id, String nombre, String email, String contraseña) {
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.contraseña = contraseña;
-        this.pedidos = new ArrayList<Pedido>();
-    }
+
+
 }

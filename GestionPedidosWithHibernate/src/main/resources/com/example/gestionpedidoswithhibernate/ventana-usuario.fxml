@@ -58,16 +58,21 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <children>
-            <FlowPane alignment="CENTER" hgap="10.0" prefHeight="22.0" prefWidth="450.0">
+            <FlowPane alignment="CENTER" hgap="10.0" maxWidth="450.0" minWidth="250.0" prefHeight="22.0" prefWidth="450.0">
                <children>
                   <Label text="Nuevo Pedido">
                      <font>
                         <Font name="Snap ITC" size="12.0" />
                      </font></Label>
-                  <ImageView fx:id="imagenAñadir" fitHeight="22.0" fitWidth="13.0" onMouseClicked="#añadir" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../add.png" />
-                     </image></ImageView>
+                  <Button fx:id="botonAñadir" mnemonicParsing="false" onAction="#añadir" style="-fx-background-color: #51b8dd;">
+                     <graphic>
+                        <ImageView fx:id="imagenAñadir" fitHeight="22.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
                <VBox.margin>
                   <Insets right="100.0" />
@@ -84,20 +89,6 @@
                         </ListView>
                         <VBox alignment="CENTER" prefHeight="343.0" prefWidth="260.0" spacing="20.0">
                            <children>
-                              <Button fx:id="botonListar" mnemonicParsing="false" onAction="#listarAllPedidos" prefHeight="34.0" prefWidth="147.0" style="-fx-background-color: #51b8dd;" text="Listar Pedidos">
-                                 <font>
-                                    <Font name="Snap ITC" size="11.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="botonVer" mnemonicParsing="false" onAction="#verPedido" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #51b8dd;" text="Ver Pedido">
-                                 <font>
-                                    <Font name="Snap ITC" size="11.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="botonAsignar" mnemonicParsing="false" onAction="#asignaProductos" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #51b8dd;" text="Asigna Productos">
-                                 <font>
-                                    <Font name="Snap ITC" size="12.0" />
-                                 </font></Button>
                               <Button fx:id="botonEliminar" mnemonicParsing="false" onAction="#eliminarPedido" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #51b8dd;" text="Eliminar Pedido">
                                  <font>
                                     <Font name="Snap ITC" size="12.0" />

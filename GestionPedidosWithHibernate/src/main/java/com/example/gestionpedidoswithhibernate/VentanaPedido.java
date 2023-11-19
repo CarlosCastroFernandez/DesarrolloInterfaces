@@ -31,8 +31,6 @@ public class VentanaPedido implements Initializable {
     @javafx.fxml.FXML
     private TableColumn<Itempedido, String> cProducto;
     @javafx.fxml.FXML
-    private Button botonVolver;
-    @javafx.fxml.FXML
     private Label labelCliente;
     @javafx.fxml.FXML
     private MenuItem salir;
@@ -42,6 +40,8 @@ public class VentanaPedido implements Initializable {
     @javafx.fxml.FXML
     private Button botonBorrar;
     private List<Itempedido>itemsAll;
+    @javafx.fxml.FXML
+    private Button botonAñadir;
 
 
     @Override
@@ -93,12 +93,6 @@ public class VentanaPedido implements Initializable {
      *
      * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
      */
-    @javafx.fxml.FXML
-    public void volver(ActionEvent actionEvent) {
-        // Establece el pedido actual como nulo y regresa a la ventana de usuario.
-        Session.setPedido(null);
-        HelloApplication.cambioVentana("ventana-usuario.fxml");
-    }
 
     /**
      * Maneja el evento de salida al inicio de sesión, estableciendo tanto el pedido como el usuario como nulos y volviendo a la pantalla de inicio de sesión.
@@ -128,7 +122,8 @@ public class VentanaPedido implements Initializable {
 
     @javafx.fxml.FXML
     public void borrarItem(ActionEvent actionEvent) {
-        if(items!=null&&tabla.getItems().size()>1){
+        try{
+        if(items!=null&&tabla.getItems().size()>=1){
             Alert alerta=new Alert(Alert.AlertType.INFORMATION);
             alerta.setTitle("ATENCION!");
             alerta.setHeaderText("¿Deseas Eliminar el producto?");
@@ -142,19 +137,37 @@ public class VentanaPedido implements Initializable {
                 tabla.getItems().clear();
                 tabla.getItems().addAll(itemsAll);
             }
+            if(tabla.getItems().isEmpty()){
+                Alert alerta2=new Alert(Alert.AlertType.INFORMATION);
+                alerta2.setTitle("ATENCION!");
+                alerta2.setHeaderText("¿Deseas Eliminar el ultimo producto?");
+                alerta2.setContentText("Si eliminas el ultimo producto eliminarás el pedido "+Session.getPedido().getCodigo());
 
-        }else if(items!=null&&tabla.getItems().size()==1){
-            Alert alerta=new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("ATENCION!");
-            alerta.setHeaderText("¿Deseas Eliminar el ultimo producto?");
-            alerta.setContentText("Si eliminas el ultimo producto eliminarás el pedido "+Session.getPedido().getCodigo());
-            ButtonType tipo=alerta.showAndWait().get();
-            if(tipo.getButtonData()== ButtonBar.ButtonData.OK_DONE){
-                (new PedidoDAOImp()).delete(Session.getPedido());
-                Session.getPedido().getItems().remove(Session.getPedido().getItems().indexOf(items));
-                tabla.getItems().clear();
-                tabla.getItems().addAll(itemsAll);
+                    ButtonType tipo2=alerta2.showAndWait().get();
+                    if(tipo2.getButtonData()== ButtonBar.ButtonData.OK_DONE){
+                        (new PedidoDAOImp()).delete(Session.getPedido());
+                        tabla.getItems().clear();
+                        tabla.getItems().addAll(itemsAll);
+                    }
+
+
+                }
+
             }
+        }catch(Exception e){
+
         }
+
+    }
+
+    @javafx.fxml.FXML
+    public void añadirProducto(ActionEvent actionEvent) {
+        Session.setItem(null);
+        HelloApplication.cambioVentana("añadir-editar-view.fxml");
+    }
+@javafx.fxml.FXML
+    public void volver(ActionEvent actionEvent) {
+        Session.setPedido(null);
+        HelloApplication.cambioVentana("ventana-usuario.fxml");
     }
 }

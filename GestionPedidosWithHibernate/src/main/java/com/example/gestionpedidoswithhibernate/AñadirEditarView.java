@@ -18,6 +18,7 @@ import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AñadirEditarView implements Initializable {
@@ -35,6 +36,7 @@ public class AñadirEditarView implements Initializable {
     private MenuItem menuVolver;
     @javafx.fxml.FXML
     private MenuItem menuFuera;
+    private Integer contador;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -109,16 +111,28 @@ public class AñadirEditarView implements Initializable {
     public void añadir(ActionEvent actionEvent) {
         checkUpOrDown();
         Session.setItem(null);
-        HelloApplication.cambioVentana("ventana-usuario.fxml");
+        if(contador!=null){
+            HelloApplication.cambioVentana("ventana-usuario.fxml");
+        }else{
+            HelloApplication.cambioVentana("ventana-pedido.fxml");
+        }
+
 
 
     }
 
     private void checkUpOrDown() {
         if(Session.getItem()==null&&Session.getPedido()==null){
+            contador=1;
+            ArrayList listaPedidos=new ArrayList();
+            listaPedidos.addAll(Session.getUsuario().getPedidos());
+            System.out.println(listaPedidos);
             Pedido pedido=new Pedido();
             SecureRandom ran=new SecureRandom();
             Integer numeroAzar=ran.nextInt(1000);
+            while(listaPedidos.contains(""+numeroAzar)){
+                 numeroAzar=ran.nextInt(1000);
+            }
             pedido.setCodigo("Pedido-"+numeroAzar);
             DateTimeFormatter format=DateTimeFormatter.ofPattern("yyy-MM-dd");
             LocalDate fechaActual=LocalDate.now();
@@ -149,7 +163,7 @@ public class AñadirEditarView implements Initializable {
                 Session.getItem().getPedido().setTotal(numeroPrecio*(Integer)spinnerCantidad.getValue());
                 contador=0;
             }else if(contador!=1 &&valorSpinner!=spinnerCantidad.getValue()){
-                Integer numeroDefinitivo=numeroPrecio+numeroTotal;
+                Integer numeroDefinitivo=numeroTotal;
                 Session.getItem().getPedido().setTotal(numeroDefinitivo);
                 contador=0;
             }else if(contador!=1&&valorSpinner==spinnerCantidad.getValue()){

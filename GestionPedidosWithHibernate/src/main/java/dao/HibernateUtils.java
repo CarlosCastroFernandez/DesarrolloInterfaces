@@ -19,16 +19,13 @@ public class HibernateUtils {
         log = Logger.getLogger(HibernateUtils.class.getName());
 
         try {
-            // Carga la configuración de la base de datos desde un archivo de propiedades.
-            InputStream is = HibernateUtils.class.getClassLoader().getResourceAsStream("config.properties");
-            Properties p = new Properties();
-            p.load(is);
             Configuration configure=new Configuration();
             configure.configure();
             conexion=configure.buildSessionFactory();
             log.info("Conexión exitosa a la base de datos.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+           log.severe("Se peta hibernate");
         }
     }
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="416.0" prefWidth="431.0" styleClass="fondo" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoswithhibernate.Login">
+<BorderPane prefHeight="628.0" prefWidth="879.0" styleClass="fondo" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoswithhibernate.Login">
    <center>
       <VBox alignment="CENTER" prefHeight="339.0" prefWidth="416.0" BorderPane.alignment="CENTER">
          <children>
@@ -71,7 +71,7 @@
                   <PasswordField fx:id="password" />
                </children>
             </HBox>
-            <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesion">
+            <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" style="-fx-background-color: #51b8dd;" text="Iniciar Sesion">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
