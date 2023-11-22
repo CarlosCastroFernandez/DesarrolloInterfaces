@@ -18,17 +18,9 @@ public class ItemPedidoDAOImp implements ItemPedidoDAO {
     private static final String queryLoadItem = "SELECT * FROM itempedido where codigoPedido=?"; // Consulta SQL para cargar elementos de pedido
 
     /**
-     * Constructor de la clase ItemPedidoDAOImp.
-     *
-     * @param conn Objeto de conexión a la base de datos.
-     */
-
-
-    /**
-     * Obtiene una lista de elementos de pedido asociados a un pedido específico.
-     *
-   //  * @param codigo El pedido del que se deben cargar los elementos.
-     * @return Una lista de elementos de pedido relacionados con el pedido especificado.
+     * Guarda en base de datos un itemPedido y modifica el total del pedido aactual
+     * @param item parametro en el que se le pasa un itemPedido de memoria
+     * @return devuelve ese ItemPedido insertado
      */
 
 
@@ -45,6 +37,12 @@ public class ItemPedidoDAOImp implements ItemPedidoDAO {
         }
         return myItem;
     }
+    /**
+     * Guarda en base de datos un itemPedido y modifica el total del pedido aactual
+     * @param item parametro en el que se le pasa un itemPedido de memoria
+     * @return devuelve ese ItemPedido modificado
+     */
+
     public void update(Itempedido  item){
         Itempedido itemPedido=null;
         try(Session s=HibernateUtils.getSession().openSession()){
@@ -60,6 +58,11 @@ public class ItemPedidoDAOImp implements ItemPedidoDAO {
 
 
     }
+    /**
+     * Borra en base de datos un itemPedido y modifica el total del pedido aactual
+     * @param item parametro en el que se le pasa un itemPedido de memoria
+     *
+     */
     public void delete(Itempedido  item){
         Itempedido itemPedido=null;
         try(Session s=HibernateUtils.getSession().openSession()){

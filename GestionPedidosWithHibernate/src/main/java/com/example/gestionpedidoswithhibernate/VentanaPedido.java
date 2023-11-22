@@ -88,11 +88,6 @@ public class VentanaPedido implements Initializable {
         tabla.getItems().addAll(itemsAll);
     }
 
-    /**
-     * Maneja el evento de volver atrás, estableciendo el pedido actual como nulo y regresando a la ventana de usuario.
-     *
-     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
-     */
 
     /**
      * Maneja el evento de salida al inicio de sesión, estableciendo tanto el pedido como el usuario como nulos y volviendo a la pantalla de inicio de sesión.
@@ -106,6 +101,11 @@ public class VentanaPedido implements Initializable {
         Session.setUsuario(null);
         HelloApplication.cambioVentana("login.fxml");
     }
+    /**
+     * Maneja el evento de editae un pedido.
+     *
+     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
+     */
 
     @javafx.fxml.FXML
     public void editar(ActionEvent actionEvent) {
@@ -119,6 +119,11 @@ public class VentanaPedido implements Initializable {
             alerta.showAndWait();
         }
     }
+    /**
+     * Maneja el evento de borrar un pedido.
+     *
+     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
+     */
 
     @javafx.fxml.FXML
     public void borrarItem(ActionEvent actionEvent) {
@@ -159,12 +164,22 @@ public class VentanaPedido implements Initializable {
         }
 
     }
+    /**
+     * Maneja el evento de añadir un pedido.
+     *
+     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
+     */
 
     @javafx.fxml.FXML
     public void añadirProducto(ActionEvent actionEvent) {
         Session.setItem(null);
         HelloApplication.cambioVentana("añadir-editar-view.fxml");
     }
+    /**
+     * Vuelve a la ventana usuario.
+     *
+     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
+     */
 @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
         Session.setPedido(null);

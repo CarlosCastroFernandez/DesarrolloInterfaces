@@ -8,6 +8,10 @@ import utils.ProductoDAO;
 import java.util.ArrayList;
 
 public class ProductoDAOImp implements ProductoDAO {
+    /**
+     * Se trae tdda una lista de todos los productos
+     * @return devuelve lista de productos
+     */
     @Override
     public ArrayList<Producto> getAllProducts() {
         ArrayList<Producto>productos=new ArrayList<>();

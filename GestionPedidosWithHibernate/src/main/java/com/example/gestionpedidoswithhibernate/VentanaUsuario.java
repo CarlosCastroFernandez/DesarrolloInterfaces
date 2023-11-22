@@ -111,19 +111,6 @@ public class VentanaUsuario implements Initializable {
         labelInfo.setStyle("-fx-font-family: 'Snap ITC'");
     }
 
-    /**
-     * Maneja el evento de listar todos los pedidos, rellenando la lista de pedidos con todos los pedidos disponibles.
-     *
-     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
-     */
-
-
-    /**
-     * Maneja el evento de ver un pedido seleccionado, redirigiendo a la ventana de detalles del pedido.
-     * Muestra una alerta si no se ha seleccionado ningún pedido.
-     *
-     * @param actionEvent El evento que desencadena la acción (por ejemplo, al hacer clic en un botón).
-     */
 
 
     /**
@@ -140,9 +127,10 @@ public class VentanaUsuario implements Initializable {
     }
 
 
-
-
-
+    /**
+     * Elimina un pedido tanto en memoria como en la base de datos
+     * @param actionEvent
+     */
     @javafx.fxml.FXML
     public void eliminarPedido(ActionEvent actionEvent) {
         if(Session.getPedido()==null){
@@ -165,7 +153,10 @@ public class VentanaUsuario implements Initializable {
             }
         }
     }
-
+    /**
+     * Añade un pedido tanto en memoria como en la base de datos
+     * @param actionEvent
+     */
 
     @javafx.fxml.FXML
     public void añadir(ActionEvent actionEvent) {

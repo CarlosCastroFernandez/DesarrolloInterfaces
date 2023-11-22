@@ -15,15 +15,23 @@ import java.util.List;
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Serializable {
+
+    /** Identificador único del usuario **/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;         // Identificador único del usuario
-    private String nombre;      // Nombre del usuario
-    private String email;       // Correo electrónico del usuario
-    private String contraseña;  // Contraseña del usuario
-    @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER)
-    private List<Pedido> pedidos;  // Lista de pedidos asociados al usuario
+    private Integer id;
 
+    /** Nombre del usuario **/
+    private String nombre;
 
+    /** Correo electrónico del usuario **/
+    private String email;
+
+    /** Contraseña del usuario **/
+    private String contraseña;
+
+    /** Lista de pedidos asociados al usuario **/
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    private List<Pedido> pedidos;
 
 }

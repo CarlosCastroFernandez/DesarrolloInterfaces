@@ -38,6 +38,12 @@ public class AñadirEditarView implements Initializable {
     private MenuItem menuFuera;
     private Integer contador;
 
+    /**
+     * Inicializa la ventana y carga datos relacionados con el pedido y sus items en la interfaz.
+     *
+     * @param url           La ubicación relativa del archivo FXML.
+     * @param resourceBundle Recursos específicos de la localización.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         comboBoxProductos.setConverter(new StringConverter<Producto>() {
@@ -107,6 +113,11 @@ public class AñadirEditarView implements Initializable {
 
     }
 
+    /**
+     * Funcion en la que puede implementar añadir editar o borrar dependiendo de la situación
+     * y que cambia de ventana al terminar de hacer cualquier funcion
+     * @param actionEvent
+     */
     @javafx.fxml.FXML
     public void añadir(ActionEvent actionEvent) {
         checkUpOrDown();
@@ -120,6 +131,10 @@ public class AñadirEditarView implements Initializable {
 
 
     }
+
+    /**
+     *Funcion en la que puede implementar añadir editar o borrar dependiendo de la situación
+     */
 
     private void checkUpOrDown() {
         if(Session.getItem()==null&&Session.getPedido()==null){
@@ -204,11 +219,20 @@ public class AñadirEditarView implements Initializable {
         }
     }
 
+    /**
+     * Funciion que ermite volver a la ventana usuario
+     * @param actionEvent
+     */
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
         Session.setItem(null);
         HelloApplication.cambioVentana("ventana-usuario.fxml");
     }
+
+    /**
+     * Funcion en la que te deslogueas
+     * @param actionEvent
+     */
 
     @javafx.fxml.FXML
     public void logOut(ActionEvent actionEvent) {

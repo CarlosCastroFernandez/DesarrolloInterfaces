@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
- * Clase que gestiona la conexión a la base de datos utilizando JDBC.
+ * Clase que gestiona la conexión a la base de datos utilizando Hibernate.
  */
 public class HibernateUtils {
     private static SessionFactory conexion; // Objeto de conexión a la base de datos

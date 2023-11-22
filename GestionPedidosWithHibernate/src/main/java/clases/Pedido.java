@@ -40,31 +40,40 @@ public class Pedido implements Serializable,Comparable<Pedido> {
         return codigo+"-----"+fecha+"-----"+usuario.getNombre()+"-----"+total+"€";
     }
 
+    /**
+     * Método compareTo para la interfaz Comparable. Compara dos objetos Pedido
+     * basándose en el código del pedido.
+     */
     @Override
     public int compareTo(Pedido o) {
-        if(!this.codigo.equals(o.codigo)){
+        if (!this.codigo.equals(o.codigo)) {
             return this.codigo.compareTo(o.codigo);
-        }else{
+        } else {
             return 0;
         }
-
     }
 
+    /**
+     * Método compareTotal para comparar dos objetos Pedido basándose en el total del
+     * pedido.
+     */
     public int compareTotal(Pedido o) {
-        if(!this.total.equals(o.total)){
+        if (!this.total.equals(o.total)) {
             return this.total.compareTo(o.total);
-        }else{
+        } else {
             return 0;
         }
-
     }
+
+    /**
+     * Método compareFecha para comparar dos objetos Pedido basándose en la fecha del
+     * pedido.
+     */
     public int compareFecha(Pedido o) {
-        if(!this.fecha.equals(o.fecha)){
+        if (!this.fecha.equals(o.fecha)) {
             return this.fecha.compareTo(o.fecha);
-        }else{
+        } else {
             return 0;
         }
-
     }
-
 }

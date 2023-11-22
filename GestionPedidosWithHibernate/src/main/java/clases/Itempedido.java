@@ -8,22 +8,43 @@ import java.io.Serializable;
 public class Itempedido implements Serializable {
 
   // Atributos de la clase
+
+  /**
+   * Identificador único del elemento de pedido.
+   */
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;// Identificador del elemento de pedido
-  @Transient
-  private String codigoPedido;   // Código del pedido al que pertenece este elemento
-  private Integer cantidad;       // Cantidad de productos en este elemento de pedido
+  private Integer id;
 
+  /**
+   * Código del pedido al que pertenece este elemento.
+   * Nota: La anotación @Transient indica que este campo no debe ser persistido en la base de datos.
+   */
+  @Transient
+  private String codigoPedido;
+
+  /**
+   * Cantidad de productos en este elemento de pedido.
+   */
+  private Integer cantidad;
+
+  /**
+   * Pedido al que pertenece este elemento.
+   * La relación @ManyToOne indica una asociación many-to-one con la clase Pedido.
+   * El joinColumn especifica la columna en la tabla 'itempedido' que se utiliza para mapear la relación.
+   */
   @ManyToOne
   @JoinColumn(name = "codigoPedido",referencedColumnName = "codigo")
   private Pedido pedido;
 
+  /**
+   * Producto asociado a este elemento.
+   * La relación @ManyToOne indica una asociación many-to-one con la clase Producto.
+   * El joinColumn especifica la columna en la tabla 'itempedido' que se utiliza para mapear la relación.
+   */
   @ManyToOne()
   @JoinColumn(name="productoID")
-  private Producto producto;     // Objeto Producto asociado a este elemento
-
-  // Constructor de la clase
+  private Producto producto;
 
   /**
    * Constructor de la clase Itempedido.

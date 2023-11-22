@@ -58,7 +58,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
          <children>
-            <FlowPane alignment="CENTER" hgap="10.0" maxWidth="450.0" minWidth="250.0" prefHeight="22.0" prefWidth="450.0">
+            <FlowPane alignment="CENTER" hgap="10.0" maxWidth="450.0" minWidth="250.0" prefHeight="22.0" prefWidth="450.0" VBox.vgrow="NEVER">
                <children>
                   <Label text="Nuevo Pedido">
                      <font>
