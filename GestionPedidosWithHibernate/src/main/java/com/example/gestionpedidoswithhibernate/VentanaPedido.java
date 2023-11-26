@@ -145,9 +145,7 @@ public class VentanaPedido implements Initializable {
             if(tabla.getItems().isEmpty()){
                 Alert alerta2=new Alert(Alert.AlertType.INFORMATION);
                 alerta2.setTitle("ATENCION!");
-                alerta2.setHeaderText("¿Deseas Eliminar el ultimo producto?");
-                alerta2.setContentText("Si eliminas el ultimo producto eliminarás el pedido "+Session.getPedido().getCodigo());
-
+                alerta2.setHeaderText("¿Deseas Eliminar tambien el pedido "+Session.getPedido().getCodigo());
                     ButtonType tipo2=alerta2.showAndWait().get();
                     if(tipo2.getButtonData()== ButtonBar.ButtonData.OK_DONE){
                         (new PedidoDAOImp()).delete(Session.getPedido());
