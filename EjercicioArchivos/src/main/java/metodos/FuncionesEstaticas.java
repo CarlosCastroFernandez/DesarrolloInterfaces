@@ -71,12 +71,17 @@ public class FuncionesEstaticas {
                         }
                     }
 
-
-                FileWriter escrituraCliente=new FileWriter(datos.getParent()+File.separator+"salida"+File.separator+hijos[i].getName());
+                try(BufferedWriter escritura=new BufferedWriter(new FileWriter(datos.getParent()+File.separator+"salida"+File.separator+hijos[i].getName()))){
+                    escritura.write(textitoCopy);
+                    textitoCopy="";
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+               /* FileWriter escrituraCliente=new FileWriter(datos.getParent()+File.separator+"salida"+File.separator+hijos[i].getName());
                 escrituraCliente.write(textitoCopy);
                 escrituraCliente.flush();
                 escrituraCliente.close();
-                textitoCopy="";
+                textitoCopy="";*/
 
             } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);

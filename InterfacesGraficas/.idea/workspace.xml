@@ -5,43 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424cc52f-3b03-4a08-ba47-47178d6596a3" name="Changes" comment="prueba desde intelliji">
-      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/UsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/usuario/UsuarioDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/clases/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/clases/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/VentanaUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/DBConecction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/PedidoDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/dao/UsuarioDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/errores/ContraseñaInvalida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/errores/UsuarioNoExiste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/utils/PedidoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/utils/UsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/ventana-usuario.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/clases/Receta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/com/example/recetariococinafx/RecetarioCocina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/com/example/recetariococinafx/recetario-cocina.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/imagenes/receta.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CesurInterfaces/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CesurInterfaces/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/Tarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/Tarea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/dominio/TareaDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAOImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/ui/Ventana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/com/example/proyectogestionpedidos/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProyectoGestionPedidos/src/main/resources/com/example/proyectogestionpedidos/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaSwing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaSwing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +33,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/bubac/Desktop/CARLOS/SEGUNDODAM/DesarrolloInterfaces/ProyectoGestionPedidos",
+    "last_opened_file_path": "C:/Users/bubac/Desktop/CARLOS/SEGUNDODAM/DesarrolloInterfaces/SwingGestorTareas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,6 +53,7 @@
       <workItem from="1697560406420" duration="51000" />
       <workItem from="1697575992204" duration="517000" />
       <workItem from="1697608842822" duration="22000" />
+      <workItem from="1701292997139" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="prueba desde intelliji">
       <option name="closed" value="true" />

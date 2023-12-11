@@ -13,3 +13,5 @@ S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 U
 %src/main/java/org/example/Sesion.java,5\9\597ac82fc630388517da09c768c4f8a0cab6820c
+=
+Francisco.obj,c\9\c99ca7c0351c9566f0ed900f9c5f2d7b44ab7b92

@@ -62,6 +62,7 @@ public class GameDao implements DAO<Game> {
 
     @Override
     public void update(Game data) {
+
         try(org.hibernate.Session s= HibernateUtil.getSesionFactory().openSession()){
             Transaction t=s.beginTransaction();
             Game g=s.get(Game.class, data.getId());

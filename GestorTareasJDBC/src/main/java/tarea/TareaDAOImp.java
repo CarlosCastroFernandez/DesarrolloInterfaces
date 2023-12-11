@@ -57,6 +57,7 @@ public class TareaDAOImp implements TareaDAO {
                 t.setUsuario(new UsuarioDAOImp(connection).load(t.getUsuario_id()));
                 salida.add(t);
             }
+
             System.out.println(salida.size());
         } catch (SQLException e) {
             throw new RuntimeException(e);

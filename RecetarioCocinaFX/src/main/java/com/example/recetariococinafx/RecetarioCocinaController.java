@@ -211,10 +211,6 @@ public class RecetarioCocinaController implements Initializable {
 
     }
 
-    @javafx.fxml.FXML
-    public void ActualizarDuracion(Event event) {
-
-    }
 
     @javafx.fxml.FXML
     public void click(Event event) {

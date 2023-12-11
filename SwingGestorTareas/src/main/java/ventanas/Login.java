@@ -39,9 +39,10 @@ public class Login extends JFrame {
             JOptionPane.showMessageDialog(null,"Bienvenido "+usuario,"Succesfull",JOptionPane.INFORMATION_MESSAGE);
             panelFondo.setBackground(Color.GREEN);
             Sesion.setUser(usuario);
-            this.dispose();
             Principal ventanaPrincipal=new Principal();
             ventanaPrincipal.setVisible(true);
+            this.dispose();
+
         }else{
             validate=false;
             panelFondo.setBackground(Color.RED);

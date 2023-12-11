@@ -5,7 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a8a0a54-be2d-4547-8f89-771d2fe187fb" name="Changes" comment="subida a todos los repositiorios">
+      <change afterPath="$PROJECT_DIR$/../JavaSwing/.idea/JavaSwing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/src/main/java/org/example/fechas.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/src/main/java/org/example/fechas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PruebaExamen/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da7015cc0a2c498f06c0c62e4500584ed9315f2c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da7015cc0a2c498f06c0c62e4500584ed9315f2c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/legal/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/org/example/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/org/example/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/org/example/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/script-dir/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/search-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/ventanas/VentanaCalculadora.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/ventanas/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaDocCalculadora/ventanas/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/metodos/FuncionesEstaticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metodos/FuncionesEstaticas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/.idea/sonarlint/issuestore/3/d/3dfad24e63e6c9aa6459568ccfbd1c159f0b3da5" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/.idea/sonarlint/issuestore/3/d/3dfad24e63e6c9aa6459568ccfbd1c159f0b3da5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/.idea/sonarlint/issuestore/9/5/95e0695d20b7880c355250269d7b40f2042c4c57" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/.idea/sonarlint/issuestore/9/5/95e0695d20b7880c355250269d7b40f2042c4c57" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GestorTareasJDBC/src/main/java/tarea/TareaDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloHibernate/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloHibernate/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HibernateWithFX/src/main/java/com/example/hibernatewithfx/domain/juego/GameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HibernateWithFX/src/main/java/com/example/hibernatewithfx/domain/juego/GameDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfacesGraficas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfacesGraficas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaSwing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaSwing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/com/example/recetariococinafx/RecetarioCocinaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/java/com/example/recetariococinafx/RecetarioCocinaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/com/example/recetariococinafx/recetario-cocina.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecetarioCocinaFX/src/main/resources/com/example/recetariococinafx/recetario-cocina.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../SwingGestorTareas/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SwingGestorTareas/src/main/java/ventanas/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SwingGestorTareas/src/main/java/ventanas/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +101,7 @@
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/bubac/Desktop/CARLOS/SEGUNDODAM/ProyectoCesurApp",
+    "last_opened_file_path": "C:/Users/bubac/Desktop/CARLOS/SEGUNDODAM/CJN/ProyectoCesurApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,6 +135,9 @@
       <workItem from="1697575966733" duration="25000" />
       <workItem from="1698159210374" duration="146000" />
       <workItem from="1698161294874" duration="25000" />
+      <workItem from="1701509010860" duration="1179000" />
+      <workItem from="1701612688936" duration="2066000" />
+      <workItem from="1701619594607" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="Final de Codigo">
       <option name="closed" value="true" />
@@ -125,5 +191,16 @@
     <MESSAGE value="Se añade error si no hay marcador" />
     <MESSAGE value="subida a todos los repositiorios" />
     <option name="LAST_COMMIT_MESSAGE" value="subida a todos los repositiorios" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/metodos/FuncionesEstaticas.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

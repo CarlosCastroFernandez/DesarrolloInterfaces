@@ -9,7 +9,7 @@ public class HibernateUtil {
     static{
         try{
             Configuration cf=new Configuration();
-            cf.configure();
+            cf.configure("hibernate.cfg.xml");
             sf=cf.buildSessionFactory();
             log.info("SesionFactory created");
         }catch(Exception e){

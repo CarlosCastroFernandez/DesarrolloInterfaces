@@ -102,7 +102,7 @@
                               </Label>
                            </children>
                         </FlowPane>
-                        <Slider fx:id="barraSlider" majorTickUnit="30.0" max="180.0" minorTickCount="2" onMouseDragged="#ActualizarDuracion" onMouseReleased="#ActualizarDuracion" showTickLabels="true" showTickMarks="true" />
+                        <Slider fx:id="barraSlider" majorTickUnit="30.0" max="180.0" minorTickCount="2" showTickLabels="true" showTickMarks="true" />
                         <Label text="Dificultad">
                            <padding>
                               <Insets left="5.0" />

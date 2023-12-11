@@ -13,3 +13,5 @@ U
 %src/main/java/ventanas/Principal.java,d\4\d49da94a06af0099bba701ba95846983ae2a3395
 U
 %src/main/java/org/example/Sesion.java,5\9\597ac82fc630388517da09c768c4f8a0cab6820c
+=
+Francisco.obj,c\9\c99ca7c0351c9566f0ed900f9c5f2d7b44ab7b92
