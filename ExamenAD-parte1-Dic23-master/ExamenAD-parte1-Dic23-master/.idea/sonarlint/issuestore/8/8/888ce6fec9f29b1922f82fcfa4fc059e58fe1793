@@ -1,0 +1,10 @@
+
+g	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8°ã‘ÄÅ1
+V
+java:S1118":Add a private constructor to hide the implicit public one.(‘A8 ‘ÄÅ1
+Y
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8×à•ÄÅ1
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8Øà•ÄÅ1
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Øà•ÄÅ1

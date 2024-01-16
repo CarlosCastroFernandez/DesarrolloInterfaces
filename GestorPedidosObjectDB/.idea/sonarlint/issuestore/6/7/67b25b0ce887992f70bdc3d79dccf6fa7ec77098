@@ -1,0 +1,22 @@
+
+o	java:S1164"URename this field "btnAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Çè‚øÿÿÿÿ
+n
+java:S1450?"XRemove the "productos" field and declare it as a local variable in the relevant methods.(ò€»ß
+M
+java:S1611O"2Remove the parentheses around the "fila" parameter(Æ€ýïúÿÿÿÿ
+M
+java:S1611S"2Remove the parentheses around the "fila" parameter(ÅÿœÊøÿÿÿÿ
+M
+java:S1611W"2Remove the parentheses around the "fila" parameter(­èµÓþÿÿÿÿ
+M
+java:S1611["2Remove the parentheses around the "fila" parameter(ó¾Ÿîûÿÿÿÿ
+n
+java:S1602["SRemove useless curly braces around statement and then remove useless return keyword(ó¾Ÿîûÿÿÿÿ
+H
+java:S1611^"2Remove the parentheses around the "fila" parameter(ÞÙ±“
+M
+java:S1611b"2Remove the parentheses around the "fila" parameter(§ÚØÿÿÿÿÿ
+C
+java:S1905Ž",Remove this unnecessary cast to "ArrayList".(ïßÇË
+A
+java:S1068>"+Remove this unused "pedidos" private field.(ý™¼‡

@@ -15,3 +15,5 @@ P
 Ksrc/main/java/com/example/recetariococinafx/VentanaSecundaryController.java,c\4\c4fa16c0c6995622ed4c744d431325d379d8c843
 z
 Jsrc/main/java/com/example/recetariococinafx/RecetarioCocinaController.java,9\2\92a82c62e164c4c71acd9352502c41d802a3ff89
+i
+9src/main/java/com/example/recetariococinafx/Practica.java,8\8\885e840edc4da7ada631aaa5d9576d1052f164e2

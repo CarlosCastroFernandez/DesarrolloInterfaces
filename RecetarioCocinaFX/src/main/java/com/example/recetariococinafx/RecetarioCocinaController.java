@@ -66,11 +66,11 @@ public class RecetarioCocinaController implements Initializable {
     private ImageView carita;
     private MediaPlayer mediaPlayer;
     private ObservableList<Receta>obs;
-    @javafx.fxml.FXML
+    private SeparatorMenuItem separador;
+    private MenuItem menu1;
+    private Receta receta;
     private ContextMenu contextMenu;
-    @javafx.fxml.FXML
-    private MenuItem pruebaMenu;
-
+    private Integer contador;
 
 
     @javafx.fxml.FXML
@@ -111,28 +111,51 @@ public class RecetarioCocinaController implements Initializable {
             carita.setImage(new Image("/com/example/recetariococinafx/imagenes/"+imagen));
             mediaPlayer.seek(new Duration(0));
             mediaPlayer.play();
+
         });
         barraSlider.setValue(60);
         barraSlider.valueProperty().addListener((observableValue, number, t1) -> labelNumeroDuracion.setText(t1.intValue() + " min"));
         txtNombre.textProperty().addListener((ob,vold,vnew)->labelInfo.setText("Antiguo: "+vold+" nuevo: "+vnew));
+
         tabla.getSelectionModel().selectedItemProperty().addListener(
                 (ob,ant,nuevo)->{
                     labelInfo.setText(nuevo.toString());
                     txtNombre.setText(nuevo.getNombre());
+                    receta=nuevo;
                     barraSlider.setValue(nuevo.getDuracion());
                     lista.getSelectionModel().select(nuevo.getTipo());
                     comboBox.getSelectionModel().select(nuevo.getDificultad());
-
                 }
+
 
         );
+
         tabla.setOnMousePressed(mouseEvent -> {
             if(mouseEvent.isSecondaryButtonDown()){
-                Receta receta=tabla.getSelectionModel().getSelectedItem();
-                if(receta!=null){
+                if(receta !=null){
+                    contextMenu=new ContextMenu();
+                    contextMenu.getItems().add(new MenuItem("ALIALIO"));
+                    separador=new SeparatorMenuItem();
+                    contextMenu.getItems().add(separador);
+                    menu1 = new MenuItem("PEPE");
+                    contextMenu.getItems().add(menu1);
+
+                    tabla.setContextMenu(contextMenu);
                     contextMenu.show(tabla,mouseEvent.getScreenX(),mouseEvent.getScreenY());
+                    menu1.setOnAction(evento->{
+                        System.out.println("HOLA");
+                    });
+
+                }else{
+                    tabla.setContextMenu(null);
+
                 }
+
+
             }
+
+
+
         });
 
 
@@ -236,6 +259,7 @@ public class RecetarioCocinaController implements Initializable {
         System.out.println(comboRecetas.getSelectionModel().getSelectedItem());
         tabla.getSelectionModel().select((Receta) comboRecetas.getSelectionModel().getSelectedItem());
         Integer numero=tabla.getSelectionModel().getFocusedIndex();
+        System.out.println(numero);
         Sesion.setPosicion(numero);
         Receta r=(Receta)comboRecetas.getSelectionModel().getSelectedItem();
         Sesion.setRecetaActual(r);

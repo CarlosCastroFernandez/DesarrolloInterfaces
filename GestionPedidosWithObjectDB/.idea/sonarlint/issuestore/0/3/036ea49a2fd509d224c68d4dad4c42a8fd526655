@@ -1,0 +1,34 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ş²è¸úÿÿÿÿ8Ü–“Ğ1
+R
+java:S3740Œ"/Provide the parametrized type for this generic.(„öÅøÿÿÿÿ8İ–“Ğ1
+R
+java:S3740Œ"/Provide the parametrized type for this generic.(„öÅøÿÿÿÿ8İ–“Ğ1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨‘Òèşÿÿÿÿ8à–“Ğ1
+x	java:S116"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8Õ–“Ğ1
+o	java:S100x"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8ó–“Ğ1
+u
+java:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ñ÷–øÿÿÿÿ8÷–“Ğ1
+[
+java:S1854£"8Remove this useless assignment to local variable "item".(Ì·’®ùÿÿÿÿ8ø–“Ğ1
+Z
+java:S1854±"<Remove this useless assignment to local variable "contador".(¦ãÁ8ø–“Ğ1
+Z
+java:S1854µ"<Remove this useless assignment to local variable "contador".(¦ãÁ8ø–“Ğ1
+Z
+java:S1854¹"<Remove this useless assignment to local variable "contador".(¦ãÁ8ø–“Ğ1
+Z
+java:S1854Ï"<Remove this useless assignment to local variable "contador".(¦ãÁ8ø–“Ğ1
+Z
+java:S1854Ó"<Remove this useless assignment to local variable "contador".(¦ãÁ8ù–“Ğ1
+[
+java:S1854Ö"8Remove this useless assignment to local variable "item".(Ì·’®ùÿÿÿÿ8ù–“Ğ1
+M	java:S106"+Replace this use of System.out by a logger.(óĞûƒşÿÿÿÿ8ı–“Ğ1
+H	java:S106œ"+Replace this use of System.out by a logger.(Õ¹œü8…‘–“Ğ1
+Z
+java:S1117©"<Rename "contador" which hides the field declared at line 37.(–¨ß£8Š‘–“Ğ1
+k
+java:S1871¶"MThis branch's code block is the same as the block for the branch on line 178.(ø‰…¹8’‘–“Ğ1
+Z
+java:S1117Ç"<Rename "contador" which hides the field declared at line 37.(–¨ß£8˜‘–“Ğ1

@@ -1,0 +1,9 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(±”ú™ÿÿÿÿÿ8¹áüÅÅ1
+[
+java:S1128">Remove this unused import 'cesur.examen.common.HibernateUtil'.(‡«Ê·8¾áüÅÅ1
+T
+java:S1128"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8¾áüÅÅ1
+X
+java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8¾áüÅÅ1

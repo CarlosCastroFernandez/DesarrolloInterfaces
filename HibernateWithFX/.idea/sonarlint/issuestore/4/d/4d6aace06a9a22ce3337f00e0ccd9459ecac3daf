@@ -1,0 +1,14 @@
+
+K
+java:S3740%"/Provide the parametrized type for this generic.(òå8±³ãÇ1
+l
+java:S1192"ODefine a constant instead of duplicating this literal "main-view.fxml" 3 times.(…Ö¿†8³³ãÇ1
+s
+java:S3655§"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(şÆœíûÿÿÿÿ8ÍµãÇ1
+r	java:S116!"VRename this field "spinnerAÃ±o" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öèç×8ÎµãÇ1
+o
+java:S1128"MRemove this unused import 'com.example.hibernatewithfx.domain.HibernateUtil'.(ƒ°Æ©úÿÿÿÿ8èµãÇ1
+S
+java:S1128"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8èµãÇ1
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8éµãÇ1

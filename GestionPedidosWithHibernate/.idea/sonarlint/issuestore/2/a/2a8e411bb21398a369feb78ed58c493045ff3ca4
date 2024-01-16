@@ -1,0 +1,18 @@
+
+G
+java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8¿ñÿƒ¼1
+U
+java:S1874,"3Remove this use of "createQuery"; it is deprecated.(°–²üÿÿÿÿ8Äñÿƒ¼1
+L	java:S106/"+Replace this use of System.out by a logger.(¬Û·½üÿÿÿÿ8Åñÿƒ¼1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8ÜæŒ„¼1
+Y
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8ÜæŒ„¼1
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8İæŒ„¼1
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8İæŒ„¼1
+O
+java:S1068"2Remove this unused "loadByPersonal" private field.(†˜×8Çñÿƒ¼1
+J
+java:S1068"(Remove this unused "load" private field.(ş³ÙÒüÿÿÿÿ8Çñÿƒ¼1

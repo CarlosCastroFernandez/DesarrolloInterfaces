@@ -1,0 +1,15 @@
+
+s
+java:S3655’"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8¤Âç”Ğ1
+y	java:S116!"XRename this field "imagenAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ßÊ‘ıÿÿÿÿ8µÃëÏ1
+x	java:S116'"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8µÃëÏ1
+U
+java:S1611\"8Remove the parentheses around the "observable" parameter(»‚8ºÃëÏ1
+J	java:S108`")Either remove or fill this block of code.(Ñˆ¿‘úÿÿÿÿ8ºÃëÏ1
+p	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8¾ÃëÏ1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8¹Âç”Ğ1
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8¹Âç”Ğ1
+I
+java:S1068"'Remove this unused "obs" private field.(ıù­Àüÿÿÿÿ8ÀÃëÏ1

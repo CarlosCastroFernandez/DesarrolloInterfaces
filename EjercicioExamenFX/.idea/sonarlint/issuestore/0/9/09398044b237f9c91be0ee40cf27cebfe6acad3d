@@ -1,0 +1,28 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(™–­¾ÿÿÿÿÿ8©óÇèÇ1
+j
+java:S1192"LDefine a constant instead of duplicating this literal "Informacion" 4 times.(¢×ó÷8÷†ÊèÇ1
+•
+java:S1192"wDefine a constant instead of duplicating this literal "Por favor seleccione una fecha de entrada
+ y de salida" 3 times.(ÖÊÌ8ºÄÊèÇ1
+x	java:S116&"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8ÆóÇèÇ1
+v
+java:S1450@"TRemove the "coste" field and declare it as a local variable in the relevant methods.(Ùƒ£ºøÿÿÿÿ8ÇóÇèÇ1
+O
+java:S1611F"2Remove the parentheses around the "fila" parameter(¦ÖØë8ËóÇèÇ1
+O
+java:S1611J"2Remove the parentheses around the "fila" parameter(ì·ÂÕ8ÌóÇèÇ1
+T
+java:S1611N"2Remove the parentheses around the "fila" parameter(¼Óùùÿÿÿÿ8ÏóÇèÇ1
+T
+java:S1611R"2Remove the parentheses around the "fila" parameter(óÑÒÔıÿÿÿÿ8ÑóÇèÇ1
+O
+java:S1611V"2Remove the parentheses around the "fila" parameter(ªğ¸’8ÒóÇèÇ1
+O
+java:S1611Z"2Remove the parentheses around the "fila" parameter(÷Í˜Ó8ÓóÇèÇ1
+T
+java:S1611^"2Remove the parentheses around the "fila" parameter(±²ÏÙúÿÿÿÿ8ÓóÇèÇ1
+p	java:S100Ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8ÛóÇèÇ1
+R
+java:S1128	"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ßóÇèÇ1

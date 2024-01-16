@@ -1,0 +1,12 @@
+
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…ÍœÚ8Ü«¿éÏ1
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(¨°‚î8Ş«¿éÏ1
+S
+java:S26960"6Make the enclosing method "static" or remove this set.(¨°‚î8ì¡Ş“Ğ1
+S
+java:S2696H"6Make the enclosing method "static" or remove this set.(¨°‚î8¼°”Ğ1
+`
+java:S1128"CRemove this unused import 'javax.persistence.EntityManagerFactory'.(îÜğ8¿°”Ğ1
+N
+java:S1068"1Remove this unused "queryLoadItem" private field.(…ÍœÚ8á«¿éÏ1

@@ -148,6 +148,7 @@ public class GameViewController implements Initializable {
         if(comboBoxFormato.getValue().length()>1) g.setFormat(comboBoxFormato.getValue());
         if(comboBoxPlataforma.getValue().length()>1) g.setPlataform(comboBoxPlataforma.getValue());
         g.setYear(Long.valueOf( spinnerAño.getValue()));
+
         g.setPlayers(Long.valueOf(spinnerJugadores.getValue()));
         if(g.getId()!=null){
             gameDAO.update(g);

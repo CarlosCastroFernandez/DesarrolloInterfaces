@@ -1,0 +1,16 @@
+
+|
+java:S1192-"ZDefine a constant instead of duplicating this literal "-fx-background-color: red" 3 times.(Œèª‹üÿÿÿÿ8Ì¨éòº1
+k
+java:S1192,"IDefine a constant instead of duplicating this literal "Usuario " 4 times.(ßÚ»þùÿÿÿÿ8Ì¨éòº1
+n
+java:S1192,"LDefine a constant instead of duplicating this literal " Incorrecto" 3 times.(ßÚ»þùÿÿÿÿ8Ì¨éòº1
+>
+java:S1116*"Remove this empty statement.(Åñ­õþÿÿÿÿ8è¨éòº1
+L	java:S106P"+Replace this use of System.out by a logger.(¨ßì¼úÿÿÿÿ8í¨éòº1
+o
+java:S1128"MRemove this unused import 'com.example.hibernatewithfx.domain.HibernateUtil'.(ƒ°Æ©úÿÿÿÿ8ï¨éòº1
+[
+java:S1128"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬þÿÿÿÿ8ñ¨éòº1
+Y
+java:S1128"<Remove this unused import 'org.hibernate.cfg.Configuration'.(ö¬ä8ò¨éòº1

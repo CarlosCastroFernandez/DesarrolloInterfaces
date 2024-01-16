@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="450.0" prefWidth="549.0" styleClass="repartidor" stylesheets="@../../../estilo.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoswithobjectdb.VentanaUsuario">
+   <top>
+      <VBox alignment="CENTER" prefHeight="57.0" prefWidth="549.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                  <items>
+                    <MenuItem fx:id="salir" mnemonicParsing="false" onAction="#salidaInicio" text="LogOut" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="labelBienvenido" styleClass="l" text="Bienvenido:" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="Snap ITC" size="24.0" />
+               </font></Label>
+            <Label text="Lista De Tus Pedidos">
+               <font>
+                  <Font name="Snap ITC" size="24.0" />
+               </font></Label>
+            <VBox spacing="10.0">
+               <children>
+                  <Label text="Busqueda Por Pedidos:">
+                     <font>
+                        <Font name="Snap ITC" size="14.0" />
+                     </font></Label>
+                  <ComboBox fx:id="comboBox" prefHeight="34.0" prefWidth="150.0" promptText="Seleccion" style="-fx-background-color: #51b8dd;" stylesheets="@../../../estilo.css" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="TOP_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </BorderPane.margin>
+         <children>
+            <FlowPane alignment="CENTER" hgap="10.0" maxWidth="450.0" minWidth="250.0" prefHeight="22.0" prefWidth="450.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="Nuevo Pedido">
+                     <font>
+                        <Font name="Snap ITC" size="12.0" />
+                     </font></Label>
+                  <Button fx:id="botonAñadir" mnemonicParsing="false" onAction="#añadir" style="-fx-background-color: #51b8dd;">
+                     <graphic>
+                        <ImageView fx:id="imagenAñadir" fitHeight="22.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets right="100.0" />
+               </VBox.margin>
+            </FlowPane>
+            <FlowPane>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="343.0" prefWidth="538.0" spacing="20.0">
+                     <children>
+                        <ListView fx:id="listaPedidos" prefHeight="281.0" prefWidth="480.0" stylesheets="@../../../estilo.css">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ListView>
+                        <VBox alignment="CENTER" prefHeight="343.0" prefWidth="260.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="botonEliminar" mnemonicParsing="false" onAction="#eliminarPedido" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #51b8dd;" text="Eliminar Pedido">
+                                 <font>
+                                    <Font name="Snap ITC" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Label fx:id="labelInfo" prefHeight="18.0" prefWidth="153.0" text="Label" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

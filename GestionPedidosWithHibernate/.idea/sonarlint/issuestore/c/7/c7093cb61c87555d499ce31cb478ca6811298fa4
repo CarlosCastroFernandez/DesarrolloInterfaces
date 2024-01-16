@@ -1,0 +1,10 @@
+
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…ÍœÚ8áø‹Ã1
+X
+java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8 áø‹Ã1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¡áø‹Ã1
+I
+java:S1068",Remove this unused "conexion" private field.(ß¸½Ú8¡áø‹Ã1
+N
+java:S1068"1Remove this unused "queryLoadItem" private field.(…ÍœÚ8¡áø‹Ã1

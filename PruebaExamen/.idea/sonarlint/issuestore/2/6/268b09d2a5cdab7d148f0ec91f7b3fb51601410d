@@ -1,0 +1,16 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ËôÂéÁ1
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÍôÂéÁ1
+g	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÎôÂéÁ1
+y
+java:S1450"WRemove the "conexion" field and declare it as a local variable in the relevant methods.(ú­¯Ùşÿÿÿÿ8¥õÂéÁ1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(Çİ‡Şùÿÿÿÿ8¿õÂéÁ1
+L	java:S106"+Replace this use of System.out by a logger.(É½ÊÃşÿÿÿÿ8ÇõÂéÁ1
+L	java:S106"+Replace this use of System.out by a logger.(°Ô§ñıÿÿÿÿ8ÉõÂéÁ1
+G	java:S106 "+Replace this use of System.out by a logger.(òšæª8ÍõÂéÁ1
+F	java:S106%"+Replace this use of System.out by a logger.(¦‹¶h8ÒõÂéÁ1
+X
+java:S64370"6Revoke and change this password, as it is compromised.(Çİ‡Şùÿÿÿÿ8ÕõÂéÁ1
+L	java:S1068"+Replace this use of System.out by a logger.(†ŒîÍúÿÿÿÿ8áõÂéÁ1
+G	java:S1069"+Replace this use of System.out by a logger.(·¦ô°8ùÅÅéÁ1

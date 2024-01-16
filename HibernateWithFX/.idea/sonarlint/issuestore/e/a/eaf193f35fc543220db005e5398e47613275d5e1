@@ -1,0 +1,25 @@
+
+k	java:S116"PRename this field "cAÃ±o" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÖ€18Ä‰è»1
+x	java:S116&"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8Ä‰è»1
+e
+java:S6355("HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8Æ‰è»1
+R
+java:S1133)"5Do not forget to remove this deprecated code someday.(ÕßĞù8Æ‰è»1
+E
+java:S1123)"(Add the missing @deprecated Javadoc tag.(ÕßĞù8Æ‰è»1
+G	java:S1061"+Replace this use of System.out by a logger.(ß†¾Ä8È‰è»1
+O
+java:S16112"2Remove the parentheses around the "fila" parameter(™ƒ½Õ8È‰è»1
+T
+java:S16116"2Remove the parentheses around the "fila" parameter(©òşÿÿÿÿ8É‰è»1
+T
+java:S1611:"2Remove the parentheses around the "fila" parameter(Ê—•åûÿÿÿÿ8É‰è»1
+N
+java:S1611>"2Remove the parentheses around the "fila" parameter(†æG8Ê‰è»1
+T
+java:S1611B"2Remove the parentheses around the "fila" parameter(ùŒı°ıÿÿÿÿ8Ê‰è»1
+T
+java:S1611F"2Remove the parentheses around the "fila" parameter(üÁ€“øÿÿÿÿ8Ê‰è»1
+o	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8Ì‰è»1
+j
+java:S1128"MRemove this unused import 'com.example.hibernatewithfx.domain.juego.GameDao'.(©»úÿ8¹îé»1

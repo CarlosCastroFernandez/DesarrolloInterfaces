@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane prefHeight="600.0" prefWidth="1125.0" styleClass="ventana" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recetariococinafx.Practica">
+   <center>
+      <BorderPane prefHeight="485.0" prefWidth="516.0">
+         <center>
+            <VBox id="pane" alignment="TOP_CENTER" maxHeight="300.0" maxWidth="500.0" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="294.0" prefWidth="388.0">
+                     <children>
+                        <Label text="Hola" />
+                        <Label text="Pepe" />
+                        <Label text="HOla" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <Label text="Label" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

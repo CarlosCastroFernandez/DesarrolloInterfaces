@@ -1,0 +1,33 @@
+
+s
+java:S3655‡"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8Š„¸¹¾1
+s
+java:S3655•"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ç•ø¶øÿÿÿÿ8Š„¸¹¾1
+x	java:S116,"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8‹„¸¹¾1
+]	java:S125?"<This block of commented-out lines of code should be removed.(ÔÅ‹‡ıÿÿÿÿ8„¸¹¾1
+O
+java:S1611E"2Remove the parentheses around the "fila" parameter(úÄÓ€8„¸¹¾1
+T
+java:S1611J"2Remove the parentheses around the "fila" parameter(­èµÓşÿÿÿÿ8„¸¹¾1
+O
+java:S1611O"2Remove the parentheses around the "fila" parameter(ŞÙ±“8„¸¹¾1
+N
+java:S1602S",Remove useless curly braces around statement(úäÓ¿şÿÿÿÿ8‘„¸¹¾1
+\
+java:S1155ƒ">Use isEmpty() to check whether the collection is empty or not.(´‰ı8”„¸¹¾1
+M	java:S106Š"+Replace this use of System.out by a logger.(…‚¶øÿÿÿÿ8•„¸¹¾1
+M	java:S106Œ"+Replace this use of System.out by a logger.(´‹¹öşÿÿÿÿ8–„¸¹¾1
+F	java:S108 ")Either remove or fill this block of code.(”ı¾8š„¸¹¾1
+k	java:S100¬"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Î†¼8›„¸¹¾1
+L
+java:S1128"/Remove this unused import 'dao.HibernateUtils'.( ·ÿò8›„¸¹¾1
+R
+java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8œ„¸¹¾1
+[
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8œ„¸¹¾1
+V
+java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8œ„¸¹¾1
+W
+java:S1128"5Remove this unused import 'javafx.scene.layout.VBox'.(íÆáÂùÿÿÿÿ8œ„¸¹¾1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8œ„¸¹¾1

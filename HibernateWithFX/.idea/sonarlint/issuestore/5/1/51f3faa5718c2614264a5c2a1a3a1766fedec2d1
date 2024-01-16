@@ -1,0 +1,8 @@
+
+„
+java:S1319"gThe type of "QUERY_ATTR" should be an interface such as "Map" rather than the implementation "HashMap".(ÍáÌ8€’ÑÍÂ1
+B
+java:S2386"%Make member "QUERY_ATTR" "protected".(Í¨Š8‘’ÑÍÂ1
+H
+java:S1168"+Return an empty collection instead of null.(¥¹ï8“’ÑÍÂ1
+]	java:S125 "<This block of commented-out lines of code should be removed.(·…ÊÄıÿÿÿÿ8“’ÑÍÂ1

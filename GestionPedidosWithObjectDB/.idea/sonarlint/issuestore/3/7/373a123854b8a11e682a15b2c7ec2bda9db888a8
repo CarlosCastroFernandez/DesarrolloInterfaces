@@ -1,0 +1,21 @@
+
+s
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8Ú…ê”Ğ1
+s
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ç•ø¶øÿÿÿÿ8Û…ê”Ğ1
+x	java:S116&"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8Û…ê”Ğ1
+]	java:S1259"<This block of commented-out lines of code should be removed.(ÔÅ‹‡ıÿÿÿÿ8á…ê”Ğ1
+O
+java:S1611?"2Remove the parentheses around the "fila" parameter(úÄÓ€8á…ê”Ğ1
+T
+java:S1611D"2Remove the parentheses around the "fila" parameter(­èµÓşÿÿÿÿ8ã…ê”Ğ1
+O
+java:S1611I"2Remove the parentheses around the "fila" parameter(ŞÙ±“8ã…ê”Ğ1
+N
+java:S1602M",Remove useless curly braces around statement(úäÓ¿şÿÿÿÿ8å…ê”Ğ1
+[
+java:S1155}">Use isEmpty() to check whether the collection is empty or not.(´‰ı8ë…ê”Ğ1
+M	java:S106„"+Replace this use of System.out by a logger.(…‚¶øÿÿÿÿ8í…ê”Ğ1
+M	java:S106†"+Replace this use of System.out by a logger.(´‹¹öşÿÿÿÿ8ï…ê”Ğ1
+F	java:S108š")Either remove or fill this block of code.(”ı¾8ò…ê”Ğ1
+k	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Î†¼8ò…ê”Ğ1

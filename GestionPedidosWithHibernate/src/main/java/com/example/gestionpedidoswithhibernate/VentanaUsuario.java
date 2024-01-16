@@ -1,6 +1,7 @@
 package com.example.gestionpedidoswithhibernate;
 
 import clases.Itempedido;
+import clases.MYSQLConnection;
 import clases.Pedido;
 import clases.Session;
 import dao.HibernateUtils;
@@ -15,12 +16,23 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import net.sf.jasperreports.swing.JRViewer;
 
+import javax.swing.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.ResourceBundle;
-import java.util.TreeSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.*;
 
 public class VentanaUsuario implements Initializable {
     @javafx.fxml.FXML
@@ -40,6 +52,9 @@ public class VentanaUsuario implements Initializable {
     private Label labelInfo;
     @javafx.fxml.FXML
     private Button botonAñadir;
+    @javafx.fxml.FXML
+    private Button botodPDF;
+
 
 
     /**
@@ -163,4 +178,38 @@ public class VentanaUsuario implements Initializable {
         Session.setPedido(null);
         HelloApplication.cambioVentana("añadir-editar-view.fxml");
     }
+
+    @javafx.fxml.FXML
+    public void descargaPDF(ActionEvent actionEvent) {
+        if(Session.getPedido()!=null){
+           Connection c=MYSQLConnection.getConexion();
+            HashMap <String,Object>parametro=new HashMap<>();
+            parametro.put("codigoPedido",Session.getPedido().getCodigo());
+            try {
+                JasperPrint jasper= JasperFillManager.fillReport("listadoProductos.jasper",parametro,c);
+                JRViewer visor=new JRViewer(jasper);
+                JFrame frame = new JFrame("Listado de Productos");
+                frame.getContentPane().add(visor);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.pack();
+                frame.setVisible(true);
+
+                //GENERA PDF
+                JRPdfExporter exp = new JRPdfExporter();
+                exp.setExporterInput(new SimpleExporterInput(jasper));
+                exp.setExporterOutput(new SimpleOutputStreamExporterOutput("productos.pdf"));
+                exp.setConfiguration(new SimplePdfExporterConfiguration());
+                exp.exportReport();
+            } catch (JRException e) {
+                throw new RuntimeException(e);
+            }
+        }else{
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("Error De Selección");
+            alerta.setContentText("Por favor seleccione un pedido");
+            alerta.showAndWait();
+        }
+    }
+
+
 }

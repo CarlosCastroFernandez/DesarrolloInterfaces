@@ -1,0 +1,31 @@
+
+h	java:S112Ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8áä¶ÈÏ1
+s
+java:S3655¡"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8‘å¶ÈÏ1
+y	java:S1160"XRename this field "imagenAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ßÊ‘ıÿÿÿÿ8’å¶ÈÏ1
+x	java:S1166"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8’å¶ÈÏ1
+U
+java:S1611k"8Remove the parentheses around the "observable" parameter(»‚8å¶ÈÏ1
+J	java:S108o")Either remove or fill this block of code.(Ñˆ¿‘úÿÿÿÿ8å¶ÈÏ1
+p	java:S100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8£å¶ÈÏ1
+`
+java:S3252Á"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8§å¶ÈÏ1
+P
+java:S1128".Remove this unused import 'clases.Itempedido'.(È§˜˜ûÿÿÿÿ8®å¶ÈÏ1
+Z
+java:S1128
+"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8®å¶ÈÏ1
+L
+java:S1128"/Remove this unused import 'javafx.event.Event'.(ô”áñ8®å¶ÈÏ1
+U
+java:S1128"8Remove this unused import 'javafx.util.StringConverter'.(ûóŠ×8®å¶ÈÏ1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8®å¶ÈÏ1
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8¯å¶ÈÏ1
+P
+java:S1128!"3Remove this unused import 'java.sql.DriverManager'.(“£°8¯å¶ÈÏ1
+O
+java:S1128""2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8şİ¹ÉÏ1
+I
+java:S1068,"'Remove this unused "obs" private field.(ıù­Àüÿÿÿÿ8¯å¶ÈÏ1

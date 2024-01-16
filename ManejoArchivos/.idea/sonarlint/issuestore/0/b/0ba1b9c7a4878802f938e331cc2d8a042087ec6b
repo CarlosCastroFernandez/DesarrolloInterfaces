@@ -1,0 +1,16 @@
+
+g	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8×óÙÎÂ1
+g	java:S112k"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8×óÙÎÂ1
+>
+java:S1643]"Use a StringBuilder instead.(Ï‚‹Øÿÿÿÿÿ8ØóÙÎÂ1
+b
+java:S2147j"ECombine this catch with the one at line 104, which has the same body.(ï­£Ä8ÛóÙÎÂ1
+W	java:S125"<This block of commented-out lines of code should be removed.(»¨è{8ÜóÙÎÂ1
+X	java:S125"<This block of commented-out lines of code should be removed.(½‘Ñ³8ÜóÙÎÂ1
+X	java:S125."<This block of commented-out lines of code should be removed.(½‘Ñ³8ÜóÙÎÂ1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Š´ÚÎÂ1
+L
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ8Š´ÚÎÂ1
+P
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8Š´ÚÎÂ1

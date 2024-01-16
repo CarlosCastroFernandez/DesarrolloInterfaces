@@ -1,0 +1,10 @@
+
+G
+java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8ÃûšëÏ1
+L	java:S106-"+Replace this use of System.out by a logger.(¬Û·½üÿÿÿÿ8ÅûšëÏ1
+N
+java:S1128",Remove this unused import 'clases.Producto'.(İ¹Ã–øÿÿÿÿ8ğ¿ç”Ğ1
+O
+java:S1068"2Remove this unused "loadByPersonal" private field.(†˜×8ÇûšëÏ1
+J
+java:S1068"(Remove this unused "load" private field.(ş³ÙÒüÿÿÿÿ8ÇûšëÏ1

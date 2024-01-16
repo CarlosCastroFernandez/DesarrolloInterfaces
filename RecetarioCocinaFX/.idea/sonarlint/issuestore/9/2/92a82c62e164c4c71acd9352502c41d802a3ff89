@@ -1,0 +1,38 @@
+
+Q
+java:S3740("/Provide the parametrized type for this generic.(œ•˜âùÿÿÿÿ8¥ıŞÎÇ1
+K
+java:S3740>"/Provide the parametrized type for this generic.(¯8¦ıŞÎÇ1
+f
+java:S1192h"IDefine a constant instead of duplicating this literal "DifÃ­cil" 3 times.(òÿæè8§ıŞÎÇ1
+d
+java:S1192h"GDefine a constant instead of duplicating this literal "FÃ¡cil" 6 times.(òÿæè8§ıŞÎÇ1
+f
+java:S1192h"IDefine a constant instead of duplicating this literal "Moderada" 6 times.(òÿæè8§ıŞÎÇ1
+l
+java:S1192¦"IDefine a constant instead of duplicating this literal "Merienda" 3 times.(ß¨Êøÿÿÿÿ8§ıŞÎÇ1
+l
+java:S1192¦"IDefine a constant instead of duplicating this literal "Almuerzo" 4 times.(ß¨Êøÿÿÿÿ8§ıŞÎÇ1
+l
+java:S1192¦"IDefine a constant instead of duplicating this literal "Desayuno" 4 times.(ß¨Êøÿÿÿÿ8§ıŞÎÇ1
+x	java:S116,"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8ÏıŞÎÇ1
+Ÿ
+java:S1186ï"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(»€ó8ÏıŞÎÇ1
+w
+java:S1450C"ZRemove the "mediaPlayer" field and declare it as a local variable in the relevant methods.(§Ûì8ÑıŞÎÇ1
+o	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8ÓıŞÎÇ1
+X	java:S125`"<This block of commented-out lines of code should be removed.(ã÷˜8×ıŞÎÇ1
+W
+java:S1117k":Rename "imagen" which hides the field declared at line 23.(¹ö§”8ßıŞÎÇ1
+O
+java:S1602‘",Remove useless curly braces around statement(ªÀÀÿÿÿÿÿ8æıŞÎÇ1
+H	java:S106’"+Replace this use of System.out by a logger.(©š‹‚8çıŞÎÇ1
+Y	java:S125¤"<This block of commented-out lines of code should be removed.(¨ßŠ8éıŞÎÇ1
+P
+java:S1611«"2Remove the parentheses around the "fila" parameter(™ƒ½Õ8éıŞÎÇ1
+I
+java:S1481¬"+Remove this unused "nombre" local variable.(‹˜¾8êıŞÎÇ1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(ÿÏÑí8óıŞÎÇ1
+H	java:S106†"+Replace this use of System.out by a logger.(™¢Â¹8ôıŞÎÇ1
+N
+java:S1068I",Remove this unused "contador" private field.( ˆÖÁıÿÿÿÿ8õıŞÎÇ1

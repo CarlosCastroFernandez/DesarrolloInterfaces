@@ -1,0 +1,15 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(ÿÜÔæ
+T
+java:S1854"9Remove this useless assignment to local variable "visor".(£ñ²¥ùÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(Ž½Ž¦ÿÿÿÿÿ
+S
+java:S6437"6Revoke and change this password, as it is compromised.( ¥Çä8âŽþâ¾1
+@	java:S106"+Replace this use of System.out by a logger.(Áß‡Ü
+E
+java:S1481"*Remove this unused "visor" local variable.(£ñ²¥ùÿÿÿÿ
+X
+java:S3252%"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ
+@	java:S106)"+Replace this use of System.out by a logger.(‚³ß¤
+G	java:S1061"+Replace this use of System.out by a logger.(‚³ß¤8Ò»šã¾1

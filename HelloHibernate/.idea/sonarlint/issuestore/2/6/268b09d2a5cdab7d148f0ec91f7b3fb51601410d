@@ -1,0 +1,9 @@
+
+L
+java:S37400"/Provide the parametrized type for this generic.(ŞøÓÄ8ÑîŠÎÂ1
+L	java:S106"+Replace this use of System.out by a logger.(½¦ÿÿÿÿÿ8ü´ñÍÂ1
+]	java:S125"<This block of commented-out lines of code should be removed.(û¤¼Èÿÿÿÿÿ8¸¢‹ÎÂ1
+]	java:S125!"<This block of commented-out lines of code should be removed.(Âüı…úÿÿÿÿ8ï©úÍÂ1
+P
+java:S18740"3Remove this use of "createQuery"; it is deprecated.(ŞøÓÄ8ñîŠÎÂ1
+L	java:S1062"+Replace this use of System.out by a logger.(µ”È‰ùÿÿÿÿ8ñîŠÎÂ1

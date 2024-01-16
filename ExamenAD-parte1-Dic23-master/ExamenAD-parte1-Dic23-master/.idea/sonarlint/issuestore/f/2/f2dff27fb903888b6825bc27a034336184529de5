@@ -1,0 +1,24 @@
+
+g	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬‚ÂÅ1
+g	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(ÑÓ ¡şÿÿÿÿ8¬‚ÂÅ1
+g	java:S112d"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬‚ÂÅ1
+h	java:S112„"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8­‚ÂÅ1
+q
+java:S2095x"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(÷Á¦£ûÿÿÿÿ8†Ï¤ÄÅ1
+q
+java:S2095/"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Çã¸ıÿÿÿÿ8†Ï¤ÄÅ1
+u	java:S116"YRename this field "QUERY_ORDER_BY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æä«ñ8²‚ÂÅ1
+s	java:S116"WRename this field "QUERY_BY_DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü¤¯8²‚ÂÅ1
+x	java:S116"WRename this field "UPDATE_BY_ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¶ß¸şÿÿÿÿ8²‚ÂÅ1
+>
+java:S1170"!Make this final field static too.(æä«ñ8²‚ÂÅ1
+>
+java:S1170"!Make this final field static too.(Ü¤¯8²‚ÂÅ1
+C
+java:S1170"!Make this final field static too.(›¶ß¸şÿÿÿÿ8²‚ÂÅ1
+V
+java:S18545"9Remove this useless assignment to local variable "filas".(Ø©å8µ‚ÂÅ1
+G
+java:S14815"*Remove this unused "filas" local variable.(Ø©å8¸‚ÂÅ1
+H
+java:S1168k"+Return an empty collection instead of null.(¥¹ï8”Ï¤ÄÅ1
