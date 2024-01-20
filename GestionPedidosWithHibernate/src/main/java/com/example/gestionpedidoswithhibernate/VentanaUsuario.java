@@ -179,6 +179,13 @@ public class VentanaUsuario implements Initializable {
         HelloApplication.cambioVentana("añadir-editar-view.fxml");
     }
 
+    /**
+     * Método en el que es capaz de conectarse con JasperReport y nuestra base de datos
+     * y visualizar una ventana con java Swing con una plantilla de jasper cargada y
+     * exportar esta plantilla en pdf que se queda guardada en la carpeta raíz del proyecto.
+     * @param actionEvent evento onclick.
+     */
+
     @javafx.fxml.FXML
     public void descargaPDF(ActionEvent actionEvent) {
         if(Session.getPedido()!=null){
