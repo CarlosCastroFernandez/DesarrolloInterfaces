@@ -49,3 +49,5 @@ Z
 *src/main/java/errores/UsuarioNoExiste.java,7\5\75285cde5a9693701fc34eb7f3ed51ab64939ba5
 Y
 )src/main/java/clases/MYSQLConnection.java,4\a\4a468ed44de002a91bef29988f1038f46a221961
+F
+listadoProductos.jrxml,9\3\934c5b1719f3da05b918ac4ea953f087b8070336

@@ -72,6 +72,11 @@ public class UsuarioDAOImp implements UsuarioDAO {
         }
         return usuario;
     }
+
+    /**
+     * Método que guarda todoos los usuarios que creamos en nuestra base de datos embebida para inicializarla
+     * @param usuarios
+     */
     public void saveAll(List<Usuario> usuarios){
         EntityManager em = ObjectDBUtil.getEntityManagerFactory().createEntityManager();
         try{

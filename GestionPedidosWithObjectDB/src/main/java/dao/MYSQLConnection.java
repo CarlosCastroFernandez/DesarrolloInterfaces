@@ -9,6 +9,11 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+/**
+ * Clase que se utiliza solamente para traerme la lista con jdbc de productos para inyectarle esta lista a nuestra
+ * base de datos embebida
+ */
+
 public class MYSQLConnection {
     static private Connection conexion;
     static private Logger log;
@@ -28,6 +33,11 @@ public class MYSQLConnection {
 
 
     }
+
+    /**
+     * Metodo que devuelve una conexión a una base de datos determinada
+     * @return
+     */
 
      public static Connection getConexion(){
         return conexion;

@@ -1,5 +1,5 @@
 
-h	java:S112Ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8áä¶ÈÏ1
+h	java:S112Ó"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8áä¶ÈÏ1
 s
 java:S3655¡"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8‘å¶ÈÏ1
 y	java:S1160"XRename this field "imagenAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ßÊ‘ıÿÿÿÿ8’å¶ÈÏ1
@@ -9,7 +9,7 @@ java:S1611k"8Remove the parentheses around the "observable" parameter(»‚8å¶
 J	java:S108o")Either remove or fill this block of code.(Ñˆ¿‘úÿÿÿÿ8å¶ÈÏ1
 p	java:S100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8£å¶ÈÏ1
 `
-java:S3252Á"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8§å¶ÈÏ1
+java:S3252È"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8§å¶ÈÏ1
 P
 java:S1128".Remove this unused import 'clases.Itempedido'.(È§˜˜ûÿÿÿÿ8®å¶ÈÏ1
 Z

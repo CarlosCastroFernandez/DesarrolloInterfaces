@@ -29,6 +29,11 @@ public class ProductoDAOImp implements ProductoDAO {
         }
         return productos;
     }
+
+    /**
+     * Método que se trae toda una lista de productos con jdbc de nuestra base de datos que hizimos en el anterior proyecto
+     * @return devuelve una lisa de productos
+     */
     public ArrayList<Producto> getAllProductsJDBC(){
         Connection conexion=MYSQLConnection.getConexion();
         ArrayList<Producto>productos=new ArrayList<>();
@@ -44,6 +49,11 @@ public class ProductoDAOImp implements ProductoDAO {
         }
         return productos;
     }
+
+    /**
+     * Guarda todos los productos de una lista en nuestra base de datos embebida.
+     * @param productos lista de productos
+     */
     public void saveAll(List<Producto> productos){
 
         EntityManager em = ObjectDBUtil.getEntityManagerFactory().createEntityManager();
