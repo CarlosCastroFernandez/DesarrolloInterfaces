@@ -1,0 +1,18 @@
+
+g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8®õ÷Õ1
+g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8®õ÷Õ1
+[
+java:S1854">Remove this useless assignment to local variable "httpClient".(¯õö´8»õ÷Õ1
+L
+java:S1481"/Remove this unused "httpClient" local variable.(¯õö´8½õ÷Õ1
+a
+java:S21470"DCombine this catch with the one at line 46, which has the same body.(ä ¹€8¾õ÷Õ1
+{
+java:S21420"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¾õ÷Õ1
+L	java:S106#"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8¿õ÷Õ1
+G	java:S106&"+Replace this use of System.out by a logger.(Æ¼Ø°8Ñõ÷Õ1
+G	java:S106*"+Replace this use of System.out by a logger.(‘ÖÏœ8Ñõ÷Õ1
+F	java:S106,"+Replace this use of System.out by a logger.(ÌĞ¥u8˜ˆ’÷Õ1
+l
+java:S1128"JRemove this unused import 'com.fasterxml.jackson.core.type.TypeReference'.(ãĞß¤ÿÿÿÿÿ8Ôõ÷Õ1
+rsecrets:S6700"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ŞšÑÕ1
