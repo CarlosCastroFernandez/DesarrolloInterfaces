@@ -59,7 +59,7 @@ public class Restaurante {
    * Lista de clientes asociados al restaurante.
    * La relación está mapeada a través del campo "restauranteId" en la base de datos.
    */
-  @OneToMany(mappedBy = "restauranteId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "restauranteId", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
   private List<Cliente> clientes;
 
   /**

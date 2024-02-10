@@ -61,7 +61,7 @@ public class Propietario {
    * La relación está mapeada a través del campo "propietarioId" en la base de datos.
    */
   @JsonIgnore
-  @OneToMany(mappedBy = "propietarioId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "propietarioId", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
   private List<Hotel> hoteles;
 
   /**
@@ -69,7 +69,7 @@ public class Propietario {
    * La relación está mapeada a través del campo "propietarioRId" en la base de datos.
    */
   @JsonIgnore
-  @OneToMany(mappedBy = "propietarioRId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "propietarioRId", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
   private List<Restaurante> restaurantes;
 
   /**

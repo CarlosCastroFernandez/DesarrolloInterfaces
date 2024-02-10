@@ -182,7 +182,12 @@ public class RestauranteController {
         Restaurante restauranteBorrado = new Restaurante();
         if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token) && repositoryRestaurante.existsById(id)) {
             restauranteBorrado = repositoryRestaurante.findById(id).get();
-            repositoryRestaurante.deleteById(id);
+            try{
+                repositoryRestaurante.deleteById(id);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
             return new ResponseEntity<>(restauranteBorrado, HttpStatus.OK);
         } else if (!repositoryRestaurante.existsById(id)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

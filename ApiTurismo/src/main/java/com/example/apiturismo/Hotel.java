@@ -77,7 +77,7 @@ public class Hotel {
    * Lista de clientes que han reservado en el hotel.
    * La relación está mapeada a través del campo "hotelId" en la base de datos.
    */
-  @OneToMany(mappedBy = "hotelId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "hotelId", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
   private List<Cliente> clientes;
 
   /**
