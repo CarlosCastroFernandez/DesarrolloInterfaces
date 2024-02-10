@@ -1,18 +1,98 @@
 
-g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8®õ÷Õ1
-g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8®õ÷Õ1
-[
-java:S1854">Remove this useless assignment to local variable "httpClient".(¯õö´8»õ÷Õ1
-L
-java:S1481"/Remove this unused "httpClient" local variable.(¯õö´8½õ÷Õ1
+g	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Èßƒ„Ö1
+g	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+g	java:S112`"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+g	java:S112b"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112œ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112¸"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112º"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112á"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+h	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éßƒ„Ö1
+m
+java:S11921"PDefine a constant instead of duplicating this literal "X-RapidAPI-Host" 6 times.(½À÷ã8Êßƒ„Ö1
+•
+java:S11920"sDefine a constant instead of duplicating this literal "b05468486bmshfcd890ee8c29ed1p1f727ejsn109bb3dfc29e" 6 times.(æÉ²·şÿÿÿÿ8Êßƒ„Ö1
+e
+java:S1192:"HDefine a constant instead of duplicating this literal "results" 9 times.(©¬¤8Êßƒ„Ö1
+
+java:S11921"bDefine a constant instead of duplicating this literal "moviesminidatabase.p.rapidapi.com" 6 times.(½À÷ã8Ëßƒ„Ö1
+q
+java:S11920"ODefine a constant instead of duplicating this literal "X-RapidAPI-Key" 6 times.(æÉ²·şÿÿÿÿ8Ëßƒ„Ö1
+l	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É™}8Ëßƒ„Ö1
+?
+java:S1643×"Use a StringBuilder instead.(›’êıÿÿÿÿ8Ìßƒ„Ö1
+:
+java:S1643Ù"Use a StringBuilder instead.(ÒèïË8Ìßƒ„Ö1
+L	java:S106"+Replace this use of System.out by a logger.(¡é®¿ùÿÿÿÿ8ƒàƒ„Ö1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ƒàƒ„Ö1
+G	java:S106"+Replace this use of System.out by a logger.(Ñ€Ù¥8ƒàƒ„Ö1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ƒàƒ„Ö1
+L	java:S106"+Replace this use of System.out by a logger.(­ˆ­Éûÿÿÿÿ8ƒàƒ„Ö1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8„àƒ„Ö1
+L	java:S106 "+Replace this use of System.out by a logger.(‡üÇÁıÿÿÿÿ8„àƒ„Ö1
+L	java:S106""+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8„àƒ„Ö1
+G	java:S106#"+Replace this use of System.out by a logger.(´Ëÿ·8„àƒ„Ö1
+L	java:S106%"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8„àƒ„Ö1
+L	java:S106&"+Replace this use of System.out by a logger.(¶ÇªÓûÿÿÿÿ8„àƒ„Ö1
+o	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È®ü÷øÿÿÿÿ8…àƒ„Ö1
 a
-java:S21470"DCombine this catch with the one at line 46, which has the same body.(ä ¹€8¾õ÷Õ1
+java:S2147B"DCombine this catch with the one at line 64, which has the same body.(ä ¹€8†àƒ„Ö1
 {
-java:S21420"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¾õ÷Õ1
-L	java:S106#"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8¿õ÷Õ1
-G	java:S106&"+Replace this use of System.out by a logger.(Æ¼Ø°8Ñõ÷Õ1
-G	java:S106*"+Replace this use of System.out by a logger.(‘ÖÏœ8Ñõ÷Õ1
-F	java:S106,"+Replace this use of System.out by a logger.(ÌĞ¥u8˜ˆ’÷Õ1
+java:S2142B"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8†àƒ„Ö1
+W
+java:S22095"5Change this instance-reference to a static reference.(´Ö†¡øÿÿÿÿ8‡àƒ„Ö1
+G	java:S106<"+Replace this use of System.out by a logger.(Á²Úğ8‡àƒ„Ö1
+[
+java:S1854J">Remove this useless assignment to local variable "httpClient".(¯õö´8ˆàƒ„Ö1
+[
+java:S1854V"9Remove this useless assignment to local variable "texto".(­Ğ†šøÿÿÿÿ8ˆàƒ„Ö1
+L
+java:S1481J"/Remove this unused "httpClient" local variable.(¯õö´8šàƒ„Ö1
+a
+java:S2147a"DCombine this catch with the one at line 95, which has the same body.(ä ¹€8›àƒ„Ö1
+{
+java:S2142a"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8›àƒ„Ö1
+L
+java:S1481V"*Remove this unused "texto" local variable.(­Ğ†šøÿÿÿÿ8›àƒ„Ö1
+F	java:S106]"+Replace this use of System.out by a logger.(ÌĞ¥u8œàƒ„Ö1
+c
+java:S2147€"ECombine this catch with the one at line 126, which has the same body.(ä ¹€8àƒ„Ö1
+|
+java:S2142€"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8àƒ„Ö1
+W
+java:S2209r"5Change this instance-reference to a static reference.(´Ö†¡øÿÿÿÿ8àƒ„Ö1
+L	java:S106z"+Replace this use of System.out by a logger.(÷¼ğÓûÿÿÿÿ8Ÿàƒ„Ö1
+c
+java:S2147"ECombine this catch with the one at line 155, which has the same body.(ä ¹€8¡àƒ„Ö1
+|
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¡àƒ„Ö1
+X
+java:S2209"5Change this instance-reference to a static reference.(´Ö†¡øÿÿÿÿ8¡àƒ„Ö1
+M	java:S106—"+Replace this use of System.out by a logger.(–«•Åûÿÿÿÿ8¢àƒ„Ö1
+c
+java:S2147¹"ECombine this catch with the one at line 183, which has the same body.(ä ¹€8¤àƒ„Ö1
+|
+java:S2142¹"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¤àƒ„Ö1
+X
+java:S2209¬"5Change this instance-reference to a static reference.(´Ö†¡øÿÿÿÿ8¤àƒ„Ö1
+H	java:S106³"+Replace this use of System.out by a logger.(ó‡Á¶8¥àƒ„Ö1
+c
+java:S2147â"ECombine this catch with the one at line 224, which has the same body.(ä ¹€8¦àƒ„Ö1
+|
+java:S2142â"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¦àƒ„Ö1
+X
+java:S2209È"5Change this instance-reference to a static reference.(´Ö†¡øÿÿÿÿ8¦àƒ„Ö1
+K
+java:S1481Ë"-Remove this unused "contador" local variable.(–¨ß£8§àƒ„Ö1
+M	java:S106Ü"+Replace this use of System.out by a logger.(àğüÃùÿÿÿÿ8¨àƒ„Ö1
 l
-java:S1128"JRemove this unused import 'com.fasterxml.jackson.core.type.TypeReference'.(ãĞß¤ÿÿÿÿÿ8Ôõ÷Õ1
-rsecrets:S6700"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ŞšÑÕ1
+java:S1128"JRemove this unused import 'com.fasterxml.jackson.core.type.TypeReference'.(ãĞß¤ÿÿÿÿÿ8¨àƒ„Ö1
+rsecrets:S67000"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
+rsecrets:S6700M"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
+rsecrets:S6700m"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
+ssecrets:S6700Š"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
+ssecrets:S6700§"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
+ssecrets:S6700Ã"MMake sure this RapidAPI key gets revoked, changed, and removed from the code.(æÉ²·şÿÿÿÿ8ùÇıƒÖ1
