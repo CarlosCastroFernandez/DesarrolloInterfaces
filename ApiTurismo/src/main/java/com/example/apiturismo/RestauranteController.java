@@ -154,9 +154,19 @@ public class RestauranteController {
      */
     @PutMapping("/{id}")
     public ResponseEntity<Restaurante> updateRestauranteByName(@PathVariable Long id, @RequestBody Restaurante restaurante, @RequestParam String token) {
+
         Restaurante restauranteNuevo = new Restaurante();
+        Boolean boleano=false;
+        Propietario pr=repositoryOwner.getPropietarioByToken(token);
+
         Optional<Restaurante> optionalRestaurante = repositoryRestaurante.findById(id);
-        if (service.validteTokenForOwner(token)) {
+        if(pr==optionalRestaurante.get().getPropietarioRId()){
+            boleano=true;
+        }else{
+            boleano=false;
+        }
+
+        if (service.validteTokenForOwner(token)&&boleano) {
             if (optionalRestaurante.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
@@ -186,7 +196,15 @@ public class RestauranteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Restaurante> deleteRestauranteById(@PathVariable Long id, @RequestParam String token) {
         Restaurante restauranteBorrado = new Restaurante();
-        if (service.validteTokenForOwner(token) && repositoryRestaurante.existsById(id)) {
+        Propietario pr=repositoryOwner.getPropietarioByToken(token);
+        restauranteBorrado=repositoryRestaurante.findById(id).get();
+        Boolean boleano=false;
+        if(pr==restauranteBorrado.getPropietarioRId()){
+            boleano=true;
+        }else{
+            boleano=false;
+        }
+        if (service.validteTokenForOwner(token) && repositoryRestaurante.existsById(id)&&boleano) {
             restauranteBorrado = repositoryRestaurante.findById(id).get();
             try{
                 repositoryRestaurante.deleteById(id);
