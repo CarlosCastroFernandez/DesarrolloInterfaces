@@ -16,6 +16,8 @@ public interface RepositoryCliente extends JpaRepository<Cliente,Long> {
     */
    Boolean existsClienteByCorreo(String correo);
 
+   public Cliente getClienteByToken(String token);
+
    /**
     * Recupera un cliente por su dirección de correo.
     *

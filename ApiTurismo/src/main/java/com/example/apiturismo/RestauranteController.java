@@ -29,16 +29,17 @@ public class RestauranteController {
     /**
      * Obtiene una lista de nombres e identificadores de todos los restaurantes.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+     *
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con una lista de cadenas que representan nombres e identificadores de restaurantes.
      */
-    @GetMapping("/{correo}")
-    public ResponseEntity<List<String>> getAllRestaurantes(@PathVariable String correo, @RequestParam String token) {
-        if (repositoryCliente.existsClienteByCorreo(correo) && service.validateTokerForUsers(token, correo)) {
+    @GetMapping("")
+    public ResponseEntity<List<String>> getAllRestaurantes(@RequestParam String token) {
+
+        if (service.validateTokerForUsers(token)) {
             return new ResponseEntity<>(repositoryRestaurante.restaurantes(), HttpStatus.OK);
         }
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             return new ResponseEntity<>(repositoryRestaurante.restaurantes(), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -47,17 +48,18 @@ public class RestauranteController {
     /**
      * Obtiene un restaurante por su identificador.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param id Identificador del restaurante.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con el objeto Restaurante correspondiente al identificador proporcionado.
      */
-    @GetMapping("/{correo}/restauranteById/{id}")
-    public ResponseEntity<Restaurante> getRestauranteById(@PathVariable String correo, @PathVariable Long id, @RequestParam String token) {
-        if (repositoryCliente.existsClienteByCorreo(correo) && service.validateTokerForUsers(token, correo)) {
+    @GetMapping("/restauranteById/{id}")
+    public ResponseEntity<Restaurante> getRestauranteById(@PathVariable Long id, @RequestParam String token) {
+
+        if ( service.validateTokerForUsers(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteById(id), HttpStatus.OK);
         }
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteById(id), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -66,17 +68,18 @@ public class RestauranteController {
     /**
      * Obtiene una lista de restaurantes asociados a un propietario por su identificador.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param idPropietarioR Identificador del propietario del restaurante.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con una lista de restaurantes asociados al propietario proporcionado.
      */
-    @GetMapping("/{correo}/restauranteByPropietarioId/{idPropietarioR}")
-    public ResponseEntity<List<Restaurante>> getRestauranteByPropietarioId(@PathVariable String correo, @PathVariable Long idPropietarioR, @RequestParam String token) {
-        if (repositoryCliente.existsClienteByCorreo(correo) && service.validateTokerForUsers(token, correo)) {
+    @GetMapping("/restauranteByPropietarioId/{idPropietarioR}")
+    public ResponseEntity<List<Restaurante>> getRestauranteByPropietarioId( @PathVariable Long idPropietarioR, @RequestParam String token) {
+
+        if ( service.validateTokerForUsers(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByPropietarioRId(idPropietarioR), HttpStatus.OK);
         }
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByPropietarioRId(idPropietarioR), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -85,17 +88,17 @@ public class RestauranteController {
     /**
      * Obtiene una lista de restaurantes fundados en un año específico.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
      * @param año Año de fundación de los restaurantes.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con una lista de restaurantes fundados en el año proporcionado.
      */
-    @GetMapping("{correo}/restaurantesByAño/{año}")
-    public ResponseEntity<List<Restaurante>> restauranteByAño(@PathVariable String correo, @PathVariable Long año, @RequestParam String token) {
-        if (repositoryCliente.existsClienteByCorreo(correo) && service.validateTokerForUsers(token, correo)) {
+    @GetMapping("/restaurantesByAño/{año}")
+    public ResponseEntity<List<Restaurante>> restauranteByAño(@PathVariable Long año, @RequestParam String token) {
+
+        if (service.validateTokerForUsers(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByAnioFundado(año), HttpStatus.OK);
         }
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByAnioFundado(año), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -104,17 +107,17 @@ public class RestauranteController {
     /**
      * Obtiene un restaurante por su dirección.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param direccion Dirección del restaurante.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con el objeto Restaurante correspondiente a la dirección proporcionada.
      */
-    @GetMapping("{correo}/restauranteByDireccion/{direccion}")
-    public ResponseEntity<Restaurante> restauranteByDireccion(@PathVariable String correo, @PathVariable String direccion, @RequestParam String token) {
-        if (repositoryCliente.existsClienteByCorreo(correo) && service.validateTokerForUsers(token, correo)) {
+    @GetMapping("/restauranteByDireccion/{direccion}")
+    public ResponseEntity<Restaurante> restauranteByDireccion( @PathVariable String direccion, @RequestParam String token) {
+        if (service.validateTokerForUsers(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByDireccion(direccion), HttpStatus.OK);
         }
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             return new ResponseEntity<>(repositoryRestaurante.getRestauranteByDireccion(direccion), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -123,14 +126,17 @@ public class RestauranteController {
     /**
      * Guarda un nuevo restaurante.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param restaurante Objeto Restaurante a guardar.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con el Restaurante guardado.
      */
-    @PostMapping("/{correo}/saveRestaurante")
-    public ResponseEntity<Restaurante> saveRestaurante(@PathVariable String correo, @RequestBody Restaurante restaurante, @RequestParam String token) {
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+    @PostMapping("/saveRestaurante")
+    public ResponseEntity<Restaurante> saveRestaurante(@RequestBody Restaurante restaurante, @RequestParam String token) {
+        if (service.validteTokenForOwner(token)) {
+            Propietario pr=new Propietario();
+            pr=repositoryOwner.getPropietarioByToken(token);
+            restaurante.setPropietarioRId(pr);
             return new ResponseEntity<>(repositoryRestaurante.save(restaurante), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -140,17 +146,17 @@ public class RestauranteController {
     /**
      * Actualiza el nombre de un restaurante por su identificador.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param id Identificador del restaurante a actualizar.
      * @param restaurante Objeto Restaurante con el nuevo nombre.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con el Restaurante actualizado.
      */
-    @PutMapping("/{correo}/{id}/updateRestauranteByName")
-    public ResponseEntity<Restaurante> updateRestauranteByName(@PathVariable String correo, @PathVariable Long id, @RequestBody Restaurante restaurante, @RequestParam String token) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Restaurante> updateRestauranteByName(@PathVariable Long id, @RequestBody Restaurante restaurante, @RequestParam String token) {
         Restaurante restauranteNuevo = new Restaurante();
         Optional<Restaurante> optionalRestaurante = repositoryRestaurante.findById(id);
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token)) {
+        if (service.validteTokenForOwner(token)) {
             if (optionalRestaurante.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
@@ -172,15 +178,15 @@ public class RestauranteController {
     /**
      * Elimina un restaurante por su identificador.
      *
-     * @param correo Correo del usuario que realiza la solicitud.
+
      * @param id Identificador del restaurante a eliminar.
      * @param token Token de autenticación del usuario.
      * @return ResponseEntity con el Restaurante eliminado.
      */
-    @DeleteMapping("/{correo}/{id}/deleteRestauranteById")
-    public ResponseEntity<Restaurante> deleteRestauranteById(@PathVariable String correo, @PathVariable Long id, @RequestParam String token) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Restaurante> deleteRestauranteById(@PathVariable Long id, @RequestParam String token) {
         Restaurante restauranteBorrado = new Restaurante();
-        if (repositoryOwner.existsPropietarioByCorreo(correo) && service.validteTokenForOwner(token) && repositoryRestaurante.existsById(id)) {
+        if (service.validteTokenForOwner(token) && repositoryRestaurante.existsById(id)) {
             restauranteBorrado = repositoryRestaurante.findById(id).get();
             try{
                 repositoryRestaurante.deleteById(id);

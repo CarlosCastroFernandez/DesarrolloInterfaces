@@ -43,13 +43,13 @@ private RepositoryHotel repositoryHotel;
      * Punto final para obtener todos los hoteles.
      * Se requiere un correo electrónico y un token válidos para la autenticación.
      */
-    @GetMapping("/{correo}")
-    public ResponseEntity<List<String>> getAllHotel(@PathVariable String correo, @RequestParam String token){
-            boolean cliente=repositoryCliente.existsClienteByCorreo(correo);
-            if(cliente&&service.validateTokerForUsers(token,correo)){
+    @GetMapping("")
+    public ResponseEntity<List<String>> getAllHotel( @RequestParam String token){
+
+            if(service.validateTokerForUsers(token)){
                 return new ResponseEntity<List<String>>(repositoryHotel.hoteles(), HttpStatus.OK);
             }
-            if( repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+            if( service.validteTokenForOwner(token)){
                 return new ResponseEntity<List<String>>(repositoryHotel.hoteles(), HttpStatus.OK);
             }
 
@@ -59,13 +59,13 @@ private RepositoryHotel repositoryHotel;
      * Punto final para obtener un hotel por su ID.
      * Se requiere un correo electrónico, ID de hotel y un token válidos para la autenticación.
      */
-    @GetMapping("/{correo}/{id}")
-    public ResponseEntity<Hotel> getHotelById(@PathVariable String correo,@PathVariable Integer id,@RequestParam String token){
-        boolean cliente=repositoryCliente.existsClienteByCorreo(correo);
-        if(cliente&&service.validateTokerForUsers(token,correo)){
+    @GetMapping("/{id}")
+    public ResponseEntity<Hotel> getHotelById(@PathVariable Integer id,@RequestParam String token){
+
+        if(service.validateTokerForUsers(token)){
             return new ResponseEntity<Hotel>((Hotel) repositoryHotel.getHotelById(id), HttpStatus.OK);
         }
-        if( repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+        if( service.validteTokenForOwner(token)){
             return new ResponseEntity<Hotel>((Hotel) repositoryHotel.getHotelById(id), HttpStatus.OK);
         }
 
@@ -75,13 +75,13 @@ private RepositoryHotel repositoryHotel;
      * Punto final para obtener lista de hoteles segun su propietario
      * Se requiere un correo electrónico, ID de propietario y un token válidos para la autenticación.
      */
-    @GetMapping("/{correo}/byOwner/{idPropietario}")
-    public ResponseEntity<List<Hotel>> getHotelByIdPropietario(@PathVariable String correo,@PathVariable Long idPropietario,@RequestParam String token){
-        boolean cliente=repositoryCliente.existsClienteByCorreo(correo);
-        if(cliente&&service.validateTokerForUsers(token,correo)){
+    @GetMapping("/{idPropietario}")
+    public ResponseEntity<List<Hotel>> getHotelByIdPropietario(@PathVariable Long idPropietario,@RequestParam String token){
+
+        if(service.validateTokerForUsers(token)){
             return new ResponseEntity<List<Hotel>>(repositoryHotel.getHotelByPropietarioId(idPropietario), HttpStatus.OK);
         }
-        if( repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+        if( service.validteTokenForOwner(token)){
             return new ResponseEntity<List<Hotel>>(repositoryHotel.getHotelByPropietarioId(idPropietario), HttpStatus.OK);
         }
 
@@ -92,13 +92,13 @@ private RepositoryHotel repositoryHotel;
      * Se requiere un correo electrónico, año de hotel y un token válidos para la autenticación.
      */
 
-    @GetMapping("/{correo}/byAño/{año}")
-    public ResponseEntity<List<Hotel>>getHotelByAño(@PathVariable String correo, @PathVariable Long año,@RequestParam String token){
-        boolean cliente=repositoryCliente.existsClienteByCorreo(correo);
-        if(cliente&&service.validateTokerForUsers(token,correo)){
+    @GetMapping("/{año}")
+    public ResponseEntity<List<Hotel>>getHotelByAño( @PathVariable Long año,@RequestParam String token){
+
+        if(service.validateTokerForUsers(token)){
             return new ResponseEntity<List<Hotel>>( repositoryHotel.getHotelByAnioFundado(año), HttpStatus.OK);
         }
-        if( repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+        if( service.validteTokenForOwner(token)){
             return new ResponseEntity<List<Hotel>>(repositoryHotel.getHotelByAnioFundado(año), HttpStatus.OK);
         }
 
@@ -108,13 +108,13 @@ private RepositoryHotel repositoryHotel;
      *  para obtener un hotel en base a su año
      * Se requiere un correo electrónico, direccion de hotel y un token válidos para la autenticación.
      */
-    @GetMapping("/{correo}/byDireccion/{direccion}")
-    public ResponseEntity<Hotel> getHotelByDireccion(@PathVariable String correo,@PathVariable String direccion,@RequestParam String token){
-        boolean cliente=repositoryCliente.existsClienteByCorreo(correo);
-        if(cliente&&service.validateTokerForUsers(token,correo)){
+    @GetMapping("/{direccion}")
+    public ResponseEntity<Hotel> getHotelByDireccion(@PathVariable String direccion,@RequestParam String token){
+
+        if(service.validateTokerForUsers(token)){
             return new ResponseEntity<Hotel>((Hotel) repositoryHotel.getHotelByDireccion(direccion), HttpStatus.OK);
         }
-        if( repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+        if( service.validteTokenForOwner(token)){
             return new ResponseEntity<Hotel>((Hotel) repositoryHotel.getHotelByDireccion(direccion), HttpStatus.OK);
         }
 
@@ -124,9 +124,12 @@ private RepositoryHotel repositoryHotel;
      * Punto final para guardar un nuevo hotel.
      * Se requiere un correo electrónico válido, un objeto Hotel en el cuerpo de la solicitud y un token para la autenticación.
      */
-@PostMapping("/{correo}/saveHotel")
-public ResponseEntity <Hotel> postHotel(@PathVariable String correo,@RequestBody Hotel hotel,@RequestParam String token){
-        if(repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+@PostMapping("/saveHotel")
+public ResponseEntity <Hotel> postHotel(@RequestBody Hotel hotel,@RequestParam String token){
+        if(service.validteTokenForOwner(token)){
+            Propietario pr=new Propietario();
+            pr=repositoryOwner.getPropietarioByToken(token);
+            hotel.setPropietarioId(pr);
             return new ResponseEntity<>(repositoryHotel.save(hotel),HttpStatus.OK);
         }else{
              return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -137,13 +140,20 @@ public ResponseEntity <Hotel> postHotel(@PathVariable String correo,@RequestBody
      * Punto final para actualizar el nombre de un hotel por su ID.
      * Se requiere un correo electrónico válido, ID de hotel, un objeto Hotel con el nuevo nombre en el cuerpo de la solicitud y un token.
      */
-@PutMapping("/{correo}/{id}/updateHotel/name")
-public ResponseEntity<Hotel> putHotelById(@PathVariable String correo,@PathVariable Long id, @RequestBody Hotel hotel, @RequestParam String token){
+@PutMapping("/{id}")
+public ResponseEntity<Hotel> putHotelById(@PathVariable Long id, @RequestBody Hotel hotel, @RequestParam String token){
 
         Hotel hotelito=new Hotel();
-
+        Boolean boleano=false;
     Optional<Hotel>optionalHotel= repositoryHotel.findById(id);
-    if(repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)){
+    Propietario pr=repositoryOwner.getPropietarioByToken(token);
+    if(pr==optionalHotel.get().getPropietarioId()){
+        boleano=true;
+    }else{
+        boleano=false;
+    }
+
+    if(service.validteTokenForOwner(token)&&boleano){
         if(optionalHotel.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }else{
@@ -168,10 +178,18 @@ public ResponseEntity<Hotel> putHotelById(@PathVariable String correo,@PathVaria
      * Punto final para eliminar un hotel por su ID.
      * Se requiere un correo electrónico válido, ID de hotel y un token para la autenticación.
      */
-@DeleteMapping("/{correo}/{id}/deleteHotel")
-public ResponseEntity<Hotel> deleteHotelById(@PathVariable String correo,@PathVariable Long id,@RequestParam String token){
+@DeleteMapping("/{id}/deleteHotel")
+public ResponseEntity<Hotel> deleteHotelById(@PathVariable Long id,@RequestParam String token){
         Hotel hotelBorrado=new Hotel();
-    if(repositoryOwner.existsPropietarioByCorreo(correo)&&service.validteTokenForOwner(token)&&repositoryHotel.existsById(id)){
+        Boolean boleano=false;
+        Propietario pr=repositoryOwner.getPropietarioByToken(token);
+        hotelBorrado=repositoryHotel.findById(id).get();
+        if(pr==hotelBorrado.getPropietarioId()&&pr!=null){
+            boleano=true;
+        }else{
+            boleano=false;
+        }
+    if(service.validteTokenForOwner(token)&&repositoryHotel.existsById(id)&&boleano){
         hotelBorrado=repositoryHotel.findById(id).get();
         repositoryHotel.deleteById(id);
         return new ResponseEntity<Hotel>(hotelBorrado,HttpStatus.OK);

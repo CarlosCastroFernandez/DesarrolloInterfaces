@@ -15,4 +15,5 @@ public interface RepositoryPropietario extends JpaRepository<Propietario, Long> 
      * @return true si existe un propietario con el correo electrónico proporcionado, false de lo contrario.
      */
     Boolean existsPropietarioByCorreo(String correo);
+    Propietario getPropietarioByToken(String token);
 }
