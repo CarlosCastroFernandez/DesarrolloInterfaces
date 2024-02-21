@@ -4,6 +4,7 @@ package com.example.cesurspringboot.classes;
 import com.example.cesurspringboot.classes.enums.PracticeType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 /**
  * La clase ActividadDiaria representa una actividad diaria realizada por un alumno.
@@ -23,7 +24,7 @@ public class DailyActivity {
      * Identificador del alumno asociado a la actividad.
      */
     @JoinColumn(name = "alumnoid")
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JsonIgnore
     private Alumn idAlumn;
 
@@ -44,7 +45,7 @@ public class DailyActivity {
      * Total de horas dedicadas a la actividad.
      */
     @Column(name="totalhoras")
-    private Integer totalHours;
+    private Long totalHours;
 
     /**
      * Nombre de la actividad realizada.
@@ -102,11 +103,11 @@ public class DailyActivity {
     }
 
 
-    public Integer getTotalHours() {
+    public Long getTotalHours() {
         return totalHours;
     }
 
-    public void setTotaHours(Integer totalHours) {
+    public void setTotalHours(Long totalHours) {
         this.totalHours = totalHours;
     }
 
