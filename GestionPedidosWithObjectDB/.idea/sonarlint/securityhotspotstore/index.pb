@@ -43,3 +43,7 @@ M
 src/main/resources/estilo.css,2\5\2579a57b20a9a4c317169495e92c30aab6385fd2
 T
 $src/main/java/utils/ProductoDAO.java,b\c\bcd413b440ea4c69e831ec425164f177aae6ddc3
+^
+.src/main/java/errores/ContraseñaInvalida.java,1\1\11a55998624a2e43ad84e342895a18400d0ab703
+Z
+*src/main/java/errores/UsuarioNoExiste.java,7\5\75285cde5a9693701fc34eb7f3ed51ab64939ba5

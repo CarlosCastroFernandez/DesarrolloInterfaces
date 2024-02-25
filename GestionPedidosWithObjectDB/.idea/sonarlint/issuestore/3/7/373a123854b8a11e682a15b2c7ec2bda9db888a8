@@ -1,8 +1,8 @@
 
 s
-java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8Ú…ê”Ğ1
-s
 java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ç•ø¶øÿÿÿÿ8Û…ê”Ğ1
+s
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¬Š´Ëøÿÿÿÿ8Ú…ê”Ğ1
 x	java:S116&"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8Û…ê”Ğ1
 ]	java:S1259"<This block of commented-out lines of code should be removed.(ÔÅ‹‡ıÿÿÿÿ8á…ê”Ğ1
 O

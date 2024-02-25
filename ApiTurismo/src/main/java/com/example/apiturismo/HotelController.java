@@ -75,7 +75,7 @@ private RepositoryHotel repositoryHotel;
      * Punto final para obtener lista de hoteles segun su propietario
      * Se requiere un correo electrónico, ID de propietario y un token válidos para la autenticación.
      */
-    @GetMapping("/{idPropietario}")
+    @GetMapping("/byIdPropietario/{idPropietario}")
     public ResponseEntity<List<Hotel>> getHotelByIdPropietario(@PathVariable Long idPropietario,@RequestParam String token){
 
         if(service.validateTokerForUsers(token)){
@@ -92,7 +92,7 @@ private RepositoryHotel repositoryHotel;
      * Se requiere un correo electrónico, año de hotel y un token válidos para la autenticación.
      */
 
-    @GetMapping("/{año}")
+    @GetMapping("/año/{año}")
     public ResponseEntity<List<Hotel>>getHotelByAño( @PathVariable Long año,@RequestParam String token){
 
         if(service.validateTokerForUsers(token)){
@@ -108,7 +108,7 @@ private RepositoryHotel repositoryHotel;
      *  para obtener un hotel en base a su año
      * Se requiere un correo electrónico, direccion de hotel y un token válidos para la autenticación.
      */
-    @GetMapping("/{direccion}")
+    @GetMapping("/direccion/{direccion}")
     public ResponseEntity<Hotel> getHotelByDireccion(@PathVariable String direccion,@RequestParam String token){
 
         if(service.validateTokerForUsers(token)){

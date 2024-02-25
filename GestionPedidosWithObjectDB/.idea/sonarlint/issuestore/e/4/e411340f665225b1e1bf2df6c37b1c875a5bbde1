@@ -1,6 +1,6 @@
 
-g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ó €ëÏ1
+g	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ó €ëÏ1
 ’
-java:S1319 "pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡‰±“ùÿÿÿÿ8îº—’Ğ1
+java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡‰±“ùÿÿÿÿ8îº—’Ğ1
 i
-java:S2095$"GUse try-with-resources or close this "Statement" in a "finally" clause.(ğ¥êÉùÿÿÿÿ8‡»—’Ğ1
+java:S2095)"GUse try-with-resources or close this "Statement" in a "finally" clause.(ğ¥êÉùÿÿÿÿ8‡»—’Ğ1
