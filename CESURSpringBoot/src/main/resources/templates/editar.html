@@ -65,8 +65,8 @@
 </head>
 <body>
 <h1>Nueva Actividad</h1>
+<div class="recuadro">
 <form action="" method="POST">
-    <div class="recuadro">
         <h2 class="CESURYellow" th:if="${actividad.id!=null}" th:text="${actividad.taskName}"></h2>
         <h2 class="CESURYellow" th:unless="${actividad.id!=null}"></h2>
         <input th:value="${actividad.id}" type="hidden" name="id">
@@ -76,13 +76,12 @@
         <input th:value="${actividad.practiceType}" name="practiceType" placeholder="Tipo de práctica">
         <input th:value="${actividad.observations}" name="observations" placeholder="Observaciones">
         <input type="submit" value="Guardar">
-        <br>
-    </div>
-</form>
-<a th:href="'/'+${actividad.idAlumn.id}">Volver</a>
+    </form>
+<br>
 <form th:if="${actividad.id!=null}" th:action="'/borrarActividad/'+${actividad.id}" method="POST">
     <input type="submit" value="Borrar">
 </form>
-
+<a th:href="'/'+${actividad.idAlumn.id}">Volver</a>
+</div>
 </body>
 </html>
