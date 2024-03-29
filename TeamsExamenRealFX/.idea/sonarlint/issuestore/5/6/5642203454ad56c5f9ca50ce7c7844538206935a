@@ -1,0 +1,8 @@
+
+p
+java:S1192?"NDefine a constant instead of duplicating this literal "Nota INvalida" 7 times.(ì™›²úÿÿÿÿ8Îµ—Íâ1
+
+java:S1319™"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ç‡Õä8Îµ—Íâ1
+Š
+java:S1319"gThe type of "alumnos" should be an interface such as "List" rather than the implementation "ArrayList".(Ò¨¨úÿÿÿÿ8Îµ—Íâ1
+]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(™¼Ş8Õµ—Íâ1

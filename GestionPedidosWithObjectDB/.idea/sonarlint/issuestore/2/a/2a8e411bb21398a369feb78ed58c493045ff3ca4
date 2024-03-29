@@ -1,10 +1,22 @@
 
+’
+java:S1319["pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¶ƒ¡„ÿÿÿÿÿ8§Ê¯†ß1
+~
+java:S1488j"aImmediately return this expression instead of assigning it to the temporary variable "resultado".(İ»Ã¢8§Ê¯†ß1
 G
-java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8ÃûšëÏ1
-L	java:S106-"+Replace this use of System.out by a logger.(¬Û·½üÿÿÿÿ8ÅûšëÏ1
+java:S3010"%Remove this assignment of "conexion".(¯×Ñ™ûÿÿÿÿ8³Ê¯†ß1
+L	java:S106,"+Replace this use of System.out by a logger.(¬Û·½üÿÿÿÿ8¶Ê¯†ß1
+S
+java:S1854]"6Remove this useless assignment to local variable "em".(¹ñËƒ8¸Ê¯†ß1
+[
+java:S1854\"9Remove this useless assignment to local variable "lista".(„ÀèÊşÿÿÿÿ8¸Ê¯†ß1
+D
+java:S1481]"'Remove this unused "em" local variable.(¹ñËƒ8¸Ê¯†ß1
+}
+java:S3923`"[Remove this conditional structure or edit its code blocks so that they're not all the same.(—¯ÀÅüÿÿÿÿ8¹Ê¯†ß1
 N
-java:S1128",Remove this unused import 'clases.Producto'.(İ¹Ã–øÿÿÿÿ8ğ¿ç”Ğ1
+java:S1128",Remove this unused import 'clases.Producto'.(İ¹Ã–øÿÿÿÿ8¹Ê¯†ß1
 O
-java:S1068"2Remove this unused "loadByPersonal" private field.(†˜×8ÇûšëÏ1
+java:S1068"2Remove this unused "loadByPersonal" private field.(†˜×8¹Ê¯†ß1
 J
-java:S1068"(Remove this unused "load" private field.(ş³ÙÒüÿÿÿÿ8ÇûšëÏ1
+java:S1068"(Remove this unused "load" private field.(ş³ÙÒüÿÿÿÿ8¹Ê¯†ß1

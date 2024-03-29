@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.CurriculumnController">
+   <center>
+      <BorderPane>
+         <center>
+            <WebView fx:id="webView" prefHeight="548.0" prefWidth="930.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

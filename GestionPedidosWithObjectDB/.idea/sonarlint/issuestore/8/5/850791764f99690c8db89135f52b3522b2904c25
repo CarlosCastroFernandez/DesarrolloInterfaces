@@ -1,9 +1,9 @@
 
-g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8µ ¬ëÏ1
+g	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¨æã…ß1
 o
-java:S3008"RRename this field "MiStage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄŞ“µ8» ¬ëÏ1
-E	java:S108,")Either remove or fill this block of code.(”ı¾8Ÿ¼ŸÒ1
+java:S3008"RRename this field "MiStage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄŞ“µ8±æã…ß1
+G	java:S106/"+Replace this use of System.out by a logger.(æôÕ8¸æã…ß1
 X
-java:S2696/"6Make the enclosing method "static" or remove this set.(™„Öşÿÿÿÿ8¿ ¬ëÏ1
+java:S26961"6Make the enclosing method "static" or remove this set.(™„Öşÿÿÿÿ8¹æã…ß1
 O
-java:S1128"-Remove this unused import 'dao.PedidoDAOImp'.(”¾Ò¹úÿÿÿÿ8Ùî”Ğ1
+java:S1128"-Remove this unused import 'dao.PedidoDAOImp'.(”¾Ò¹úÿÿÿÿ8­óŠ°ß1

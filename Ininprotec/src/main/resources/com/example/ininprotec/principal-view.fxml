@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.PrincipalController">
+   <center>
+      <BorderPane prefHeight="526.0" prefWidth="754.0">
+         <top>
+            <GridPane BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="28.0" prefWidth="140.0" text="ININPROTEC" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Franklin Gothic Demi Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <MenuBar prefHeight="26.0" prefWidth="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Menu">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Mi Perfil" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </GridPane>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="518.0" prefWidth="842.0" BorderPane.alignment="CENTER">
+              <items>
+                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="imagenPerfil" fitHeight="150.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true" />
+                        <FlowPane alignment="CENTER" hgap="10.0" prefHeight="27.0" prefWidth="222.0">
+                           <children>
+                              <ImageView fx:id="imagenNombre" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="labelNombre" text="Nombre">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER" hgap="17.0" layoutX="10.0" layoutY="160.0" prefHeight="27.0" prefWidth="222.0">
+                           <children>
+                              <ImageView fx:id="imagenEmail" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin></ImageView>
+                              <Label fx:id="labelEmail" text="E-mail">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER" hgap="30.0" layoutX="10.0" layoutY="188.0" prefHeight="27.0" prefWidth="222.0">
+                           <children>
+                              <ImageView fx:id="imagenDni" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin></ImageView>
+                              <Label fx:id="labelDNI" text="DNI">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                  </VBox>
+                  <FlowPane fx:id="principalFlowPane" alignment="CENTER" hgap="60.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" layoutX="170.0" layoutY="245.0" prefHeight="210.0" prefWidth="205.0" spacing="10.0">
+                           <children>
+                              <Label text="SERVICIOS" />
+                              <ComboBox fx:id="comboServicios" prefWidth="150.0" />
+                              <Button fx:id="botonEntrarServicios" mnemonicParsing="false" text="Entrar" />
+                              <Button fx:id="botonEditarServicios" mnemonicParsing="false" text="Editar" />
+                              <Button fx:id="botonCrearServicios" mnemonicParsing="false" text="Crear Nuevo" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="151.0" spacing="10.0">
+                           <children>
+                              <Label text="CURSOS" />
+                              <ComboBox fx:id="comboCurso" prefWidth="150.0" />
+                              <Button fx:id="botonEntrarCurso" mnemonicParsing="false" onAction="#entrarCurso" text="Entrar" />
+                              <Button fx:id="botonEditarCurso" layoutX="10.0" layoutY="204.0" mnemonicParsing="false" text="Editar" />
+                              <Button fx:id="botonCrearCurso" layoutX="10.0" layoutY="229.0" mnemonicParsing="false" onAction="#crearCursoNuevo" text="Crear Nuevo" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="210.0" prefWidth="151.0" spacing="10.0">
+                           <children>
+                              <Label text="BOLSA EMPLEO" />
+                              <Button fx:id="botonEntrarBolsa" mnemonicParsing="false" text="Entrar" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="303.0" layoutY="140.0" prefHeight="210.0" prefWidth="205.0" spacing="10.0">
+                           <children>
+                              <Label text="REGISTRAR ALUMNO/TRABAJADOR" />
+                              <Button fx:id="botonEntrarRegistro" mnemonicParsing="false" onAction="#entrarRegistroAlumno" text="Entrar" />
+                           </children>
+                        </VBox>
+                     </children></FlowPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

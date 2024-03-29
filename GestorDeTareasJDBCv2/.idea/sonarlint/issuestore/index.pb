@@ -9,3 +9,11 @@ h
 8src/main/java/org/example/domain/tarea/TareaAdapter.java,2\1\215713b3ade8caed480a7c97dab8548456718828
 d
 4src/main/java/org/example/domain/tarea/TareaDAO.java,f\5\f596d6124b16bd5a675b570dba35eeabf212164d
+k
+;src/main/java/org/example/domain/usuario/UsuarioDAOImp.java,d\1\d13b5c0da953d69993cf680283859d0dfeb722d7
+e
+5src/main/java/org/example/domain/usuario/Usuario.java,a\0\a0337a192b94ba109fb4569ae5039833e5e0197b
+S
+#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+Y
+)src/main/java/org/example/ui/Ventana.java,f\b\fbde2974b78c82def3df635224436980734bba0c

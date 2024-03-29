@@ -1,0 +1,41 @@
+
+h	java:S112Ñ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8×Çé™â1
+Q
+java:S3740N"/Provide the parametrized type for this generic.( ­É‚øÿÿÿÿ8×Çé™â1
+R
+java:S3740"/Provide the parametrized type for this generic.(‡•ıÏùÿÿÿÿ8×Çé™â1
+¤
+java:S1186Ö"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆ÷‰àøÿÿÿÿ8ôÇé™â1
+w
+java:S1450O"ZRemove the "contextMenu" field and declare it as a local variable in the relevant methods.( ÎÁ¦8õÇé™â1
+t
+java:S3776S"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(•‘İŸüÿÿÿÿ8öÇé™â1
+I
+java:S1602^",Remove useless curly braces around statement(¸ÓçÛ8úÇé™â1
+Q
+java:S1611b"4Remove the parentheses around the "nombre" parameter(Ï²¼ô8úÇé™â1
+S
+java:S1611f"6Remove the parentheses around the "apellido" parameter(¡‡Ÿ8úÇé™â1
+T
+java:S1611j"2Remove the parentheses around the "nota" parameter(óÏ¸Úüÿÿÿÿ8ûÇé™â1
+O
+java:S1611n"2Remove the parentheses around the "nota" parameter(ºÚ´•8ûÇé™â1
+T
+java:S1611r"2Remove the parentheses around the "nota" parameter(†›÷Şıÿÿÿÿ8ûÇé™â1
+O
+java:S1611v"2Remove the parentheses around the "nota" parameter(àÖë8üÇé™â1
+T
+java:S1611z"2Remove the parentheses around the "nota" parameter(‰¨¯Íıÿÿÿÿ8üÇé™â1
+T
+java:S1611~"2Remove the parentheses around the "nota" parameter(æ‰ÉŞúÿÿÿÿ8üÇé™â1
+P
+java:S1611‚"2Remove the parentheses around the "nota" parameter(îŒŒÖ8üÇé™â1
+Y	java:S125Â"<This block of commented-out lines of code should be removed.(Â¼Áş8€Èé™â1
+[
+java:S3252Ç"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(£°€†8ƒÈé™â1
+[
+java:S1128">Remove this unused import 'javafx.beans.value.ChangeListener'.(¸÷Í8ˆÈé™â1
+\
+java:S1128"?Remove this unused import 'javafx.beans.value.ObservableValue'.(´œ«Å8ˆÈé™â1
+U
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8ˆÈé™â1

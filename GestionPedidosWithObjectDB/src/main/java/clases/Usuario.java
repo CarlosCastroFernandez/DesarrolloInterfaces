@@ -32,8 +32,8 @@ public class Usuario implements Serializable {
 
     }
 
-    public Usuario( String nombre, String email, String contraseña, List<Pedido> pedidos) {
-
+    public Usuario( Integer id,String nombre, String email, String contraseña, List<Pedido> pedidos) {
+        this.id=id;
         this.nombre = nombre;
         this.email = email;
         this.contraseña = contraseña;
@@ -78,5 +78,16 @@ public class Usuario implements Serializable {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", contraseña='" + contraseña + '\'' +
+                ", pedidos=" + pedidos +
+                '}';
     }
 }

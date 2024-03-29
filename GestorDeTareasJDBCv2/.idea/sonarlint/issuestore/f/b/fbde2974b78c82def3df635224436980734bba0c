@@ -1,0 +1,25 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(Ì¼§¥øÿÿÿÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(ËÎ‰£
+J
+java:S3740"/Provide the parametrized type for this generic.(İ´»èøÿÿÿÿ
+K
+java:S1948""0Make "selectionModel" transient or serializable.(Úì“öúÿÿÿÿ
+C
+java:S1948$"(Make "tareas" transient or serializable.(êÜ¬Üşÿÿÿÿ
+H
+java:S1948&"-Make "tareaActual" transient or serializable.(¤›³şÿÿÿÿ
+G
+java:S1602B",Remove useless curly braces around statement(Ùïàşÿÿÿÿ
+^
+java:S1612H"CReplace this lambda with method reference 'this::showTareaDetails'.(¨ï³üÿÿÿÿ
+E	java:S106h"+Replace this use of System.out by a logger.(æ»Ğüÿÿÿÿ
+F
+java:S1611œ"/Remove the parentheses around the "t" parameter(ÄĞ¾”
+C
+java:S1602œ",Remove useless curly braces around statement(ÄĞ¾”
+Q	java:S125"<This block of commented-out lines of code should be removed.(­û¬b
+M
+java:S1068""2Remove this unused "selectionModel" private field.(Úì“öúÿÿÿÿ

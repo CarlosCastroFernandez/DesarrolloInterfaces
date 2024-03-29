@@ -7,6 +7,10 @@ R
 java:S3740Œ"/Provide the parametrized type for this generic.(„öÅøÿÿÿÿ8İ–“Ğ1
 n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨‘Òèşÿÿÿÿ8à–“Ğ1
 x	java:S116"WRename this field "botonAÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãíÿÿÿÿÿÿ8Õ–“Ğ1
+D
+java:S1905B"'Remove this unnecessary cast to "Long".(½—¤Õ8ïúéÏß1
+I
+java:S1905V"'Remove this unnecessary cast to "Long".(ĞîáÍøÿÿÿÿ8üúéÏß1
 o	java:S100x"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò¡©öşÿÿÿÿ8ó–“Ğ1
 u
 java:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ñ÷–øÿÿÿÿ8÷–“Ğ1

@@ -1,0 +1,23 @@
+
+W
+'src/main/java/utils/MYSQLConection.java,0\6\06729a67f30469603076f206b2596e8a6d554ca1
+S
+#src/main/java/dao/ActividadDAO.java,4\4\44220d0f4ef6982687b58f7c81d666bbf6ca9cb7
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+[
++src/main/java/utils/HibernateConection.java,f\1\f1afc4528e8b031f2151db996a33d13bc26a785c
+J
+src/main/java/dao/DAO.java,8\5\854afe0992586767882304145dc1841dd1eecb4e
+P
+ src/main/java/dao/AlumnoDAO.java,6\9\6919cbe40228242d6cebff13ac06674a1443f7e4
+d
+4src/main/java/implementosdao/AlumnoDAOImplement.java,6\a\6ad7e2cd67888e5627da34e4407aa1a415070eed
+R
+"src/main/java/clase/Actividad.java,5\f\5f981dceb5da8ccde750768539b2ba27cc43e87e
+O
+src/main/java/clase/Alumno.java,3\f\3f4c18b9663043dc6ab0841f27e97cd7dc74674c
+S
+#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+g
+7src/main/java/implementosdao/ActividadDAOImplement.java,3\f\3f89d1d235915e2477817366b241c66196c4de24

@@ -1,0 +1,28 @@
+
+g	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ğ±üÄã1
+g	java:S112("FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ğ±üÄã1
+9
+java:S1643"Use a StringBuilder instead.(‰´çÓ8Ñ±üÄã1
+o
+java:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Çµí‘8›²üÄã1
+I
+java:S1481",Remove this unused "alumnos" local variable.(ôÕ·8›²üÄã1
+J	java:S108")Either remove or fill this block of code.(Ÿ‘îêùÿÿÿÿ8²üÄã1
+a
+java:S2147'"DCombine this catch with the one at line 37, which has the same body.(ï­£Ä8²üÄã1
+L	java:S106"+Replace this use of System.out by a logger.(â¥±ûÿÿÿÿ8²üÄã1
+G	java:S106 "+Replace this use of System.out by a logger.( ¼­Û8²üÄã1
+O
+java:S1481!"2Remove this unused "partesArchivo" local variable.(…¹š˜8Åï€Åã1
+P
+java:S1481"".Remove this unused "contenido" local variable.(œ˜¹«úÿÿÿÿ8Åï€Åã1
+]	java:S125H"<This block of commented-out lines of code should be removed.(­ ¨Éøÿÿÿÿ8Ÿ²üÄã1
+T
+java:S1135Z"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8 ²üÄã1
+P
+java:S1128".Remove this unused import 'java.time.Instant'.(Â‚éñÿÿÿÿÿ8 ²üÄã1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8 ²üÄã1
+N
+java:S1128"1Remove this unused import 'java.time.ZoneOffset'.(ìÍÄË8 ²üÄã1

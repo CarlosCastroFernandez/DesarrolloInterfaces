@@ -18,10 +18,10 @@ java:S1643B"Use a StringBuilder instead.(‹Θρύÿÿÿÿ8ÿ²Γ1
 java:S1643΄"Use a StringBuilder instead.(›΅­Òώÿÿÿÿ8ÿ²Γ1
 i
 java:S20951"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(°™Τ 8“¶Γ1
-n
-java:S2095'"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¦ª¶–ύÿÿÿÿ8“¶Γ1
 j
 java:S2095ª"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(κμΆψ8“¶Γ1
+n
+java:S2095'"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¦ª¶–ύÿÿÿÿ8“¶Γ1
 U
 java:S2589®"7Remove this expression which always evaluates to "true"(Ϊ‘”Ώ8“¶Γ1
 W

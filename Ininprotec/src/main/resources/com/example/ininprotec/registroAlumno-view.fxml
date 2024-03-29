@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="602.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
+   <center>
+      <BorderPane>
+         <center>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <Label text="FICHA" />
+                        <ImageView fx:id="imagenPerfil" fitHeight="170.0" fitWidth="235.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
+                        <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="48.0" prefWidth="235.0" vgap="10.0">
+                           <children>
+                              <Label text="CURRICULUM VITAE" />
+                              <Button fx:id="botonArchivos" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
+                              <Label fx:id="labelURL" />
+                           </children>
+                        </FlowPane>
+                        <Separator prefHeight="11.0" prefWidth="235.0" />
+                        <Label text="DNI" />
+                        <TextField fx:id="textDni" maxWidth="200.0" />
+                        <Label text="Nº TIP" />
+                        <TextArea fx:id="textAreaTIP" maxWidth="200.0" prefHeight="0.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+                  <FlowPane alignment="CENTER" hgap="100.0" vgap="10.0">
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="Nombre" />
+                              <TextField fx:id="textNombre" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Apellido1" />
+                              <TextField fx:id="textApellido1" layoutX="10.0" layoutY="28.0" />
+                              <Label layoutX="10.0" layoutY="53.0" text="Apellido2" />
+                              <TextField fx:id="textApellido2" layoutX="10.0" layoutY="71.0" />
+                              <Label layoutX="10.0" layoutY="96.0" text="E-Mail" />
+                              <TextField fx:id="textEmail" layoutX="10.0" layoutY="114.0" />
+                              <Label layoutX="10.0" layoutY="183.0" text="Telefono" />
+                              <TextField fx:id="textTelefono" layoutX="10.0" layoutY="200.0" />
+                              <Label layoutX="10.0" layoutY="226.0" text="Licencia De Arma" />
+                              <TextField fx:id="textLicenciaArmas" layoutX="10.0" layoutY="244.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" spacing="5.0">
+                           <children>
+                              <Label text="Fecha Nacimiento" />
+                              <DatePicker fx:id="dateFecha" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Talla De Camiseta" />
+                              <TextField fx:id="textCamiseta" layoutX="10.0" layoutY="28.0" />
+                              <Label layoutX="10.0" layoutY="53.0" text="Nº De Cuenta Bancaria" />
+                              <TextField fx:id="textIBAN" layoutX="10.0" layoutY="71.0" />
+                              <Label layoutX="10.0" layoutY="96.0" text="Nº Seguridad Social" />
+                              <TextField fx:id="textSegSocial" layoutX="10.0" layoutY="114.0" />
+                              <Label layoutX="10.0" layoutY="183.0" text="Titulacion" />
+                              <TextField fx:id="textTitulacion" layoutX="10.0" layoutY="200.0" />
+                              <Label layoutX="10.0" layoutY="226.0" text="Lugar De Residencia" />
+                              <TextField fx:id="textResidencia" layoutX="10.0" layoutY="244.0" />
+                           </children>
+                        </VBox>
+                        <FlowPane alignment="CENTER" hgap="100.0" prefHeight="42.0" prefWidth="390.0" vgap="30.0">
+                           <children>
+                              <RadioButton fx:id="radioAlumno" mnemonicParsing="false" text="Alumno">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="uno" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="radioTrabajador" mnemonicParsing="false" text="Trabajador // No Alumno" toggleGroup="$uno" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane fx:id="flowPaneCurso" alignment="CENTER" hgap="30.0" prefHeight="44.0" prefWidth="298.0">
+                           <children>
+                              <Label text="Curso" />
+                              <ComboBox fx:id="comboCurso" prefHeight="26.0" prefWidth="154.0" />
+                           </children>
+                        </FlowPane>
+                        <VBox alignment="CENTER" prefHeight="35.0" prefWidth="182.0">
+                           <children>
+                              <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <FlowPane alignment="CENTER" prefHeight="50.0" prefWidth="794.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="REGISTRO" />
+         </children>
+      </FlowPane>
+   </top>
+</BorderPane>

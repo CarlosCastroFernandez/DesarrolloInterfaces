@@ -1,0 +1,19 @@
+
+`	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S112E"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+b
+java:S1192"GDefine a constant instead of duplicating this literal "nombre" 3 times.(Χ¤ξϋÿÿÿÿ
+\
+java:S1192"FDefine a constant instead of duplicating this literal "email" 3 times.(β’ίÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(©Όªόÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ίψ‚έψÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ζ›Χ
+
+java:S1186V"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ςΆΓÿÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(©Όªόÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ίψ‚έψÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ζ›Χ

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane prefHeight="595.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamsfxjasper.HelloController">
+   <top>
+      <BorderPane prefHeight="582.0" prefWidth="890.0" BorderPane.alignment="CENTER">
+         <center>
+            <TableView fx:id="tabla" prefHeight="582.0" prefWidth="624.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="columnaNombre" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="columnaApellidos" prefWidth="75.0" text="Apellidos" />
+                  <TableColumn fx:id="columnaAD" prefWidth="75.0" text="AD" />
+                  <TableColumn fx:id="columnaSGE" prefWidth="75.0" text="SGE" />
+                  <TableColumn fx:id="columnaDI" prefWidth="75.0" text="DI" />
+                  <TableColumn fx:id="columnaPMDM" prefWidth="75.0" text="PMDM" />
+                  <TableColumn fx:id="columnaPSP" prefWidth="75.0" text="PSP" />
+                  <TableColumn fx:id="columnaEIE" prefWidth="75.0" text="EIE" />
+                  <TableColumn fx:id="columnaHLC" prefWidth="75.0" text="HLC" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <left>
+            <SplitPane prefHeight="582.0" prefWidth="255.0" BorderPane.alignment="CENTER">
+               <items>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="6.0">
+                     <children>
+                        <Label text="Nombre">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textNombre" maxWidth="250.0" />
+                        <Label text="Apellido">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textApellido" maxWidth="250.0" />
+                        <Label text="AD">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textAD" maxWidth="250.0" />
+                        <Label text="SGE">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textSGE" maxWidth="250.0" />
+                        <Label text="DI">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textDI" maxWidth="250.0" />
+                        <Label text="PMDM">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textPMDM" maxWidth="250.0" />
+                        <Label text="PSP">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textPSP" maxWidth="250.0" />
+                        <Label text="EIE">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textEIE" maxWidth="250.0" />
+                        <Label text="HLC">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textHLC" maxWidth="250.0" />
+                        <FlowPane alignment="CENTER" hgap="20.0" maxWidth="250.0" prefHeight="50.0" prefWidth="234.0" vgap="10.0">
+                           <children>
+                              <Button fx:id="botonInsertar" mnemonicParsing="false" onAction="#insertarAlumno" text="Insertar Alumno" />
+                              <Button fx:id="botonDWPDF" mnemonicParsing="false" onAction="#descargarPDF" text="Descargar PDF" />
+                              <Button fx:id="botonSalir" mnemonicParsing="false" onAction="#salir" text="Salir" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </left>
+         <bottom>
+            <Label fx:id="labelInfo" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </top>
+</BorderPane>

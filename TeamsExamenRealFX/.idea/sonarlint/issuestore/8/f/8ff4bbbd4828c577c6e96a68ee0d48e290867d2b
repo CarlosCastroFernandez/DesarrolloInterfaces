@@ -1,0 +1,19 @@
+
+g	java:S112'"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8×¯æÌâ1
+g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ø¯æÌâ1
+g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ø¯æÌâ1
+q
+java:S2095-"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(£øô ÿÿÿÿÿ8ÓÍæÌâ1
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(œÒôÄúÿÿÿÿ8ß¯æÌâ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(‡äÁ˜øÿÿÿÿ8á¯æÌâ1
+d
+java:S1854"GRemove this useless assignment to local variable "numeroFilaInsertada".(¤Á¥£8â¯æÌâ1
+U
+java:S1481"8Remove this unused "numeroFilaInsertada" local variable.(¤Á¥£8ä¯æÌâ1
+f
+java:S21477"DCombine this catch with the one at line 53, which has the same body.(¶©Õ«ıÿÿÿÿ8æ¯æÌâ1
+L
+java:S1128
+"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8ÚÍæÌâ1

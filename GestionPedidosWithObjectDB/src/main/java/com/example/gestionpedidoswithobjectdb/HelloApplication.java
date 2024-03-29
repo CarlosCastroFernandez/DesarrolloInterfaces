@@ -36,13 +36,15 @@ public class HelloApplication extends Application {
             List<Producto> p=(new ProductoDAOImp()).getAllProductsJDBC();
             (new ProductoDAOImp()).saveAll(p);
             List<Usuario>usuarios=new ArrayList<>();
-            usuarios.add(new Usuario("Carlos","bubachico@gmail.com","1234",new ArrayList<>()));
-            usuarios.add(new Usuario("Naomi","naomi@gmail.com","1234",new ArrayList<>()));
-            usuarios.add(new Usuario("Pepe","pepe@gmail.com","1234",new ArrayList<>()));
-            usuarios.add(new Usuario("Alex","alex@gmail.com","1234",new ArrayList<>()));
+            usuarios.add(new Usuario(1,"Carlos","bubachico@gmail.com","1234",new ArrayList<>()));
+            usuarios.add(new Usuario(2,"Naomi","naomi@gmail.com","1234",new ArrayList<>()));
+            usuarios.add(new Usuario(3,"Pepe","pepe@gmail.com","1234",new ArrayList<>()));
+            usuarios.add(new Usuario(4,"Alex","alex@gmail.com","1234",new ArrayList<>()));
             (new UsuarioDAOImp(ObjectDBUtil.getEntityManagerFactory().createEntityManager())).saveAll(usuarios);
-        }catch (Exception e){
 
+
+        }catch (Exception e){
+            System.out.println(new UsuarioDAOImp(ObjectDBUtil.getEntityManagerFactory().createEntityManager()).countUser());
         }
         MiStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));

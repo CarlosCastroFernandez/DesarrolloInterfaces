@@ -1,0 +1,14 @@
+
+K
+java:S2440")Remove this instantiation of "AlumnoDAO".(³¦Œşÿÿÿÿ8Šß½ßß1
+I
+java:S1905	"'Remove this unnecessary cast to "long".(¥áß´şÿÿÿÿ8éÄ‘ßß1
+I
+java:S1905
+"'Remove this unnecessary cast to "long".(òË•§ùÿÿÿÿ8éÄ‘ßß1
+E	java:S108")Either remove or fill this block of code.(”ı¾8Á·ğŞß1
+L	java:S106"+Replace this use of System.out by a logger.(‡ëº²şÿÿÿÿ8°åñŞß1
+G	java:S106"+Replace this use of System.out by a logger.(«ïóö8°åñŞß1
+L	java:S106"+Replace this use of System.out by a logger.(›‰İ„ûÿÿÿÿ8°åñŞß1
+W
+java:S2209"5Change this instance-reference to a static reference.(³«¢Îÿÿÿÿÿ8¶‹¿ßß1

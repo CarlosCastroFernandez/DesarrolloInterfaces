@@ -36,12 +36,11 @@ public class UsuarioDAOImp implements UsuarioDAO {
     @Override
     public Usuario consultaPersonal(String email, String password) throws UsuarioNoExiste, ContraseñaInvalida {
         Usuario usuario = null;
-        ArrayList<Usuario>lista=new ArrayList<>();
+
         try  {
             TypedQuery<Usuario> q = conexion.createQuery("select u from Usuario u where email=:correo", Usuario.class);
             q.setParameter("correo", email);
-            lista =(ArrayList<Usuario>) q.getResultList();
-            usuario=lista.get(0);
+            usuario =q.getSingleResult();
             System.out.println(usuario);
             if (!password.equals(usuario.getContraseña())) {
                 throw new ContraseñaInvalida("Contraseña Inbalida");
@@ -89,6 +88,25 @@ public class UsuarioDAOImp implements UsuarioDAO {
             em.close();
         }
     }
+    public ArrayList<Usuario>getAllUsers(){
+        ArrayList<Usuario> lista=new ArrayList<>();
+        EntityManager em = ObjectDBUtil.getEntityManagerFactory().createEntityManager();
+        TypedQuery<Usuario> q = conexion.createQuery("select u from Usuario u", Usuario.class);
+        lista= (ArrayList<Usuario>) q.getResultList();
+        if(!lista.isEmpty()){
+            return lista;
+        }else{
+            return lista;
+        }
+    }
+
+    public Usuario countUser(){
+        EntityManager em=ObjectDBUtil.getEntityManagerFactory().createEntityManager();
+        TypedQuery<Usuario> q=em.createQuery("select u from Usuario u where u.id<5 and u.nombre='Carlos'", Usuario.class);
+        Usuario resultado=q.getSingleResult();
+        return resultado;
+    }
+
     }
 
 
