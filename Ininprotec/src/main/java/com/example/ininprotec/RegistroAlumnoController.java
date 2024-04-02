@@ -5,6 +5,7 @@ import clase.Curso;
 import clase.PersonalBolsa;
 import implement.CursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +23,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,6 +34,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.ClientInfoStatus;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -91,58 +92,102 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     private Button botonGuardar;
     private Path nuevoPath;
+    @javafx.fxml.FXML
+    private Label labelCurso;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        labelURL.setStyle("-fx-text-fill: #000000");
-        labelURL.setStyle("-fx-underline: true");
-        flowPaneCurso.setVisible(false);
-        CursoDAOImplement daoCurso=new CursoDAOImplement();
-        radioAlumno.setOnAction(actionEvent -> {
-            flowPaneCurso.setVisible(true);
-        });
-        radioTrabajador.setOnAction(actionEvent -> {
-            comboCurso.getSelectionModel().select(null);
+        if(Utilidad.getAlumno()==null){
+            labelURL.setStyle("-fx-text-fill: #000000");
+            labelURL.setStyle("-fx-underline: true");
             flowPaneCurso.setVisible(false);
-        });
-        String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
-        Image imagen=new Image(rutaImagen);
-        imagenPerfil.setImage(imagen);
-        comboCurso.setConverter(new StringConverter<Curso>() {
+            CursoDAOImplement daoCurso=new CursoDAOImplement();
+            radioAlumno.setOnAction(actionEvent -> {
+                flowPaneCurso.setVisible(true);
+            });
+            radioTrabajador.setOnAction(actionEvent -> {
+                comboCurso.getSelectionModel().select(null);
+                flowPaneCurso.setVisible(false);
+            });
+            String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
+            Image imagen=new Image(rutaImagen);
+            imagenPerfil.setImage(imagen);
+            comboCurso.setConverter(new StringConverter<Curso>() {
 
 
-            @Override
-            public String toString(Curso curso) {
-                return (curso == null ? null : curso.getNombre());
+                @Override
+                public String toString(Curso curso) {
+                    return (curso == null ? null : curso.getNombre());
+                }
+
+                @Override
+                public Curso fromString(String s) {
+                    return null;
+                }
+
+
+            });
+            comboCurso.getItems().addAll(daoCurso.getAll());
+            labelURL.setOnMouseClicked(mouseEvent -> {
+                if(!labelURL.getText().equals("")){
+                    String rutaArchivo=nuevoPath.toString();
+                    File archivo=new File(rutaArchivo);
+                    try {
+                        Desktop.getDesktop().open(archivo);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                }
+            });
+            labelURL.setOnMouseEntered(evento->{
+
+                labelURL.setStyle("-fx-text-fill: #0124FB");
+            });
+            labelURL.setOnMouseExited(evento->{
+                labelURL.setStyle("-fx-text-fill: #000000");
+            });
+        }else{
+            if(Utilidad.getAlumno().getEsAlumno()==1){
+                radioAlumno.setSelected(true);
+            }else{
+                radioTrabajador.setSelected(true);
             }
-
-            @Override
-            public Curso fromString(String s) {
-                return null;
-            }
-
-
-        });
-        comboCurso.getItems().addAll(daoCurso.getAll());
-        labelURL.setOnMouseClicked(mouseEvent -> {
-            if(!labelURL.getText().equals("")){
-                String rutaArchivo=nuevoPath.toString();
-                File archivo=new File(rutaArchivo);
+            labelCurso.setVisible(false);
+            radioTrabajador.setVisible(false);
+            radioAlumno.setVisible(false);
+            comboCurso.setVisible(false);
+            textNombre.setText(Utilidad.getAlumno().getNombre());
+            textApellido1.setText(Utilidad.getAlumno().getApellido1());
+            textApellido2.setText(Utilidad.getAlumno().getApellido2());
+            textEmail.setText(Utilidad.getAlumno().getCorreo());
+            textTelefono.setText(Utilidad.getAlumno().getTelefono());
+            textLicenciaArmas.setText(Utilidad.getAlumno().getLicenciaArma());
+            dateFecha.setValue(LocalDate.parse(Utilidad.getAlumno().getFechaNacimiento().toString()));
+            textCamiseta.setText(Utilidad.getAlumno().getTallaCamiseta());
+            textIBAN.setText(Utilidad.getAlumno().getNumeroCuenta());
+            textSegSocial.setText(Utilidad.getAlumno().getNumeroSocial());
+            textTitulacion.setText(Utilidad.getAlumno().getTitulacion());
+            textResidencia.setText(Utilidad.getAlumno().getLugarResidencia());
+            if(Utilidad.getAlumno().getImagenPerfil()!=null){
+                ByteArrayInputStream lectura=new ByteArrayInputStream(Utilidad.getAlumno().getImagenPerfil());
+                Image imagenLeida=new Image(lectura);
                 try {
-                    Desktop.getDesktop().open(archivo);
+                    lectura.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-
+                imagenPerfil.setImage(imagenLeida);
+            }else{
+                imagenPerfil.setImage(null);
             }
-        });
-        labelURL.setOnMouseEntered(evento->{
 
-            labelURL.setStyle("-fx-text-fill: #0124FB");
-        });
-        labelURL.setOnMouseExited(evento->{
-            labelURL.setStyle("-fx-text-fill: #000000");
-        });
+
+            labelURL.setText(Utilidad.getAlumno().getCurriculumUrl());
+            textDni.setText(Utilidad.getAlumno().getDni());
+            textAreaTIP.setText(Utilidad.getAlumno().getNumeroTip());
+        }
+
 
 
 
@@ -210,8 +255,41 @@ public class RegistroAlumnoController implements Initializable {
 
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
+        if(Utilidad.getAlumno()==null){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+                byte[]imagenCargada=null;
+                if(archivoImagen!=null){
+                    File archivo=new File(archivoImagen);
+                    try {
+                        imagenCargada=imageToByteArray(archivo);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
 
-        if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+                PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
+                        textDni.getText(),textTelefono.getText(), Date.valueOf(dateFecha.getValue()),textLicenciaArmas.getText(),
+                        textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
+                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
+                if(clienteA.getEsAlumno()==1){
+                    clienteA.setCursosAlumnos(new ArrayList<>());
+                    clienteA.setModulos(new ArrayList<>());
+                    clienteA.getCursosAlumnos().add(comboCurso.getValue());
+                    if(comboCurso.getValue()!=null){
+                        clienteA.getModulos().addAll(comboCurso.getValue().getModulos());
+                    }else{
+                        clienteA.setModulos(null);
+                        clienteA.setCursosAlumnos(null);
+                    }
+
+                    PersonalBolsaDAOImplement daoAlumno=new PersonalBolsaDAOImplement();
+                    daoAlumno.subir(clienteA);
+                }else{
+                    PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
+                    daoTrabajador.subir(clienteA);
+                }
+            }
+        }else{
             byte[]imagenCargada=null;
             if(archivoImagen!=null){
                 File archivo=new File(archivoImagen);
@@ -220,29 +298,42 @@ public class RegistroAlumnoController implements Initializable {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-            }
-
-            PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
-                    textDni.getText(),textTelefono.getText(), Date.valueOf(dateFecha.getValue()),textLicenciaArmas.getText(),
-                    textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:0L),
-                    textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
-            if(clienteA.getEsAlumno()==1){
-                clienteA.setCursosAlumnos(new ArrayList<>());
-                clienteA.setModulos(new ArrayList<>());
-                clienteA.getCursosAlumnos().add(comboCurso.getValue());
-                if(comboCurso.getValue()!=null){
-                    clienteA.getModulos().addAll(comboCurso.getValue().getModulos());
-                }else{
-                    clienteA.setModulos(null);
-                }
-
-                PersonalBolsaDAOImplement daoAlumno=new PersonalBolsaDAOImplement();
-                daoAlumno.subir(clienteA);
             }else{
-                PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
-                daoTrabajador.subir(clienteA);
+                Image imagenCojida=imagenPerfil.getImage();
+                BufferedImage image= SwingFXUtils.fromFXImage(imagenCojida,null);
+                ByteArrayOutputStream biImagen=new ByteArrayOutputStream();
+                try {
+                    ImageIO.write(image,"png",biImagen);
+                    imagenCargada=biImagen.toByteArray();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }finally {
+                    try {
+                        biImagen.close();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
             }
+            Utilidad.getAlumno().setNombre(textNombre.getText());
+            Utilidad.getAlumno().setApellido1(textApellido1.getText());
+            Utilidad.getAlumno().setApellido2(textApellido2.getText());
+            Utilidad.getAlumno().setCorreo(textEmail.getText());
+            Utilidad.getAlumno().setTelefono(textTelefono.getText());
+            Utilidad.getAlumno().setLicenciaArma(textLicenciaArmas.getText());
+            Utilidad.getAlumno().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
+            Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText());
+            Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText());
+            Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText());
+            Utilidad.getAlumno().setTitulacion(textTitulacion.getText());
+            Utilidad.getAlumno().setLugarResidencia(textResidencia.getText());
+            Utilidad.getAlumno().setImagenPerfil(imagenCargada);
+            Utilidad.getAlumno().setCurriculumUrl(labelURL.getText());
+            Utilidad.getAlumno().setDni(textDni.getText());
+            Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
+            Utilidad.setAlumno((new PersonalBolsaDAOImplement()).modPersonalBolsa(Utilidad.getAlumno()));
         }
+
         if(textNombre.getText().isEmpty()){
             textNombre.setStyle("-fx-border-color: #B30909");
         }

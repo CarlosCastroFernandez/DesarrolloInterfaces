@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane prefHeight="434.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.TodosAlumnosController">
+   <center>
+      <BorderPane>
+         <center>
+            <TableView fx:id="tabla" prefHeight="447.0" prefWidth="658.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre Y Apellidos" />
+                <TableColumn fx:id="cCurso" prefWidth="75.0" text="Cursos" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER" prefHeight="53.0" prefWidth="766.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="botonAgregar" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+               </children>
+            </FlowPane>
+         </bottom>
+         <top>
+            <VBox prefHeight="58.0" prefWidth="574.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane alignment="TOP_CENTER">
+                     <children>
+                        <Label text="Label" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="31.0" prefWidth="574.0">
+                     <children>
+                        <TextField fx:id="textBuscar" onKeyReleased="#filtro" promptText="Buscar..." />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

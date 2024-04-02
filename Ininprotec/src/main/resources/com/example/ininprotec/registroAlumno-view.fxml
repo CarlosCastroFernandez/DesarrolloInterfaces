@@ -89,7 +89,7 @@
                         </FlowPane>
                         <FlowPane fx:id="flowPaneCurso" alignment="CENTER" hgap="30.0" prefHeight="44.0" prefWidth="298.0">
                            <children>
-                              <Label text="Curso" />
+                              <Label fx:id="labelCurso" text="Curso" />
                               <ComboBox fx:id="comboCurso" prefHeight="26.0" prefWidth="154.0" />
                            </children>
                         </FlowPane>

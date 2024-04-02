@@ -9,4 +9,6 @@ public interface DAOPersonalBolsa {
     public List<PersonalBolsa> getAll();
     public void modNotas(PersonalBolsa alumno);
     public List<PersonalBolsa> getAllByCursoId(Curso curso);
+    public void agregarAlumnoCurso(PersonalBolsa alumno);
+    public PersonalBolsa modPersonalBolsa(PersonalBolsa personal);
 }

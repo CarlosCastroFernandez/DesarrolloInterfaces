@@ -4,10 +4,20 @@ import Util.Utilidad;
 import clase.PersonalBolsa;
 import implement.PersonalBolsaDAOImplement;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -67,9 +77,23 @@ public class EntradaCursoController implements Initializable {
     @javafx.fxml.FXML
     private Button botonGuardad;
     private PersonalBolsa personalElegido;
+    @javafx.fxml.FXML
+    private ImageView imagenActualizar;
+    @javafx.fxml.FXML
+    private ImageView imagenAddAlumno;
+    private ObservableList<PersonalBolsa>alumnos;
+    private ObservableList<PersonalBolsa>filtroAlumnos=FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagen=new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/recargar.png").toExternalForm());
+        Image imagenAgregar=new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/agregar.png").toExternalForm());
+        imagenAddAlumno.setImage(imagenAgregar);
+        imagenActualizar.setImage(imagen);
+        imagenActualizar.setOnMouseClicked(evento->{
+            alumnos.clear();
+            alumnos.addAll(new PersonalBolsaDAOImplement().getAllByCursoId(Utilidad.getCurso()));
+        });
         switch (Utilidad.getCurso().getModulos().size()) {
             case 1:
                 labelM1.setText(Utilidad.getCurso().getModulos().get(0).getNombre());
@@ -190,7 +214,8 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo2.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -200,7 +225,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo3.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -210,7 +235,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 break;
             case 4:
@@ -247,7 +272,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo2.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -257,7 +282,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo3.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -267,7 +292,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo4.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -277,7 +302,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 break;
             case 5:
@@ -315,7 +340,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo2.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -325,7 +350,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo3.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -335,7 +360,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo4.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -345,7 +370,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo5.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -355,7 +380,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 break;
             case 6:
@@ -392,7 +417,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo2.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -402,7 +427,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo3.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -412,7 +437,8 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo4.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -422,7 +448,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo5.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -432,7 +458,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo6.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -442,7 +468,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 break;
             case 7:
@@ -479,7 +505,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo2.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -489,7 +515,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo3.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -499,7 +525,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo4.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -509,7 +535,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo5.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -519,7 +545,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo6.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -529,7 +555,7 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 cModulo7.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -539,22 +565,36 @@ public class EntradaCursoController implements Initializable {
                         }
                     }
                     String nota = String.valueOf(alumno.getValue().getModulos().get(posicion).getNotaModulo());
-                    return new SimpleStringProperty((nota==null?"":nota));
+                    return new SimpleStringProperty((nota.equals("null")?"":nota));
                 });
                 break;
 
 
         }
-        tablaCurso.getItems().addAll(Utilidad.getCurso().getAlumnos());
+        alumnos=FXCollections.observableArrayList();
+        alumnos.addAll(Utilidad.getCurso().getAlumnos());
+        tablaCurso.setItems(alumnos);
 
         tablaCurso.getSelectionModel().selectedItemProperty().addListener((observableValue, personalBolsa, t1) -> {
            if(!tablaCurso.getItems().isEmpty()){
                personalElegido = t1;
-
                labelInfo.setText("Alumno Seleccionado: "+personalElegido.getNombre() + " " + personalElegido.getApellido1() + " " + personalElegido.getApellido2());
+
            }
 
         });
+        tablaCurso.setRowFactory(tv -> {
+            TableRow<PersonalBolsa> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {
+                    PersonalBolsa clickedRow = row.getItem();
+                    Utilidad.setAlumno(clickedRow);
+                    HelloApplication.cambioVentana("registroAlumno-view.fxml");
+                }
+            });
+            return row;
+        });
+
 
 
     }
@@ -674,8 +714,40 @@ public class EntradaCursoController implements Initializable {
             System.out.println(personalElegido);
             (new PersonalBolsaDAOImplement()).modNotas(personalElegido);
             labelInfo.setText("");
-           tablaCurso.getItems().clear();
-            tablaCurso.getItems().addAll(new PersonalBolsaDAOImplement().getAllByCursoId(Utilidad.getCurso()));
+           alumnos.clear();
+           alumnos.addAll(new PersonalBolsaDAOImplement().getAllByCursoId(Utilidad.getCurso()));
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void agregarAlumno(Event event) {
+        Stage stage=new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("todos-alumnos-view.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 800, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.setTitle("Alumnos");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void filtrar(Event event) {
+        String filtro=textBuscador.getText();
+        if(filtro.isEmpty()){
+            tablaCurso.setItems(alumnos);
+        }else{
+            filtroAlumnos.clear();
+            for(PersonalBolsa a:alumnos){
+                String porBusqueda= a.getNombre().toLowerCase()+" "+a.getApellido1().toLowerCase()+" "+a.getApellido2().toLowerCase();
+                if(porBusqueda.contains(filtro.toLowerCase())){
+                    filtroAlumnos.add(a);
+                }
+            }
+            tablaCurso.setItems(filtroAlumnos);
         }
     }
 }

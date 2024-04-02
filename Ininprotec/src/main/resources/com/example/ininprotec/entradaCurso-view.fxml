@@ -4,9 +4,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
@@ -39,9 +42,10 @@
                         <Label fx:id="labelTitutlo" text="Label" />
                      </children>
                   </FlowPane>
-                  <FlowPane prefHeight="33.0" prefWidth="598.0">
+                  <FlowPane hgap="10.0" prefHeight="33.0" prefWidth="598.0">
                      <children>
-                        <TextField fx:id="textBuscador" />
+                        <TextField fx:id="textBuscador" onKeyReleased="#filtrar" promptText="Buscar...." />
+                        <ImageView fx:id="imagenActualizar" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                      <VBox.margin>
                         <Insets left="40.0" />
@@ -51,47 +55,63 @@
             </VBox>
          </top>
          <bottom>
-            <VBox prefHeight="154.0" prefWidth="782.0" spacing="20.0" BorderPane.alignment="CENTER">
-               <children>
-                  <FlowPane alignment="CENTER">
+            <SplitPane prefHeight="73.0" prefWidth="782.0" BorderPane.alignment="CENTER">
+               <items>
+                  <VBox prefHeight="154.0" prefWidth="782.0" spacing="20.0">
                      <children>
-                        <Label text="CALIFICAR NOTAS" />
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="CALIFICAR NOTAS" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="TOP_CENTER" hgap="7.0" prefHeight="54.0" prefWidth="598.0" vgap="20.0">
+                           <children>
+                              <Label fx:id="labelM1" text="Label" />
+                              <Spinner fx:id="spM1" />
+                              <Label fx:id="labelM2" layoutX="10.0" layoutY="14.0" text="Label" />
+                              <Spinner fx:id="spM2" layoutX="38.0" layoutY="10.0" />
+                              <Label fx:id="labelM3" layoutX="188.0" layoutY="14.0" text="Label" />
+                              <Spinner fx:id="spM3" layoutX="216.0" layoutY="10.0" />
+                              <Label fx:id="labelM4" layoutX="365.0" layoutY="14.0" text="Label" />
+                              <Spinner fx:id="spM4" layoutX="393.0" layoutY="10.0" />
+                              <Label fx:id="labelM5" layoutX="543.0" layoutY="14.0" text="Label" />
+                              <Spinner fx:id="spM5" layoutX="10.0" layoutY="36.0" />
+                              <Label fx:id="labelM6" layoutX="160.0" layoutY="40.0" text="Label" />
+                              <Spinner fx:id="spM6" layoutX="188.0" layoutY="36.0" />
+                              <Label fx:id="labelM7" layoutX="337.0" layoutY="40.0" text="Label" />
+                              <Spinner fx:id="spM7" layoutX="365.0" layoutY="36.0" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER" prefHeight="20.0" prefWidth="782.0">
+                           <children>
+                              <Button fx:id="botonGuardad" mnemonicParsing="false" onAction="#guardarNotas" text="Guardar" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label fx:id="labelInfo" text="Label" />
+                           </children>
+                        </FlowPane>
                      </children>
-                  </FlowPane>
-                  <FlowPane alignment="TOP_CENTER" hgap="7.0" prefHeight="54.0" prefWidth="598.0" vgap="20.0">
-                     <children>
-                        <Label fx:id="labelM1" text="Label" />
-                        <Spinner fx:id="spM1" />
-                        <Label fx:id="labelM2" layoutX="10.0" layoutY="14.0" text="Label" />
-                        <Spinner fx:id="spM2" layoutX="38.0" layoutY="10.0" />
-                        <Label fx:id="labelM3" layoutX="188.0" layoutY="14.0" text="Label" />
-                        <Spinner fx:id="spM3" layoutX="216.0" layoutY="10.0" />
-                        <Label fx:id="labelM4" layoutX="365.0" layoutY="14.0" text="Label" />
-                        <Spinner fx:id="spM4" layoutX="393.0" layoutY="10.0" />
-                        <Label fx:id="labelM5" layoutX="543.0" layoutY="14.0" text="Label" />
-                        <Spinner fx:id="spM5" layoutX="10.0" layoutY="36.0" />
-                        <Label fx:id="labelM6" layoutX="160.0" layoutY="40.0" text="Label" />
-                        <Spinner fx:id="spM6" layoutX="188.0" layoutY="36.0" />
-                        <Label fx:id="labelM7" layoutX="337.0" layoutY="40.0" text="Label" />
-                        <Spinner fx:id="spM7" layoutX="365.0" layoutY="36.0" />
-                     </children>
-                  </FlowPane>
-                  <FlowPane alignment="CENTER" prefHeight="20.0" prefWidth="782.0">
-                     <children>
-                        <Button fx:id="botonGuardad" mnemonicParsing="false" onAction="#guardarNotas" text="Guardar" />
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </FlowPane>
-                  <FlowPane alignment="CENTER">
-                     <children>
-                        <Label fx:id="labelInfo" text="Label" />
-                     </children>
-                  </FlowPane>
-               </children>
-            </VBox>
+                  </VBox>
+               </items>
+            </SplitPane>
          </bottom>
+         <left>
+            <SplitPane dividerPositions="0.9791666666666667" prefHeight="377.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+              <items>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <ImageView fx:id="imagenAddAlumno" fitHeight="150.0" fitWidth="149.0" onMouseClicked="#agregarAlumno" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="55.0" />
+              </items>
+            </SplitPane>
+         </left>
       </BorderPane>
    </center>
 </BorderPane>
