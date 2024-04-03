@@ -39,3 +39,9 @@ W
 'src/main/java/dao/DAOPersonalBolsa.java,9\2\92a46b2f1da41686485d78911860fc57c086abee
 p
 @src/main/java/com/example/ininprotec/TodosAlumnosController.java,2\5\258d79070a14155fa686776544adb0a5d0acaa28
+T
+$src/main/java/clase/AlumnoCurso.java,6\2\6298c1b0f4de62fcb60b4c8a27016c9d0ae461c2
+U
+%src/main/java/clase/AlumnoModulo.java,5\d\5d20db52c92c2f0c486967e1a9004f5f39cc75f6
+Q
+!src/main/java/Util/MYSQLUtil.java,3\2\32a073c338185c9dc266ac44f653f757a5e57933

@@ -1,5 +1,7 @@
 
-^	java:S1077"BConstructor has 21 parameters, which is greater than 7 authorized.(’¡ò”8¡á·¶è1
-^	java:S107N"BConstructor has 17 parameters, which is greater than 7 authorized.(…¡ª8£á·¶è1
-M
-java:S11727"0Remove this unused method parameter "notaCurso".(’¡ò”8§á·¶è1
+L
+java:S19480"/Make "cursosAlumnos" transient or serializable.(é„‹±8îŸóê1
+P
+java:S19482".Make "moduloAlumno" transient or serializable.(“¿¬øÿÿÿÿ8îŸóê1
+c	java:S1075"BConstructor has 20 parameters, which is greater than 7 authorized.(ğ„”¿şÿÿÿÿ8ïŸóê1
+^	java:S107L"BConstructor has 17 parameters, which is greater than 7 authorized.(…¡ª8ïŸóê1

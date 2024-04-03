@@ -64,14 +64,16 @@ public class TodosAlumnosController implements Initializable {
     @javafx.fxml.FXML
     public void agregar(ActionEvent actionEvent) {
         AlumnoCurso alumnoCurso=new AlumnoCurso();
-        AlumnoModulo alumnoModulo=new AlumnoModulo();
+
         if(alumnoElegido!=null){
             if(!alumnoElegido.getCursosAlumnos().isEmpty()){
                 alumnoCurso.setAlumnoId(alumnoElegido);
                 alumnoCurso.setCursoId(Utilidad.getCurso());
                 alumnoElegido.getCursosAlumnos().add(alumnoCurso);
-                alumnoModulo.setAlumnoId(alumnoElegido);
+
                 for(Modulo m:Utilidad.getCurso().getModulos()){
+                    AlumnoModulo alumnoModulo=new AlumnoModulo();
+                    alumnoModulo.setAlumnoId(alumnoElegido);
                     alumnoModulo.setModuloId(m);
                     alumnoElegido.getModuloAlumno().add(alumnoModulo);
                 }
@@ -81,8 +83,9 @@ public class TodosAlumnosController implements Initializable {
                 alumnoCurso.setAlumnoId(alumnoElegido);
                 alumnoCurso.setCursoId(Utilidad.getCurso());
                 alumnoElegido.getCursosAlumnos().add(alumnoCurso);
-                alumnoModulo.setAlumnoId(alumnoElegido);
                 for(Modulo m:Utilidad.getCurso().getModulos()){
+                    AlumnoModulo alumnoModulo=new AlumnoModulo();
+                    alumnoModulo.setAlumnoId(alumnoElegido);
                     alumnoModulo.setModuloId(m);
                     alumnoElegido.getModuloAlumno().add(alumnoModulo);
                 }

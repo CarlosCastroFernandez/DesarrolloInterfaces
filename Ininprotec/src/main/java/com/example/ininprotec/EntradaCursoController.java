@@ -2,7 +2,9 @@ package com.example.ininprotec;
 
 import Util.MYSQLUtil;
 import Util.Utilidad;
+import clase.AlumnoCurso;
 import clase.PersonalBolsa;
+import implement.AlumnoCursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -142,15 +144,8 @@ public class EntradaCursoController implements Initializable {
                     return new SimpleStringProperty(nombre);
                 });
                 cNotaFinal.setCellValueFactory((alumno) -> {
-                    Integer posicion = 0;
-                    for (int i = 0; i < alumno.getValue().getCursosAlumnos().size(); i++) {
-                        if (alumno.getValue().getCursosAlumnos().get(i).getCursoId() == Utilidad.getCurso()) {
-                            posicion = i;
-                        }
-                    }
-                    System.out.println(posicion);
-                    String nota = String.valueOf(alumno.getValue().getCursosAlumnos().get(posicion).getNotaCurso());
-                    System.out.println(nota);
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                   String nota=String.valueOf(alumnoCurso.getNotaCurso());
                     return new SimpleStringProperty((nota.equals("null") ? "" : nota));
 
                 });
@@ -190,6 +185,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -238,6 +239,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -295,6 +302,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -363,6 +376,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -440,6 +459,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -527,6 +552,12 @@ public class EntradaCursoController implements Initializable {
                 cNombre.setCellValueFactory((alumno) -> {
                     String nombre = alumno.getValue().getNombre() + " " + alumno.getValue().getApellido1() + " " + alumno.getValue().getApellido2();
                     return new SimpleStringProperty(nombre);
+                });
+                cNotaFinal.setCellValueFactory((alumno) -> {
+                    AlumnoCurso alumnoCurso=(new AlumnoCursoDAOImplement().getAlumnoCursoById(alumno.getValue(),Utilidad.getCurso()));
+                    String nota=String.valueOf(alumnoCurso.getNotaCurso());
+                    return new SimpleStringProperty((nota.equals("null") ? "" : nota));
+
                 });
                 cModulo1.setCellValueFactory((alumno) -> {
                     Integer posicion = 0;
@@ -640,10 +671,9 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
+
 
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
@@ -653,21 +683,22 @@ public class EntradaCursoController implements Initializable {
                         }
 
                     }
-                    System.out.println(personalElegido);
+
                     break;
                 case 2:
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
 
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
@@ -678,17 +709,19 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM3.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM3.getValue().toString()));
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
 
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
@@ -700,19 +733,21 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM3.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM3.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM4.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM4.getValue().toString()));
-
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
@@ -725,22 +760,24 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM3.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM3.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM4.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM4.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM5.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM5.getValue().toString()));
-
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
@@ -752,25 +789,27 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM3.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM3.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM4.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM4.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM5.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM5.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM6.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM6.getValue().toString()));
-
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
@@ -782,28 +821,30 @@ public class EntradaCursoController implements Initializable {
                     for (int i = 0; i < personalElegido.getModuloAlumno().size(); i++) {
                         if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM1.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM1.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM2.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM2.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM3.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM3.getValue().toString()));
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM4.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM4.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM5.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM5.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM6.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM6.getValue().toString()));
-
+                            notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         } else if (personalElegido.getModuloAlumno().get(i).getModuloId().getNombre().contains(labelM7.getText())) {
                             personalElegido.getModuloAlumno().get(i).setNotaModulo(Double.valueOf(spM7.getValue().toString()));
-
-                        }
-                        if(personalElegido.getModuloAlumno().get(i).getNotaModulo()!=null){
                             notaCurso+=personalElegido.getModuloAlumno().get(i).getNotaModulo();
                         }
+
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+                    notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);

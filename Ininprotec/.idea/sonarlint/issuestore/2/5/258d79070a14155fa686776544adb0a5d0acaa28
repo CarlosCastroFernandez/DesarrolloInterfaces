@@ -1,9 +1,9 @@
 
->
-java:S1643/"Use a StringBuilder instead.(ãú©ûÿÿÿÿ8äı÷é1
+9
+java:S1643-"Use a StringBuilder instead.(ÈÃ˜İ8ºÁê1
 Q
-java:S1611'"4Remove the parentheses around the "alumno" parameter(±Úâ‚8øı÷é1
+java:S1611%"4Remove the parentheses around the "alumno" parameter(±Úâ‚8»ºÁê1
 Q
-java:S1611+"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8øı÷é1
+java:S1611)"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8¼ºÁê1
 I
-java:S1602<",Remove useless curly braces around statement(œ„Ù8ùı÷é1
+java:S1602:",Remove useless curly braces around statement(œ„Ù8¾ºÁê1
