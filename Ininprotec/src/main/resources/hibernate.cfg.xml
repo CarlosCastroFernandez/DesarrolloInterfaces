@@ -16,6 +16,8 @@
         <mapping class="clase.Modulo"/>
         <mapping class="clase.PersonalBolsa"/>
         <mapping class="clase.PersonalIIP"/>
+        <mapping class="clase.AlumnoCurso"/>
+        <mapping class="clase.AlumnoModulo"/>
 
 
     </session-factory>

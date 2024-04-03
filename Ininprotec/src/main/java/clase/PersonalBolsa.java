@@ -42,17 +42,15 @@ public class PersonalBolsa implements Serializable {
   private String titulacion;
   @Column(name = "lugar_residencia")
   private String lugarResidencia;
-  @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(name = "alumno_curso",joinColumns = @JoinColumn(name = "alumno_id"),inverseJoinColumns = @JoinColumn(name = "curso_id"))
+  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 
-  private List<Curso> cursosAlumnos;
-  @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(name = "alumno_modulo",joinColumns = @JoinColumn(name = "alumno_id"),inverseJoinColumns = @JoinColumn(name = "modulo_id"))
-  private List<Modulo>modulos;
-  @Column(name = "nota_curso")
-  private Double notaCurso;
 
-  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, Double notaCurso, String titulacion, String lugarResidencia, List<Curso> cursosAlumnos, List<Modulo> modulos) {
+  private List<AlumnoCurso> cursosAlumnos;
+  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  private List<AlumnoModulo> moduloAlumno;
+
+
+  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
     this.id = id;
     this.nombre = nombre;
     this.apellido1 = apellido1;
@@ -73,7 +71,7 @@ public class PersonalBolsa implements Serializable {
     this.titulacion = titulacion;
     this.lugarResidencia = lugarResidencia;
     this.cursosAlumnos = cursosAlumnos;
-    this.modulos = modulos;
+    this.moduloAlumno = modulos;
   }
   public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia) {
     this.nombre = nombre;
@@ -99,20 +97,20 @@ public class PersonalBolsa implements Serializable {
   public PersonalBolsa() {
   }
 
-  public List<Curso> getCursosAlumnos() {
+  public List<AlumnoCurso> getCursosAlumnos() {
     return cursosAlumnos;
   }
 
-  public void setCursosAlumnos(List<Curso> cursosAlumnos) {
+  public void setCursosAlumnos(List<AlumnoCurso> cursosAlumnos) {
     this.cursosAlumnos = cursosAlumnos;
   }
 
-  public List<Modulo> getModulos() {
-    return modulos;
+  public List<AlumnoModulo> getModuloAlumno() {
+    return moduloAlumno;
   }
 
-  public void setModulos(List<Modulo> modulos) {
-    this.modulos = modulos;
+  public void setModuloAlumno(List<AlumnoModulo> modulos) {
+    this.moduloAlumno = modulos;
   }
 
   public Long getId() {
@@ -150,13 +148,6 @@ public class PersonalBolsa implements Serializable {
     this.apellido2 = apellido2;
   }
 
-  public Double getNotaCurso() {
-    return notaCurso;
-  }
-
-  public void setNotaCurso(Double notaCurso) {
-    this.notaCurso = notaCurso;
-  }
 
   public String getCorreo() {
     return correo;
@@ -307,7 +298,8 @@ public class PersonalBolsa implements Serializable {
             ", imagenPerfil=" + Arrays.toString(imagenPerfil) +
             ", titulacion='" + titulacion + '\'' +
             ", lugarResidencia='" + lugarResidencia + '\'' +
-            ", modulos=" + modulos +
+            ", modulos=" + moduloAlumno +
+            " cursosAlumnos "+cursosAlumnos+
             '}';
   }
 }

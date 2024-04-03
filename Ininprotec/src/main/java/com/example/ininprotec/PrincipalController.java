@@ -1,6 +1,7 @@
 package com.example.ininprotec;
 
 import Util.Utilidad;
+import clase.AlumnoCurso;
 import clase.Curso;
 import implement.CursoDAOImplement;
 import javafx.event.ActionEvent;
@@ -78,22 +79,24 @@ public class PrincipalController implements Initializable {
         imagenPerfil.setImage(imagePerfil);
         comboCurso.setConverter(new StringConverter<Curso>() {
 
-            @Override
-            public String toString(Curso curso) {
-                if(curso!=null){
-                    return curso.getNombre();
-                }else{
-                    return "";
-                }
 
-            }
+                                    @Override
+                                    public String toString(Curso alumnoCurso) {
+                                        if(alumnoCurso!=null){
+                                            return alumnoCurso.getNombre();
+                                        }else{
+                                            return null;
+                                        }
 
-            @Override
-            public Curso fromString(String s) {
-                return null;
-            }
-        });
-        CursoDAOImplement daoCurso=new CursoDAOImplement();
+                                    }
+
+                                    @Override
+                                    public Curso fromString(String s) {
+                                        return null;
+                                    }
+                                });
+
+            CursoDAOImplement daoCurso=new CursoDAOImplement();
         comboCurso.getItems().addAll(daoCurso.getAll());
 
     }

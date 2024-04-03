@@ -14,18 +14,17 @@ public class Curso implements Serializable {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String nombre;
-  @ManyToMany(mappedBy = "cursosAlumnos",fetch = FetchType.EAGER)
-  private List<PersonalBolsa> alumnos;
+  @OneToMany(mappedBy = "cursoId",fetch = FetchType.EAGER)
+  private List<AlumnoCurso> alumnoCurso;
+
   @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER)
   private List<Modulo>modulos=new ArrayList<>();
 
 
-  public Curso(Long id, String nombre, List<PersonalBolsa> alumnos,List<Modulo>modulos) {
+  public Curso(Long id, String nombre, List<AlumnoCurso> alumnos,List<Modulo>modulos) {
     this.id = id;
     this.nombre = nombre;
-
-
-    this.alumnos = alumnos;
+    this.alumnoCurso = alumnos;
     this.modulos=modulos;
   }
   public Curso(Long id, String nombre) {
@@ -46,6 +45,7 @@ public class Curso implements Serializable {
   }
 
 
+
   public List<Modulo> getModulos() {
     return modulos;
   }
@@ -54,12 +54,12 @@ public class Curso implements Serializable {
     this.modulos = modulos;
   }
 
-  public List<PersonalBolsa> getAlumnos() {
-    return alumnos;
+  public List<AlumnoCurso> getAlumnoCurso() {
+    return alumnoCurso;
   }
 
-  public void setAlumnos(List<PersonalBolsa> alumnos) {
-    this.alumnos = alumnos;
+  public void setAlumnoCurso(List<AlumnoCurso> alumnos) {
+    this.alumnoCurso = alumnos;
   }
 
 

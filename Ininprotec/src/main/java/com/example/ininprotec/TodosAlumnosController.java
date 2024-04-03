@@ -1,9 +1,7 @@
 package com.example.ininprotec;
 
 import Util.Utilidad;
-import clase.Curso;
-import clase.Modulo;
-import clase.PersonalBolsa;
+import clase.*;
 import implement.PersonalBolsaDAOImplement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -43,8 +41,8 @@ public class TodosAlumnosController implements Initializable {
         cCurso.setCellValueFactory((alumno)->{
             String curso="";
             if(!alumno.getValue().getCursosAlumnos().isEmpty()){
-                for(Curso c:alumno.getValue().getCursosAlumnos()){
-                    curso+=c.getNombre()+", ";
+                for(AlumnoCurso c:alumno.getValue().getCursosAlumnos()){
+                    curso+=c.getCursoId().getNombre()+", ";
                 }
                 curso=curso.substring(0,curso.lastIndexOf(","));
                 return new SimpleStringProperty(curso);
@@ -65,18 +63,28 @@ public class TodosAlumnosController implements Initializable {
 
     @javafx.fxml.FXML
     public void agregar(ActionEvent actionEvent) {
+        AlumnoCurso alumnoCurso=new AlumnoCurso();
+        AlumnoModulo alumnoModulo=new AlumnoModulo();
         if(alumnoElegido!=null){
             if(!alumnoElegido.getCursosAlumnos().isEmpty()){
-                alumnoElegido.getCursosAlumnos().add(Utilidad.getCurso());
+                alumnoCurso.setAlumnoId(alumnoElegido);
+                alumnoCurso.setCursoId(Utilidad.getCurso());
+                alumnoElegido.getCursosAlumnos().add(alumnoCurso);
+                alumnoModulo.setAlumnoId(alumnoElegido);
                 for(Modulo m:Utilidad.getCurso().getModulos()){
-                    alumnoElegido.getModulos().add(m);
+                    alumnoModulo.setModuloId(m);
+                    alumnoElegido.getModuloAlumno().add(alumnoModulo);
                 }
             }else{
                 alumnoElegido.setCursosAlumnos(new ArrayList<>());
-                alumnoElegido.setModulos(new ArrayList<>());
-                alumnoElegido.getCursosAlumnos().add(Utilidad.getCurso());
+                alumnoElegido.setModuloAlumno(new ArrayList<>());
+                alumnoCurso.setAlumnoId(alumnoElegido);
+                alumnoCurso.setCursoId(Utilidad.getCurso());
+                alumnoElegido.getCursosAlumnos().add(alumnoCurso);
+                alumnoModulo.setAlumnoId(alumnoElegido);
                 for(Modulo m:Utilidad.getCurso().getModulos()){
-                    alumnoElegido.getModulos().add(m);
+                    alumnoModulo.setModuloId(m);
+                    alumnoElegido.getModuloAlumno().add(alumnoModulo);
                 }
             }
             if(alumnoElegido.getEsAlumno()==2){

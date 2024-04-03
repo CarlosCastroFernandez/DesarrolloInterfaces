@@ -1,6 +1,8 @@
 package com.example.ininprotec;
 
 import Util.Utilidad;
+import clase.AlumnoCurso;
+import clase.AlumnoModulo;
 import clase.Curso;
 import clase.PersonalBolsa;
 import implement.CursoDAOImplement;
@@ -8,9 +10,7 @@ import implement.PersonalBolsaDAOImplement;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,7 +20,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 import javax.imageio.ImageIO;
@@ -32,10 +31,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.sql.ClientInfoStatus;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -115,19 +112,22 @@ public class RegistroAlumnoController implements Initializable {
             comboCurso.setConverter(new StringConverter<Curso>() {
 
 
-                @Override
-                public String toString(Curso curso) {
-                    return (curso == null ? null : curso.getNombre());
-                }
+                                        @Override
+                                        public String toString(Curso alumnoCurso) {
+                                            if(alumnoCurso!=null){
+                                                return alumnoCurso.getNombre();
+                                            }
+                                            return null;
+                                        }
 
-                @Override
-                public Curso fromString(String s) {
-                    return null;
-                }
+                                        @Override
+                                        public Curso fromString(String s) {
+                                            return null;
+                                        }
 
-
-            });
-            comboCurso.getItems().addAll(daoCurso.getAll());
+                                        ;
+                                    });
+                comboCurso.getItems().addAll(daoCurso.getAll());
             labelURL.setOnMouseClicked(mouseEvent -> {
                 if(!labelURL.getText().equals("")){
                     String rutaArchivo=nuevoPath.toString();
@@ -255,6 +255,8 @@ public class RegistroAlumnoController implements Initializable {
 
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
+        AlumnoCurso alumnoCurso=new AlumnoCurso();
+        AlumnoModulo alumnoModulo=new AlumnoModulo();
         if(Utilidad.getAlumno()==null){
             if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 byte[]imagenCargada=null;
@@ -273,12 +275,20 @@ public class RegistroAlumnoController implements Initializable {
                         textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
                 if(clienteA.getEsAlumno()==1){
                     clienteA.setCursosAlumnos(new ArrayList<>());
-                    clienteA.setModulos(new ArrayList<>());
-                    clienteA.getCursosAlumnos().add(comboCurso.getValue());
+                    clienteA.setModuloAlumno(new ArrayList<>());
+                    alumnoCurso.setAlumnoId(clienteA);
+                    alumnoCurso.setCursoId(comboCurso.getValue());
+                    clienteA.getCursosAlumnos().add(alumnoCurso);
                     if(comboCurso.getValue()!=null){
-                        clienteA.getModulos().addAll(comboCurso.getValue().getModulos());
+                        alumnoModulo.setAlumnoId(clienteA);
+                        for(int i=0;i<comboCurso.getValue().getModulos().size();i++){
+                            alumnoModulo.setModuloId(comboCurso.getValue().getModulos().get(i));
+                            clienteA.getModuloAlumno().add(alumnoModulo);
+                        }
+
+
                     }else{
-                        clienteA.setModulos(null);
+                        clienteA.setModuloAlumno(null);
                         clienteA.setCursosAlumnos(null);
                     }
 

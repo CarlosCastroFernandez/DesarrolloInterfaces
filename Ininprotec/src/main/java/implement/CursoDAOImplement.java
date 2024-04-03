@@ -1,6 +1,7 @@
 package implement;
 
 import Util.HibernateUtil;
+import clase.AlumnoCurso;
 import clase.Curso;
 import clase.Modulo;
 import clase.PersonalIIP;
@@ -39,7 +40,7 @@ public class CursoDAOImplement implements DAOCurso {
     public List<Curso> getAll() {
         List<Curso>cursos=new ArrayList<>();
         try(Session s=HibernateUtil.getSession().openSession()){
-            Query q=s.createQuery("FROM Curso",Curso.class);
+            Query q=s.createQuery("FROM Curso ",Curso.class);
             cursos=q.getResultList();
         }catch (Exception e){
             e.printStackTrace();

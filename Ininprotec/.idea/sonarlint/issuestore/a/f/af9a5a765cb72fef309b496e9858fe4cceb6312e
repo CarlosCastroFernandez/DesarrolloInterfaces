@@ -1,29 +1,40 @@
 
-h	java:S112†"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8º¢ü¬è1
-h	java:S112·"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»¢ü¬è1
-h	java:S112İ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»¢ü¬è1
+h	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112²"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112ä"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112«"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112µ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß’×öé1
+h	java:S112º"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¤éØöé1
 }
-java:S1192ò"ZDefine a constant instead of duplicating this literal "-fx-border-color: #B30909" 3 times.(›…²üÿÿÿÿ8¼¢ü¬è1
+java:S1192Ò"ZDefine a constant instead of duplicating this literal "-fx-border-color: #B30909" 3 times.(›…²üÿÿÿÿ8à’×öé1
+`
+java:S1163º"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8¦éØöé1
+W
+java:S1143º"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8¦éØöé1
 Z
-java:S2589©"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8ç¢ü¬è1
+java:S2589Ö"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8ƒ“×öé1
+t
+java:S3776c"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(•‘İŸüÿÿÿÿ8…“×öé1
 N
-java:S1602e",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8ë¢ü¬è1
+java:S1602i",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8†“×öé1
 O
-java:S1602‹",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8ûı¬è1
+java:S1602",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8Š“×öé1
 O
-java:S1602",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8Ô­­è1
-H	java:S106œ"+Replace this use of System.out by a logger.(Ô–¿®8ó¢ü¬è1
-M	java:S106¨"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8õ¢ü¬è1
-G
-java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8Òíæ¶è1
+java:S1602“",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8Š“×öé1
+H	java:S106É"+Replace this use of System.out by a logger.(Ô–¿®8“×öé1
+M	java:S106Õ"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8“×öé1
+p
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 39 to the 15 allowed.(¦ëçÍ8‘“×öé1
+M
+java:S2093±"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8Ï…Øöé1
 U
-java:S1128
-"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8Óíæ¶è1
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8•“×öé1
 L
-java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²8Óíæ¶è1
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²8•“×öé1
 Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8Óíæ¶è1
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8•“×öé1
 X
-java:S1128#"6Remove this unused import 'java.sql.ClientInfoStatus'.(¥¥éÀüÿÿÿÿ8Óíæ¶è1
+java:S1128#"6Remove this unused import 'java.sql.ClientInfoStatus'.(¥¥éÀüÿÿÿÿ8•“×öé1
 J
-java:S1128%"-Remove this unused import 'java.time.ZoneId'.( Æ½“8Óíæ¶è1
+java:S1128&"-Remove this unused import 'java.time.ZoneId'.( Æ½“8•“×öé1

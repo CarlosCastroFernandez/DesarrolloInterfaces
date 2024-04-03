@@ -22,10 +22,9 @@ public class Modulo implements Serializable {
   @JoinColumn(name = "instructor_id")
   @ManyToOne
   private PersonalIIP instructor;
-  @ManyToMany(mappedBy = "modulos",fetch = FetchType.EAGER)
-  private List<PersonalBolsa> alumnos;
-  @Column(name = "nota_modulo")
-  private Double notaModulo;
+  @OneToMany(mappedBy = "moduloId",fetch = FetchType.EAGER)
+  private List<AlumnoModulo> modulos;
+
 
   public Modulo(Long id, String nombre, Long cursoId, Curso curso) {
     this.id = id;
@@ -44,13 +43,7 @@ public class Modulo implements Serializable {
   public Modulo() {
   }
 
-  public Double getNotaModulo() {
-    return notaModulo;
-  }
 
-  public void setNotaModulo(Double notaModulo) {
-    this.notaModulo = notaModulo;
-  }
 
   public Curso getCurso() {
     return curso;
@@ -64,12 +57,12 @@ public class Modulo implements Serializable {
     return instructor;
   }
 
-  public List<PersonalBolsa> getAlumnos() {
-    return alumnos;
+  public List<AlumnoModulo> getAlumnos() {
+    return modulos;
   }
 
-  public void setAlumnos(List<PersonalBolsa> alumnos) {
-    this.alumnos = alumnos;
+  public void setAlumnos(List<AlumnoModulo  > alumnos) {
+    this.modulos = alumnos;
   }
 
   public void setInstructor(PersonalIIP instructor) {
@@ -109,7 +102,6 @@ public class Modulo implements Serializable {
     return "Modulo{" +
             "id=" + id +
             ", nombre='" + nombre + '\'' +
-            "notaModulo "+notaModulo+" "+
             ", cursoId=" + curso.getId()+ ", instructorid = "+instructor.getId();
 
   }

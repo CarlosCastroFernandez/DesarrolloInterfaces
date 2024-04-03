@@ -1,93 +1,95 @@
 
+h	java:S112Ú"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ı»ôé1
 Q
-java:S3740("/Provide the parametrized type for this generic.(Á³Éôÿÿÿÿÿ8‚í¼µè1
+java:S37402"/Provide the parametrized type for this generic.(Á³Éôÿÿÿÿÿ8ı»ôé1
 Q
-java:S3740,"/Provide the parametrized type for this generic.(Åêµ²úÿÿÿÿ8‚í¼µè1
+java:S37406"/Provide the parametrized type for this generic.(Åêµ²úÿÿÿÿ8ı»ôé1
 Q
-java:S37400"/Provide the parametrized type for this generic.(Ä¬¾”ÿÿÿÿÿ8‚í¼µè1
+java:S3740:"/Provide the parametrized type for this generic.(Ä¬¾”ÿÿÿÿÿ8ı»ôé1
 Q
-java:S37404"/Provide the parametrized type for this generic.(ôûİøÿÿÿÿ8‚í¼µè1
+java:S3740>"/Provide the parametrized type for this generic.(ôûİøÿÿÿÿ8ı»ôé1
 L
-java:S37408"/Provide the parametrized type for this generic.(êˆ‚µ8‚í¼µè1
+java:S3740B"/Provide the parametrized type for this generic.(êˆ‚µ8ı»ôé1
 Q
-java:S3740<"/Provide the parametrized type for this generic.(ÊÃÕ£ıÿÿÿÿ8‚í¼µè1
+java:S3740F"/Provide the parametrized type for this generic.(ÊÃÕ£ıÿÿÿÿ8ı»ôé1
 L
-java:S3740@"/Provide the parametrized type for this generic.(¿ÚŒã8‚í¼µè1
+java:S3740J"/Provide the parametrized type for this generic.(¿ÚŒã8ı»ôé1
 u
-java:S3776H"SRefactor this method to reduce its Cognitive Complexity from 199 to the 15 allowed.(•‘İŸüÿÿÿÿ8ší¼µè1
-C	java:S131I""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8œí¼µè1
+java:S3776X"SRefactor this method to reduce its Cognitive Complexity from 287 to the 15 allowed.(•‘İŸüÿÿÿÿ8ôı»ôé1
+C	java:S131a""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8ùı»ôé1
 Q
-java:S1611`"4Remove the parentheses around the "alumno" parameter(±Úâ‚8í¼µè1
+java:S1611x"4Remove the parentheses around the "alumno" parameter(±Úâ‚8úı»ôé1
 V
-java:S1611d"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8Ÿí¼µè1
+java:S1611|"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8ûı»ôé1
 R
-java:S1611…"4Remove the parentheses around the "alumno" parameter(±Úâ‚8¡í¼µè1
+java:S1611"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ÿı»ôé1
 W
-java:S1611‰"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8¡í¼µè1
+java:S1611¡"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8ÿı»ôé1
 W
-java:S1611“"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¢í¼µè1
+java:S1611«"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8€ş»ôé1
 R
-java:S1611µ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8¤í¼µè1
+java:S1611Í"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ƒş»ôé1
 W
-java:S1611¹"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8¤í¼µè1
+java:S1611Ñ"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8„ş»ôé1
 W
-java:S1611Ã"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¥í¼µè1
+java:S1611Ü"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8…ş»ôé1
 W
-java:S1611Í"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¥í¼µè1
+java:S1611æ"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8†ş»ôé1
 R
-java:S1611î"4Remove the parentheses around the "alumno" parameter(±Úâ‚8§í¼µè1
+java:S1611‡"4Remove the parentheses around the "alumno" parameter(±Úâ‚8Šş»ôé1
 W
-java:S1611ò"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8¨í¼µè1
+java:S1611‹"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8‹ş»ôé1
 W
-java:S1611ü"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¨í¼µè1
+java:S1611•"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8Œş»ôé1
 W
-java:S1611†"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¨í¼µè1
+java:S1611Ÿ"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8ş»ôé1
 W
-java:S1611"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8©í¼µè1
+java:S1611©"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8ş»ôé1
 R
-java:S1611²"4Remove the parentheses around the "alumno" parameter(±Úâ‚8«í¼µè1
+java:S1611Ë"4Remove the parentheses around the "alumno" parameter(±Úâ‚8’ş»ôé1
 W
-java:S1611¶"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8«í¼µè1
+java:S1611Ï"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8’ş»ôé1
 W
-java:S1611À"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¬í¼µè1
+java:S1611Ù"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8“ş»ôé1
 W
-java:S1611Ê"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¬í¼µè1
+java:S1611ã"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8”ş»ôé1
 W
-java:S1611Ô"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8­í¼µè1
+java:S1611í"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8•ş»ôé1
 W
-java:S1611Ş"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8­í¼µè1
+java:S1611÷"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8–ş»ôé1
 R
-java:S1611ÿ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8°í¼µè1
+java:S1611˜"4Remove the parentheses around the "alumno" parameter(±Úâ‚8›ş»ôé1
 W
-java:S1611ƒ"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8°í¼µè1
+java:S1611œ"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8›ş»ôé1
 W
-java:S1611"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8°í¼µè1
+java:S1611¦"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8ş»ôé1
 W
-java:S1611—"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8±í¼µè1
+java:S1611°"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8ş»ôé1
 W
-java:S1611¡"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8±í¼µè1
+java:S1611»"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8Ÿş»ôé1
 W
-java:S1611«"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8±í¼µè1
+java:S1611Å"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8 ş»ôé1
 R
-java:S1611µ"4Remove the parentheses around the "alumno" parameter(§“¹¯8²í¼µè1
+java:S1611Ï"4Remove the parentheses around the "alumno" parameter(§“¹¯8¡ş»ôé1
 R
-java:S1611Ö"4Remove the parentheses around the "alumno" parameter(±Úâ‚8µí¼µè1
+java:S1611ğ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8¥ş»ôé1
 W
-java:S1611Ú"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8µí¼µè1
+java:S1611ô"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8¦ş»ôé1
 W
-java:S1611ä"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8µí¼µè1
+java:S1611ş"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¦ş»ôé1
 W
-java:S1611î"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¶í¼µè1
+java:S1611ˆ"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8§ş»ôé1
 W
-java:S1611ø"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8¶í¼µè1
+java:S1611’"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8¨ş»ôé1
 W
-java:S1611‚"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8¶í¼µè1
+java:S1611œ"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8©ş»ôé1
 R
-java:S1611Œ"4Remove the parentheses around the "alumno" parameter(§“¹¯8·í¼µè1
+java:S1611¦"4Remove the parentheses around the "alumno" parameter(§“¹¯8©ş»ôé1
 W
-java:S1611–"4Remove the parentheses around the "alumno" parameter(„Û–úÿÿÿÿ8·í¼µè1
+java:S1611°"4Remove the parentheses around the "alumno" parameter(„Û–úÿÿÿÿ8ªş»ôé1
 u
-java:S3776³"RRefactor this method to reduce its Cognitive Complexity from 73 to the 15 allowed.(—Ô­‰ÿÿÿÿÿ8¹í¼µè1
-D	java:S131µ""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8»í¼µè1
+java:S3776Û"RRefactor this method to reduce its Cognitive Complexity from 73 to the 15 allowed.(—Ô­‰ÿÿÿÿÿ8¬ş»ôé1
+D	java:S131İ""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8­ş»ôé1
+H	java:S106Ê"+Replace this use of System.out by a logger.(¹˜®©8÷íÌôé1
 é
-java:S6541³"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 101 to 64, Complexity from 44 to 14, Nesting Level from 4 to 2, Number of Variables from 8 to 6.(—Ô­‰ÿÿÿÿÿ8Èí¼µè1
+java:S6541Û"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 102 to 64, Complexity from 44 to 14, Nesting Level from 4 to 2, Number of Variables from 8 to 6.(—Ô­‰ÿÿÿÿÿ8Âş»ôé1

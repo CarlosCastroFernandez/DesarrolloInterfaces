@@ -1,6 +1,8 @@
 package implement;
 
 import Util.HibernateUtil;
+import Util.Utilidad;
+import clase.AlumnoCurso;
 import clase.Curso;
 import clase.Modulo;
 import clase.PersonalBolsa;
@@ -29,14 +31,7 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
         try(Session s=HibernateUtil.getSession().openSession()){
             Transaction t=s.beginTransaction();
             PersonalBolsa alumnoElegido=s.get(PersonalBolsa.class,alumno.getId());
-            for (Modulo moduloElegido : alumnoElegido.getModulos()) {
-                for (Modulo modulo : alumno.getModulos()) {
-                    if (moduloElegido.getId().equals(modulo.getId())) {
-                        moduloElegido.setNotaModulo(modulo.getNotaModulo());
-                        break; // Salir del bucle una vez que se ha encontrado el módulo
-                    }
-                }
-            }
+            alumnoElegido=alumno;
             s.merge(alumnoElegido);
             t.commit();
         }
@@ -44,10 +39,13 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
 
     @Override
     public List<PersonalBolsa> getAllByCursoId(Curso curso) {
-        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+       List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
         try(Session s= HibernateUtil.getSession().openSession()){
-            Curso cursoElegido=s.get(Curso.class,curso.getId());
-            listaAlumnos.addAll(cursoElegido.getAlumnos());
+            Query<PersonalBolsa>q=s.createQuery("select distinct a.alumnoId from AlumnoCurso a where a.cursoId.id=:id",PersonalBolsa.class);
+            q.setParameter("id",curso.getId());
+            listaAlumnos=q.getResultList();
+
         }
         return listaAlumnos;
     }
@@ -56,18 +54,9 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
     public void agregarAlumnoCurso(PersonalBolsa alumno) {
         try(Session s= HibernateUtil.getSession().openSession()){
             Transaction t=s.beginTransaction();
-            PersonalBolsa alumnoBDD=s.get(PersonalBolsa.class,alumno.getId());
-            alumnoBDD.setCursosAlumnos(alumno.getCursosAlumnos());
-            alumnoBDD.setModulos(alumno.getModulos());
-            for(Curso curso:alumnoBDD.getCursosAlumnos()){
-                curso.getAlumnos().add(alumno);
-                s.merge(curso);
-            }
-            for(Modulo modulo:alumnoBDD.getModulos()){
-                modulo.getAlumnos().add(alumno);
-                s.merge(modulo);
-            }
-            alumnoBDD.setEsAlumno(alumno.getEsAlumno());
+            PersonalBolsa alumnoBBDD=s.get(PersonalBolsa.class,alumno.getId());
+            alumnoBBDD=alumno;
+            s.merge(alumnoBBDD);
             t.commit();
 
         }
@@ -105,18 +94,6 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
         try(Session s= HibernateUtil.getSession().openSession()){
             Transaction t=s.beginTransaction();
             s.persist(objeto);
-            if(objeto.getCursosAlumnos()!=null){
-                for(Curso curso:objeto.getCursosAlumnos()){
-                    curso.getAlumnos().add(objeto);
-                    s.merge(curso);
-                }
-            }
-            if(objeto.getModulos()!=null){
-                for(Modulo modulo:objeto.getModulos()){
-                    modulo.getAlumnos().add(objeto);
-                    s.merge(modulo);
-                }
-            }
 
             t.commit();
         }catch (Exception e){

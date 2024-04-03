@@ -1,5 +1,6 @@
 package dao;
 
+import clase.AlumnoCurso;
 import clase.Curso;
 
 import java.util.List;
