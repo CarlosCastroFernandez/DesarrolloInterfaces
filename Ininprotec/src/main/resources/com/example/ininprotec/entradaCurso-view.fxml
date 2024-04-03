@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="612.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.EntradaCursoController">
+<BorderPane prefHeight="659.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.EntradaCursoController">
    <center>
       <BorderPane>
          <center>
@@ -43,10 +43,25 @@
                         <Label fx:id="labelTitutlo" text="Label" />
                      </children>
                   </FlowPane>
-                  <FlowPane hgap="10.0" prefHeight="33.0" prefWidth="598.0">
+                  <FlowPane prefHeight="33.0" prefWidth="598.0">
                      <children>
                         <TextField fx:id="textBuscador" onKeyReleased="#filtrar" promptText="Buscar...." />
                         <ImageView fx:id="imagenActualizar" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="botonAlumnosNUevos" mnemonicParsing="false" onAction="#mostrarAlumnosNuevos" text="Alumnos Nuevos">
+                           <FlowPane.margin>
+                              <Insets left="50.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="botonListadoAlumnos" mnemonicParsing="false" onAction="#generarListadoAlumnos" text="Listado Alumnos (PDF)">
+                           <FlowPane.margin>
+                              <Insets left="50.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="botonCertificado" mnemonicParsing="false" onAction="#generarCertificado" text="Certificado Alumno (PDF)">
+                           <FlowPane.margin>
+                              <Insets left="50.0" />
+                           </FlowPane.margin>
+                        </Button>
                      </children>
                      <VBox.margin>
                         <Insets left="40.0" />
@@ -56,9 +71,9 @@
             </VBox>
          </top>
          <bottom>
-            <SplitPane prefHeight="73.0" prefWidth="782.0" BorderPane.alignment="CENTER">
+            <SplitPane prefHeight="207.0" prefWidth="802.0" BorderPane.alignment="CENTER">
                <items>
-                  <VBox prefHeight="154.0" prefWidth="782.0" spacing="20.0">
+                  <VBox prefHeight="179.0" prefWidth="801.0" spacing="15.0">
                      <children>
                         <FlowPane alignment="CENTER">
                            <children>
@@ -82,6 +97,9 @@
                               <Label fx:id="labelM7" layoutX="337.0" layoutY="40.0" text="Label" />
                               <Spinner fx:id="spM7" layoutX="365.0" layoutY="36.0" />
                            </children>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </VBox.margin>
                         </FlowPane>
                         <FlowPane alignment="CENTER" prefHeight="20.0" prefWidth="782.0">
                            <children>
@@ -97,6 +115,9 @@
                            </children>
                         </FlowPane>
                      </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
                   </VBox>
                </items>
             </SplitPane>

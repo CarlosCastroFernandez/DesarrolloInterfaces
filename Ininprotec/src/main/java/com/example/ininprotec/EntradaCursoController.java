@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.MYSQLUtil;
 import Util.Utilidad;
 import clase.PersonalBolsa;
 import implement.PersonalBolsaDAOImplement;
@@ -16,9 +17,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import net.sf.jasperreports.swing.JRViewer;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class EntradaCursoController implements Initializable {
@@ -85,6 +97,12 @@ public class EntradaCursoController implements Initializable {
     private ObservableList<PersonalBolsa> filtroAlumnos = FXCollections.observableArrayList();
     @javafx.fxml.FXML
     private TableColumn<PersonalBolsa, String> cNotaFinal;
+    @javafx.fxml.FXML
+    private Button botonAlumnosNUevos;
+    @javafx.fxml.FXML
+    private Button botonListadoAlumnos;
+    @javafx.fxml.FXML
+    private Button botonCertificado;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -833,6 +851,66 @@ public class EntradaCursoController implements Initializable {
                 }
             }
             tablaCurso.setItems(filtroAlumnos);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void mostrarAlumnosNuevos(ActionEvent actionEvent) {
+        alumnos.clear();
+        alumnos.addAll((new PersonalBolsaDAOImplement()).getAllByCursoIdNuevos(Utilidad.getCurso()));
+    }
+
+    @javafx.fxml.FXML
+    public void generarListadoAlumnos(ActionEvent actionEvent) {
+        Connection c= MYSQLUtil.getConexion();
+        HashMap<String,Object> parametro=new HashMap<>();
+        parametro.put("cursoId",Utilidad.getCurso().getId());
+        parametro.put("cursoNombre",Utilidad.getCurso().getNombre());
+        try {
+            JasperPrint jasper= JasperFillManager.fillReport("ListadoAlumnos.jasper",parametro,c);
+            JRViewer visor=new JRViewer(jasper);
+            JFrame frame = new JFrame("Listado de Alumnos Nuevos");
+            frame.getContentPane().add(visor);
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            frame.pack();
+            frame.setVisible(true);
+
+            //GENERA PDF
+            JRPdfExporter exp = new JRPdfExporter();
+            exp.setExporterInput(new SimpleExporterInput(jasper));
+            exp.setExporterOutput(new SimpleOutputStreamExporterOutput("listadoAlumnos.pdf"));
+            exp.setConfiguration(new SimplePdfExporterConfiguration());
+            exp.exportReport();
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void generarCertificado(ActionEvent actionEvent) {
+        if(personalElegido!=null){
+            Connection c= MYSQLUtil.getConexion();
+            HashMap<String,Object> parametro=new HashMap<>();
+            parametro.put("alumnoId",personalElegido.getId());
+            parametro.put("cursoNombre",Utilidad.getCurso().getNombre());
+            try {
+                JasperPrint jasper= JasperFillManager.fillReport("certificadoAlumno.jasper",parametro,c);
+                JRViewer visor=new JRViewer(jasper);
+                JFrame frame = new JFrame("Certificado Del Alumnado");
+                frame.getContentPane().add(visor);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                frame.pack();
+                frame.setVisible(true);
+
+                //GENERA PDF
+                JRPdfExporter exp = new JRPdfExporter();
+                exp.setExporterInput(new SimpleExporterInput(jasper));
+                exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Certificado.pdf"));
+                exp.setConfiguration(new SimplePdfExporterConfiguration());
+                exp.exportReport();
+            } catch (JRException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

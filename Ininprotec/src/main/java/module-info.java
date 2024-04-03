@@ -7,6 +7,7 @@ module com.example.ininprotec {
     requires java.naming;
     requires javafx.web;
     requires javafx.swing;
+    requires jasperreports;
 
     opens imagenes;
     opens clase;

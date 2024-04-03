@@ -51,6 +51,20 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
     }
 
     @Override
+    public List<PersonalBolsa> getAllByCursoIdNuevos(Curso curso) {
+        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Query<PersonalBolsa>q=s.createQuery("select distinct a.alumnoId from AlumnoCurso a where a.cursoId.id=:id and a.notaCurso is null",PersonalBolsa.class);
+            q.setParameter("id",curso.getId());
+            listaAlumnos=q.getResultList();
+            System.out.println(listaAlumnos);
+
+        }
+        return listaAlumnos;
+    }
+
+    @Override
     public void agregarAlumnoCurso(PersonalBolsa alumno) {
         try(Session s= HibernateUtil.getSession().openSession()){
             Transaction t=s.beginTransaction();
