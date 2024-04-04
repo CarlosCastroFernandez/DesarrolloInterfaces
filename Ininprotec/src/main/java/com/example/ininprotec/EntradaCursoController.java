@@ -105,17 +105,27 @@ public class EntradaCursoController implements Initializable {
     private Button botonListadoAlumnos;
     @javafx.fxml.FXML
     private Button botonCertificado;
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+            Utilidad.setCurso(null);
+        });
+        labelTitutlo.setText(Utilidad.getCurso().getNombre());
         Image imagen = new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/recargar.png").toExternalForm());
         Image imagenAgregar = new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/agregar.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
         imagenAddAlumno.setImage(imagenAgregar);
         imagenActualizar.setImage(imagen);
         imagenActualizar.setOnMouseClicked(evento -> {
             alumnos.clear();
             alumnos.addAll(new PersonalBolsaDAOImplement().getAllByCursoId(Utilidad.getCurso()));
         });
+
         switch (Utilidad.getCurso().getModulos().size()) {
             case 1:
                 labelM1.setText(Utilidad.getCurso().getModulos().get(0).getNombre());

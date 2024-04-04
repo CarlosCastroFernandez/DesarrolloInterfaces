@@ -3,16 +3,17 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="659.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.EntradaCursoController">
    <center>
@@ -36,17 +37,29 @@
             </TableView>
          </center>
          <top>
-            <VBox BorderPane.alignment="CENTER">
+            <VBox spacing="20.0" BorderPane.alignment="CENTER">
                <children>
-                  <FlowPane alignment="CENTER" prefHeight="42.0" prefWidth="200.0">
+                  <FlowPane hgap="310.0" prefHeight="42.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="labelTitutlo" text="Label" />
+                        <ImageView fx:id="imagenFlecha" fitHeight="42.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                           <FlowPane.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </FlowPane.margin>
+                        </ImageView>
+                        <Label fx:id="labelTitutlo" text="Label">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
                      </children>
                   </FlowPane>
+                  <Separator prefHeight="8.0" prefWidth="802.0" />
                   <FlowPane prefHeight="33.0" prefWidth="598.0">
                      <children>
+                        <ImageView fx:id="imagenActualizar" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <FlowPane.margin>
+                              <Insets right="15.0" />
+                           </FlowPane.margin></ImageView>
                         <TextField fx:id="textBuscador" onKeyReleased="#filtrar" promptText="Buscar...." />
-                        <ImageView fx:id="imagenActualizar" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                         <Button fx:id="botonAlumnosNUevos" mnemonicParsing="false" onAction="#mostrarAlumnosNuevos" text="Alumnos Nuevos">
                            <FlowPane.margin>
                               <Insets left="50.0" />
@@ -71,7 +84,7 @@
             </VBox>
          </top>
          <bottom>
-            <SplitPane prefHeight="207.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+            <SplitPane prefHeight="14.0" prefWidth="802.0" BorderPane.alignment="CENTER">
                <items>
                   <VBox prefHeight="179.0" prefWidth="801.0" spacing="15.0">
                      <children>
@@ -123,14 +136,14 @@
             </SplitPane>
          </bottom>
          <left>
-            <SplitPane dividerPositions="0.9791666666666667" prefHeight="377.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+            <SplitPane prefHeight="308.0" prefWidth="126.0" BorderPane.alignment="CENTER">
               <items>
-                  <VBox alignment="CENTER">
+                  <VBox alignment="CENTER" prefHeight="306.0" prefWidth="131.0" spacing="10.0">
                      <children>
-                        <ImageView fx:id="imagenAddAlumno" fitHeight="150.0" fitWidth="149.0" onMouseClicked="#agregarAlumno" pickOnBounds="true" preserveRatio="true" />
+                        <Label text="Agregar Alumno" />
+                        <ImageView fx:id="imagenAddAlumno" fitHeight="80.0" fitWidth="76.0" onMouseClicked="#agregarAlumno" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </VBox>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="55.0" />
               </items>
             </SplitPane>
          </left>

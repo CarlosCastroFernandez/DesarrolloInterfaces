@@ -1,6 +1,7 @@
 
 Ÿ
-java:S1186…"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™ìÛ©8Àåàâå1
+java:S1186‡"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™ìÛ©8Î»™Ãê1
 t
-java:S37769"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(•‘İŸüÿÿÿÿ8”ì¹­è1
-H	java:S106³"+Replace this use of System.out by a logger.(µ„ò8Ååàâå1
+java:S3776="RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(•‘İŸüÿÿÿÿ8Ñ»™Ãê1
+N
+java:S1602@",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8ÿšÓÅê1

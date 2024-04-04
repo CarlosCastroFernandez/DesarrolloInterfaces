@@ -62,6 +62,8 @@ public class PrincipalController implements Initializable {
     private Label labelEmail;
     @FXML
     private Label labelDNI;
+    @FXML
+    private Button botonMiPerfil;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -115,5 +117,9 @@ public class PrincipalController implements Initializable {
     @FXML
     public void entrarRegistroAlumno(ActionEvent actionEvent) {
         HelloApplication.cambioVentana("registroAlumno-view.fxml");
+    }
+
+    @FXML
+    public void miPerfil(ActionEvent actionEvent) {
     }
 }

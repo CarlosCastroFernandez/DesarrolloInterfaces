@@ -24,7 +24,6 @@ public class CursoDAOImplement implements DAOCurso {
             List<Modulo>modulos=new ArrayList<>();
             s.persist(objeto);
             for(int i=0;i<objeto.getModulos().size();i++){
-                s.persist(objeto.getModulos().get(i));
                 PersonalIIP instructor=s.get(PersonalIIP.class,objeto.getModulos().get(i).getInstructor().getId());
                 modulos.addAll(objeto.getModulos().get(i).getInstructor().getModulos());
                 instructor.setModulos(modulos);

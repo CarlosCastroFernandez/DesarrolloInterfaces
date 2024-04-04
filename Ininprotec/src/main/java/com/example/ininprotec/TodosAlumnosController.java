@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -30,6 +32,14 @@ public class TodosAlumnosController implements Initializable {
     private ObservableList<PersonalBolsa>alumnos= FXCollections.observableArrayList();
     private ObservableList<PersonalBolsa>filtroALumnos=FXCollections.observableArrayList();
     private PersonalBolsa alumnoElegido;
+    @javafx.fxml.FXML
+    private TableColumn <PersonalBolsa,String>cDNI;
+    @javafx.fxml.FXML
+    private TableColumn  <PersonalBolsa,String>cCorreo;
+    @javafx.fxml.FXML
+    private TableColumn  <PersonalBolsa,String>cTelefono;
+    @javafx.fxml.FXML
+    private TableColumn  <PersonalBolsa,String>cRol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,8 +62,24 @@ public class TodosAlumnosController implements Initializable {
             }
 
         });
+        cDNI.setCellValueFactory((alumno)->{
+            String dni=alumno.getValue().getDni();
+            return new SimpleStringProperty(dni);
+        });
+        cCorreo.setCellValueFactory((alumno)->{
+            String correo=alumno.getValue().getCorreo();
+            return new SimpleStringProperty(correo);
+        });
+        cTelefono.setCellValueFactory((alumno)->{
+            String telefono=alumno.getValue().getTelefono();
+            return new SimpleStringProperty(telefono);
+        });
+        cRol.setCellValueFactory((alumno)->{
+            String rol=(alumno.getValue().getEsAlumno()==1?"Alumno":alumno.getValue().getEsAlumno()==2?"Trabajador":"Alumno y Trabajador");
+            return new SimpleStringProperty(rol);
+        });
         alumnos.addAll((new PersonalBolsaDAOImplement().getAll()));
-        tabla.getItems().addAll(alumnos);
+        tabla.setItems(alumnos);
 
         tabla.getSelectionModel().selectedItemProperty().addListener((observableValue, personalBolsa, t1) -> {
             alumnoElegido=t1;
@@ -94,8 +120,7 @@ public class TodosAlumnosController implements Initializable {
                 alumnoElegido.setEsAlumno(3L);
             }
             (new PersonalBolsaDAOImplement()).agregarAlumnoCurso(alumnoElegido);
-            Stage ventana= (Stage)botonAgregar.getScene().getWindow();
-            ventana.close();
+            alumnos.remove(alumnoElegido);
 
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
@@ -115,7 +140,8 @@ public class TodosAlumnosController implements Initializable {
             filtroALumnos.clear();
 
             for(PersonalBolsa a:alumnos){
-                String porBusqueda= a.getNombre().toLowerCase()+" "+a.getApellido1().toLowerCase()+" "+a.getApellido2().toLowerCase();
+                String porBusqueda= a.getNombre().toLowerCase()+" "+a.getApellido1().toLowerCase()+" "+a.getApellido2().toLowerCase()+" "+a.getDni().toLowerCase()
+                        +" "+a.getTelefono().toLowerCase()+" "+a.getCorreo().toLowerCase();
                 if(porBusqueda.contains(filtro.toLowerCase())){
                     filtroALumnos.add(a);
                 }

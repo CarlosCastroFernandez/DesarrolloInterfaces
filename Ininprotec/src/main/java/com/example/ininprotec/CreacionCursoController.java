@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
 
 import java.net.URL;
@@ -52,9 +54,16 @@ public class CreacionCursoController implements Initializable {
     private TextField textModulo7;
     @javafx.fxml.FXML
     private ComboBox <PersonalIIP> comboInstructor7;
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(CreacionCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
         comboInstructor.setConverter(new StringConverter<PersonalIIP>() {
             @Override
             public String toString(PersonalIIP personalIIP) {
@@ -176,7 +185,6 @@ public class CreacionCursoController implements Initializable {
         comboInstructor5.getItems().addAll(lista);
         comboInstructor6.getItems().addAll(lista);
         comboInstructor7.getItems().addAll(lista);
-        System.out.println(lista);
 
     }
 
@@ -191,65 +199,59 @@ public class CreacionCursoController implements Initializable {
         Modulo modulo5=new Modulo();
         Modulo modulo6=new Modulo();
         Modulo modulo7=new Modulo();
-        if(!textModulo1.getText().isEmpty()){
-            modulo1.setNombre(textModulo1.getText());
-
+        if(!textModulo1.getText().isEmpty()&&comboInstructor.getValue()!=null){
+            modulo1.setNombre(textModulo1.getText()+" ("+textNombreCurso.getText()+")");
             modulo1.setCurso(curso);
             modulo1.setInstructor(comboInstructor.getValue());
             comboInstructor.getValue().getModulos().add(modulo1);
             modulos.add(modulo1);
        }
-        if(!textModulo2.getText().isEmpty()){
-            modulo2.setNombre(textModulo2.getText());
-
+        if(!textModulo2.getText().isEmpty()&&comboInstructor2.getValue()!=null){
+            modulo2.setNombre(textModulo2.getText()+" ("+textNombreCurso.getText()+")");
             modulo2.setCurso(curso);
             modulo2.setInstructor(comboInstructor2.getValue());
             comboInstructor2.getValue().getModulos().add(modulo2);
             modulos.add(modulo2);
         }
-        if(!textModulo3.getText().isEmpty()){
-            modulo3.setNombre(textModulo3.getText());
-
+        if(!textModulo3.getText().isEmpty()&&comboInstructor3.getValue()!=null){
+            modulo3.setNombre(textModulo3.getText()+" ("+textNombreCurso.getText()+")");
             modulo3.setCurso(curso);
             modulo3.setInstructor(comboInstructor3.getValue());
             comboInstructor3.getValue().getModulos().add(modulo3);
             modulos.add(modulo3);
         }
-        if(!textModulo4.getText().isEmpty()){
-            modulo4.setNombre(textModulo4.getText());
-
+        if(!textModulo4.getText().isEmpty()&&comboInstructor4.getValue()!=null){
+            modulo4.setNombre(textModulo4.getText()+" ("+textNombreCurso.getText()+")");
             modulo4.setCurso(curso);
             modulo4.setInstructor(comboInstructor4.getValue());
           comboInstructor4.getValue().getModulos().add(modulo4);
             modulos.add(modulo4);
         }
-        if(!textModulo5.getText().isEmpty()){
-            modulo5.setNombre(textModulo5.getText());
-
+        if(!textModulo5.getText().isEmpty()&&comboInstructor5.getValue()!=null){
+            modulo5.setNombre(textModulo5.getText()+" ("+textNombreCurso.getText()+")");
             modulo5.setCurso(curso);
             modulo5.setInstructor( comboInstructor5.getValue());
           comboInstructor5.getValue().getModulos().add(modulo5);
             modulos.add(modulo5);
 
         }
-        if(!textModulo6.getText().isEmpty()){
-            modulo6.setNombre(textModulo6.getText());
-
+        if(!textModulo6.getText().isEmpty()&&comboInstructor6.getValue()!=null){
+            modulo6.setNombre(textModulo6.getText()+" ("+textNombreCurso.getText()+")");
             modulo6.setCurso(curso);
             modulo6.setInstructor( comboInstructor6.getValue());
           comboInstructor6.getValue().getModulos().add(modulo5);
             modulos.add(modulo5);
 
         }
-        if(!textModulo7.getText().isEmpty()){
-            modulo7.setNombre(textModulo5.getText());
-
+        if(!textModulo7.getText().isEmpty()&&comboInstructor7.getValue()!=null){
+            modulo7.setNombre(textModulo7.getText()+" ("+textNombreCurso.getText()+")");
             modulo7.setCurso(curso);
             modulo7.setInstructor( comboInstructor7.getValue());
             comboInstructor7.getValue().getModulos().add(modulo5);
             modulos.add(modulo5);
 
         }
+
         curso.setNombre(textNombreCurso.getText());
         curso.setModulos(modulos);
         CursoDAOImplement dao=new CursoDAOImplement();

@@ -1,9 +1,25 @@
 
 9
-java:S1643-"Use a StringBuilder instead.(ÈÃ˜İ8ºÁê1
+java:S16437"Use a StringBuilder instead.(ÈÃ˜İ8’Åê1
 Q
-java:S1611%"4Remove the parentheses around the "alumno" parameter(±Úâ‚8»ºÁê1
+java:S1611/"4Remove the parentheses around the "alumno" parameter(±Úâ‚8°’Åê1
 Q
-java:S1611)"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8¼ºÁê1
+java:S16113"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8±’Åê1
+V
+java:S1611A"4Remove the parentheses around the "alumno" parameter(Œ§ÖŠúÿÿÿÿ8²’Åê1
+V
+java:S1611E"4Remove the parentheses around the "alumno" parameter(½åÀ«üÿÿÿÿ8²’Åê1
+P
+java:S1611I"4Remove the parentheses around the "alumno" parameter(Ä«Œ-8³’Åê1
+V
+java:S1611M"4Remove the parentheses around the "alumno" parameter(©Öæüÿÿÿÿ8³’Åê1
+a
+java:S3358N"DExtract this nested ternary operation into an independent statement.(õÌ¹Ç8³’Åê1
 I
-java:S1602:",Remove useless curly braces around statement(œ„Ù8¾ºÁê1
+java:S1602T",Remove useless curly braces around statement(œ„Ù8´’Åê1
+R
+java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8êşœÅê1
+[
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8â» Åê1
+Q
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8·’’Åê1
