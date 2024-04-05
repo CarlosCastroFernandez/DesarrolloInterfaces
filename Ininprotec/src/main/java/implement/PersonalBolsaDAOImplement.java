@@ -103,6 +103,55 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
         return personalBBDD;
     }
 
+    @Override
+    public void borradoAlumno(PersonalBolsa cliente) {
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Transaction t=s.beginTransaction();
+            PersonalBolsa clienteBBDD=s.get(PersonalBolsa.class,cliente.getId());
+            s.remove(clienteBBDD);
+            t.commit();
+        }
+    }
+
+    @Override
+    public List<PersonalBolsa> getAllByCursoIdTerminados(Curso curso) {
+        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Query<PersonalBolsa>q=s.createQuery("select distinct a.alumnoId from AlumnoCurso a where a.cursoId.id=:id and a.notaCurso is not null",PersonalBolsa.class);
+            q.setParameter("id",curso.getId());
+            listaAlumnos=q.getResultList();
+            System.out.println(listaAlumnos);
+
+        }
+        return listaAlumnos;
+
+    }
+
+    @Override
+    public List<PersonalBolsa> getAllNuevos() {
+        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Query<PersonalBolsa>q=s.createQuery("select distinct a.alumnoId from AlumnoCurso a where a.notaCurso is null",PersonalBolsa.class);
+            listaAlumnos=q.getResultList();
+
+        }
+        return listaAlumnos;
+    }
+
+    @Override
+    public List<PersonalBolsa> getAllTerminados() {
+        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Query<PersonalBolsa>q=s.createQuery("select distinct a.alumnoId from AlumnoCurso a where a.notaCurso is not null",PersonalBolsa.class);
+            listaAlumnos=q.getResultList();
+
+        }
+        return listaAlumnos;
+    }
+
 
     public void subir(PersonalBolsa objeto) {
         try(Session s= HibernateUtil.getSession().openSession()){

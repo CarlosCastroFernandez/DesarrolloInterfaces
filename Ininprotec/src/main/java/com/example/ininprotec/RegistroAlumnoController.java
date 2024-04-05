@@ -94,6 +94,12 @@ public class RegistroAlumnoController implements Initializable {
     private Label labelCurso;
     @javafx.fxml.FXML
     private ImageView imagenFlecha;
+    @javafx.fxml.FXML
+    private Button botonGestion;
+    @javafx.fxml.FXML
+    private Label labelRol;
+    @javafx.fxml.FXML
+    private ComboBox comboRol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -101,8 +107,12 @@ public class RegistroAlumnoController implements Initializable {
         imagenFlecha.setImage(imagenFlechia);
         imagenFlecha.setOnMouseClicked(mouseEvent -> {
             HelloApplication.cambioVentana("principal-view.fxml");
+            Utilidad.setAlumno(null);
+            Utilidad.setCurso(null);
         });
         if(Utilidad.getAlumno()==null){
+            labelRol.setVisible(false);
+            comboRol.setVisible(false);
             labelURL.setStyle("-fx-text-fill: #000000");
             labelURL.setStyle("-fx-underline: true");
             flowPaneCurso.setVisible(false);
@@ -156,11 +166,22 @@ public class RegistroAlumnoController implements Initializable {
                 labelURL.setStyle("-fx-text-fill: #000000");
             });
         }else{
+            labelRol.setVisible(true);
+            comboRol.setVisible(true);
+            comboRol.getItems().add("Alumno");
+            comboRol.getItems().add("Trabajador");
+            comboRol.getItems().add("Alumno y Trabajador");
+
             if(Utilidad.getAlumno().getEsAlumno()==1){
                 radioAlumno.setSelected(true);
-            }else{
+                comboCurso.getSelectionModel().select(0);
+            }else if(Utilidad.getAlumno().getEsAlumno()==2){
                 radioTrabajador.setSelected(true);
+                comboCurso.getSelectionModel().select(1);
+            }else{
+                comboCurso.getSelectionModel().select(2);
             }
+            botonGestion.setVisible(false);
             labelCurso.setVisible(false);
             radioTrabajador.setVisible(false);
             radioAlumno.setVisible(false);
@@ -309,6 +330,17 @@ public class RegistroAlumnoController implements Initializable {
                     PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
                     daoTrabajador.subir(clienteA);
                 }
+                textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
+                textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
+                textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
+                String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
+                imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText("");
+                textDni.clear();textAreaTIP.clear();
+                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                alerta.setTitle("OK!");
+                alerta.setHeaderText("Alumno Insertado Con Éxito");
+                alerta.showAndWait();
+
             }else{
                 if(textNombre.getText().isEmpty()){
                     textNombre.setStyle("-fx-border-color: #B30909");
@@ -377,6 +409,15 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setCurriculumUrl(labelURL.getText());
                 Utilidad.getAlumno().setDni(textDni.getText());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
+                Long seleccionado=0L;
+                if(comboRol.getValue().equals("Alumno")){
+                    seleccionado=1L;
+                }else if(comboRol.getValue().equals("Trabajador")){
+                    seleccionado=2L;
+                }else{
+                    seleccionado=3L;
+                }
+                Utilidad.getAlumno().setEsAlumno(seleccionado);
                 Utilidad.setAlumno((new PersonalBolsaDAOImplement()).modPersonalBolsa(Utilidad.getAlumno()));
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
@@ -385,7 +426,7 @@ public class RegistroAlumnoController implements Initializable {
                 if(tipo.get()==ButtonType.OK){
                     Utilidad.setAlumno(null);
                     Utilidad.setCurso(null);
-                  HelloApplication.cambioVentana("principal-view.fxml");
+                  HelloApplication.cambioVentana("registroAlumno-view.fxml");
                 }
             }else{
                 if(textNombre.getText().isEmpty()){
@@ -415,4 +456,8 @@ public class RegistroAlumnoController implements Initializable {
 
         }
 
+    @javafx.fxml.FXML
+    public void gestion(ActionEvent actionEvent) {
+        HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+    }
 }
