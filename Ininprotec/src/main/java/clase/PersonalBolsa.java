@@ -48,6 +48,8 @@ public class PersonalBolsa implements Serializable {
   private List<AlumnoCurso> cursosAlumnos;
   @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
   private List<AlumnoModulo> moduloAlumno;
+  @Column(name = "nota_final")
+  private Double notaFinal;
 
 
   public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
@@ -99,6 +101,14 @@ public class PersonalBolsa implements Serializable {
 
   public List<AlumnoCurso> getCursosAlumnos() {
     return cursosAlumnos;
+  }
+
+  public Double getNotaFinal() {
+    return notaFinal;
+  }
+
+  public void setNotaFinal(Double notaFinal) {
+    this.notaFinal = notaFinal;
   }
 
   public void setCursosAlumnos(List<AlumnoCurso> cursosAlumnos) {

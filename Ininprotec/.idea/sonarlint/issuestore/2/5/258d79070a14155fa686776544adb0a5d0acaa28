@@ -1,25 +1,43 @@
 
-9
-java:S16437"Use a StringBuilder instead.(ÈÃ˜İ8’Åê1
-Q
-java:S1611/"4Remove the parentheses around the "alumno" parameter(±Úâ‚8°’Åê1
-Q
-java:S16113"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8±’Åê1
-V
-java:S1611A"4Remove the parentheses around the "alumno" parameter(Œ§ÖŠúÿÿÿÿ8²’Åê1
-V
-java:S1611E"4Remove the parentheses around the "alumno" parameter(½åÀ«üÿÿÿÿ8²’Åê1
-P
-java:S1611I"4Remove the parentheses around the "alumno" parameter(Ä«Œ-8³’Åê1
-V
-java:S1611M"4Remove the parentheses around the "alumno" parameter(©Öæüÿÿÿÿ8³’Åê1
-a
-java:S3358N"DExtract this nested ternary operation into an independent statement.(õÌ¹Ç8³’Åê1
-I
-java:S1602T",Remove useless curly braces around statement(œ„Ù8´’Åê1
+L
+java:S37404"/Provide the parametrized type for this generic.(¾ñÂ˜8Íèä ë1
+L
+java:S3740="/Provide the parametrized type for this generic.(æ´¸8Íèä ë1
+j
+java:S1192Q"NDefine a constant instead of duplicating this literal "No Calificado" 4 times.(‰ô¢a8Îèä ë1
+m
+java:S1192P"KDefine a constant instead of duplicating this literal "Calificado" 4 times.(Æ³Š’úÿÿÿÿ8Îèä ë1
+:
+java:S1643±"Use a StringBuilder instead.(ÈÃ˜İ8Ïèä ë1
+}
+java:S2259’"ZA "NullPointerException" could be thrown; "comboFiltroTodosCalificacion" is nullable here.(©îé•ùÿÿÿÿ8Ûéä ë1
+~
+java:S1450?"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8Şéä ë1
+t
+java:S3776C"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(•‘İŸüÿÿÿÿ8âéä ë1
+g
+java:S1858k"E"t1" is already a string, there's no need to call "toString()" on it.(Úûí„úÿÿÿÿ8çéä ë1
+h
+java:S1858„"E"t1" is already a string, there's no need to call "toString()" on it.(ƒÿçúÿÿÿÿ8ééä ë1
 R
-java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8êşœÅê1
-[
-java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8â» Åê1
+java:S1611©"4Remove the parentheses around the "alumno" parameter(±Úâ‚8íéä ë1
+R
+java:S1611­"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8íéä ë1
+W
+java:S1611»"4Remove the parentheses around the "alumno" parameter(Œ§ÖŠúÿÿÿÿ8îéä ë1
+W
+java:S1611¿"4Remove the parentheses around the "alumno" parameter(½åÀ«üÿÿÿÿ8ïéä ë1
 Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8·’’Åê1
+java:S1611Ã"4Remove the parentheses around the "alumno" parameter(Ä«Œ-8ïéä ë1
+W
+java:S1611Ç"4Remove the parentheses around the "alumno" parameter(©Öæüÿÿÿÿ8ïéä ë1
+b
+java:S3358È"DExtract this nested ternary operation into an independent statement.(õÌ¹Ç8ïéä ë1
+J
+java:S1602Î",Remove useless curly braces around statement(œ„Ù8ğéä ë1
+R
+java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8şéä ë1
+[
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8şéä ë1
+Q
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8şéä ë1

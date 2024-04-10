@@ -5,14 +5,12 @@ import clase.AlumnoCurso;
 import clase.Curso;
 import implement.CursoDAOImplement;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -27,46 +25,43 @@ import java.util.ResourceBundle;
 public class PrincipalController implements Initializable {
 
     @FXML
-    private FlowPane principalFlowPane;
-    @FXML
     private ImageView imagenPerfil;
     @FXML
     private ImageView imagenNombre;
     @FXML
     private Label labelNombre;
     @FXML
-    private Button botonEntrarBolsa;
-    @FXML
     private ImageView imagenEmail;
     @FXML
     private ImageView imagenDni;
     @FXML
-    private ComboBox comboServicios;
-    @FXML
-    private Button botonEntrarServicios;
-    @FXML
-    private Button botonEditarServicios;
-    @FXML
-    private Button botonCrearServicios;
-    @FXML
     private ComboBox <Curso>comboCurso;
-    @FXML
-    private Button botonEntrarCurso;
-    @FXML
-    private Button botonEditarCurso;
-    @FXML
-    private Button botonCrearCurso;
-    @FXML
-    private Button botonEntrarRegistro;
     @FXML
     private Label labelEmail;
     @FXML
     private Label labelDNI;
     @FXML
     private Button botonMiPerfil;
+    @FXML
+    private ImageView imagenCursos;
+    @FXML
+    private MenuItem crearCurso;
+    @FXML
+    private ImageView imagenRegistro;
+    @FXML
+    private ImageView imagenServicios;
+    @FXML
+    private ImageView imagenBolsa;
+    @FXML
+    private ImageView imagenProfe;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        imagenCursos.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoFormacion.png").toExternalForm()));
+        imagenRegistro.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoRegistrarse.png").toExternalForm()));
+        imagenServicios.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoServicio.png").toExternalForm()));
+        imagenBolsa.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoClasificacion.png").toExternalForm()));
+        imagenProfe.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconProfe.png").toExternalForm()));
         String ruta = PrincipalController.class.getClassLoader().getResource("imagenes/iconoNombre.png").toExternalForm();
         String rutaEmail = PrincipalController.class.getClassLoader().getResource("imagenes/iconoEmail.png").toExternalForm();
         String rutaDNI = PrincipalController.class.getClassLoader().getResource("imagenes/iconoDNI.png").toExternalForm();
@@ -104,22 +99,45 @@ public class PrincipalController implements Initializable {
     }
 
     @FXML
-    public void crearCursoNuevo(ActionEvent actionEvent) {
-    HelloApplication.cambioVentana("creacionCurso-view.fxml");
+    public void miPerfil(ActionEvent actionEvent) {
     }
 
     @FXML
-    public void entrarCurso(ActionEvent actionEvent) {
-        Utilidad.setCurso(comboCurso.getValue());
-        HelloApplication.cambioVentana("entradaCurso-view.fxml");
+    public void entrar(Event event) {
+        if(comboCurso.getValue()!=null){
+            Utilidad.setCurso(comboCurso.getValue());
+            HelloApplication.cambioVentana("entradaCurso-view.fxml");
+        }else{
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Curso No Seleccionado");
+            alerta.setContentText("Por favor seleccione un curso para poder entrar en él.");
+            alerta.showAndWait();
+        }
+
     }
 
     @FXML
-    public void entrarRegistroAlumno(ActionEvent actionEvent) {
+    public void creacionCurso(ActionEvent actionEvent) {
+        HelloApplication.cambioVentana("creacionCurso-view.fxml");
+    }
+
+
+    @FXML
+    public void registro(Event event) {
         HelloApplication.cambioVentana("registroAlumno-view.fxml");
     }
 
     @FXML
-    public void miPerfil(ActionEvent actionEvent) {
+    public void entrarServicios(Event event) {
+    }
+
+    @FXML
+    public void entrarBolsa(Event event) {
+    }
+
+    @FXML
+    public void entrarInstructor(Event event) {
+        HelloApplication.cambioVentana("registroInstructor-view.fxml");
     }
 }

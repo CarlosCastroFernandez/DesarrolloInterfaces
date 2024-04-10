@@ -1,0 +1,19 @@
+
+Q
+java:S3740("/Provide the parametrized type for this generic.(Óü©Õûÿÿÿÿ8ÿÕÊ ì1
+
+java:S1186W"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¦¹8–ÖÊ ì1
+
+java:S1186["€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úˆ¶§8–ÖÊ ì1
+
+java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·À”–8–ÖÊ ì1
+
+java:S1186c"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ŞãE8–ÖÊ ì1
+~
+java:S1450+"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8—ÖÊ ì1
+e
+java:S6355Z"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8ÖÊ ì1
+R
+java:S1133["5Do not forget to remove this deprecated code someday.(úˆ¶§8ÖÊ ì1
+E
+java:S1123["(Add the missing @deprecated Javadoc tag.(úˆ¶§8ÖÊ ì1

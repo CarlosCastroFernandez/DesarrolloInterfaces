@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -36,8 +35,12 @@ public class PersonalIIP implements Serializable {
   @Column(name = "lugar_residencia")
   private String lugarResidencia;
   private String titulacion;
+  @Column(name = "licencia_arma")
+  private String licenciaArma;
   @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER)
   private List<Modulo>modulos;
+  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  private List<InstructorCurso> cursoInstructor;
 
   public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
     this.id = id;
@@ -59,10 +62,11 @@ public class PersonalIIP implements Serializable {
     this.titulacion = titulacion;
 
   }
-  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
+  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
+    this.licenciaArma=licenciaArma;
     this.correo = correo;
     this.dni = dni;
     this.telefono = telefono;
@@ -102,6 +106,14 @@ public class PersonalIIP implements Serializable {
     this.modulos = modulos;
   }
 
+  public List<InstructorCurso> getCursoInstructor() {
+    return cursoInstructor;
+  }
+
+  public void setCursoInstructor(List<InstructorCurso> cursos) {
+    this.cursoInstructor = cursos;
+  }
+
   public String getNombre() {
     return nombre;
   }
@@ -110,6 +122,13 @@ public class PersonalIIP implements Serializable {
     this.nombre = nombre;
   }
 
+  public String getLicenciaArma() {
+    return licenciaArma;
+  }
+
+  public void setLicenciaArma(String licenciaArma) {
+    this.licenciaArma = licenciaArma;
+  }
 
   public String getApellido1() {
     return apellido1;

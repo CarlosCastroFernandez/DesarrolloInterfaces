@@ -49,3 +49,7 @@ U
 %src/main/java/dao/DAOAlumnoCurso.java,c\9\c9916a1b86a9006cc9c4713a028c2631920af351
 d
 4src/main/java/implement/AlumnoCursoDAOImplement.java,2\3\236e4e01a7cdd1bfeae63c88054a17907f4c8887
+v
+Fsrc/main/java/com/example/ininprotec/RegistroInstructorController.java,2\1\214a7c1da0223013d50eae06f3874b996d752b82
+s
+Csrc/main/java/com/example/ininprotec/TodosInstructorController.java,e\d\edfdef724a810f1ef88e9b8fbf91dbc87ddb281e

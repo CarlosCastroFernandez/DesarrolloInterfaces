@@ -18,6 +18,8 @@
         <mapping class="clase.PersonalIIP"/>
         <mapping class="clase.AlumnoCurso"/>
         <mapping class="clase.AlumnoModulo"/>
+        <mapping class="clase.InstructorCurso"/>
+
 
 
     </session-factory>

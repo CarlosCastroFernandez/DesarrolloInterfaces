@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         miStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("principal-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
         if(ruta.equals("creacionCurso-view.fxml")){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
-                Scene scene = new Scene(fxmlLoader.load(),800,600);
+                Scene scene = new Scene(fxmlLoader.load(),900,600);
                 miStage.setScene(scene);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -30,7 +30,7 @@ public class HelloApplication extends Application {
         }else{
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(ruta));
-                Scene scene = new Scene(fxmlLoader.load(),800,600);
+                Scene scene = new Scene(fxmlLoader.load(),900,600);
                 miStage.setScene(scene);
             } catch (IOException e) {
                 throw new RuntimeException(e);

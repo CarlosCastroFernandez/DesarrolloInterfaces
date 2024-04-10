@@ -1,42 +1,44 @@
 
-h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Şƒ€Èê1
-h	java:S112º"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
-h	java:S112î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
-h	java:S112—"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
-h	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
-h	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
-h	java:S112è"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ßƒ€Èê1
+h	java:S112œ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Œ÷Ëïê1
+h	java:S112Ï"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Œ÷Ëïê1
+h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷Ëïê1
+h	java:S112¬"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷Ëïê1
+h	java:S112ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷Ëïê1
+h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷Ëïê1
+h	java:S112ˆ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷Ëïê1
+Q
+java:S3740f"/Provide the parametrized type for this generic.(ÚäøÚşÿÿÿÿ8÷Ëïê1
 ~
-java:S1192º"[Define a constant instead of duplicating this literal "-fx-border-color: #B30909" 14 times.(›…²üÿÿÿÿ8àƒ€Èê1
+java:S1192Ú"[Define a constant instead of duplicating this literal "-fx-border-color: #B30909" 14 times.(›…²üÿÿÿÿ8÷Ëïê1
+ƒ
+java:S1192"aDefine a constant instead of duplicating this literal "imagenes/imagenDefectoPerfil.png" 3 times.(˜µ²¢üÿÿÿÿ8÷Ëïê1
 `
-java:S1163è"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8áƒ€Èê1
+java:S1163ˆ"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8’÷Ëïê1
 W
-java:S1143è"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8âƒ€Èê1
+java:S1143ˆ"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8’÷Ëïê1
 k
-java:S3655"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8»ÊƒÈê1
+java:S3655ª"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8¸áÌïê1
 Z
-java:S2589à"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8üƒ€Èê1
+java:S2589õ"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8º÷Ëïê1
 t
-java:S3776c"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(•‘İŸüÿÿÿÿ8ÿƒ€Èê1
+java:S3776i"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(•‘İŸüÿÿÿÿ8¾÷Ëïê1
 N
-java:S1602f",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8„€Èê1
-N
-java:S1602n",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8‚„€Èê1
+java:S1602x",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8Á÷Ëïê1
 ?
-java:S1116ˆ"Remove this empty statement.(Åñ­õşÿÿÿÿ8ƒ„€Èê1
+java:S1116’"Remove this empty statement.(Åñ­õşÿÿÿÿ8Ã÷Ëïê1
 O
-java:S1602—",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8…„€Èê1
+java:S1602¡",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8Å÷Ëïê1
 O
-java:S1602›",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8…„€Èê1
-H	java:S106Ó"+Replace this use of System.out by a logger.(Ô–¿®8‰„€Èê1
-M	java:S106ß"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8‰„€Èê1
+java:S1602¥",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8Å÷Ëïê1
+H	java:S106è"+Replace this use of System.out by a logger.(Ô–¿®8Ë÷Ëïê1
+M	java:S106ô"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8Ì÷Ëïê1
 p
-java:S3776‹"RRefactor this method to reduce its Cognitive Complexity from 94 to the 15 allowed.(¦ëçÍ8„€Èê1
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 99 to the 15 allowed.(¦ëçÍ8Ğ÷Ëïê1
 J
-java:S1125Ë"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8‘„€Èê1
+java:S1125ë"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8Ö÷Ëïê1
 J
-java:S1125Ë"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8‘„€Èê1
+java:S1125ë"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8Ö÷Ëïê1
 M
-java:S2093ß"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8’„€Èê1
+java:S2093ÿ"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8Ø÷Ëïê1
 å
-java:S6541‹"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 141 to 64, Complexity from 37 to 14, Nesting Level from 5 to 2, Number of Variables from 20 to 6.(¦ëçÍ8–„€Èê1
+java:S6541 "ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 160 to 64, Complexity from 39 to 14, Nesting Level from 5 to 2, Number of Variables from 23 to 6.(¦ëçÍ8Ü÷Ëïê1

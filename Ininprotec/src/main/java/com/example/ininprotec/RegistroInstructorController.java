@@ -1,12 +1,10 @@
 package com.example.ininprotec;
 
 import Util.Utilidad;
-import clase.AlumnoCurso;
-import clase.AlumnoModulo;
-import clase.Curso;
-import clase.PersonalBolsa;
+import clase.*;
 import implement.CursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
+import implement.PersonalIIPDAOImplement;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -37,11 +35,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-
-
-
-
-public class RegistroAlumnoController implements Initializable {
+public class RegistroInstructorController implements Initializable {
     @javafx.fxml.FXML
     private ImageView imagenPerfil;
     @javafx.fxml.FXML
@@ -76,30 +70,14 @@ public class RegistroAlumnoController implements Initializable {
     private TextField textTitulacion;
     @javafx.fxml.FXML
     private TextField textResidencia;
-    @javafx.fxml.FXML
-    private RadioButton radioAlumno;
-    @javafx.fxml.FXML
-    private ToggleGroup uno;
-    @javafx.fxml.FXML
-    private RadioButton radioTrabajador;
-    @javafx.fxml.FXML
-    private FlowPane flowPaneCurso;
-    @javafx.fxml.FXML
-    private ComboBox <Curso>comboCurso;
     private String archivoImagen;
     @javafx.fxml.FXML
     private Button botonGuardar;
     private Path nuevoPath;
     @javafx.fxml.FXML
-    private Label labelCurso;
-    @javafx.fxml.FXML
     private ImageView imagenFlecha;
     @javafx.fxml.FXML
     private Button botonGestion;
-    @javafx.fxml.FXML
-    private Label labelRol;
-    @javafx.fxml.FXML
-    private ComboBox comboRol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,42 +89,14 @@ public class RegistroAlumnoController implements Initializable {
             Utilidad.setCurso(null);
             Utilidad.setInstructor(null);
         });
-        if(Utilidad.getAlumno()==null){
-            labelRol.setVisible(false);
-            comboRol.setVisible(false);
+        if(Utilidad.getInstructor()==null){
             labelURL.setStyle("-fx-text-fill: #000000");
             labelURL.setStyle("-fx-underline: true");
-            flowPaneCurso.setVisible(false);
-            CursoDAOImplement daoCurso=new CursoDAOImplement();
-            radioAlumno.setOnAction(actionEvent -> {
-                flowPaneCurso.setVisible(true);
-            });
-            radioTrabajador.setOnAction(actionEvent -> {
-                comboCurso.getSelectionModel().select(null);
-                flowPaneCurso.setVisible(false);
-            });
             String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
             Image imagen=new Image(rutaImagen);
             imagenPerfil.setImage(imagen);
-            comboCurso.setConverter(new StringConverter<Curso>() {
 
 
-                                        @Override
-                                        public String toString(Curso alumnoCurso) {
-                                            if(alumnoCurso!=null){
-                                                return alumnoCurso.getNombre();
-                                            }
-                                            return null;
-                                        }
-
-                                        @Override
-                                        public Curso fromString(String s) {
-                                            return null;
-                                        }
-
-                                        ;
-                                    });
-                comboCurso.getItems().addAll(daoCurso.getAll());
             labelURL.setOnMouseClicked(mouseEvent -> {
                 if(!labelURL.getText().equals("")){
                     String rutaArchivo=nuevoPath.toString();
@@ -167,40 +117,22 @@ public class RegistroAlumnoController implements Initializable {
                 labelURL.setStyle("-fx-text-fill: #000000");
             });
         }else{
-            labelRol.setVisible(true);
-            comboRol.setVisible(true);
-            comboRol.getItems().add("Alumno");
-            comboRol.getItems().add("Trabajador");
-            comboRol.getItems().add("Alumno y Trabajador");
 
-            if(Utilidad.getAlumno().getEsAlumno()==1){
-                radioAlumno.setSelected(true);
-                comboCurso.getSelectionModel().select(0);
-            }else if(Utilidad.getAlumno().getEsAlumno()==2){
-                radioTrabajador.setSelected(true);
-                comboCurso.getSelectionModel().select(1);
-            }else{
-                comboCurso.getSelectionModel().select(2);
-            }
             botonGestion.setVisible(false);
-            labelCurso.setVisible(false);
-            radioTrabajador.setVisible(false);
-            radioAlumno.setVisible(false);
-            comboCurso.setVisible(false);
-            textNombre.setText(Utilidad.getAlumno().getNombre());
-            textApellido1.setText(Utilidad.getAlumno().getApellido1());
-            textApellido2.setText(Utilidad.getAlumno().getApellido2());
-            textEmail.setText(Utilidad.getAlumno().getCorreo());
-            textTelefono.setText(Utilidad.getAlumno().getTelefono());
-            textLicenciaArmas.setText(Utilidad.getAlumno().getLicenciaArma());
-            dateFecha.setValue(LocalDate.parse(Utilidad.getAlumno().getFechaNacimiento().toString()));
-            textCamiseta.setText(Utilidad.getAlumno().getTallaCamiseta());
-            textIBAN.setText(Utilidad.getAlumno().getNumeroCuenta());
-            textSegSocial.setText(Utilidad.getAlumno().getNumeroSocial());
-            textTitulacion.setText(Utilidad.getAlumno().getTitulacion());
-            textResidencia.setText(Utilidad.getAlumno().getLugarResidencia());
-            if(Utilidad.getAlumno().getImagenPerfil()!=null){
-                ByteArrayInputStream lectura=new ByteArrayInputStream(Utilidad.getAlumno().getImagenPerfil());
+            textNombre.setText(Utilidad.getInstructor().getNombre());
+            textApellido1.setText(Utilidad.getInstructor().getApellido1());
+            textApellido2.setText(Utilidad.getInstructor().getApellido2());
+            textEmail.setText(Utilidad.getInstructor().getCorreo());
+            textTelefono.setText(Utilidad.getInstructor().getTelefono());
+            textLicenciaArmas.setText(Utilidad.getInstructor().getLicenciaArma());
+            dateFecha.setValue(LocalDate.parse(Utilidad.getInstructor().getFechaNacimiento().toString()));
+            textCamiseta.setText(Utilidad.getInstructor().getTallaCamiseta());
+            textIBAN.setText(Utilidad.getInstructor().getNumeroCuenta());
+            textSegSocial.setText(Utilidad.getInstructor().getNumeroSocial());
+            textTitulacion.setText(Utilidad.getInstructor().getTitulacion());
+            textResidencia.setText(Utilidad.getInstructor().getLugarResidencia());
+            if(Utilidad.getInstructor().getImagenPerfil()!=null){
+                ByteArrayInputStream lectura=new ByteArrayInputStream(Utilidad.getInstructor().getImagenPerfil());
                 Image imagenLeida=new Image(lectura);
                 try {
                     lectura.close();
@@ -215,9 +147,9 @@ public class RegistroAlumnoController implements Initializable {
             }
 
 
-            labelURL.setText(Utilidad.getAlumno().getCurriculumUrl());
-            textDni.setText(Utilidad.getAlumno().getDni());
-            textAreaTIP.setText(Utilidad.getAlumno().getNumeroTip());
+            labelURL.setText(Utilidad.getInstructor().getCurriculum());
+            textDni.setText(Utilidad.getInstructor().getDni());
+            textAreaTIP.setText(Utilidad.getInstructor().getNumeroTip());
         }
 
 
@@ -248,14 +180,14 @@ public class RegistroAlumnoController implements Initializable {
             Path destino=Paths.get("./Curriculums/"+archivo.getName());
             try {
                 Files.copy(origenPath,destino);
-                    String nombreElegido="CV "+textNombre.getText()+" "+textApellido1.getText()+" "+textApellido2.getText();
-                    String extension=archivo.getName().substring(archivo.getName().lastIndexOf("."),archivo.getName().length());
-                    nombreElegido+=extension;
-                    nuevoPath=destino.resolveSibling(nombreElegido);
-                    Files.move(destino,nuevoPath, StandardCopyOption.REPLACE_EXISTING);
-                    String nombreRuta=String.valueOf(nuevoPath);
-                    String nombreFinalRuta=nombreRuta.substring(nombreRuta.lastIndexOf(File.separator)+1,nombreRuta.length());
-                    labelURL.setText(nombreFinalRuta);
+                String nombreElegido="CV "+textNombre.getText()+" "+textApellido1.getText()+" "+textApellido2.getText();
+                String extension=archivo.getName().substring(archivo.getName().lastIndexOf("."),archivo.getName().length());
+                nombreElegido+=extension;
+                nuevoPath=destino.resolveSibling(nombreElegido);
+                Files.move(destino,nuevoPath, StandardCopyOption.REPLACE_EXISTING);
+                String nombreRuta=String.valueOf(nuevoPath);
+                String nombreFinalRuta=nombreRuta.substring(nombreRuta.lastIndexOf(File.separator)+1,nombreRuta.length());
+                labelURL.setText(nombreFinalRuta);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -287,11 +219,8 @@ public class RegistroAlumnoController implements Initializable {
 
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
-        AlumnoCurso alumnoCurso=new AlumnoCurso();
-        AlumnoModulo alumnoModulo=new AlumnoModulo();
-        if(Utilidad.getAlumno()==null){
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&dateFecha.getValue()!=null&&!textDni.getText().isEmpty()&&
-            !textEmail.getText().isEmpty()&&(radioAlumno.isSelected()||radioTrabajador.isSelected())){
+        if(Utilidad.getInstructor()==null){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -302,35 +231,14 @@ public class RegistroAlumnoController implements Initializable {
                     }
                 }
 
-                PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
-                        textDni.getText(),textTelefono.getText(), Date.valueOf(dateFecha.getValue()),textLicenciaArmas.getText(),
-                        textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
-                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
-                if(clienteA.getEsAlumno()==1){
-                    clienteA.setCursosAlumnos(new ArrayList<>());
-                    clienteA.setModuloAlumno(new ArrayList<>());
-                    alumnoCurso.setAlumnoId(clienteA);
-                    alumnoCurso.setCursoId(comboCurso.getValue());
-                    clienteA.getCursosAlumnos().add(alumnoCurso);
-                    if(comboCurso.getValue()!=null){
-                        alumnoModulo.setAlumnoId(clienteA);
-                        for(int i=0;i<comboCurso.getValue().getModulos().size();i++){
-                            alumnoModulo.setModuloId(comboCurso.getValue().getModulos().get(i));
-                            clienteA.getModuloAlumno().add(alumnoModulo);
-                        }
+                PersonalIIP clienteA=new PersonalIIP(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
+                        textDni.getText(),textTelefono.getText(),  (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textCamiseta.getText(),
+                        labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 1L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
 
 
-                    }else{
-                        clienteA.setModuloAlumno(null);
-                        clienteA.setCursosAlumnos(null);
-                    }
 
-                    PersonalBolsaDAOImplement daoAlumno=new PersonalBolsaDAOImplement();
-                    daoAlumno.subir(clienteA);
-                }else{
-                    PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
-                    daoTrabajador.subir(clienteA);
-                }
+                (new PersonalIIPDAOImplement()).subir(clienteA);
+
                 textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
                 textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
                 textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
@@ -339,7 +247,7 @@ public class RegistroAlumnoController implements Initializable {
                 textDni.clear();textAreaTIP.clear();
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
-                alerta.setHeaderText("Alumno Insertado Con Éxito");
+                alerta.setHeaderText("Instructor Insertado Con Éxito");
                 alerta.showAndWait();
 
             }else{
@@ -361,10 +269,7 @@ public class RegistroAlumnoController implements Initializable {
                 if(textDni.getText().isEmpty()){
                     textDni.setStyle("-fx-border-color: #B30909");
                 }
-                if(radioAlumno.isSelected()==false&&radioTrabajador.isSelected()==false){
-                    radioAlumno.setStyle("-fx-border-color: #B30909");
-                    radioTrabajador.setStyle("-fx-border-color: #B30909");
-                }
+
             }
         }else{
             if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&dateFecha.getValue()!=null&&!textDni.getText().isEmpty()&&
@@ -394,40 +299,34 @@ public class RegistroAlumnoController implements Initializable {
                         }
                     }
                 }
-                Utilidad.getAlumno().setNombre(textNombre.getText());
-                Utilidad.getAlumno().setApellido1(textApellido1.getText());
-                Utilidad.getAlumno().setApellido2(textApellido2.getText());
-                Utilidad.getAlumno().setCorreo(textEmail.getText());
-                Utilidad.getAlumno().setTelefono(textTelefono.getText());
-                Utilidad.getAlumno().setLicenciaArma(textLicenciaArmas.getText());
-                Utilidad.getAlumno().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
-                Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText());
-                Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText());
-                Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText());
-                Utilidad.getAlumno().setTitulacion(textTitulacion.getText());
-                Utilidad.getAlumno().setLugarResidencia(textResidencia.getText());
-                Utilidad.getAlumno().setImagenPerfil(imagenCargada);
-                Utilidad.getAlumno().setCurriculumUrl(labelURL.getText());
-                Utilidad.getAlumno().setDni(textDni.getText());
-                Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
-                Long seleccionado=0L;
-                if(comboRol.getValue().equals("Alumno")){
-                    seleccionado=1L;
-                }else if(comboRol.getValue().equals("Trabajador")){
-                    seleccionado=2L;
-                }else{
-                    seleccionado=3L;
-                }
-                Utilidad.getAlumno().setEsAlumno(seleccionado);
-                Utilidad.setAlumno((new PersonalBolsaDAOImplement()).modPersonalBolsa(Utilidad.getAlumno()));
+                Utilidad.getInstructor().setNombre(textNombre.getText());
+                Utilidad.getInstructor().setApellido1(textApellido1.getText());
+                Utilidad.getInstructor().setApellido2(textApellido2.getText());
+                Utilidad.getInstructor().setCorreo(textEmail.getText());
+                Utilidad.getInstructor().setTelefono(textTelefono.getText());
+                Utilidad.getInstructor().setLicenciaArma(textLicenciaArmas.getText());
+                Utilidad.getInstructor().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
+                Utilidad.getInstructor().setTallaCamiseta(textCamiseta.getText());
+                Utilidad.getInstructor().setNumeroCuenta(textIBAN.getText());
+                Utilidad.getInstructor().setNumeroSocial(textSegSocial.getText());
+                Utilidad.getInstructor().setTitulacion(textTitulacion.getText());
+                Utilidad.getInstructor().setLugarResidencia(textResidencia.getText());
+                Utilidad.getInstructor().setImagenPerfil(imagenCargada);
+                Utilidad.getInstructor().setCurriculum(labelURL.getText());
+                Utilidad.getInstructor().setDni(textDni.getText());
+                Utilidad.getInstructor().setNumeroTip(textAreaTIP.getText());
+                //MODIFICACION INSTRUCOT
+                (new PersonalIIPDAOImplement()).actualizar(Utilidad.getInstructor());
+               //-------------------------
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
-                alerta.setHeaderText("Alumno Modificado Con Éxito");
+                alerta.setHeaderText("Instructor Modificado Con Éxito");
                 Optional<ButtonType> tipo=alerta.showAndWait();
                 if(tipo.get()==ButtonType.OK){
                     Utilidad.setAlumno(null);
                     Utilidad.setCurso(null);
-                  HelloApplication.cambioVentana("registroAlumno-view.fxml");
+                    Utilidad.setInstructor(null);
+                    HelloApplication.cambioVentana("registroInstructor-view.fxml");
                 }
             }else{
                 if(textNombre.getText().isEmpty()){
@@ -455,10 +354,10 @@ public class RegistroAlumnoController implements Initializable {
 
 
 
-        }
+    }
 
     @javafx.fxml.FXML
     public void gestion(ActionEvent actionEvent) {
-        HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+        HelloApplication.cambioVentana("todos-instructor-view.fxml");
     }
 }
