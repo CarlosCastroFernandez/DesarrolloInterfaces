@@ -54,6 +54,8 @@ public class PrincipalController implements Initializable {
     private ImageView imagenBolsa;
     @FXML
     private ImageView imagenProfe;
+    @FXML
+    private MenuItem botonEditarCurso;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -139,5 +141,19 @@ public class PrincipalController implements Initializable {
     @FXML
     public void entrarInstructor(Event event) {
         HelloApplication.cambioVentana("registroInstructor-view.fxml");
+    }
+
+    @FXML
+    public void edicionCurso(ActionEvent actionEvent) {
+        if(comboCurso.getValue()!=null){
+            Utilidad.setCurso(comboCurso.getValue());
+            HelloApplication.cambioVentana("creacionCurso-view.fxml");
+        }else{
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Curso No Seleccionado");
+            alerta.setContentText("Por favor seleccione un curso para poder editarlo.");
+            alerta.showAndWait();
+        }
     }
 }

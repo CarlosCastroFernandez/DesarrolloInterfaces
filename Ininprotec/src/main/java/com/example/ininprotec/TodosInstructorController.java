@@ -137,14 +137,16 @@ public class TodosInstructorController implements Initializable {
     public void borrar(ActionEvent actionEvent) {
         if(instructorSeleccionado!=null){
             (new PersonalIIPDAOImplement()).borrar(instructorSeleccionado);
-            tabla.getItems().remove(instructorSeleccionado);
+
             Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
             alerta.setTitle("OK!");
             alerta.setHeaderText("Borrado Con Éxito");
             alerta.setContentText("El instructor con nombre "+instructorSeleccionado.getNombre()+" y\n" +
                     "DNI: "+instructorSeleccionado.getDni()+" Ha sido BORRADO");
             alerta.showAndWait();
-            instructorSeleccionado=null;
+            tabla.getItems().remove(instructorSeleccionado);
+
+
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("ERROR");

@@ -1,19 +1,27 @@
 
 Q
-java:S3740("/Provide the parametrized type for this generic.(Óü©Õûÿÿÿÿ8ÿÕÊ ì1
-
-java:S1186W"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¦¹8–ÖÊ ì1
-
-java:S1186["€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úˆ¶§8–ÖÊ ì1
-
-java:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·À”–8–ÖÊ ì1
-
-java:S1186c"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ŞãE8–ÖÊ ì1
+java:S3740)"/Provide the parametrized type for this generic.(Óü©Õûÿÿÿÿ8ĞãøÎì1
+g
+java:S11926"JDefine a constant instead of duplicating this literal "Sin Curso" 3 times.(ÃüşÁ8ÑãøÎì1
+9
+java:S1643h"Use a StringBuilder instead.(ÈÃ˜İ8ÒãøÎì1
 ~
-java:S1450+"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8—ÖÊ ì1
-e
-java:S6355Z"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8ÖÊ ì1
-R
-java:S1133["5Do not forget to remove this deprecated code someday.(úˆ¶§8ÖÊ ì1
-E
-java:S1123["(Add the missing @deprecated Javadoc tag.(úˆ¶§8ÖÊ ì1
+java:S1450,"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8ğãøÎì1
+t
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(•‘İŸüÿÿÿÿ8óãøÎì1
+Z
+java:S1611`"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8øãøÎì1
+U
+java:S1611d"8Remove the parentheses around the "instructor" parameter(åí¾8øãøÎì1
+Z
+java:S1611r"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8ùãøÎì1
+Z
+java:S1611v"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8ùãøÎì1
+U
+java:S1611z"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8úãøÎì1
+N
+java:S1602~",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8úãøÎì1
+d
+java:S1128"BRemove this unused import 'implement.InstructorCursoDAOImplement'.(ÖÄßËùÿÿÿÿ8ãÒûŞì1
+]
+java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8ãÒûŞì1

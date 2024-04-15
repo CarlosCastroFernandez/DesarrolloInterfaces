@@ -19,7 +19,7 @@ public class Curso implements Serializable {
 
   @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
   private List<Modulo>modulos=new ArrayList<>();
-  @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<InstructorCurso> cursoInstructor;
 
 
@@ -91,6 +91,6 @@ public class Curso implements Serializable {
     return "Curso{" +
             "id=" + id +
             ", nombre='" + nombre + '\'' +
-            '}';
+            '}'+" modulos"+modulos.toString();
   }
 }

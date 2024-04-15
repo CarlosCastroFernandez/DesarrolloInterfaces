@@ -1,7 +1,91 @@
 
+¯
+java:S1192«"‹Define a constant instead of duplicating this literal "Por favro elimine primero los modulos posteriores para poder eliminar este" 5 times.(øĞ«Üşÿÿÿÿ8ºÌçí1
+q
+java:S1192¨"TDefine a constant instead of duplicating this literal "Campo Sin Rellenar" 31 times.(”£ûl8¹Ìçí1
+q
+java:S1192ª"SDefine a constant instead of duplicating this literal "Error de ELIMINADO" 5 times.(ß´±û8ºÌçí1
+i
+java:S1192©"FDefine a constant instead of duplicating this literal "ERROR" 7 times.(®æôêıÿÿÿÿ8ºÌçí1
+F
+java:S5411—"(Use a primitive boolean expression here.(ÊÕµ¬8½Ìçí1
+F
+java:S5411±"(Use a primitive boolean expression here.(·Ñúó8½Ìçí1
+F
+java:S5411É"(Use a primitive boolean expression here.(ü§¶Å8½Ìçí1
+F
+java:S5411á"(Use a primitive boolean expression here.(µÔØ„8½Ìçí1
+F
+java:S5411ù"(Use a primitive boolean expression here.(âØ½¯8½Ìçí1
+K
+java:S5411’"(Use a primitive boolean expression here.(ú‡’ãÿÿÿÿÿ8½Ìçí1
+K
+java:S5411°"(Use a primitive boolean expression here.(¦ÙĞ©ûÿÿÿÿ8½Ìçí1
+F
+java:S5411Î"(Use a primitive boolean expression here.(Ú‹8½Ìçí1
+F
+java:S5411ì"(Use a primitive boolean expression here.(§‰Øª8½Ìçí1
+K
+java:S5411‹"(Use a primitive boolean expression here.(°·Ñõúÿÿÿÿ8½Ìçí1
+K
+java:S5411ª"(Use a primitive boolean expression here.(Ó¹´¬ûÿÿÿÿ8½Ìçí1
+F
+java:S5411É"(Use a primitive boolean expression here.(¶­ßÿ8½Ìçí1
+¨
+java:S1862­"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(†ÖÉÒøÿÿÿÿ8ÀÌçí1
 Ÿ
-java:S1186‡"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™ìÛ©8Î»™Ãê1
-t
-java:S3776="RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(•‘İŸüÿÿÿÿ8Ñ»™Ãê1
+java:S1186ï"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™ìÛ©8¿Îçí1
+¤
+java:S1186õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ºæô©ûÿÿÿÿ8ÀÎçí1
+y
+java:S1450e"WRemove the "visible2" field and declare it as a local variable in the relevant methods.(úÉà‹ÿÿÿÿÿ8ÁÎçí1
+u
+java:S3776n"SRefactor this method to reduce its Cognitive Complexity from 126 to the 15 allowed.(•‘İŸüÿÿÿÿ8ÆÎçí1
+E
+java:S1125—"'Remove the unnecessary boolean literal.(ÊÕµ¬8ÉÎçí1
+E
+java:S1125—"'Remove the unnecessary boolean literal.(ÊÕµ¬8ÉÎçí1
+E
+java:S1125—"'Remove the unnecessary boolean literal.(ÊÕµ¬8ÉÎçí1
+E
+java:S1125—"'Remove the unnecessary boolean literal.(ÊÕµ¬8ÉÎçí1
+E
+java:S1125—"'Remove the unnecessary boolean literal.(ÊÕµ¬8ÉÎçí1
+H	java:S106¤"+Replace this use of System.out by a logger.(¤¡ë8øÎçí1
+M	java:S106¥"+Replace this use of System.out by a logger.(Ò†ÌÔûÿÿÿÿ8ßĞ÷ïí1
+E
+java:S1125±"'Remove the unnecessary boolean literal.(·Ñúó8ËÎçí1
+E
+java:S1125±"'Remove the unnecessary boolean literal.(·Ñúó8ËÎçí1
+E
+java:S1125±"'Remove the unnecessary boolean literal.(·Ñúó8ËÎçí1
+E
+java:S1125±"'Remove the unnecessary boolean literal.(·Ñúó8ËÎçí1
+E
+java:S1125É"'Remove the unnecessary boolean literal.(ü§¶Å8ÌÎçí1
+E
+java:S1125É"'Remove the unnecessary boolean literal.(ü§¶Å8ÌÎçí1
+E
+java:S1125É"'Remove the unnecessary boolean literal.(ü§¶Å8ÌÎçí1
+E
+java:S1125á"'Remove the unnecessary boolean literal.(µÔØ„8ÍÎçí1
+E
+java:S1125á"'Remove the unnecessary boolean literal.(µÔØ„8ÍÎçí1
+E
+java:S1125ù"'Remove the unnecessary boolean literal.(âØ½¯8ÎÎçí1
+D	java:S131¡""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8ÕÎçí1
+q
+java:S3776ƒ"SRefactor this method to reduce its Cognitive Complexity from 315 to the 15 allowed.(¦ëçÍ8ÚÎçí1
+M	java:S106Ú"+Replace this use of System.out by a logger.(Ûï­ëüÿÿÿÿ8Öµğí1
+f
+java:S6355î"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8ùÎçí1
+S
+java:S1133ï"5Do not forget to remove this deprecated code someday.(™ìÛ©8ùÎçí1
+F
+java:S1123ï"(Add the missing @deprecated Javadoc tag.(™ìÛ©8ùÎçí1
 N
-java:S1602@",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8ÿšÓÅê1
+java:S1068e",Remove this unused "visible2" private field.(úÉà‹ÿÿÿÿÿ8ùÎçí1
+é
+java:S6541n"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 373 to 64, Complexity from 16 to 14, Nesting Level from 5 to 2, Number of Variables from 44 to 6.(•‘İŸüÿÿÿÿ8úÎçí1
+æ
+java:S6541ƒ"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 456 to 64, Complexity from 110 to 14, Nesting Level from 5 to 2, Number of Variables from 45 to 6.(¦ëçÍ8úÎçí1

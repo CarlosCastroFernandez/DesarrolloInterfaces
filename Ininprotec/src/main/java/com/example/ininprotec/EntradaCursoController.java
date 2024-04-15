@@ -650,6 +650,7 @@ public class EntradaCursoController implements Initializable {
         tablaCurso.getSelectionModel().selectedItemProperty().addListener((observableValue, personalBolsa, t1) -> {
             if (!tablaCurso.getItems().isEmpty()) {
                 personalElegido = t1;
+                System.out.println(personalElegido);
                 labelInfo.setText("Alumno Seleccionado: " + personalElegido.getNombre() + " " + personalElegido.getApellido1() + " " + personalElegido.getApellido2());
 
             }

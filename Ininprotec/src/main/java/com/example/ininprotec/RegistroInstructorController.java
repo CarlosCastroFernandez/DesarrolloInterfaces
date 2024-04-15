@@ -260,20 +260,12 @@ public class RegistroInstructorController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
-                if(textEmail.getText().isEmpty()){
-                    textEmail.setStyle("-fx-border-color: #B30909");
-                }
-                if(dateFecha.getValue()==null){
-                    dateFecha.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
+
+
 
             }
         }else{
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&dateFecha.getValue()!=null&&!textDni.getText().isEmpty()&&
-                    !textEmail.getText().isEmpty()){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -338,15 +330,8 @@ public class RegistroInstructorController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
-                if(textEmail.getText().isEmpty()){
-                    textEmail.setStyle("-fx-border-color: #B30909");
-                }
-                if(dateFecha.getValue()==null){
-                    dateFecha.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
+
+
             }
 
         }

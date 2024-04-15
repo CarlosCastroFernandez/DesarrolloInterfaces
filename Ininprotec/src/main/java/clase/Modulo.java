@@ -22,8 +22,8 @@ public class Modulo implements Serializable {
   @JoinColumn(name = "instructor_id")
   @ManyToOne
   private PersonalIIP instructor;
-  @OneToMany(mappedBy = "moduloId",fetch = FetchType.EAGER)
-  private List<AlumnoModulo> modulos;
+  @OneToMany(mappedBy = "moduloId",fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REMOVE})
+  private List<AlumnoModulo> alumnoModulo;
 
 
   public Modulo(Long id, String nombre, Long cursoId, Curso curso) {
@@ -53,16 +53,24 @@ public class Modulo implements Serializable {
     this.curso = curso;
   }
 
+  public List<AlumnoModulo> getAlumnoModulo() {
+    return alumnoModulo;
+  }
+
+  public void setAlumnoModulo(List<AlumnoModulo> modulos) {
+    this.alumnoModulo = modulos;
+  }
+
   public PersonalIIP getInstructor() {
     return instructor;
   }
 
   public List<AlumnoModulo> getAlumnos() {
-    return modulos;
+    return alumnoModulo;
   }
 
   public void setAlumnos(List<AlumnoModulo  > alumnos) {
-    this.modulos = alumnos;
+    this.alumnoModulo = alumnos;
   }
 
   public void setInstructor(PersonalIIP instructor) {

@@ -50,4 +50,12 @@ public class InstructorCurso {
     this.curso = cursoId;
   }
 
+  @Override
+  public String toString() {
+    return "InstructorCurso{" +
+            "id=" + id +
+            ", instructor=" + instructor.getNombre() +
+            ", curso=" + curso.getNombre() +
+            '}';
+  }
 }

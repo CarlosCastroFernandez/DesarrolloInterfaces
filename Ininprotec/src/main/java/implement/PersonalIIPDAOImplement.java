@@ -2,6 +2,8 @@ package implement;
 
 import Util.HibernateUtil;
 import clase.Curso;
+import clase.InstructorCurso;
+import clase.Modulo;
 import clase.PersonalIIP;
 import dao.DAOPersonalIIP;
 import org.hibernate.Session;
@@ -76,6 +78,13 @@ public class PersonalIIPDAOImplement implements DAOPersonalIIP {
         try (Session s = HibernateUtil.getSession().openSession()) {
             Transaction t=s.beginTransaction();
             PersonalIIP instructorBBDD=s.get(PersonalIIP.class,instructor.getId());
+            Query q=s.createQuery("delete  from InstructorCurso i where i.instructor.id=:id");
+            q.setParameter("id",instructor.getId());
+            int deletedCount = q.executeUpdate();
+            for (Modulo modulo : instructorBBDD.getModulos()) {
+                modulo.setInstructor(null);  // Desvincula el instructor
+                s.saveOrUpdate(modulo); // Actualiza el módulo para guardar el cambio
+            }
             s.remove(instructorBBDD);
             t.commit();
         }

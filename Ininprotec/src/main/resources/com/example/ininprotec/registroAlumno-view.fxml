@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="602.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
+<BorderPane prefHeight="608.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
    <center>
       <BorderPane>
          <center>
@@ -43,7 +43,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </VBox>
-                  <FlowPane alignment="CENTER" hgap="100.0" vgap="10.0">
+                  <FlowPane alignment="CENTER" hgap="100.0" maxWidth="900.0" vgap="10.0">
                      <children>
                         <VBox spacing="5.0">
                            <children>

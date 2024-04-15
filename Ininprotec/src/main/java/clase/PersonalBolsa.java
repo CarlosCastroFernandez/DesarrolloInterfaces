@@ -46,7 +46,7 @@ public class PersonalBolsa implements Serializable {
 
 
   private List<AlumnoCurso> cursosAlumnos;
-  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<AlumnoModulo> moduloAlumno;
   @Column(name = "nota_final")
   private Double notaFinal;

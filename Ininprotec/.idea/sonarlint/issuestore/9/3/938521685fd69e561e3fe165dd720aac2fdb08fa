@@ -1,3 +1,17 @@
 
+Q
+java:S3740Q"/Provide the parametrized type for this generic.(º¯ÖÂÿÿÿÿÿ8œòµÃí1
+†
+java:S1488>"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8äú§Ãí1
+†
+java:S1488G"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8äú§Ãí1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú½ø†ÿÿÿÿÿ8ê”»Ÿì1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú½ø†ÿÿÿÿÿ8óú§Ãí1
+U
+java:S1874Q"3Remove this use of "createQuery"; it is deprecated.(º¯ÖÂÿÿÿÿÿ8²¡¶Ãí1
+N
+java:S1481S"1Remove this unused "deletedCount" local variable.(åÜèÿ8ˆÂ¹Ãí1
+Q
+java:S1874V"4Remove this use of "saveOrUpdate"; it is deprecated.(ßÅìÑ8øú§Ãí1
+O
+java:S1128"2Remove this unused import 'clase.InstructorCurso'.(áâÿå8´¡¶Ãí1

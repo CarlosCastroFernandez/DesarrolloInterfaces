@@ -1,3 +1,5 @@
 
-F
-java:S1948")Make "modulos" transient or serializable.(ş”÷š8±Ğî›ê1
+
+java:S4144D"_Update this method so that its implementation is not identical to "getAlumnoModulo" on line 56.(’âş­øÿÿÿÿ8Ú£´éí1
+K
+java:S1948".Make "alumnoModulo" transient or serializable.(€“¼8Ú£´éí1

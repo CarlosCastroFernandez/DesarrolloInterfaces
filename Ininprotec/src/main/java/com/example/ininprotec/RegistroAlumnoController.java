@@ -288,10 +288,9 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
         AlumnoCurso alumnoCurso=new AlumnoCurso();
-        AlumnoModulo alumnoModulo=new AlumnoModulo();
         if(Utilidad.getAlumno()==null){
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&dateFecha.getValue()!=null&&!textDni.getText().isEmpty()&&
-            !textEmail.getText().isEmpty()&&(radioAlumno.isSelected()||radioTrabajador.isSelected())){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&
+            (radioAlumno.isSelected()||radioTrabajador.isSelected())){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -303,7 +302,7 @@ public class RegistroAlumnoController implements Initializable {
                 }
 
                 PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
-                        textDni.getText(),textTelefono.getText(), Date.valueOf(dateFecha.getValue()),textLicenciaArmas.getText(),
+                        textDni.getText(),textTelefono.getText(), (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
                         textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
                         textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
                 if(clienteA.getEsAlumno()==1){
@@ -313,10 +312,11 @@ public class RegistroAlumnoController implements Initializable {
                     alumnoCurso.setCursoId(comboCurso.getValue());
                     clienteA.getCursosAlumnos().add(alumnoCurso);
                     if(comboCurso.getValue()!=null){
-                        alumnoModulo.setAlumnoId(clienteA);
                         for(int i=0;i<comboCurso.getValue().getModulos().size();i++){
-                            alumnoModulo.setModuloId(comboCurso.getValue().getModulos().get(i));
-                            clienteA.getModuloAlumno().add(alumnoModulo);
+                            AlumnoModulo alumnoModulito = new AlumnoModulo(); // Crear una nueva instancia dentro del bucle
+                            alumnoModulito.setAlumnoId(clienteA);
+                            alumnoModulito.setModuloId(comboCurso.getValue().getModulos().get(i));
+                            clienteA.getModuloAlumno().add(alumnoModulito);
                         }
 
 
@@ -352,23 +352,14 @@ public class RegistroAlumnoController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
-                if(textEmail.getText().isEmpty()){
-                    textEmail.setStyle("-fx-border-color: #B30909");
-                }
-                if(dateFecha.getValue()==null){
-                    dateFecha.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
+
                 if(radioAlumno.isSelected()==false&&radioTrabajador.isSelected()==false){
                     radioAlumno.setStyle("-fx-border-color: #B30909");
                     radioTrabajador.setStyle("-fx-border-color: #B30909");
                 }
             }
         }else{
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&dateFecha.getValue()!=null&&!textDni.getText().isEmpty()&&
-                    !textEmail.getText().isEmpty()){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -439,15 +430,7 @@ public class RegistroAlumnoController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
-                if(textEmail.getText().isEmpty()){
-                    textEmail.setStyle("-fx-border-color: #B30909");
-                }
-                if(dateFecha.getValue()==null){
-                    dateFecha.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
+
             }
 
         }

@@ -1,7 +1,7 @@
 
-h	java:S112τ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
-h	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
-h	java:S112Γ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
+h	java:S112υ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
+h	java:S112©"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
+h	java:S112Δ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8φÿ½Εκ1
 Q
 java:S3740@"/Provide the parametrized type for this generic.(Α³Ιτÿÿÿÿÿ8φÿ½Εκ1
 Q
@@ -103,15 +103,16 @@ R
 java:S1611ξ"4Remove the parentheses around the "alumno" parameter(§“Ή―8Α‚ΎΕκ1
 W
 java:S1611ψ"4Remove the parentheses around the "alumno" parameter(„Ϋ–ϊÿÿÿÿ8Γ‚ΎΕκ1
+H	java:S106"+Replace this use of System.out by a logger.(Ή®©8ξ‚ΎΕκ1
 v
-java:S3776£"SRefactor this method to reduce its Cognitive Complexity from 122 to the 15 allowed.(—Τ­‰ÿÿÿÿÿ8Θ‚ΎΕκ1
+java:S3776¤"SRefactor this method to reduce its Cognitive Complexity from 122 to the 15 allowed.(—Τ­‰ÿÿÿÿÿ8Θ‚ΎΕκ1
 P
-java:S1481¦"2Remove this unused "posicionCurso" local variable.(ΚοΙ§8Κ‚ΎΕκ1
-D	java:S131§""Add a default case to this switch.(ωΪΣνψÿÿÿÿ8Λ‚ΎΕκ1
-H	java:S106δ"+Replace this use of System.out by a logger.(Ή®©8ξ‚ΎΕκ1
+java:S1481§"2Remove this unused "posicionCurso" local variable.(ΚοΙ§8Κ‚ΎΕκ1
+D	java:S131¨""Add a default case to this switch.(ωΪΣνψÿÿÿÿ8Λ‚ΎΕκ1
+H	java:S106ε"+Replace this use of System.out by a logger.(Ή®©8†°Άβν1
 `
-java:S3252"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Κ¤³ρϊÿÿÿÿ8ÿ‚ΎΕκ1
+java:S3252"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Κ¤³ρϊÿÿÿÿ8ÿ‚ΎΕκ1
 `
-java:S3252Έ"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Κ¤³ρϊÿÿÿÿ8‹ƒΎΕκ1
+java:S3252Ή"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Κ¤³ρϊÿÿÿÿ8‹ƒΎΕκ1
 κ
-java:S6541£"ΖA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 180 to 64, Complexity from 58 to 14, Nesting Level from 4 to 2, Number of Variables from 17 to 6.(—Τ­‰ÿÿÿÿÿ8ƒΎΕκ1
+java:S6541¤"ΖA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 180 to 64, Complexity from 58 to 14, Nesting Level from 4 to 2, Number of Variables from 17 to 6.(—Τ­‰ÿÿÿÿÿ8ƒΎΕκ1

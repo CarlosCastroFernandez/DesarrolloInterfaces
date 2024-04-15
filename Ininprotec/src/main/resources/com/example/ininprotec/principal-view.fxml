@@ -136,7 +136,7 @@
                                  <children>
                                     <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" text="Menu">
                                       <items>
-                                        <MenuItem mnemonicParsing="false" text="Editar" />
+                                        <MenuItem fx:id="botonEditarCurso" mnemonicParsing="false" onAction="#edicionCurso" text="Editar" />
                                         <MenuItem fx:id="crearCurso" mnemonicParsing="false" onAction="#creacionCurso" text="Crear Nuevo" />
                                       </items>
                                     </MenuButton>

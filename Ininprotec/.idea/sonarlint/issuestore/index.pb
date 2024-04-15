@@ -53,3 +53,13 @@ v
 Fsrc/main/java/com/example/ininprotec/RegistroInstructorController.java,2\1\214a7c1da0223013d50eae06f3874b996d752b82
 s
 Csrc/main/java/com/example/ininprotec/TodosInstructorController.java,e\d\edfdef724a810f1ef88e9b8fbf91dbc87ddb281e
+X
+(src/main/java/clase/InstructorCurso.java,0\5\0549061f391615609ec7b55e39cb88ee2af909c0
+h
+8src/main/java/implement/InstructorCursoDAOImplement.java,8\4\843090df3889faf88306e626c8445986aaab988e
+Y
+)src/main/java/dao/DAOInstructorCurso.java,4\a\4a5e37ba91a8be6f6cb70dfa1f9335e5074caec3
+W
+'src/main/java/error/CursoSinNombre.java,7\7\77fdba60af4df9a971ba96901b1be09ab0331149
+Z
+*src/main/java/error/FaltaDeCampoCurso.java,8\b\8bef8fc88b5d4e0b534031e6b62987255769b4a2

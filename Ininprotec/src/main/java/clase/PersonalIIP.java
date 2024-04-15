@@ -37,9 +37,9 @@ public class PersonalIIP implements Serializable {
   private String titulacion;
   @Column(name = "licencia_arma")
   private String licenciaArma;
-  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
   private List<Modulo>modulos;
-  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE})
   private List<InstructorCurso> cursoInstructor;
 
   public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
@@ -284,6 +284,7 @@ public class PersonalIIP implements Serializable {
             ", lugarResidencia='" + lugarResidencia + '\'' +
             ", titulacion='" + titulacion + '\'' +
             ", modulos=" + modulos +
+            " cursos ="+cursoInstructor.toString() +
             '}';
   }
 }
