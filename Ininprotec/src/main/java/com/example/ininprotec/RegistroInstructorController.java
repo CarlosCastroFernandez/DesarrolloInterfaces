@@ -89,6 +89,25 @@ public class RegistroInstructorController implements Initializable {
             Utilidad.setCurso(null);
             Utilidad.setInstructor(null);
         });
+        labelURL.setOnMouseClicked(mouseEvent -> {
+            if(!labelURL.getText().equals("")){
+                String rutaArchivo=nuevoPath.toString();
+                File archivo=new File(rutaArchivo);
+                try {
+                    Desktop.getDesktop().open(archivo);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        });
+        labelURL.setOnMouseEntered(evento->{
+
+            labelURL.setStyle("-fx-text-fill: #0124FB");
+        });
+        labelURL.setOnMouseExited(evento->{
+            labelURL.setStyle("-fx-text-fill: #000000");
+        });
         if(Utilidad.getInstructor()==null){
             labelURL.setStyle("-fx-text-fill: #000000");
             labelURL.setStyle("-fx-underline: true");
@@ -97,25 +116,7 @@ public class RegistroInstructorController implements Initializable {
             imagenPerfil.setImage(imagen);
 
 
-            labelURL.setOnMouseClicked(mouseEvent -> {
-                if(!labelURL.getText().equals("")){
-                    String rutaArchivo=nuevoPath.toString();
-                    File archivo=new File(rutaArchivo);
-                    try {
-                        Desktop.getDesktop().open(archivo);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
 
-                }
-            });
-            labelURL.setOnMouseEntered(evento->{
-
-                labelURL.setStyle("-fx-text-fill: #0124FB");
-            });
-            labelURL.setOnMouseExited(evento->{
-                labelURL.setStyle("-fx-text-fill: #000000");
-            });
         }else{
 
             botonGestion.setVisible(false);
@@ -125,7 +126,11 @@ public class RegistroInstructorController implements Initializable {
             textEmail.setText(Utilidad.getInstructor().getCorreo());
             textTelefono.setText(Utilidad.getInstructor().getTelefono());
             textLicenciaArmas.setText(Utilidad.getInstructor().getLicenciaArma());
-            dateFecha.setValue(LocalDate.parse(Utilidad.getInstructor().getFechaNacimiento().toString()));
+            if (Utilidad.getInstructor().getFechaNacimiento() != null) {
+                dateFecha.setValue(LocalDate.parse(Utilidad.getInstructor().getFechaNacimiento().toString()));
+            } else {
+                dateFecha.setValue(null);
+            }
             textCamiseta.setText(Utilidad.getInstructor().getTallaCamiseta());
             textIBAN.setText(Utilidad.getInstructor().getNumeroCuenta());
             textSegSocial.setText(Utilidad.getInstructor().getNumeroSocial());

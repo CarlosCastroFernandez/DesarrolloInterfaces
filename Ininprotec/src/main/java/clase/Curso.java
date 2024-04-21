@@ -14,7 +14,7 @@ public class Curso implements Serializable {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String nombre;
-  @OneToMany(mappedBy = "cursoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "cursoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<AlumnoCurso> alumnoCurso;
 
   @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = CascadeType.ALL)

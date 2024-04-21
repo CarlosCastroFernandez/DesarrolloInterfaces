@@ -56,6 +56,8 @@ public class PrincipalController implements Initializable {
     private ImageView imagenProfe;
     @FXML
     private MenuItem botonEditarCurso;
+    @FXML
+    private MenuItem itemBorrar;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -154,6 +156,13 @@ public class PrincipalController implements Initializable {
             alerta.setHeaderText("Curso No Seleccionado");
             alerta.setContentText("Por favor seleccione un curso para poder editarlo.");
             alerta.showAndWait();
+        }
+    }
+
+    @FXML
+    public void borrarCurso(ActionEvent actionEvent) {
+        if(comboCurso.getValue()!=null){
+            (new CursoDAOImplement()).borrarCurso(comboCurso.getValue());
         }
     }
 }

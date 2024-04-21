@@ -25,6 +25,14 @@ public class CursoDAOImplement implements DAOCurso {
             e.printStackTrace();
         }
     }
+    public void borrarCurso(Curso objeto) {
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Transaction t=s.beginTransaction();
+            Curso cursoBBD=s.get(Curso.class,objeto.getId());
+            s.remove(cursoBBD);
+            t.commit();
+        }
+    }
 
     @Override
     public List<Curso> getAll() {
@@ -44,7 +52,7 @@ public class CursoDAOImplement implements DAOCurso {
         System.out.println(curso);
 
         try(Session s=HibernateUtil.getSession().openSession()){
-            Boolean borrado=false;
+           // Boolean borrado=false;
             Transaction t=s.beginTransaction();
             Curso cursoBBDD=s.get(Curso.class,curso.getId());
 
@@ -53,7 +61,7 @@ public class CursoDAOImplement implements DAOCurso {
                 Modulo moduloBBDD=s.get(Modulo.class,modulo.getId());
                 if(moduloBBDD!=null){
                     Iterator<Modulo>it=cursoBBDD.getModulos().iterator();
-                    borrado=true;
+                    //borrado=true;
                     while (it.hasNext()){
                         Modulo moduloCurso=it.next();
                         if(moduloCurso==moduloBBDD){
@@ -68,7 +76,7 @@ public class CursoDAOImplement implements DAOCurso {
                 cursoBBDD.getModulos().remove(modulo);
             }
 
-            if(borrado){
+           /* if(borrado){
                 for (AlumnoCurso alumnoCurso : cursoBBDD.getAlumnoCurso()) {
                     if (alumnoCurso.getNotaCurso() != null) { // Sólo procesar si ya hay una nota establecida
                         double sumaNotas = 0;
@@ -90,7 +98,7 @@ public class CursoDAOImplement implements DAOCurso {
 
 
                 }
-            }
+            }*/
 
 
             if(curso.getModulos().size()==cursoBBDD.getModulos().size()){

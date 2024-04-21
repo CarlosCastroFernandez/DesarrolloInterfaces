@@ -32,7 +32,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -73,8 +75,6 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     private TextField textSegSocial;
     @javafx.fxml.FXML
-    private TextField textTitulacion;
-    @javafx.fxml.FXML
     private TextField textResidencia;
     @javafx.fxml.FXML
     private RadioButton radioAlumno;
@@ -100,6 +100,18 @@ public class RegistroAlumnoController implements Initializable {
     private Label labelRol;
     @javafx.fxml.FXML
     private ComboBox comboRol;
+    @javafx.fxml.FXML
+    private TextArea textTitulacion;
+    @javafx.fxml.FXML
+    private TextArea textIdioma;
+    @javafx.fxml.FXML
+    private Spinner <Double> spAltura;
+    @javafx.fxml.FXML
+    private ToggleGroup vale;
+    @javafx.fxml.FXML
+    private RadioButton radioHombre;
+    @javafx.fxml.FXML
+    private RadioButton radioMujer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,6 +123,7 @@ public class RegistroAlumnoController implements Initializable {
             Utilidad.setCurso(null);
             Utilidad.setInstructor(null);
         });
+        spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
         if(Utilidad.getAlumno()==null){
             labelRol.setVisible(false);
             comboRol.setVisible(false);
@@ -193,7 +206,11 @@ public class RegistroAlumnoController implements Initializable {
             textEmail.setText(Utilidad.getAlumno().getCorreo());
             textTelefono.setText(Utilidad.getAlumno().getTelefono());
             textLicenciaArmas.setText(Utilidad.getAlumno().getLicenciaArma());
-            dateFecha.setValue(LocalDate.parse(Utilidad.getAlumno().getFechaNacimiento().toString()));
+            if (Utilidad.getAlumno().getFechaNacimiento() != null) {
+                dateFecha.setValue(LocalDate.parse(Utilidad.getAlumno().getFechaNacimiento().toString()));
+            } else {
+                dateFecha.setValue(null);
+            }
             textCamiseta.setText(Utilidad.getAlumno().getTallaCamiseta());
             textIBAN.setText(Utilidad.getAlumno().getNumeroCuenta());
             textSegSocial.setText(Utilidad.getAlumno().getNumeroSocial());
@@ -218,6 +235,19 @@ public class RegistroAlumnoController implements Initializable {
             labelURL.setText(Utilidad.getAlumno().getCurriculumUrl());
             textDni.setText(Utilidad.getAlumno().getDni());
             textAreaTIP.setText(Utilidad.getAlumno().getNumeroTip());
+            spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,Utilidad.getAlumno().getAltura(),0.1));
+            textIdioma.setText(Utilidad.getAlumno().getIdioma());
+            if(Utilidad.getAlumno().getEsAlumno()==1){
+                comboRol.getSelectionModel().select(0);
+            }else if(Utilidad.getAlumno().getEsAlumno()==2){
+                comboRol.getSelectionModel().select(1);
+            }else if(Utilidad.getAlumno().getEsAlumno()==3){
+                comboRol.getSelectionModel().select(2);
+            }
+
+
+
+
         }
 
 
@@ -300,11 +330,15 @@ public class RegistroAlumnoController implements Initializable {
                         throw new RuntimeException(e);
                     }
                 }
-
+                LocalDate fechaLocal=LocalDate.now();
+                DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String fechaTexto=formato.format(fechaLocal);
+                LocalDate fechaFinalLocal=LocalDate.parse(fechaTexto,formato);
+                Date fechaFinal=Date.valueOf(fechaFinalLocal);
                 PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
                         textDni.getText(),textTelefono.getText(), (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
                         textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
-                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText(),textResidencia.getText());
+                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':null)));
                 if(clienteA.getEsAlumno()==1){
                     clienteA.setCursosAlumnos(new ArrayList<>());
                     clienteA.setModuloAlumno(new ArrayList<>());
@@ -395,12 +429,14 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText());
                 Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText());
                 Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText());
-                Utilidad.getAlumno().setTitulacion(textTitulacion.getText());
+                Utilidad.getAlumno().setTitulacion(textTitulacion.getText().toLowerCase());
                 Utilidad.getAlumno().setLugarResidencia(textResidencia.getText());
                 Utilidad.getAlumno().setImagenPerfil(imagenCargada);
                 Utilidad.getAlumno().setCurriculumUrl(labelURL.getText());
                 Utilidad.getAlumno().setDni(textDni.getText());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
+                Utilidad.getAlumno().setAltura(spAltura.getValue());
+                Utilidad.getAlumno().setIdioma(textIdioma.getText().toLowerCase());
                 Long seleccionado=0L;
                 if(comboRol.getValue().equals("Alumno")){
                     seleccionado=1L;

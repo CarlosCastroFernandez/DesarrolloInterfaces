@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -14,18 +15,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="608.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
+<BorderPane prefHeight="706.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
    <center>
       <BorderPane>
          <center>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="619.0" prefWidth="879.0" BorderPane.alignment="CENTER">
               <items>
                   <VBox alignment="TOP_CENTER" spacing="10.0">
                      <children>
                         <Label text="FICHA" />
-                        <ImageView fx:id="imagenPerfil" fitHeight="170.0" fitWidth="235.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imagenPerfil" fitHeight="106.0" fitWidth="135.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
                         <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="48.0" prefWidth="235.0" vgap="10.0">
                            <children>
                               <Label text="CURRICULUM VITAE" />
@@ -34,16 +36,35 @@
                            </children>
                         </FlowPane>
                         <Separator prefHeight="11.0" prefWidth="235.0" />
+                        <Label text="Sexo" />
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" spacing="20.0">
+                           <children>
+                              <RadioButton fx:id="radioHombre" mnemonicParsing="false" text="Hombre">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="vale" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="radioMujer" mnemonicParsing="false" text="Mujer" toggleGroup="$vale" />
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
                         <Label text="DNI" />
                         <TextField fx:id="textDni" maxWidth="200.0" />
+                        <Separator prefWidth="200.0" />
                         <Label text="Nº TIP" />
                         <TextArea fx:id="textAreaTIP" maxWidth="200.0" prefHeight="0.0" prefWidth="200.0" />
+                        <Separator prefWidth="200.0" />
+                        <Label text="Idioma" />
+                        <TextArea fx:id="textIdioma" maxWidth="200.0" prefHeight="62.0" prefWidth="261.0" />
+                        <Separator prefWidth="200.0" />
+                        <Label text="Titulacion" />
+                        <TextArea fx:id="textTitulacion" maxWidth="200.0" prefHeight="62.0" prefWidth="261.0" />
                      </children>
                      <padding>
                         <Insets top="20.0" />
                      </padding>
                   </VBox>
-                  <FlowPane alignment="CENTER" hgap="100.0" maxWidth="900.0" vgap="10.0">
+                  <FlowPane alignment="CENTER" hgap="100.0" maxWidth="600.0" prefHeight="553.0" prefWidth="577.0" vgap="10.0">
                      <children>
                         <VBox spacing="5.0">
                            <children>
@@ -71,10 +92,10 @@
                               <TextField fx:id="textIBAN" layoutX="10.0" layoutY="71.0" />
                               <Label layoutX="10.0" layoutY="96.0" text="Nº Seguridad Social" />
                               <TextField fx:id="textSegSocial" layoutX="10.0" layoutY="114.0" />
-                              <Label layoutX="10.0" layoutY="183.0" text="Titulacion" />
-                              <TextField fx:id="textTitulacion" layoutX="10.0" layoutY="200.0" />
                               <Label layoutX="10.0" layoutY="226.0" text="Lugar De Residencia" />
                               <TextField fx:id="textResidencia" layoutX="10.0" layoutY="244.0" />
+                              <Label text="Altura" />
+                              <Spinner fx:id="spAltura" />
                            </children>
                         </VBox>
                         <FlowPane alignment="CENTER" hgap="100.0" prefHeight="42.0" prefWidth="390.0" vgap="30.0">
@@ -99,7 +120,7 @@
                               <ComboBox fx:id="comboCurso" prefHeight="26.0" prefWidth="154.0" />
                            </children>
                         </FlowPane>
-                        <VBox alignment="CENTER" prefHeight="35.0" prefWidth="182.0" spacing="10.0">
+                        <VBox alignment="CENTER" prefHeight="62.0" prefWidth="222.0" spacing="10.0">
                            <children>
                               <Button fx:id="botonGestion" mnemonicParsing="false" onAction="#gestion" text="Gestión Alumno // trabajador" />
                               <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
@@ -113,7 +134,7 @@
       </BorderPane>
    </center>
    <top>
-      <FlowPane hgap="290.0" prefHeight="50.0" prefWidth="794.0" BorderPane.alignment="CENTER">
+      <FlowPane hgap="290.0" prefHeight="11.0" prefWidth="827.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="imagenFlecha" fitHeight="38.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
                <FlowPane.margin>

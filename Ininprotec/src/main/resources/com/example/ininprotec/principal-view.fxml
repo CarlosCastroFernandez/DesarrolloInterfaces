@@ -138,6 +138,7 @@
                                       <items>
                                         <MenuItem fx:id="botonEditarCurso" mnemonicParsing="false" onAction="#edicionCurso" text="Editar" />
                                         <MenuItem fx:id="crearCurso" mnemonicParsing="false" onAction="#creacionCurso" text="Crear Nuevo" />
+                                          <MenuItem fx:id="itemBorrar" mnemonicParsing="false" onAction="#borrarCurso" text="Borrar" />
                                       </items>
                                     </MenuButton>
                                     <ComboBox fx:id="comboCurso" prefHeight="26.0" prefWidth="107.0" />

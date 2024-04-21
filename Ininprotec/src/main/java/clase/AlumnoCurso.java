@@ -16,12 +16,15 @@ public class AlumnoCurso {
   private Curso cursoId;
 @Column(name = "nota_curso")
   private Double notaCurso;
+@Column(name = "fecha_finalizacion")
+private String fechaFin;
 
-    public AlumnoCurso(Long id, PersonalBolsa alumnoId, Curso cursoId, Double notaCurso) {
+    public AlumnoCurso(Long id, PersonalBolsa alumnoId, Curso cursoId, Double notaCurso,String fechaFin) {
         this.id = id;
         this.alumnoId = alumnoId;
         this.cursoId = cursoId;
         this.notaCurso = notaCurso;
+        this.fechaFin=fechaFin;
     }
 
     public AlumnoCurso() {
@@ -53,6 +56,13 @@ public class AlumnoCurso {
     this.cursoId = cursoId;
   }
 
+  public String getFechaFin() {
+    return fechaFin;
+  }
+
+  public void setFechaFin(String fechaFin) {
+    this.fechaFin = fechaFin;
+  }
 
   public Double getNotaCurso() {
     return notaCurso;

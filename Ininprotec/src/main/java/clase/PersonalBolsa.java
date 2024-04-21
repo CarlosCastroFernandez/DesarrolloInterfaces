@@ -42,7 +42,7 @@ public class PersonalBolsa implements Serializable {
   private String titulacion;
   @Column(name = "lugar_residencia")
   private String lugarResidencia;
-  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
 
 
   private List<AlumnoCurso> cursosAlumnos;
@@ -50,6 +50,11 @@ public class PersonalBolsa implements Serializable {
   private List<AlumnoModulo> moduloAlumno;
   @Column(name = "nota_final")
   private Double notaFinal;
+  private Double altura;
+  private String idioma;
+  @Column(name = "fecha_registro")
+  private Date fechaRegistro;
+  private Character sexo;
 
 
   public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
@@ -75,12 +80,15 @@ public class PersonalBolsa implements Serializable {
     this.cursosAlumnos = cursosAlumnos;
     this.moduloAlumno = modulos;
   }
-  public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia) {
+  public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia,Date fechaRegisto,
+                       String idioma,Double altura,Character sexo) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
     this.correo = correo;
     this.dni = dni;
+    this.idioma=idioma;
+    this.altura=altura;
     this.telefono = telefono;
     this.fechaNacimiento = fechaNacimiento;
     this.licenciaArma = licenciaArma;
@@ -91,9 +99,10 @@ public class PersonalBolsa implements Serializable {
     this.esAlumno = esAlumno;
     this.numeroTip = numeroTip;
     this.imagenPerfil = imagenPerfil;
-
+    this.fechaRegistro=fechaRegisto;
     this.titulacion = titulacion;
     this.lugarResidencia = lugarResidencia;
+    this.sexo=sexo;
   }
 
   public PersonalBolsa() {
@@ -105,6 +114,30 @@ public class PersonalBolsa implements Serializable {
 
   public Double getNotaFinal() {
     return notaFinal;
+  }
+
+  public Double getAltura() {
+    return altura;
+  }
+
+  public void setAltura(Double altura) {
+    this.altura = altura;
+  }
+
+  public String getIdioma() {
+    return idioma;
+  }
+
+  public void setIdioma(String idioma) {
+    this.idioma = idioma;
+  }
+
+  public Date getFechaRegistro() {
+    return fechaRegistro;
+  }
+
+  public void setFechaRegistro(Date fechaRegistro) {
+    this.fechaRegistro = fechaRegistro;
   }
 
   public void setNotaFinal(Double notaFinal) {
