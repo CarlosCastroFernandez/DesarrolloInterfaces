@@ -1,29 +1,24 @@
 
 Q
-java:S3740!"/Provide the parametrized type for this generic.(Ζ¤²Φϊÿÿÿÿ8Ηα—ξ1
-L
-java:S1066N"/Merge this if statement with the enclosing one.(‡ξχ«8Θα—ξ1
-E
-java:S5411G"(Use a primitive boolean expression here.(’νσ8Ια—ξ1
+java:S3740)"/Provide the parametrized type for this generic.(Ζ¤²Φϊÿÿÿÿ8μθμ†π1
 ^
-java:S4973e"<Strings and Boxed types should be compared using "equals()".(ƒτ¥”όÿÿÿÿ8Κα—ξ1
-^
-java:S4973z"<Strings and Boxed types should be compared using "equals()".(ƒτ¥”όÿÿÿÿ8Κα—ξ1
+java:S4973m"<Strings and Boxed types should be compared using "equals()".(ƒτ¥”όÿÿÿÿ8νθμ†π1
+_
+java:S4973‚"<Strings and Boxed types should be compared using "equals()".(ƒτ¥”όÿÿÿÿ8νθμ†π1
 
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²¨αμ8ή‹α—ξ1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(²¨αμ8”κμ†π1
 o
-java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(µΔ8ε‹α—ξ1
-G	java:S106+"+Replace this use of System.out by a logger.(¤΅λ8ζ‹α—ξ1
-G	java:S106,"+Replace this use of System.out by a logger.(¬ΰ—¬8ζ‹α—ξ1
-\
-java:S4034M":Replace this negation and "anyMatch()" with "noneMatch()".(¨¶ΖΧωÿÿÿÿ8κ‹α—ξ1
-G	java:S106c"+Replace this use of System.out by a logger.(άρΎ8ξ‹α—ξ1
-G	java:S106x"+Replace this use of System.out by a logger.(άρΎ8ς‹α—ξ1
+java:S37762"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(µΔ8—κμ†π1
+G	java:S1063"+Replace this use of System.out by a logger.(¤΅λ8—κμ†π1
+G	java:S1064"+Replace this use of System.out by a logger.(¬ΰ—¬8—κμ†π1
+]	java:S1257"<This block of commented-out lines of code should be removed.(κήΠ¨ωÿÿÿÿ8—κμ†π1
+W	java:S125@"<This block of commented-out lines of code should be removed.(ξ¶D8κμ†π1
+X	java:S125O"<This block of commented-out lines of code should be removed.(¥·Θ8κμ†π1
+G	java:S106k"+Replace this use of System.out by a logger.(άρΎ8™κμ†π1
+H	java:S106€"+Replace this use of System.out by a logger.(άρΎ8κμ†π1
 Q
-java:S1874‰"3Remove this use of "createQuery"; it is deprecated.(ασ€8υ‹α—ξ1
+java:S1874‘"3Remove this use of "createQuery"; it is deprecated.(ασ€8κμ†π1
 V
-java:S1874"3Remove this use of "createQuery"; it is deprecated.(ΝςΘΨϋÿÿÿÿ8φ‹α—ξ1
-H	java:S106“"+Replace this use of System.out by a logger.(Ε«“™8φ‹α—ξ1
-Y	java:S125¨"<This block of commented-out lines of code should be removed.(£†‡8ω‹α—ξ1
-δ
-java:S6541*"ΖA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 107 to 64, Complexity from 23 to 14, Nesting Level from 7 to 2, Number of Variables from 31 to 6.(µΔ8ϊ‹α—ξ1
+java:S1874"3Remove this use of "createQuery"; it is deprecated.(ΝςΘΨϋÿÿÿÿ8κμ†π1
+H	java:S106›"+Replace this use of System.out by a logger.(Ε«“™8κμ†π1
+Y	java:S125°"<This block of commented-out lines of code should be removed.(£†‡8κμ†π1

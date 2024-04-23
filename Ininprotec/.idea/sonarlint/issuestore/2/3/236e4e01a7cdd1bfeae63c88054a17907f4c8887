@@ -1,3 +1,31 @@
 
+l
+java:S11926"JDefine a constant instead of duplicating this literal "formacion" 8 times.(¤Òìıÿÿÿÿ8œ€ä‹ğ1
+c
+java:S1192="FDefine a constant instead of duplicating this literal "fecha" 4 times.(ÚÉô¶8œ€ä‹ğ1
+j
+java:S11920"HDefine a constant instead of duplicating this literal "altura" 12 times.(‘‘ÎÆùÿÿÿÿ8œ€ä‹ğ1
+c
+java:S1192-"FDefine a constant instead of duplicating this literal "curso" 6 times.(”‹¢8œ€ä‹ğ1
+e
+java:S1192"HDefine a constant instead of duplicating this literal "idCurso" 5 times.(ñ§í‡8œ€ä‹ğ1
+j
+java:S11923"HDefine a constant instead of duplicating this literal "idioma" 12 times.(çĞ¯Ïşÿÿÿÿ8œ€ä‹ğ1
+h
+java:S11927"KDefine a constant instead of duplicating this literal "titulacion" 4 times.(‹Àğğ8œ€ä‹ğ1
+l
+java:S1192,"JDefine a constant instead of duplicating this literal "sentencia" 4 times.(–Á‚…úÿÿÿÿ8œ€ä‹ğ1
+ƒ
+java:S1319`"fThe type of "sentencia" should be an interface such as "Map" rather than the implementation "HashMap".(ÆîÚÿ8œ€ä‹ğ1
+„
+java:S1319`"gThe type of "parametros" should be an interface such as "Map" rather than the implementation "HashMap".(ÆîÚÿ8œ€ä‹ğ1
 …
-java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "alumnoCurso".(ŞÔƒ—şÿÿÿÿ8ñú—±ê1
+java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "alumnoCurso".(ŞÔƒ—şÿÿÿÿ8€ä‹ğ1
+_
+java:S4973Ÿ"<Strings and Boxed types should be compared using "equals()".(ãÇóøÿÿÿÿ8€ä‹ğ1
+o
+java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(â¡Ñî8€ä‹ğ1
+o
+java:S3776`"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ÆîÚÿ8„ä‹ğ1
+?
+java:S1110–"!Remove these useless parentheses.(··Ë8‡ä‹ğ1

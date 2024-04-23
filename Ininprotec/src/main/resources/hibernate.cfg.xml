@@ -19,6 +19,7 @@
         <mapping class="clase.AlumnoCurso"/>
         <mapping class="clase.AlumnoModulo"/>
         <mapping class="clase.InstructorCurso"/>
+        <mapping class="clase.Servicio"/>
 
 
 

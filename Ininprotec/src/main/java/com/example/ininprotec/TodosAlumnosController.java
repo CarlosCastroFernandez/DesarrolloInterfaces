@@ -372,34 +372,37 @@ radioMujer.setOnAction(actionEvent -> {
 
     @javafx.fxml.FXML
     public void quitar(ActionEvent actionEvent) {
-        boleano=false;
-        copiado.clear();
-        comboCurso.getSelectionModel().selectedItemProperty().removeListener(listenerCurso);
-        comboCalificacion.getSelectionModel().selectedItemProperty().removeListener(comboCalificacionListener);
-        comboIdioma.getSelectionModel().selectedItemProperty().removeListener(listenerIdioma);
-        comboFormacion.getSelectionModel().selectedItemProperty().removeListener(listenerFormacion);
-        comboCalificacion.getSelectionModel().select(null);
-        comboCurso.getSelectionModel().select(null);
-        comboCalificacion.setDisable(true);
-        comboSigno.getSelectionModel().select(null);
-        radioHombre.setSelected(false);
-        radioMujer.setSelected(false);
-        comboIdioma.getSelectionModel().select(null);
-        comboFormacion.getSelectionModel().select(null);
-        spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
-        alumnos.clear();
-        alumnos.addAll((new PersonalBolsaDAOImplement().getAll()));
-        if(textBuscar.getText().isEmpty()){
-            tabla.setItems(alumnos);
-        }else {
-            tabla.setItems(filtroALumnos);
+        if(spAltura.getValue()!=0.0||radioHombre.isSelected()||radioMujer.isSelected()||comboCurso.getValue()!=null||comboIdioma.getValue()!=null||comboFormacion.getValue()!=null||(dateDesde.getValue()!=null&&dateHasta.getValue()!=null)){
+            boleano=false;
+            copiado.clear();
+            comboCurso.getSelectionModel().selectedItemProperty().removeListener(listenerCurso);
+            comboCalificacion.getSelectionModel().selectedItemProperty().removeListener(comboCalificacionListener);
+            comboIdioma.getSelectionModel().selectedItemProperty().removeListener(listenerIdioma);
+            comboFormacion.getSelectionModel().selectedItemProperty().removeListener(listenerFormacion);
+            comboCalificacion.getSelectionModel().select(null);
+            comboCurso.getSelectionModel().select(null);
+            comboCalificacion.setDisable(true);
+            comboSigno.getSelectionModel().select(null);
+            radioHombre.setSelected(false);
+            radioMujer.setSelected(false);
+            comboIdioma.getSelectionModel().select(null);
+            comboFormacion.getSelectionModel().select(null);
+            spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
+            alumnos.clear();
+            alumnos.addAll((new PersonalBolsaDAOImplement().getAll()));
+            if(textBuscar.getText().isEmpty()){
+                tabla.setItems(alumnos);
+            }else {
+                tabla.setItems(filtroALumnos);
+            }
+            copiado.clear();
+            parametro.clear();
+            comboCalificacion.getSelectionModel().selectedItemProperty().addListener(comboCalificacionListener);
+            comboFormacion.getSelectionModel().selectedItemProperty().addListener(listenerFormacion);
+            comboIdioma.getSelectionModel().selectedItemProperty().addListener(listenerIdioma);
+            comboCurso.getSelectionModel().selectedItemProperty().addListener(listenerCurso);
+
         }
-        copiado.clear();
-        parametro.clear();
-        comboCalificacion.getSelectionModel().selectedItemProperty().addListener(comboCalificacionListener);
-        comboFormacion.getSelectionModel().selectedItemProperty().addListener(listenerFormacion);
-        comboIdioma.getSelectionModel().selectedItemProperty().addListener(listenerIdioma);
-        comboCurso.getSelectionModel().selectedItemProperty().addListener(listenerCurso);
 
 
 
@@ -407,517 +410,527 @@ radioMujer.setOnAction(actionEvent -> {
 
     @javafx.fxml.FXML
     public void buscar(ActionEvent actionEvent) {
-        filtrado.clear();
-        boleano=true;
-        ArrayList<PersonalBolsa>personalBBDD=new ArrayList<>();
-        List<String>fechas=new ArrayList<>();
-        if(spAltura.getValue()!=0.0){
-            copiado.put("altura","altura"+comboSigno.getValue()+":altura");
-            parametro.put("altura",spAltura.getValue());
+        if(spAltura.getValue()!=0.0&&comboSigno.getValue()==null) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Selección Signo de la Altura");
+            alerta.setContentText("Seleccione el simbolo de la altura ya que se necesita\nsaber como lo quieres buscar por ejemplo " +
+                    "<,>,=,<=,>=");
+            alerta.showAndWait();
+        }else{
+            filtrado.clear();
+            boleano=true;
+            ArrayList<PersonalBolsa>personalBBDD=new ArrayList<>();
+            List<String>fechas=new ArrayList<>();
+            if(spAltura.getValue()!=0.0){
+                copiado.put("altura","altura"+comboSigno.getValue()+":altura");
+                parametro.put("altura",spAltura.getValue());
+            }
+            if(dateDesde.getValue()!=null&&dateHasta.getValue()!=null){
+                LocalDate desde=dateDesde.getValue();
+                LocalDate hasta=dateHasta.getValue();
+                fechas=obtenerFechas(desde,hasta);
+                copiado.put("fecha","fechaRegistro=:fecha");
+
+            }
+            HashMap<String,String>copiadoViceversa=new HashMap<>();
+            copiadoViceversa.putAll(copiado);
+
+            switch (copiado.size()){
+                case 1:
+                    System.out.println(copiado);
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                    String guardado=sentencia.get("sentencia");
+                    if(guardado.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":(copiado.containsKey("fecha")?"AlumnoCurso ca":"PersonalBolsa ca"))+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura=:altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    }
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+                case 2:
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    String contiene= sentencia.get("sentencia");
+
+                    if(contiene.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }
+                    if(contiene.contains("ca.cursoId")){
+                        copiado.remove("curso");
+                    }else if(contiene.contains("ca.altura")||contiene.contains("ca.alumnoId.altura")){
+                        copiado.remove("altura");
+                    }else if(contiene.contains("ca.idioma")||contiene.contains("ca.alumnoId.idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene.contains("ca.titulacion")||contiene.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene.contains("ca.fechaRegistro")||contiene.contains("ca.alumnoId.fechaRegistro")) {
+                        copiado.remove("fecha");
+                    }else if(contiene.contains("ca.sexo")||contiene.contains("ca.alumnoId.sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho);
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+
+
+                case 3:
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca." +
+                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    String contiene1= sentencia.get("sentencia");
+                    if(contiene1.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }
+                    if(contiene1.contains("ca.cursoId")){
+                        copiado.remove("curso");
+                    }else if(contiene1.contains("ca.altura")||contiene1.contains("ca.alumnoId.altura")){
+                        copiado.remove("altura");
+                    }else if(contiene1.contains("ca.idioma")||contiene1.contains("ca.alumnoId.idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene1.contains("ca.titulacion")||contiene1.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene1.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene1.contains("ca.fechaRegistro")||contiene1.contains("ca.alumnoId.fechaRegistro")) {
+                        copiado.remove("fecha");
+                    }else if(contiene1.contains("ca.sexo")||contiene1.contains("ca.alumnoId.sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho1=" and ca."+ ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho1);
+                    String contiene2= sentencia.get("sentencia");
+                    if(contiene2.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene2.contains("ca.altura")||contiene2.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene2.contains("ca.idioma")||contiene2.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene2.contains("ca.titulacion")||contiene2.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene2.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if((contiene2.contains("ca.fechaRegistro")||contiene2.contains("ca.alumnoId.fechaRegistro"))&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene2.contains("ca.sexo")||contiene2.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho2=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho2);
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+                case 4:
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    String contiene3= sentencia.get("sentencia");
+                    if(contiene3.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }
+                    if(contiene3.contains("ca.cursoId")){
+                        copiado.remove("curso");
+                    }else if(contiene3.contains("ca.altura")||contiene3.contains("ca.alumnoId.altura")){
+                        copiado.remove("altura");
+                    }else if(contiene3.contains("ca.idioma")||contiene3.contains("ca.alumnoId.idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene3.contains("ca.titulacion")||contiene3.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene3.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene3.contains("ca.fechaRegistro")||contiene3.contains("ca.alumnoId.fechaRegistro")) {
+                        copiado.remove("fecha");
+                    }else if(contiene3.contains("ca.sexo")||contiene3.contains("ca.alumnoId.sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho3=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho3);
+                    String contiene4= sentencia.get("sentencia");
+                    if(contiene4.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene4.contains("ca.altura")||contiene4.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene4.contains("ca.idioma")||contiene4.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene4.contains("ca.titulacion")||contiene4.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene4.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene4.contains("ca.fechaRegistro")||contiene4.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene4.contains("ca.sexo")||contiene4.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho4=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho4);
+
+
+                    String contiene5= sentencia.get("sentencia");
+                    if(contiene5.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene5.contains("ca.altura")||contiene5.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene5.contains("ca.idioma")||contiene5.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene5.contains("ca.titulacion")||contiene5.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene5.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene5.contains("ca.fechaRegistro")||contiene5.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene5.contains("ca.sexo")||contiene5.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho5=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho5);
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+                case 5:
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    String contiene6= sentencia.get("sentencia");
+                    if(contiene6.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }
+                    if(contiene6.contains("ca.cursoId")){
+                        copiado.remove("curso");
+                    }else if(contiene6.contains("ca.altura")||contiene6.contains("ca.alumnoId.altura")){
+                        copiado.remove("altura");
+                    }else if(contiene6.contains("ca.idioma")||contiene6.contains("ca.alumnoId.idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene6.contains("ca.titulacion")||contiene6.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene6.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene6.contains("ca.fechaRegistro")||contiene6.contains("ca.alumnoId.fechaRegistro")) {
+                        copiado.remove("fecha");
+                    }else if(contiene6.contains("ca.sexo")||contiene6.contains("ca.alumnoId.sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho6=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho6);
+                    String contiene7= sentencia.get("sentencia");
+                    if(contiene7.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene7.contains("ca.altura")||contiene7.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene7.contains("ca.idioma")||contiene7.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene7.contains("ca.titulacion")||contiene7.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene7.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene7.contains("ca.fechaRegistro")||contiene7.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene7.contains("ca.sexo")||contiene7.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho7=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho7);
+
+
+                    String contiene8= sentencia.get("sentencia");
+                    if(contiene8.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene8.contains("ca.altura")||contiene8.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene8.contains("ca.idioma")||contiene8.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene8.contains("ca.titulacion")||contiene8.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene8.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene8.contains("ca.fechaRegistro")||contiene8.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene8.contains("ca.sexo")||contiene8.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho8=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho8);
+
+                    String contiene9= sentencia.get("sentencia");
+                    if(contiene9.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene9.contains("ca.altura")||contiene9.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene9.contains("ca.idioma")||contiene9.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene9.contains("ca.titulacion")||contiene9.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene9.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene9.contains("ca.fechaRegistro")||contiene9.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene9.contains("ca.sexo")||contiene9.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho9=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho9);
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+                case 6:
+                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    String contiene10= sentencia.get("sentencia");
+                    if(contiene10.contains("PersonalBolsa")){
+                        sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
+                        if(copiado.containsKey("altura")){
+                            copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
+                        }
+                        if(copiado.containsKey("idioma")){
+                            copiado.put("idioma","alumnoId.idioma like:idioma");
+                        }
+                        if(copiado.containsKey("formacion")){
+                            copiado.put("formacion","alumnoId.titulacion like:titulacion");
+                        }
+                        if(copiado.containsKey("fecha")){
+                            copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
+                        }
+                        if(copiado.containsKey("sexo")){
+                            copiado.put("sexo","alumnoId.sexo=:sexo");
+                        }
+                        sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
+                                ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
+                    }
+                    if(contiene10.contains("ca.cursoId")){
+                        copiado.remove("curso");
+                    }else if(contiene10.contains("ca.altura")||contiene10.contains("ca.alumnoId.altura")){
+                        copiado.remove("altura");
+                    }else if(contiene10.contains("ca.idioma")||contiene10.contains("ca.alumnoId.idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene10.contains("ca.titulacion")||contiene10.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene10.contains("ca.alumnoId.titulacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene10.contains("ca.fechaRegistro")||contiene10.contains("ca.alumnoId.fechaRegistro")) {
+                        copiado.remove("fecha");
+                    }else if(contiene10.contains("ca.sexo")||contiene10.contains("ca.alumnoId.sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho10=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho10);
+                    String contiene11= sentencia.get("sentencia");
+                    if(contiene11.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene11.contains("ca.altura")||contiene11.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene11.contains("ca.idioma")||contiene11.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene11.contains("ca.titulacion")||contiene11.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene11.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene11.contains("ca.fechaRegistro")||contiene11.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene11.contains("ca.sexo")||contiene11.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho11=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho11);
+
+
+                    String contiene12= sentencia.get("sentencia");
+                    if(contiene12.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene12.contains("ca.altura")||contiene12.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene12.contains("ca.idioma")||contiene12.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene12.contains("ca.titulacion")||contiene12.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene12.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene12.contains("ca.fechaRegistro")||contiene12.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene12.contains("ca.sexo")||contiene12.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho12=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho12);
+
+                    String contiene13= sentencia.get("sentencia");
+                    if(contiene13.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene13.contains("ca.altura")||contiene13.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene13.contains("ca.idioma")||contiene13.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene13.contains("ca.titulacion")||contiene13.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene13.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene13.contains("ca.fechaRegistro")||contiene13.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene13.contains("ca.sexo")||contiene13.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho13=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho13);
+                    String contiene14= sentencia.get("sentencia");
+                    if(contiene14.contains("ca.curso")&&copiado.containsKey("curso")){
+                        copiado.remove("curso");
+                    } else if((contiene14.contains("ca.altura")||contiene14.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
+                        copiado.remove("altura");
+                    }else if((contiene14.contains("ca.idioma")||contiene14.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
+                        copiado.remove("idioma");
+                    }else if(contiene14.contains("ca.titulacion")||contiene14.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
+                        copiado.remove("formacion");
+                    }else if(contiene14.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
+                        copiado.remove("calificacion");
+                    }else if(contiene14.contains("ca.fechaRegistro")||contiene14.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
+                        copiado.remove("fecha");
+                    }else if(contiene14.contains("ca.sexo")||contiene14.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
+                        copiado.remove("sexo");
+                    }
+                    String hecho14=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
+                    sentencia.put("sentencia",sentencia.get("sentencia")+hecho14);
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+
+                    break;
+                case 7:
+                    sentencia.put("sentencia","select ca.alumnoId from AlumnoCurso where ca.curso.id=:idCurso and ca."+copiado.get("calificacion")+" and ca.alumnoId.altura"+comboSigno.getValue()+":altura and ca.alumnoId.idioma LIKE:idioma and ca.alumnoId.titulacion LIKE:titulacion and ca.alumnoId.fechaRegistro=:fecha and ca.alumnoId.sexo=:sexo");
+                    System.out.println(sentencia);
+                    copiado.clear();
+                    copiado.putAll(copiadoViceversa);
+                    System.out.println(parametro.size());
+                    personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
+                    filtrado.addAll(personalBBDD);
+                    tabla.setItems(filtrado);
+                    break;
+            }
         }
-        if(dateDesde.getValue()!=null&&dateHasta.getValue()!=null){
-            LocalDate desde=dateDesde.getValue();
-            LocalDate hasta=dateHasta.getValue();
-            fechas=obtenerFechas(desde,hasta);
-            copiado.put("fecha","fechaRegistro=:fecha");
 
-        }
-        HashMap<String,String>copiadoViceversa=new HashMap<>();
-        copiadoViceversa.putAll(copiado);
-
-        switch (copiado.size()){
-            case 1:
-                System.out.println(copiado);
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                      String guardado=sentencia.get("sentencia");
-                      if(guardado.contains("PersonalBolsa")){
-                          sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                          ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                      }else{
-                          sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":(copiado.containsKey("fecha")?"AlumnoCurso ca":"PersonalBolsa ca"))+" where ca.");
-                          if(copiado.containsKey("altura")){
-                              copiado.put("altura","alumnoId.altura=:altura");
-                          }
-                          if(copiado.containsKey("idioma")){
-                              copiado.put("idioma","alumnoId.idioma like:idioma");
-                          }
-                          if(copiado.containsKey("formacion")){
-                              copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                          }
-                          if(copiado.containsKey("fecha")){
-                              copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                          }
-                          if(copiado.containsKey("sexo")){
-                              copiado.put("sexo","alumnoId.sexo=:sexo");
-                          }
-                          sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                                  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                      }
-                System.out.println(sentencia);
-                      copiado.clear();
-                      copiado.putAll(copiadoViceversa);
-               personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-            case 2:
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                        ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                String contiene= sentencia.get("sentencia");
-
-                if(contiene.contains("PersonalBolsa")){
-                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }else{
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                    if(copiado.containsKey("altura")){
-                        copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
-                    }
-                    if(copiado.containsKey("idioma")){
-                        copiado.put("idioma","alumnoId.idioma like:idioma");
-                    }
-                    if(copiado.containsKey("formacion")){
-                        copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                    }
-                    if(copiado.containsKey("fecha")){
-                        copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                    }
-                    if(copiado.containsKey("sexo")){
-                        copiado.put("sexo","alumnoId.sexo=:sexo");
-                    }
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }
-                if(contiene.contains("ca.cursoId")){
-                    copiado.remove("curso");
-                }else if(contiene.contains("ca.altura")||contiene.contains("ca.alumnoId.altura")){
-                    copiado.remove("altura");
-                }else if(contiene.contains("ca.idioma")||contiene.contains("ca.alumnoId.idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene.contains("ca.titulacion")||contiene.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene.contains("ca.fechaRegistro")||contiene.contains("ca.alumnoId.fechaRegistro")) {
-                    copiado.remove("fecha");
-                }else if(contiene.contains("ca.sexo")||contiene.contains("ca.alumnoId.sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho);
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-               personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-
-
-            case 3:
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca." +
-                        ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                String contiene1= sentencia.get("sentencia");
-                if(contiene1.contains("PersonalBolsa")){
-                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }else{
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                    if(copiado.containsKey("altura")){
-                        copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
-                    }
-                    if(copiado.containsKey("idioma")){
-                        copiado.put("idioma","alumnoId.idioma like:idioma");
-                    }
-                    if(copiado.containsKey("formacion")){
-                        copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                    }
-                    if(copiado.containsKey("fecha")){
-                        copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                    }
-                    if(copiado.containsKey("sexo")){
-                        copiado.put("sexo","alumnoId.sexo=:sexo");
-                    }
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }
-                if(contiene1.contains("ca.cursoId")){
-                    copiado.remove("curso");
-                }else if(contiene1.contains("ca.altura")||contiene1.contains("ca.alumnoId.altura")){
-                    copiado.remove("altura");
-                }else if(contiene1.contains("ca.idioma")||contiene1.contains("ca.alumnoId.idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene1.contains("ca.titulacion")||contiene1.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene1.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene1.contains("ca.fechaRegistro")||contiene1.contains("ca.alumnoId.fechaRegistro")) {
-                    copiado.remove("fecha");
-                }else if(contiene1.contains("ca.sexo")||contiene1.contains("ca.alumnoId.sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho1=" and ca."+ ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho1);
-                String contiene2= sentencia.get("sentencia");
-                if(contiene2.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene2.contains("ca.altura")||contiene2.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene2.contains("ca.idioma")||contiene2.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene2.contains("ca.titulacion")||contiene2.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene2.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if((contiene2.contains("ca.fechaRegistro")||contiene2.contains("ca.alumnoId.fechaRegistro"))&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene2.contains("ca.sexo")||contiene2.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho2=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho2);
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-                personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-            case 4:
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                        ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                String contiene3= sentencia.get("sentencia");
-                if(contiene3.contains("PersonalBolsa")){
-                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }else{
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                    if(copiado.containsKey("altura")){
-                        copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
-                    }
-                    if(copiado.containsKey("idioma")){
-                        copiado.put("idioma","alumnoId.idioma like:idioma");
-                    }
-                    if(copiado.containsKey("formacion")){
-                        copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                    }
-                    if(copiado.containsKey("fecha")){
-                        copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                    }
-                    if(copiado.containsKey("sexo")){
-                        copiado.put("sexo","alumnoId.sexo=:sexo");
-                    }
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }
-                if(contiene3.contains("ca.cursoId")){
-                    copiado.remove("curso");
-                }else if(contiene3.contains("ca.altura")||contiene3.contains("ca.alumnoId.altura")){
-                    copiado.remove("altura");
-                }else if(contiene3.contains("ca.idioma")||contiene3.contains("ca.alumnoId.idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene3.contains("ca.titulacion")||contiene3.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene3.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene3.contains("ca.fechaRegistro")||contiene3.contains("ca.alumnoId.fechaRegistro")) {
-                    copiado.remove("fecha");
-                }else if(contiene3.contains("ca.sexo")||contiene3.contains("ca.alumnoId.sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho3=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho3);
-                String contiene4= sentencia.get("sentencia");
-                if(contiene4.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene4.contains("ca.altura")||contiene4.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene4.contains("ca.idioma")||contiene4.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene4.contains("ca.titulacion")||contiene4.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene4.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene4.contains("ca.fechaRegistro")||contiene4.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene4.contains("ca.sexo")||contiene4.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho4=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho4);
-
-
-                String contiene5= sentencia.get("sentencia");
-                if(contiene5.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene5.contains("ca.altura")||contiene5.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene5.contains("ca.idioma")||contiene5.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene5.contains("ca.titulacion")||contiene5.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene5.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene5.contains("ca.fechaRegistro")||contiene5.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene5.contains("ca.sexo")||contiene5.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho5=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho5);
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-                personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-            case 5:
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                        ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                String contiene6= sentencia.get("sentencia");
-                if(contiene6.contains("PersonalBolsa")){
-                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }else{
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                    if(copiado.containsKey("altura")){
-                        copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
-                    }
-                    if(copiado.containsKey("idioma")){
-                        copiado.put("idioma","alumnoId.idioma like:idioma");
-                    }
-                    if(copiado.containsKey("formacion")){
-                        copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                    }
-                    if(copiado.containsKey("fecha")){
-                        copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                    }
-                    if(copiado.containsKey("sexo")){
-                        copiado.put("sexo","alumnoId.sexo=:sexo");
-                    }
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }
-                if(contiene6.contains("ca.cursoId")){
-                    copiado.remove("curso");
-                }else if(contiene6.contains("ca.altura")||contiene6.contains("ca.alumnoId.altura")){
-                    copiado.remove("altura");
-                }else if(contiene6.contains("ca.idioma")||contiene6.contains("ca.alumnoId.idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene6.contains("ca.titulacion")||contiene6.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene6.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene6.contains("ca.fechaRegistro")||contiene6.contains("ca.alumnoId.fechaRegistro")) {
-                    copiado.remove("fecha");
-                }else if(contiene6.contains("ca.sexo")||contiene6.contains("ca.alumnoId.sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho6=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho6);
-                String contiene7= sentencia.get("sentencia");
-                if(contiene7.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene7.contains("ca.altura")||contiene7.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene7.contains("ca.idioma")||contiene7.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene7.contains("ca.titulacion")||contiene7.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene7.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene7.contains("ca.fechaRegistro")||contiene7.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene7.contains("ca.sexo")||contiene7.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho7=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho7);
-
-
-                String contiene8= sentencia.get("sentencia");
-                if(contiene8.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene8.contains("ca.altura")||contiene8.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene8.contains("ca.idioma")||contiene8.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene8.contains("ca.titulacion")||contiene8.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene8.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene8.contains("ca.fechaRegistro")||contiene8.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene8.contains("ca.sexo")||contiene8.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho8=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho8);
-
-                String contiene9= sentencia.get("sentencia");
-                if(contiene9.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene9.contains("ca.altura")||contiene9.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene9.contains("ca.idioma")||contiene9.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene9.contains("ca.titulacion")||contiene9.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene9.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene9.contains("ca.fechaRegistro")||contiene9.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene9.contains("ca.sexo")||contiene9.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho9=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho9);
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-                personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-            case 6:
-                sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                        ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                String contiene10= sentencia.get("sentencia");
-                if(contiene10.contains("PersonalBolsa")){
-                    sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }else{
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
-                    if(copiado.containsKey("altura")){
-                        copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
-                    }
-                    if(copiado.containsKey("idioma")){
-                        copiado.put("idioma","alumnoId.idioma like:idioma");
-                    }
-                    if(copiado.containsKey("formacion")){
-                        copiado.put("formacion","alumnoId.titulacion like:titulacion");
-                    }
-                    if(copiado.containsKey("fecha")){
-                        copiado.put("fecha","alumnoId.fechaRegistro=:fecha");
-                    }
-                    if(copiado.containsKey("sexo")){
-                        copiado.put("sexo","alumnoId.sexo=:sexo");
-                    }
-                    sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
-                            ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                }
-                if(contiene10.contains("ca.cursoId")){
-                    copiado.remove("curso");
-                }else if(contiene10.contains("ca.altura")||contiene10.contains("ca.alumnoId.altura")){
-                    copiado.remove("altura");
-                }else if(contiene10.contains("ca.idioma")||contiene10.contains("ca.alumnoId.idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene10.contains("ca.titulacion")||contiene10.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene10.contains("ca.alumnoId.titulacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene10.contains("ca.fechaRegistro")||contiene10.contains("ca.alumnoId.fechaRegistro")) {
-                    copiado.remove("fecha");
-                }else if(contiene10.contains("ca.sexo")||contiene10.contains("ca.alumnoId.sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho10=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho10);
-                String contiene11= sentencia.get("sentencia");
-                if(contiene11.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene11.contains("ca.altura")||contiene11.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene11.contains("ca.idioma")||contiene11.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene11.contains("ca.titulacion")||contiene11.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene11.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene11.contains("ca.fechaRegistro")||contiene11.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene11.contains("ca.sexo")||contiene11.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho11=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho11);
-
-
-                String contiene12= sentencia.get("sentencia");
-                if(contiene12.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene12.contains("ca.altura")||contiene12.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene12.contains("ca.idioma")||contiene12.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene12.contains("ca.titulacion")||contiene12.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene12.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene12.contains("ca.fechaRegistro")||contiene12.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene12.contains("ca.sexo")||contiene12.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho12=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho12);
-
-                String contiene13= sentencia.get("sentencia");
-                if(contiene13.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene13.contains("ca.altura")||contiene13.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene13.contains("ca.idioma")||contiene13.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene13.contains("ca.titulacion")||contiene13.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene13.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene13.contains("ca.fechaRegistro")||contiene13.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene13.contains("ca.sexo")||contiene13.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho13=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho13);
-                String contiene14= sentencia.get("sentencia");
-                if(contiene14.contains("ca.curso")&&copiado.containsKey("curso")){
-                    copiado.remove("curso");
-                } else if((contiene14.contains("ca.altura")||contiene14.contains("ca.alumnoId.altura"))&&copiado.containsKey("altura")){
-                    copiado.remove("altura");
-                }else if((contiene14.contains("ca.idioma")||contiene14.contains("ca.alumnoId.idioma"))&&copiado.containsKey("idioma")) {
-                    copiado.remove("idioma");
-                }else if(contiene14.contains("ca.titulacion")||contiene14.contains("ca.alumnoId.titulacion")&&copiado.containsKey("formacion")) {
-                    copiado.remove("formacion");
-                }else if(contiene14.contains("ca.notaCurso")&&copiado.containsKey("calificacion")) {
-                    copiado.remove("calificacion");
-                }else if(contiene14.contains("ca.fechaRegistro")||contiene14.contains("ca.alumnoId.fechaRegistro")&&copiado.containsKey("fecha")) {
-                    copiado.remove("fecha");
-                }else if(contiene14.contains("ca.sexo")||contiene14.contains("ca.alumnoId.sexo")&&copiado.containsKey("sexo")){
-                    copiado.remove("sexo");
-                }
-                String hecho14=" and ca."+  ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                sentencia.put("sentencia",sentencia.get("sentencia")+hecho14);
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-                personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-
-                break;
-            case 7:
-                sentencia.put("sentencia","select ca.alumnoId from AlumnoCurso where ca.curso.id=:idCurso and ca."+copiado.get("calificacion")+" and ca.alumnoId.altura"+comboSigno.getValue()+":altura and ca.alumnoId.idioma LIKE:idioma and ca.alumnoId.titulacion LIKE:titulacion and ca.alumnoId.fechaRegistro=:fecha and ca.alumnoId.sexo=:sexo");
-                System.out.println(sentencia);
-                copiado.clear();
-                copiado.putAll(copiadoViceversa);
-                System.out.println(parametro.size());
-               personalBBDD=(ArrayList<PersonalBolsa>) (new AlumnoCursoDAOImplement()).getFiltradoTodos(fechas,sentencia,parametro);
-                filtrado.addAll(personalBBDD);
-                tabla.setItems(filtrado);
-                break;
-        }
 
     }
     public static List<String> obtenerFechas(LocalDate desde, LocalDate hasta) {

@@ -134,6 +134,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void entrarServicios(Event event) {
+        HelloApplication.cambioVentana("grafica-view.fxml");
     }
 
     @FXML
