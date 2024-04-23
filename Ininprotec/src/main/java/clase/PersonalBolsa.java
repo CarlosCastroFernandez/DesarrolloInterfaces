@@ -116,6 +116,14 @@ public class PersonalBolsa implements Serializable {
     return notaFinal;
   }
 
+  public Character getSexo() {
+    return sexo;
+  }
+
+  public void setSexo(Character sexo) {
+    this.sexo = sexo;
+  }
+
   public Double getAltura() {
     return altura;
   }

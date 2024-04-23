@@ -98,6 +98,9 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
             personalBBDD.setCurriculumUrl(personal.getCurriculumUrl());
             personalBBDD.setDni(personal.getDni());
             personalBBDD.setNumeroTip(personal.getNumeroTip());
+            personalBBDD.setAltura(personal.getAltura());
+            personalBBDD.setSexo(personal.getSexo());
+            personalBBDD.setIdioma(personal.getIdioma());
             t.commit();
         }
         return personalBBDD;

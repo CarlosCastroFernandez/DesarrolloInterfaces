@@ -1,0 +1,10 @@
+
+L
+java:S3740("/Provide the parametrized type for this generic.(¥ÙÊÑ8ÕË’Öğ1
+s	java:S116,"RRename this field "aÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ˆÚ¾úÿÿÿÿ8òË’Öğ1
+
+java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·À”–8òË’Öğ1
+w
+java:S1450-"URemove the "series" field and declare it as a local variable in the relevant methods.(®ÈŒµÿÿÿÿÿ8óË’Öğ1
+I
+java:S1602E",Remove useless curly braces around statement(ûÄËĞ8ùË’Öğ1

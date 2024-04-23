@@ -338,7 +338,7 @@ public class RegistroAlumnoController implements Initializable {
                 PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
                         textDni.getText(),textTelefono.getText(), (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
                         textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
-                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':null)));
+                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
                 if(clienteA.getEsAlumno()==1){
                     clienteA.setCursosAlumnos(new ArrayList<>());
                     clienteA.setModuloAlumno(new ArrayList<>());
@@ -425,7 +425,7 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setCorreo(textEmail.getText());
                 Utilidad.getAlumno().setTelefono(textTelefono.getText());
                 Utilidad.getAlumno().setLicenciaArma(textLicenciaArmas.getText());
-                Utilidad.getAlumno().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
+                Utilidad.getAlumno().setFechaNacimiento(dateFecha.getValue()!=null?Date.valueOf(dateFecha.getValue()):null);
                 Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText());
                 Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText());
                 Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText());
@@ -437,6 +437,7 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
                 Utilidad.getAlumno().setAltura(spAltura.getValue());
                 Utilidad.getAlumno().setIdioma(textIdioma.getText().toLowerCase());
+                Utilidad.getAlumno().setSexo((radioMujer.isSelected()?'m':radioHombre.isSelected()?'h':'x'));
                 Long seleccionado=0L;
                 if(comboRol.getValue().equals("Alumno")){
                     seleccionado=1L;

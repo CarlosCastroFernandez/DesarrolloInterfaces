@@ -40,5 +40,7 @@ J
 java:S1125†"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8Êå·‹ğ1
 M
 java:S2093™"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8Ëå·‹ğ1
+T
+java:S1128#"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8èÄéÒğ1
 å
 java:S6541¿"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 148 to 64, Complexity from 30 to 14, Nesting Level from 5 to 2, Number of Variables from 28 to 6.(¦ëçÍ8Ñå·‹ğ1
