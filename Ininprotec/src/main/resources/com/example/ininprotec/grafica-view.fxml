@@ -4,6 +4,7 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -13,7 +14,6 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane prefHeight="688.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.GraficaController">
    <center>
@@ -30,18 +30,27 @@
                     </yAxis>
                   </BarChart>
                   <Separator prefHeight="0.0" prefWidth="866.0" />
-                  <FlowPane fx:id="textBuscador" hgap="290.0" onKeyReleased="#filtro" prefHeight="50.0" prefWidth="866.0">
+                  <FlowPane hgap="263.0" prefHeight="50.0" prefWidth="866.0">
                      <children>
                         <Label fx:id="añadir" text="Añadir Servicio" />
-                        <TextField />
+                        <TextField fx:id="textBuscador" onKeyReleased="#filtro" />
+                        <HBox prefHeight="26.0" prefWidth="70.0">
+                           <children>
+                              <Button fx:id="botonBorrar" mnemonicParsing="false" onAction="#borrarServicio" text="Borrar " />
+                           </children>
+                        </HBox>
                      </children>
                      <VBox.margin>
-                        <Insets left="20.0" top="10.0" />
+                        <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>
                   </FlowPane>
                   <TableView fx:id="tabla" prefHeight="280.0" prefWidth="845.0">
                     <columns>
                       <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="cLaboral" prefWidth="75.0" text="Horas L-V" />
+                        <TableColumn fx:id="cFestivos" prefWidth="75.0" text="Horas S-D-Festv" />
+                        <TableColumn fx:id="cHorasTotales" prefWidth="75.0" text="Horas Totales/Mes" />
+                        <TableColumn fx:id="cComision" prefWidth="75.0" text="Comisión" />
                       <TableColumn fx:id="cBeneficio" prefWidth="75.0" text="Beneficio" />
                     </columns>
                      <VBox.margin>

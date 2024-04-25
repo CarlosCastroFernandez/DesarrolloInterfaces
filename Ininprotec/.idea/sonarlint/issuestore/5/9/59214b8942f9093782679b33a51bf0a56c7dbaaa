@@ -1,9 +1,9 @@
 
-L	java:S106="+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8Çƒáğê1
-L	java:S106|"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8Íƒáğê1
+L	java:S106="+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8íäº×ğ1
+L	java:S106"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8ôäº×ğ1
 G
-java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8›œÑòê1
+java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8¦ƒÈÜğ1
 K
-java:S1128".Remove this unused import 'clase.AlumnoCurso'.(ñŒĞÒ8›œÑòê1
+java:S1128".Remove this unused import 'clase.AlumnoCurso'.(ñŒĞÒ8¦ƒÈÜğ1
 K
-java:S1128")Remove this unused import 'clase.Modulo'.(–Áó°ıÿÿÿÿ8›œÑòê1
+java:S1128")Remove this unused import 'clase.Modulo'.(–Áó°ıÿÿÿÿ8¦ƒÈÜğ1

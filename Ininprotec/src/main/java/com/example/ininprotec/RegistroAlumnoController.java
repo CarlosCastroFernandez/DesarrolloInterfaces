@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.EnvioCorreoElectronico;
 import Util.Utilidad;
 import clase.AlumnoCurso;
 import clase.AlumnoModulo;
@@ -112,9 +113,13 @@ public class RegistroAlumnoController implements Initializable {
     private RadioButton radioHombre;
     @javafx.fxml.FXML
     private RadioButton radioMujer;
+    private byte[]parseo;
+    @javafx.fxml.FXML
+    private Button botonAbrir;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        EnvioCorreoElectronico.enviar();
         Image imagenFlechia=new Image(RegistroAlumnoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
         imagenFlecha.setImage(imagenFlechia);
         imagenFlecha.setOnMouseClicked(mouseEvent -> {
@@ -125,6 +130,7 @@ public class RegistroAlumnoController implements Initializable {
         });
         spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
         if(Utilidad.getAlumno()==null){
+            botonAbrir.setVisible(false);
             labelRol.setVisible(false);
             comboRol.setVisible(false);
             labelURL.setStyle("-fx-text-fill: #000000");
@@ -185,6 +191,13 @@ public class RegistroAlumnoController implements Initializable {
             comboRol.getItems().add("Alumno");
             comboRol.getItems().add("Trabajador");
             comboRol.getItems().add("Alumno y Trabajador");
+            if(Utilidad.getAlumno().getCurriculumUrl()!=null){
+                botonAbrir.setVisible(true);
+                botonArchivos.setVisible(false);
+            }else{
+                botonAbrir.setVisible(false);
+                botonArchivos.setVisible(true);
+            }
 
             if(Utilidad.getAlumno().getEsAlumno()==1){
                 radioAlumno.setSelected(true);
@@ -232,11 +245,15 @@ public class RegistroAlumnoController implements Initializable {
             }
 
 
-            labelURL.setText(Utilidad.getAlumno().getCurriculumUrl());
             textDni.setText(Utilidad.getAlumno().getDni());
             textAreaTIP.setText(Utilidad.getAlumno().getNumeroTip());
             spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,Utilidad.getAlumno().getAltura(),0.1));
             textIdioma.setText(Utilidad.getAlumno().getIdioma());
+            if(Utilidad.getAlumno().getSexo()!='x'&&Utilidad.getAlumno().getSexo()=='h'){
+                radioHombre.setSelected(true);
+            }else if(Utilidad.getAlumno().getSexo()!='x'&&Utilidad.getAlumno().getSexo()=='m'){
+                radioMujer.setSelected(true);
+            }
             if(Utilidad.getAlumno().getEsAlumno()==1){
                 comboRol.getSelectionModel().select(0);
             }else if(Utilidad.getAlumno().getEsAlumno()==2){
@@ -274,22 +291,7 @@ public class RegistroAlumnoController implements Initializable {
         File archivo=openArchivos.showOpenDialog(null);
         System.out.println(archivo.getName());
         if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
-            Path origenPath= Paths.get(archivo.getPath());
-            Path destino=Paths.get("./Curriculums/"+archivo.getName());
-            try {
-                Files.copy(origenPath,destino);
-                    String nombreElegido="CV "+textNombre.getText()+" "+textApellido1.getText()+" "+textApellido2.getText();
-                    String extension=archivo.getName().substring(archivo.getName().lastIndexOf("."),archivo.getName().length());
-                    nombreElegido+=extension;
-                    nuevoPath=destino.resolveSibling(nombreElegido);
-                    Files.move(destino,nuevoPath, StandardCopyOption.REPLACE_EXISTING);
-                    String nombreRuta=String.valueOf(nuevoPath);
-                    String nombreFinalRuta=nombreRuta.substring(nombreRuta.lastIndexOf(File.separator)+1,nombreRuta.length());
-                    labelURL.setText(nombreFinalRuta);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+            parseo=documentoToByteArray(archivo);
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
@@ -314,6 +316,16 @@ public class RegistroAlumnoController implements Initializable {
 
         return bos.toByteArray();
     }
+    private byte[] documentoToByteArray(File file){
+        byte[] fileContent = null;
+        try {
+            fileContent = Files.readAllBytes(file.toPath());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return fileContent;
+    }
 
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
@@ -337,7 +349,7 @@ public class RegistroAlumnoController implements Initializable {
                 Date fechaFinal=Date.valueOf(fechaFinalLocal);
                 PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
                         textDni.getText(),textTelefono.getText(), (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
-                        textCamiseta.getText(),labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
+                        textCamiseta.getText(),(parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
                         textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
                 if(clienteA.getEsAlumno()==1){
                     clienteA.setCursosAlumnos(new ArrayList<>());
@@ -369,7 +381,8 @@ public class RegistroAlumnoController implements Initializable {
                 textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
                 textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
                 String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
-                imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText("");
+                imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText(""); radioMujer.setSelected(false); radioHombre.setSelected(false);
+                spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
                 textDni.clear();textAreaTIP.clear();
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
@@ -432,7 +445,7 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setTitulacion(textTitulacion.getText().toLowerCase());
                 Utilidad.getAlumno().setLugarResidencia(textResidencia.getText());
                 Utilidad.getAlumno().setImagenPerfil(imagenCargada);
-                Utilidad.getAlumno().setCurriculumUrl(labelURL.getText());
+                Utilidad.getAlumno().setCurriculumUrl((parseo==null?null:parseo));
                 Utilidad.getAlumno().setDni(textDni.getText());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
                 Utilidad.getAlumno().setAltura(spAltura.getValue());
@@ -480,5 +493,19 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     public void gestion(ActionEvent actionEvent) {
         HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void abrirCurriculum(ActionEvent actionEvent) {
+        try(FileOutputStream fos=new FileOutputStream("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf",false)) {
+            fos.write(Utilidad.getAlumno().getCurriculumUrl());
+            File filePath=new File("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf");
+            Desktop.getDesktop().open(filePath);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

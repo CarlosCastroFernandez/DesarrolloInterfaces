@@ -22,7 +22,7 @@ public class PersonalIIP implements Serializable {
   private java.sql.Date fechaNacimiento;
   @Column(name = "talla_camiseta")
   private String tallaCamiseta;
-  private String curriculum;
+  private byte[] curriculum;
   @Column(name = "numero_cuenta")
   private String numeroCuenta;
   @Column(name = "numero_social")
@@ -42,7 +42,7 @@ public class PersonalIIP implements Serializable {
   @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE})
   private List<InstructorCurso> cursoInstructor;
 
-  public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
+  public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
     this.id = id;
     this.nombre = nombre;
     this.apellido1 = apellido1;
@@ -62,7 +62,7 @@ public class PersonalIIP implements Serializable {
     this.titulacion = titulacion;
 
   }
-  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, String curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) {
+  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
@@ -193,11 +193,11 @@ public class PersonalIIP implements Serializable {
   }
 
 
-  public String getCurriculum() {
+  public byte[] getCurriculum() {
     return curriculum;
   }
 
-  public void setCurriculum(String curriculum) {
+  public void setCurriculum(byte[] curriculum) {
     this.curriculum = curriculum;
   }
 

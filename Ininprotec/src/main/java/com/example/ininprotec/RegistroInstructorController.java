@@ -78,6 +78,9 @@ public class RegistroInstructorController implements Initializable {
     private ImageView imagenFlecha;
     @javafx.fxml.FXML
     private Button botonGestion;
+    private byte[]parseo;
+    @javafx.fxml.FXML
+    private Button botonAbrir;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -89,35 +92,23 @@ public class RegistroInstructorController implements Initializable {
             Utilidad.setCurso(null);
             Utilidad.setInstructor(null);
         });
-        labelURL.setOnMouseClicked(mouseEvent -> {
-            if(!labelURL.getText().equals("")){
-                String rutaArchivo=nuevoPath.toString();
-                File archivo=new File(rutaArchivo);
-                try {
-                    Desktop.getDesktop().open(archivo);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
 
-            }
-        });
-        labelURL.setOnMouseEntered(evento->{
 
-            labelURL.setStyle("-fx-text-fill: #0124FB");
-        });
-        labelURL.setOnMouseExited(evento->{
-            labelURL.setStyle("-fx-text-fill: #000000");
-        });
+
         if(Utilidad.getInstructor()==null){
-            labelURL.setStyle("-fx-text-fill: #000000");
-            labelURL.setStyle("-fx-underline: true");
+         botonAbrir.setVisible(false);
             String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
             Image imagen=new Image(rutaImagen);
             imagenPerfil.setImage(imagen);
 
-
-
         }else{
+            if(Utilidad.getInstructor().getCurriculum()==null){
+                botonArchivos.setVisible(true);
+                botonAbrir.setVisible(false);
+            }else{
+                botonArchivos.setVisible(false);
+                botonAbrir.setVisible(true);
+            }
 
             botonGestion.setVisible(false);
             textNombre.setText(Utilidad.getInstructor().getNombre());
@@ -152,7 +143,6 @@ public class RegistroInstructorController implements Initializable {
             }
 
 
-            labelURL.setText(Utilidad.getInstructor().getCurriculum());
             textDni.setText(Utilidad.getInstructor().getDni());
             textAreaTIP.setText(Utilidad.getInstructor().getNumeroTip());
         }
@@ -181,22 +171,7 @@ public class RegistroInstructorController implements Initializable {
         File archivo=openArchivos.showOpenDialog(null);
         System.out.println(archivo.getName());
         if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
-            Path origenPath= Paths.get(archivo.getPath());
-            Path destino=Paths.get("./Curriculums/"+archivo.getName());
-            try {
-                Files.copy(origenPath,destino);
-                String nombreElegido="CV "+textNombre.getText()+" "+textApellido1.getText()+" "+textApellido2.getText();
-                String extension=archivo.getName().substring(archivo.getName().lastIndexOf("."),archivo.getName().length());
-                nombreElegido+=extension;
-                nuevoPath=destino.resolveSibling(nombreElegido);
-                Files.move(destino,nuevoPath, StandardCopyOption.REPLACE_EXISTING);
-                String nombreRuta=String.valueOf(nuevoPath);
-                String nombreFinalRuta=nombreRuta.substring(nombreRuta.lastIndexOf(File.separator)+1,nombreRuta.length());
-                labelURL.setText(nombreFinalRuta);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+            parseo=documentoToByteArray(archivo);
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
@@ -205,6 +180,16 @@ public class RegistroInstructorController implements Initializable {
             alerta.showAndWait();
         }
 
+    }
+    private byte[] documentoToByteArray(File file){
+        byte[] fileContent = null;
+        try {
+            fileContent = Files.readAllBytes(file.toPath());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return fileContent;
     }
     public static byte[] imageToByteArray(File file) throws IOException {
         FileInputStream fis = new FileInputStream(file);
@@ -238,7 +223,7 @@ public class RegistroInstructorController implements Initializable {
 
                 PersonalIIP clienteA=new PersonalIIP(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
                         textDni.getText(),textTelefono.getText(),  (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textCamiseta.getText(),
-                        labelURL.getText(),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 1L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
+                        (parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 1L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
 
 
 
@@ -309,7 +294,7 @@ public class RegistroInstructorController implements Initializable {
                 Utilidad.getInstructor().setTitulacion(textTitulacion.getText());
                 Utilidad.getInstructor().setLugarResidencia(textResidencia.getText());
                 Utilidad.getInstructor().setImagenPerfil(imagenCargada);
-                Utilidad.getInstructor().setCurriculum(labelURL.getText());
+                Utilidad.getInstructor().setCurriculum((parseo==null?null:parseo));
                 Utilidad.getInstructor().setDni(textDni.getText());
                 Utilidad.getInstructor().setNumeroTip(textAreaTIP.getText());
                 //MODIFICACION INSTRUCOT
@@ -350,4 +335,19 @@ public class RegistroInstructorController implements Initializable {
     public void gestion(ActionEvent actionEvent) {
         HelloApplication.cambioVentana("todos-instructor-view.fxml");
     }
-}
+
+    @javafx.fxml.FXML
+    public void abiriCurriculum(ActionEvent actionEvent) {
+        try(FileOutputStream fos=new FileOutputStream("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf",false)) {
+            fos.write(Utilidad.getInstructor().getCurriculum());
+            File filePath=new File("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf");
+            Desktop.getDesktop().open(filePath);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    }
+

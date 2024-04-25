@@ -8,6 +8,10 @@ module com.example.ininprotec {
     requires javafx.web;
     requires javafx.swing;
     requires jasperreports;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.core;
+    requires java.net.http;
+    requires java.mail;
 
     opens imagenes;
     opens clase;

@@ -114,6 +114,9 @@ private ChangeListener<String> comboCalificacionListener;
             }
         });
         comboCurso.getItems().addAll((new CursoDAOImplement().getAll()));
+        Curso  sinCurso=new Curso();
+        sinCurso.setNombre("Sin Curso");
+        comboCurso.getItems().add(sinCurso);
         comboCalificacion.getItems().add("Calificado");
         comboCalificacion.getItems().add("No Calificado");
         comboCalificacion.setDisable(true);
@@ -131,10 +134,18 @@ private ChangeListener<String> comboCalificacionListener;
         spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
 
         listenerCurso=((observableValue, s, t1) -> {
-            System.out.println("Entro");
-            copiado.put("curso","cursoId.id=:idCurso");
-            parametro.put("curso",comboCurso.getValue().getId());
-            comboCalificacion.setDisable(false);
+
+            if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                copiado.put("curso","cursoId is null");
+                parametro.remove("curso");
+                comboCalificacion.setDisable(true);
+            }else{
+                System.out.println("Entro");
+                copiado.put("curso","cursoId.id=:idCurso");
+                parametro.put("curso",comboCurso.getValue().getId());
+                comboCalificacion.setDisable(false);
+            }
+
 
 
 
@@ -435,16 +446,20 @@ radioMujer.setOnAction(actionEvent -> {
             }
             HashMap<String,String>copiadoViceversa=new HashMap<>();
             copiadoViceversa.putAll(copiado);
+            Boolean compruebaCase=false;
 
             switch (copiado.size()){
                 case 1:
                     System.out.println(copiado);
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                     String guardado=sentencia.get("sentencia");
-                    if(guardado.contains("PersonalBolsa")){
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                    }
+                    if(guardado.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):"")))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":(copiado.containsKey("fecha")?"AlumnoCurso ca":"PersonalBolsa ca"))+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura=:altura");
@@ -475,11 +490,18 @@ radioMujer.setOnAction(actionEvent -> {
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                             ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
                     String contiene= sentencia.get("sentencia");
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                        compruebaCase=true;
+                    }
+                    if(compruebaCase){
+                        copiado.remove("curso");
+                    }
 
-                    if(contiene.contains("PersonalBolsa")){
+                    if(contiene.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
@@ -529,10 +551,17 @@ radioMujer.setOnAction(actionEvent -> {
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca." +
                             ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
                     String contiene1= sentencia.get("sentencia");
-                    if(contiene1.contains("PersonalBolsa")){
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                        compruebaCase=true;
+                    }
+                    if(compruebaCase){
+                        copiado.remove("curso");
+                    }
+                    if(contiene1.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
@@ -598,10 +627,17 @@ radioMujer.setOnAction(actionEvent -> {
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                             ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
                     String contiene3= sentencia.get("sentencia");
-                    if(contiene3.contains("PersonalBolsa")){
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                        compruebaCase=true;
+                    }
+                    if(compruebaCase){
+                        copiado.remove("curso");
+                    }
+                    if(contiene3.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
@@ -687,10 +723,17 @@ radioMujer.setOnAction(actionEvent -> {
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                             ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
                     String contiene6= sentencia.get("sentencia");
-                    if(contiene6.contains("PersonalBolsa")){
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                        compruebaCase=true;
+                    }
+                    if(compruebaCase){
+                        copiado.remove("curso");
+                    }
+                    if(contiene6.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
@@ -795,10 +838,17 @@ radioMujer.setOnAction(actionEvent -> {
                     sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                             ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
                     String contiene10= sentencia.get("sentencia");
-                    if(contiene10.contains("PersonalBolsa")){
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac."+copiado.get("curso"));
+                        compruebaCase=true;
+                    }
+                    if(compruebaCase){
+                        copiado.remove("curso");
+                    }
+                    if(contiene10.contains("PersonalBolsa")&&!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca."+
                                 ((copiado.containsKey("curso"))?copiado.get("curso"):(copiado.containsKey("calificacion")?copiado.get("calificacion"):(copiado.containsKey("altura")?copiado.get("altura"):(copiado.containsKey("idioma")?copiado.get("idioma"):(copiado.containsKey("formacion")?copiado.get("formacion"):(copiado.containsKey("fecha")?copiado.get("fecha"):(copiado.containsKey("sexo")?copiado.get("sexo"):""))))))));
-                    }else{
+                    }else if(!comboCurso.getValue().getNombre().equals("Sin Curso")){
                         sentencia.put("sentencia","select ca.alumnoId from "+(copiado.containsKey("curso")?"AlumnoCurso ca":"PersonalBolsa ca")+" where ca.");
                         if(copiado.containsKey("altura")){
                             copiado.put("altura","alumnoId.altura"+comboSigno.getValue()+":altura");
@@ -919,7 +969,13 @@ radioMujer.setOnAction(actionEvent -> {
 
                     break;
                 case 7:
-                    sentencia.put("sentencia","select ca.alumnoId from AlumnoCurso where ca.curso.id=:idCurso and ca."+copiado.get("calificacion")+" and ca.alumnoId.altura"+comboSigno.getValue()+":altura and ca.alumnoId.idioma LIKE:idioma and ca.alumnoId.titulacion LIKE:titulacion and ca.alumnoId.fechaRegistro=:fecha and ca.alumnoId.sexo=:sexo");
+                    if(comboCurso.getValue().getNombre().equals("Sin Curso")){
+                        sentencia.put("sentencia","SELECT DISTINCT instructor FROM PersonalIIP instructor LEFT JOIN InstructorCurso ic ON instructor.id = ic.instructor.id WHERE ic.curso IS NULL" +
+                                " and "+copiado.get("altura")+" and "+copiado.get("idioma")+" and "+copiado.get("formacion")+" and "+copiado.get("fecha")+" and "+copiado.get("sexo"));
+                    }else{
+                        sentencia.put("sentencia","select ca.alumnoId from AlumnoCurso where ca.curso.id=:idCurso and ca."+copiado.get("calificacion")+" and ca.alumnoId.altura"+comboSigno.getValue()+":altura and ca.alumnoId.idioma LIKE:idioma and ca.alumnoId.titulacion LIKE:titulacion and ca.alumnoId.fechaRegistro=:fecha and ca.alumnoId.sexo=:sexo");
+                    }
+
                     System.out.println(sentencia);
                     copiado.clear();
                     copiado.putAll(copiadoViceversa);

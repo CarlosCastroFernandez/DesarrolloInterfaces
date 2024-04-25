@@ -13,6 +13,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -22,7 +23,7 @@
    <center>
       <BorderPane>
          <center>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="619.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.3204" prefHeight="619.0" prefWidth="879.0" BorderPane.alignment="CENTER">
               <items>
                   <VBox alignment="TOP_CENTER" spacing="10.0">
                      <children>
@@ -31,7 +32,12 @@
                         <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="48.0" prefWidth="235.0" vgap="10.0">
                            <children>
                               <Label text="CURRICULUM VITAE" />
-                              <Button fx:id="botonArchivos" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
+                              <AnchorPane prefHeight="34.0" prefWidth="76.0">
+                                 <children>
+                                    <Button fx:id="botonArchivos" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
+                                    <Button fx:id="botonAbrir" layoutX="13.0" layoutY="5.0" mnemonicParsing="false" onAction="#abrirCurriculum" text="Abrir" />
+                                 </children>
+                              </AnchorPane>
                               <Label fx:id="labelURL" />
                            </children>
                         </FlowPane>
@@ -54,11 +60,22 @@
                         <Label text="Nº TIP" />
                         <TextArea fx:id="textAreaTIP" maxWidth="200.0" prefHeight="0.0" prefWidth="200.0" />
                         <Separator prefWidth="200.0" />
-                        <Label text="Idioma" />
-                        <TextArea fx:id="textIdioma" maxWidth="200.0" prefHeight="62.0" prefWidth="261.0" />
-                        <Separator prefWidth="200.0" />
-                        <Label text="Titulacion" />
-                        <TextArea fx:id="textTitulacion" maxWidth="200.0" prefHeight="62.0" prefWidth="261.0" />
+                        <FlowPane alignment="CENTER" hgap="10.0" prefHeight="73.0" prefWidth="271.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="97.0" prefWidth="127.0">
+                                 <children>
+                                    <Label text="Idioma" />
+                                    <TextArea fx:id="textIdioma" maxWidth="200.0" prefHeight="62.0" prefWidth="154.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="78.0" prefWidth="132.0">
+                                 <children>
+                                    <Label text="Titulacion" />
+                                    <TextArea fx:id="textTitulacion" maxWidth="200.0" prefHeight="62.0" prefWidth="120.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </FlowPane>
                      </children>
                      <padding>
                         <Insets top="20.0" />
@@ -111,13 +128,16 @@
                         <FlowPane alignment="CENTER" hgap="20.0">
                            <children>
                               <Label fx:id="labelRol" text="Cambiar Rol" />
-                              <ComboBox fx:id="comboRol" prefWidth="150.0" />
+                              <ComboBox fx:id="comboRol" maxWidth="200.0" prefWidth="150.0" />
                            </children>
+                           <padding>
+                              <Insets right="26.0" />
+                           </padding>
                         </FlowPane>
                         <FlowPane fx:id="flowPaneCurso" alignment="CENTER" hgap="30.0" prefHeight="44.0" prefWidth="298.0">
                            <children>
                               <Label fx:id="labelCurso" text="Curso" />
-                              <ComboBox fx:id="comboCurso" prefHeight="26.0" prefWidth="154.0" />
+                              <ComboBox fx:id="comboCurso" maxWidth="200.0" prefHeight="26.0" prefWidth="154.0" />
                            </children>
                         </FlowPane>
                         <VBox alignment="CENTER" prefHeight="62.0" prefWidth="222.0" spacing="10.0">

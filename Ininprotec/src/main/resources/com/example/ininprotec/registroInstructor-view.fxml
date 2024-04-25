@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
@@ -17,16 +18,21 @@
     <center>
         <BorderPane>
             <center>
-                <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <SplitPane dividerPositions="0.3373737373737373" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <items>
                         <VBox alignment="TOP_CENTER" spacing="10.0">
                             <children>
                                 <Label text="FICHA" />
-                                <ImageView fx:id="imagenPerfil" fitHeight="170.0" fitWidth="235.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="imagenPerfil" fitHeight="107.0" fitWidth="112.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
                                 <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="48.0" prefWidth="235.0" vgap="10.0">
                                     <children>
                                         <Label text="CURRICULUM VITAE" />
-                                        <Button fx:id="botonArchivos" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
+                              <AnchorPane prefHeight="26.0" prefWidth="84.0">
+                                 <children>
+                                              <Button fx:id="botonArchivos" layoutX="11.0" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
+                                    <Button fx:id="botonAbrir" layoutX="16.0" mnemonicParsing="false" onAction="#abiriCurriculum" text="Abrir" />
+                                 </children>
+                              </AnchorPane>
                                         <Label fx:id="labelURL" />
                                     </children>
                                 </FlowPane>
@@ -40,7 +46,7 @@
                                 <Insets top="20.0" />
                             </padding>
                         </VBox>
-                        <FlowPane alignment="CENTER" hgap="100.0" vgap="10.0">
+                        <FlowPane alignment="CENTER" hgap="100.0" maxWidth="600.0" prefHeight="542.0" prefWidth="510.0" vgap="10.0">
                             <children>
                                 <VBox spacing="5.0">
                                     <children>

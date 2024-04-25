@@ -26,7 +26,7 @@ public class PersonalBolsa implements Serializable {
   @Column(name = "talla_camiseta")
   private String tallaCamiseta;
   @Column(name = "curriculum_url")
-  private String curriculumUrl;
+  private byte[] curriculumUrl;
   @Column(name = "numero_cuenta")
   private String numeroCuenta;
   @Column(name = "numero_social")
@@ -57,7 +57,7 @@ public class PersonalBolsa implements Serializable {
   private Character sexo;
 
 
-  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
+  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
     this.id = id;
     this.nombre = nombre;
     this.apellido1 = apellido1;
@@ -80,7 +80,7 @@ public class PersonalBolsa implements Serializable {
     this.cursosAlumnos = cursosAlumnos;
     this.moduloAlumno = modulos;
   }
-  public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, String curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia,Date fechaRegisto,
+  public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia,Date fechaRegisto,
                        String idioma,Double altura,Character sexo) {
     this.nombre = nombre;
     this.apellido1 = apellido1;
@@ -254,11 +254,11 @@ public class PersonalBolsa implements Serializable {
   }
 
 
-  public String getCurriculumUrl() {
+  public byte[] getCurriculumUrl() {
     return curriculumUrl;
   }
 
-  public void setCurriculumUrl(String curriculumUrl) {
+  public void setCurriculumUrl(byte[] curriculumUrl) {
     this.curriculumUrl = curriculumUrl;
   }
 
