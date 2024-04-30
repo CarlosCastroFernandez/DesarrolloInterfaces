@@ -6,6 +6,7 @@ import clase.InstructorCurso;
 import clase.PersonalIIP;
 import dao.DAOInstructorCurso;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 
@@ -27,4 +28,6 @@ public class InstructorCursoDAOImplement implements DAOInstructorCurso {
         }
         return (instructorCurso!=null?true:false);
     }
+
+
 }

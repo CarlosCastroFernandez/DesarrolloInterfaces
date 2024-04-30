@@ -1,27 +1,25 @@
 
-Q
-java:S3740)"/Provide the parametrized type for this generic.(Óü©Õûÿÿÿÿ8ĞãøÎì1
 g
-java:S11926"JDefine a constant instead of duplicating this literal "Sin Curso" 3 times.(ÃüşÁ8ÑãøÎì1
+java:S11927"JDefine a constant instead of duplicating this literal "Sin Curso" 3 times.(ÃüşÁ8®äÔò1
 9
-java:S1643h"Use a StringBuilder instead.(ÈÃ˜İ8ÒãøÎì1
+java:S1643i"Use a StringBuilder instead.(ÈÃ˜İ8°äÔò1
 ~
-java:S1450,"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8ğãøÎì1
+java:S1450,"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8âäÔò1
 t
-java:S37763"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(•‘İŸüÿÿÿÿ8óãøÎì1
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(•‘İŸüÿÿÿÿ8çäÔò1
 Z
-java:S1611`"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8øãøÎì1
+java:S1611a"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8ğäÔò1
 U
-java:S1611d"8Remove the parentheses around the "instructor" parameter(åí¾8øãøÎì1
+java:S1611e"8Remove the parentheses around the "instructor" parameter(åí¾8ñäÔò1
 Z
-java:S1611r"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8ùãøÎì1
+java:S1611s"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8óäÔò1
 Z
-java:S1611v"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8ùãøÎì1
+java:S1611w"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8ôäÔò1
 U
-java:S1611z"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8úãøÎì1
+java:S1611{"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8ôäÔò1
 N
-java:S1602~",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8úãøÎì1
+java:S1602",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8õäÔò1
 d
-java:S1128"BRemove this unused import 'implement.InstructorCursoDAOImplement'.(ÖÄßËùÿÿÿÿ8ãÒûŞì1
+java:S1128"BRemove this unused import 'implement.InstructorCursoDAOImplement'.(ÖÄßËùÿÿÿÿ8ò–«Ùò1
 ]
-java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8ãÒûŞì1
+java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8ıäÔò1

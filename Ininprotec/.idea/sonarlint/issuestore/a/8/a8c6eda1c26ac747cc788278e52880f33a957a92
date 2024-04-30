@@ -1,0 +1,13 @@
+
+g	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã·„®ñ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8ã·„®ñ1
+W
+java:S1118	":Add a private constructor to hide the implicit public one.(Çê”†8é·„®ñ1
+H
+java:S1481",Remove this unused "emailTo" local variable.(Í€ğ}8é·„®ñ1
+I
+java:S1481",Remove this unused "subject" local variable.(ŠÈìÉ8é·„®ñ1
+N
+java:S1481",Remove this unused "content" local variable.(–•ÙÅùÿÿÿÿ8ê·„®ñ1
+^
+java:S1128"ARemove this unused import 'javax.mail.internet.AddressException'.(ÏŠŠÂ8í·„®ñ1

@@ -17,7 +17,7 @@ public class Curso implements Serializable {
   @OneToMany(mappedBy = "cursoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<AlumnoCurso> alumnoCurso;
 
-  @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<Modulo>modulos=new ArrayList<>();
   @OneToMany(mappedBy = "curso",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<InstructorCurso> cursoInstructor;

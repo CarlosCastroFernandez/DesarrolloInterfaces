@@ -12,6 +12,8 @@ module com.example.ininprotec {
     requires com.fasterxml.jackson.core;
     requires java.net.http;
     requires java.mail;
+    requires activation;
+
 
     opens imagenes;
     opens clase;

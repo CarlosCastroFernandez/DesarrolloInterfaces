@@ -1,5 +1,6 @@
 package clase;
 
+import error.DNIIncorrecto;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -55,15 +56,16 @@ public class PersonalBolsa implements Serializable {
   @Column(name = "fecha_registro")
   private Date fechaRegistro;
   private Character sexo;
+  private String contraseña;
 
 
-  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos) {
+  public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos,String contraseña) throws DNIIncorrecto {
     this.id = id;
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
     this.correo = correo;
-    this.dni = dni;
+    this.setDni(dni);
     this.telefono = telefono;
     this.fechaNacimiento = fechaNacimiento;
     this.licenciaArma = licenciaArma;
@@ -73,7 +75,7 @@ public class PersonalBolsa implements Serializable {
     this.numeroSocial = numeroSocial;
     this.esAlumno = esAlumno;
     this.numeroTip = numeroTip;
-
+this.contraseña=contraseña;
     this.imagenPerfil = imagenPerfil;
     this.titulacion = titulacion;
     this.lugarResidencia = lugarResidencia;
@@ -81,12 +83,12 @@ public class PersonalBolsa implements Serializable {
     this.moduloAlumno = modulos;
   }
   public PersonalBolsa(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia,Date fechaRegisto,
-                       String idioma,Double altura,Character sexo) {
+                       String idioma,Double altura,Character sexo) throws DNIIncorrecto {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
     this.correo = correo;
-    this.dni = dni;
+    this.setDni(dni);
     this.idioma=idioma;
     this.altura=altura;
     this.telefono = telefono;
@@ -134,6 +136,14 @@ public class PersonalBolsa implements Serializable {
 
   public String getIdioma() {
     return idioma;
+  }
+
+  public String getContraseña() {
+    return contraseña;
+  }
+
+  public void setContraseña(String contraseña) {
+    this.contraseña = contraseña;
   }
 
   public void setIdioma(String idioma) {
@@ -213,8 +223,24 @@ public class PersonalBolsa implements Serializable {
     return dni;
   }
 
-  public void setDni(String dni) {
-    this.dni = dni;
+  public void setDni(String dni) throws DNIIncorrecto {
+    String numeros="0123456789";
+    String letras="abcdefghijklmnñopqrstuvwxyz".toUpperCase();
+    String dniMin=dni.toUpperCase();
+
+    if(dniMin.length()==9&&(letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0))){
+      for(int i=0;i<dniMin.length();i++){
+        if(i==1&&i!=dniMin.length()-1){
+          if(!numeros.contains(""+dniMin.charAt(i))){
+            throw new DNIIncorrecto("DNI incorrecto");
+          }
+        }
+      }
+      this.dni=dniMin;
+
+    }else{
+      throw new DNIIncorrecto("DNI Incorrecto");
+    }
   }
 
 

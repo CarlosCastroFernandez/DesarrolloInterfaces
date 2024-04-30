@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.HashPassword;
 import Util.Utilidad;
 import clase.*;
 import implement.CursoDAOImplement;
@@ -29,6 +30,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -210,7 +212,7 @@ public class RegistroInstructorController implements Initializable {
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
         if(Utilidad.getInstructor()==null){
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -220,14 +222,20 @@ public class RegistroInstructorController implements Initializable {
                         throw new RuntimeException(e);
                     }
                 }
+                String contraseña="IIP"+textDni.getText().substring(5,8);
 
                 PersonalIIP clienteA=new PersonalIIP(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
                         textDni.getText(),textTelefono.getText(),  (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textCamiseta.getText(),
                         (parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 1L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
+                try {
+                    clienteA.setContraseña(HashPassword.hashPassword(contraseña));
+                    (new PersonalIIPDAOImplement()).subir(clienteA);
+
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                }
 
 
-
-                (new PersonalIIPDAOImplement()).subir(clienteA);
 
                 textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
                 textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
@@ -250,12 +258,15 @@ public class RegistroInstructorController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
+                if(textDni.getText().isEmpty()){
+                    textDni.setStyle("-fx-border-color: #B30909");
+                }
 
 
 
             }
         }else{
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -319,6 +330,9 @@ public class RegistroInstructorController implements Initializable {
                 }
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
+                }
+                if(textDni.getText().isEmpty()){
+                    textDni.setStyle("-fx-border-color: #B30909");
                 }
 
 

@@ -1,0 +1,18 @@
+¡Hola Bienvenido a Ininprotec $nombre!.
+
+Nos complace que hallas decidido apuntarse en nuestra academia de formación con los mejores
+profesionales del sector de la seguridad.
+
+En este correo te explicamos como vas a poder acceder a nuestro portal del alumno.
+
+Necesitas entrar en nuestra pagina https://prueba.com donde podrás iniciar sesión con los
+siguientes parámetros:
+
+Usuario: *su correo electrónico"
+
+Contraseña: IIP*seguido con los tres últimos numeros de su dni sin la letra*
+
+¡¡OJO!!
+
+Ejemplo de inicio de sesión: Suppongamos que el usuario es carlos@gmail.com y que el dni
+de este usuario es 76436728Q, por lo tanto la contraseña sería IIP728.

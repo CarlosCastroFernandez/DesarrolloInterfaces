@@ -1,11 +1,13 @@
 package com.example.ininprotec;
 
 import Util.EnvioCorreoElectronico;
+import Util.HashPassword;
 import Util.Utilidad;
 import clase.AlumnoCurso;
 import clase.AlumnoModulo;
 import clase.Curso;
 import clase.PersonalBolsa;
+import error.DNIIncorrecto;
 import implement.CursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
 import javafx.embed.swing.SwingFXUtils;
@@ -32,6 +34,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -116,10 +120,16 @@ public class RegistroAlumnoController implements Initializable {
     private byte[]parseo;
     @javafx.fxml.FXML
     private Button botonAbrir;
+    @javafx.fxml.FXML
+    private Button botonPlantilla;
+    @javafx.fxml.FXML
+    private Button botonCorreo;
+    private String recojidaNombre;
+    private String recojidaCorreo;
+    private Boolean botonEnvio=false;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        EnvioCorreoElectronico.enviar();
         Image imagenFlechia=new Image(RegistroAlumnoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
         imagenFlecha.setImage(imagenFlechia);
         imagenFlecha.setOnMouseClicked(mouseEvent -> {
@@ -128,8 +138,19 @@ public class RegistroAlumnoController implements Initializable {
             Utilidad.setCurso(null);
             Utilidad.setInstructor(null);
         });
+        botonCorreo.setOnAction(actionEvent -> {
+            botonEnvio=true;
+            guardar(actionEvent);
+            EnvioCorreoElectronico.enviar(recojidaCorreo,recojidaNombre);
+            botonEnvio=false;
+            HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+        });
+        botonPlantilla.setOnAction(actionEvent -> {
+
+        });
         spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
         if(Utilidad.getAlumno()==null){
+            botonCorreo.setVisible(false);
             botonAbrir.setVisible(false);
             labelRol.setVisible(false);
             comboRol.setVisible(false);
@@ -330,9 +351,10 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
         AlumnoCurso alumnoCurso=new AlumnoCurso();
+        try {
         if(Utilidad.getAlumno()==null){
             if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&
-            (radioAlumno.isSelected()||radioTrabajador.isSelected())){
+            (radioAlumno.isSelected()||radioTrabajador.isSelected())&&!textDni.getText().isEmpty()&&!textEmail.getText().isEmpty()&&(radioHombre.isSelected()||radioMujer.isSelected())){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -347,10 +369,18 @@ public class RegistroAlumnoController implements Initializable {
                 String fechaTexto=formato.format(fechaLocal);
                 LocalDate fechaFinalLocal=LocalDate.parse(fechaTexto,formato);
                 Date fechaFinal=Date.valueOf(fechaFinalLocal);
-                PersonalBolsa clienteA=new PersonalBolsa(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
-                        textDni.getText(),textTelefono.getText(), (dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
-                        textCamiseta.getText(),(parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),(radioAlumno.isSelected()?1L:2L),
-                        textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
+                PersonalBolsa clienteA= null;
+                String contraseña="IIP"+textDni.getText().substring(5,8);
+
+
+                    clienteA = new PersonalBolsa(textNombre.getText().strip(),textApellido1.getText().strip(),textApellido2.getText().strip(),textEmail.getText().strip(),
+                            textDni.getText().strip(),textTelefono.getText().strip(), (dateFecha.getValue()==null?null: Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
+                            textCamiseta.getText().strip(),(parseo==null?null:parseo),textIBAN.getText().strip(),textSegSocial.getText().strip(),(radioAlumno.isSelected()?1L:2L),
+                            textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText().strip(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
+                try {
+                   clienteA.setContraseña(HashPassword.hashPassword(contraseña));
+                    System.out.println(clienteA.getContraseña());
+
                 if(clienteA.getEsAlumno()==1){
                     clienteA.setCursosAlumnos(new ArrayList<>());
                     clienteA.setModuloAlumno(new ArrayList<>());
@@ -377,6 +407,9 @@ public class RegistroAlumnoController implements Initializable {
                     PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
                     daoTrabajador.subir(clienteA);
                 }
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                }
                 textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
                 textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
                 textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
@@ -384,10 +417,19 @@ public class RegistroAlumnoController implements Initializable {
                 imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText(""); radioMujer.setSelected(false); radioHombre.setSelected(false);
                 spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
                 textDni.clear();textAreaTIP.clear();
-                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
-                alerta.setTitle("OK!");
-                alerta.setHeaderText("Alumno Insertado Con Éxito");
-                alerta.showAndWait();
+                if(Utilidad.getComprDNI()==false){
+                    Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                    alerta.setTitle("OK!");
+                    alerta.setHeaderText("Alumno Insertado Con Éxito");
+                    Optional<ButtonType> tipo=alerta.showAndWait();
+                    if(tipo.get()==ButtonType.OK){
+
+                       EnvioCorreoElectronico.enviar(clienteA.getCorreo(), clienteA.getNombre());
+
+                    }
+
+                }
+                Utilidad.setComprDNI(false);
 
             }else{
                 if(textNombre.getText().isEmpty()){
@@ -404,9 +446,20 @@ public class RegistroAlumnoController implements Initializable {
                     radioAlumno.setStyle("-fx-border-color: #B30909");
                     radioTrabajador.setStyle("-fx-border-color: #B30909");
                 }
+                if(textDni.getText().isEmpty()){
+                    textDni.setStyle("-fx-border-color: #B30909");
+                }
+                if(textEmail.getText().isEmpty()){
+                    textEmail.setStyle("-fx-border-color: #B30909");
+                }
+                if(radioMujer.isSelected()==false&&radioHombre.isSelected()==false){
+                    radioMujer.setStyle("-fx-border-color: #B30909");
+                    radioHombre.setStyle("-fx-border-color: #B30909");
+                }
             }
         }else{
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()
+            &&!textDni.getText().isEmpty()&&!textEmail.getText().isEmpty()){
                 byte[]imagenCargada=null;
                 if(archivoImagen!=null){
                     File archivo=new File(archivoImagen);
@@ -432,21 +485,21 @@ public class RegistroAlumnoController implements Initializable {
                         }
                     }
                 }
-                Utilidad.getAlumno().setNombre(textNombre.getText());
-                Utilidad.getAlumno().setApellido1(textApellido1.getText());
-                Utilidad.getAlumno().setApellido2(textApellido2.getText());
-                Utilidad.getAlumno().setCorreo(textEmail.getText());
-                Utilidad.getAlumno().setTelefono(textTelefono.getText());
+                Utilidad.getAlumno().setNombre(textNombre.getText().strip());
+                Utilidad.getAlumno().setApellido1(textApellido1.getText().strip());
+                Utilidad.getAlumno().setApellido2(textApellido2.getText().strip());
+                Utilidad.getAlumno().setCorreo(textEmail.getText().strip());
+                Utilidad.getAlumno().setTelefono(textTelefono.getText().strip());
                 Utilidad.getAlumno().setLicenciaArma(textLicenciaArmas.getText());
                 Utilidad.getAlumno().setFechaNacimiento(dateFecha.getValue()!=null?Date.valueOf(dateFecha.getValue()):null);
-                Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText());
-                Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText());
-                Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText());
+                Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText().strip());
+                Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText().strip());
+                Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText().strip());
                 Utilidad.getAlumno().setTitulacion(textTitulacion.getText().toLowerCase());
-                Utilidad.getAlumno().setLugarResidencia(textResidencia.getText());
+                Utilidad.getAlumno().setLugarResidencia(textResidencia.getText().strip());
                 Utilidad.getAlumno().setImagenPerfil(imagenCargada);
                 Utilidad.getAlumno().setCurriculumUrl((parseo==null?null:parseo));
-                Utilidad.getAlumno().setDni(textDni.getText());
+                Utilidad.getAlumno().setDni(textDni.getText().strip());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
                 Utilidad.getAlumno().setAltura(spAltura.getValue());
                 Utilidad.getAlumno().setIdioma(textIdioma.getText().toLowerCase());
@@ -461,15 +514,24 @@ public class RegistroAlumnoController implements Initializable {
                 }
                 Utilidad.getAlumno().setEsAlumno(seleccionado);
                 Utilidad.setAlumno((new PersonalBolsaDAOImplement()).modPersonalBolsa(Utilidad.getAlumno()));
-                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
-                alerta.setTitle("OK!");
-                alerta.setHeaderText("Alumno Modificado Con Éxito");
-                Optional<ButtonType> tipo=alerta.showAndWait();
-                if(tipo.get()==ButtonType.OK){
-                    Utilidad.setAlumno(null);
-                    Utilidad.setCurso(null);
-                  HelloApplication.cambioVentana("registroAlumno-view.fxml");
-                }
+               if(Utilidad.getComprDNI()==false){
+                   Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                   alerta.setTitle("OK!");
+                   alerta.setHeaderText("Alumno Modificado Con Éxito "+(botonEnvio?"y Correo Enviado":""));
+                   Optional<ButtonType> tipo=alerta.showAndWait();
+                   if(tipo.get()==ButtonType.OK){
+                       recojidaNombre=Utilidad.getAlumno().getNombre();
+                       recojidaCorreo=Utilidad.getAlumno().getCorreo();
+                       Utilidad.setAlumno(null);
+                       Utilidad.setCurso(null);
+                       if(botonEnvio==false){
+                           HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+                       }
+
+                   }
+               }
+               Utilidad.setComprDNI(false);
+
             }else{
                 if(textNombre.getText().isEmpty()){
                     textNombre.setStyle("-fx-border-color: #B30909");
@@ -480,9 +542,22 @@ public class RegistroAlumnoController implements Initializable {
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
                 }
+                if(textDni.getText().isEmpty()){
+                    textDni.setStyle("-fx-border-color: #B30909");
+                }
+                if(textEmail.getText().isEmpty()){
+                    textEmail.setStyle("-fx-border-color: #B30909");
+                }
 
             }
 
+        }
+        } catch (DNIIncorrecto e) {
+          Alert alerta=new Alert(Alert.AlertType.ERROR);
+          alerta.setTitle("ERROR");
+          alerta.setHeaderText("DNI Incorrecto");
+          alerta.setContentText("Por favor asegurese de que el dni es correcto");
+          alerta.showAndWait();
         }
 
 
@@ -508,4 +583,13 @@ public class RegistroAlumnoController implements Initializable {
         }
 
     }
+
+    @javafx.fxml.FXML
+    public void generarPlantilla(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void enviarCorreoNuevo(ActionEvent actionEvent) {
+    }
+
 }

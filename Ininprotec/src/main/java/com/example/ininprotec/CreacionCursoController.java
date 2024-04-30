@@ -98,12 +98,7 @@ public class CreacionCursoController implements Initializable {
     private VBox vBoxM7;
     @javafx.fxml.FXML
     private Button botonP7;
-    private Boolean visible2=false;
-    private Boolean visible3=false;
-    private Boolean visible4=false;
-    private Boolean visible5=false;
-    private Boolean visible6=false;
-    private Boolean visible7=false;
+
     private List<Modulo>modulosBorrados=new ArrayList<>();
 
     @Override
@@ -125,35 +120,34 @@ public class CreacionCursoController implements Initializable {
 
         botonM1.setOnAction(actionEvent -> {
             vBoxM2.setVisible(true);
-            visible2=true;
+
         });
         botonM2.setOnAction(actionEvent -> {
             vBoxM3.setVisible(true);
-            visible3=true;
+
         });
         botonM3.setOnAction(actionEvent -> {
             vBoxM4.setVisible(true);
-            visible4=true;
+
         });
         botonM4.setOnAction(actionEvent -> {
             vBoxM5.setVisible(true);
-            visible5=true;
+
         });
         botonM5.setOnAction(actionEvent -> {
             vBoxM6.setVisible(true);
-            visible6=true;
+
         });
         botonM6.setOnAction(actionEvent -> {
             vBoxM7.setVisible(true);
-            visible7=true;
+
         });
         botonP2.setOnAction(actionEvent -> {
-            if(visible3==false&&visible4==false&&visible5==false&&visible6==false&&visible7==false){
+            if(!vBoxM3.isVisible()&&!vBoxM4.isVisible()&&!vBoxM5.isVisible()&&!vBoxM6.isVisible()&&!vBoxM7.isVisible()){
                 textModulo2.clear();
                 comboInstructor2.getSelectionModel().select(null);
-                visible2=false;
                 vBoxM2.setVisible(false);
-                if(Utilidad.getCurso()!=null){
+                if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=1){
                     textModulo2.setText(Utilidad.getCurso().getModulos().get(1).getNombre());
                     for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                         if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo2.getText())){
@@ -174,12 +168,11 @@ public class CreacionCursoController implements Initializable {
 
         });
         botonP3.setOnAction(actionEvent -> {
-            if(visible4==false&&visible5==false&&visible6==false&&visible7==false){
+            if(!vBoxM4.isVisible()&&!vBoxM5.isVisible()&&!vBoxM6.isVisible()&&!vBoxM7.isVisible()){
                 textModulo3.clear();
                 comboInstructor3.getSelectionModel().select(null);
-                visible3=false;
                 vBoxM3.setVisible(false);
-                if(Utilidad.getCurso()!=null){
+                if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=2){
                     textModulo3.setText(Utilidad.getCurso().getModulos().get(2).getNombre());
                     for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                         if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo3.getText())){
@@ -198,12 +191,11 @@ public class CreacionCursoController implements Initializable {
 
         });
         botonP4.setOnAction(actionEvent -> {
-            if(visible5==false&&visible6==false&&visible7==false){
+            if(!vBoxM5.isVisible()&&!vBoxM6.isVisible()&&!vBoxM7.isVisible()){
                 textModulo4.clear();
                 comboInstructor4.getSelectionModel().select(null);
-                visible4=false;
                 vBoxM4.setVisible(false);
-                if(Utilidad.getCurso()!=null){
+                if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=3){
                     textModulo4.setText(Utilidad.getCurso().getModulos().get(3).getNombre());
                     for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                         if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo4.getText())){
@@ -222,12 +214,11 @@ public class CreacionCursoController implements Initializable {
 
         });
         botonP5.setOnAction(actionEvent -> {
-            if(visible6==false&&visible7==false){
+            if(!vBoxM6.isVisible()&&!vBoxM7.isVisible()){
                 textModulo5.clear();
                 comboInstructor5.getSelectionModel().select(null);
-                visible5=false;
                 vBoxM5.setVisible(false);
-                if(Utilidad.getCurso()!=null){
+                if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=4){
                     textModulo5.setText(Utilidad.getCurso().getModulos().get(4).getNombre());
                     for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                         if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo5.getText())){
@@ -246,12 +237,11 @@ public class CreacionCursoController implements Initializable {
 
         });
         botonP6.setOnAction(actionEvent -> {
-            if(visible7==false){
+            if(!vBoxM7.isVisible()){
                 textModulo6.clear();
                 comboInstructor6.getSelectionModel().select(null);
-                visible6=false;
                 vBoxM6.setVisible(false);
-                if(Utilidad.getCurso()!=null){
+                if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=5){
                     textModulo6.setText(Utilidad.getCurso().getModulos().get(5).getNombre());
                     for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                         if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo6.getText())){
@@ -272,9 +262,8 @@ public class CreacionCursoController implements Initializable {
         botonP7.setOnAction(actionEvent -> {
                 textModulo7.clear();
                 comboInstructor7.getSelectionModel().select(null);
-                visible7=false;
                 vBoxM7.setVisible(false);
-            if(Utilidad.getCurso()!=null){
+            if(Utilidad.getCurso()!=null&&Utilidad.getCurso().getModulos().size()-1>=6){
                 textModulo7.setText(Utilidad.getCurso().getModulos().get(6).getNombre());
                 for(int i=0;i<Utilidad.getCurso().getModulos().size();i++){
                     if(Utilidad.getCurso().getModulos().get(i).getNombre().equals(textModulo7.getText())){
@@ -985,6 +974,7 @@ public class CreacionCursoController implements Initializable {
             Utilidad.getCurso().setModulos(modulos);
             System.out.println("AQUIIIII "+Utilidad.getCurso());
             (new CursoDAOImplement()).editCurso(Utilidad.getCurso(),modulosBorrados);
+            modulosBorrados.clear();
         }
 
         }catch (FaltaDeCampoCurso e){
@@ -1003,10 +993,6 @@ public class CreacionCursoController implements Initializable {
 
     }
 
-    @Deprecated
-    public void botonCancelar(ActionEvent actionEvent) {
-
-    }
 
 
     @javafx.fxml.FXML

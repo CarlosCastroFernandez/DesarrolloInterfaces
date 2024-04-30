@@ -37,12 +37,13 @@ public class PersonalIIP implements Serializable {
   private String titulacion;
   @Column(name = "licencia_arma")
   private String licenciaArma;
-  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+  @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE})
   private List<Modulo>modulos;
   @OneToMany(mappedBy = "instructor",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE})
   private List<InstructorCurso> cursoInstructor;
+  private String contraseña;
 
-  public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion) {
+  public PersonalIIP(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String contraseña) {
     this.id = id;
     this.nombre = nombre;
     this.apellido1 = apellido1;
@@ -60,6 +61,7 @@ public class PersonalIIP implements Serializable {
     this.imagenPerfil = imagenPerfil;
     this.lugarResidencia = lugarResidencia;
     this.titulacion = titulacion;
+    this.contraseña=contraseña;
 
   }
   public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) {
@@ -104,6 +106,14 @@ public class PersonalIIP implements Serializable {
 
   public void setModulos(List<Modulo> modulos) {
     this.modulos = modulos;
+  }
+
+  public String getContraseña() {
+    return contraseña;
+  }
+
+  public void setContraseña(String contraseña) {
+    this.contraseña = contraseña;
   }
 
   public List<InstructorCurso> getCursoInstructor() {

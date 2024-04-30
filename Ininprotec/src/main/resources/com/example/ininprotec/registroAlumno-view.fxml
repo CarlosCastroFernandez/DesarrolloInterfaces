@@ -42,6 +42,12 @@
                            </children>
                         </FlowPane>
                         <Separator prefHeight="11.0" prefWidth="235.0" />
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Button fx:id="botonPlantilla" alignment="CENTER" mnemonicParsing="false" onAction="#generarPlantilla" text="Generar Plantilla" />
+                              <Button fx:id="botonCorreo" mnemonicParsing="false" onAction="#enviarCorreoNuevo" text="Volver a Enviar Correo" />
+                           </children>
+                        </HBox>
                         <Label text="Sexo" />
                         <HBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" spacing="20.0">
                            <children>
@@ -140,10 +146,14 @@
                               <ComboBox fx:id="comboCurso" maxWidth="200.0" prefHeight="26.0" prefWidth="154.0" />
                            </children>
                         </FlowPane>
-                        <VBox alignment="CENTER" prefHeight="62.0" prefWidth="222.0" spacing="10.0">
+                        <VBox alignment="CENTER" prefHeight="62.0" prefWidth="266.0" spacing="10.0">
                            <children>
-                              <Button fx:id="botonGestion" mnemonicParsing="false" onAction="#gestion" text="Gestión Alumno // trabajador" />
-                              <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                              <HBox alignment="CENTER" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                                    <Button fx:id="botonGestion" mnemonicParsing="false" onAction="#gestion" text="Gestión Alumno // trabajador" />
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>

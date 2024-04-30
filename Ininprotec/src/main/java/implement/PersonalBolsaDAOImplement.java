@@ -7,8 +7,11 @@ import clase.Curso;
 import clase.Modulo;
 import clase.PersonalBolsa;
 import dao.DAOPersonalBolsa;
+import error.DNIIncorrecto;
+import javafx.scene.control.Alert;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -102,6 +105,16 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
             personalBBDD.setSexo(personal.getSexo());
             personalBBDD.setIdioma(personal.getIdioma());
             t.commit();
+        } catch (DNIIncorrecto e) {
+            throw new RuntimeException(e);
+        }catch(ConstraintViolationException a){
+            Utilidad.setComprDNI(true);
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("DNI Duplicado");
+            alerta.setContentText("Por favor asegurese de que el dni no sea duplicado con " +
+                    "alguno de las personas que se enceuntran en la app");
+            alerta.showAndWait();
         }
         return personalBBDD;
     }
@@ -162,8 +175,14 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
             s.persist(objeto);
 
             t.commit();
-        }catch (Exception e){
-            e.printStackTrace();
+        }catch (ConstraintViolationException e){
+            Utilidad.setComprDNI(true);
+           Alert alerta=new Alert(Alert.AlertType.ERROR);
+           alerta.setTitle("ERROR");
+           alerta.setHeaderText("DNI Duplicado");
+           alerta.setContentText("Por favor asegurese de que el dni no sea duplicado con " +
+                   "alguno de las personas que se enceuntran en la app");
+           alerta.showAndWait();
         }
     }
 

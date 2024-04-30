@@ -38,7 +38,7 @@ public class TodosInstructorController implements Initializable {
     @javafx.fxml.FXML
     private TextField textBuscar;
     @javafx.fxml.FXML
-    private ComboBox comboCurso;
+    private ComboBox <Curso>comboCurso;
     @javafx.fxml.FXML
     private Button botonQuitar;
     private ChangeListener<Curso> listenerCurso;
@@ -47,6 +47,7 @@ public class TodosInstructorController implements Initializable {
     private PersonalIIP instructorSeleccionado;
     private ObservableList<PersonalIIP> instructores= FXCollections.observableArrayList();
     private ObservableList<PersonalIIP> filtroInstructores= FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -181,9 +182,13 @@ public class TodosInstructorController implements Initializable {
 
     @javafx.fxml.FXML
     public void quitar(ActionEvent actionEvent) {
-        instructores.clear();
-        instructores.addAll((new PersonalIIPDAOImplement().getAll()));
-        tabla.setItems(instructores);
-        comboCurso.getSelectionModel().select(null);
+        if(comboCurso.getValue()!=null){
+            instructores.clear();
+            instructores.addAll((new PersonalIIPDAOImplement().getAll()));
+            tabla.setItems(instructores);
+            comboCurso.getSelectionModel().select(null);
+        }
+
     }
+
 }

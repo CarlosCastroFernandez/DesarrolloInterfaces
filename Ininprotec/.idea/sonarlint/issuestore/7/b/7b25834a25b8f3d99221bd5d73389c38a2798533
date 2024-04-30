@@ -1,37 +1,71 @@
 
-h	java:S112€"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™Åˆığ1
-h	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™Åˆığ1
+h	java:S112Ş"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éöı¨ñ1
+h	java:S112à"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éöı¨ñ1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éöı¨ñ1
+h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Éöı¨ñ1
 L
-java:S3740."/Provide the parametrized type for this generic.(¥ÙÊÑ8™Åˆığ1
-n	java:S117İ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÀİ8šÅˆığ1
-n	java:S117Ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¢Èº8šÅˆığ1
-~
-java:S1488Ö"`Immediately return this expression instead of assigning it to the temporary variable "comision".(×Î½¾8›Åˆığ1
+java:S3740."/Provide the parametrized type for this generic.(¥ÙÊÑ8Éöı¨ñ1
+j
+java:S1192Œ"GDefine a constant instead of duplicating this literal "-08-19" 3 times.(²¿«Œúÿÿÿÿ8—¿©©ñ1
+j
+java:S1192"GDefine a constant instead of duplicating this literal "-09-09" 3 times.(É»§¸ÿÿÿÿÿ8—¿©©ñ1
+j
+java:S1192”"GDefine a constant instead of duplicating this literal "-07-16" 3 times.(êÃà‰úÿÿÿÿ8—¿©©ñ1
+j
+java:S1192•"GDefine a constant instead of duplicating this literal "-07-17" 3 times.(†şå…şÿÿÿÿ8—¿©©ñ1
+j
+java:S1192“"GDefine a constant instead of duplicating this literal "-05-15" 3 times.(Ã“Äùÿÿÿÿ8—¿©©ñ1
+l
+java:S1192"IDefine a constant instead of duplicating this literal "marbella" 3 times.(Í“şşÿÿÿÿ8—¿©©ñ1
+j
+java:S1192"GDefine a constant instead of duplicating this literal "-10-19" 3 times.(àìŞ·úÿÿÿÿ8—¿©©ñ1
+g
+java:S1192’"IDefine a constant instead of duplicating this literal "estepona" 3 times.(Èé¨Ï8—¿©©ñ1
+j
+java:S1192‹"GDefine a constant instead of duplicating this literal "malaga" 3 times.(øŠœÄüÿÿÿÿ8˜¿©©ñ1
+i
+java:S1192‡"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 3 times.(¥Ò˜8˜¿©©ñ1
+j
+java:S1192"GDefine a constant instead of duplicating this literal "-06-11" 3 times.(Ğş«§ùÿÿÿÿ8˜¿©©ñ1
+r	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úšÎÿÿÿÿÿ8Ëöı¨ñ1
+m	java:S117¯"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ƒM8Ëöı¨ñ1
+s	java:S117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢àúÿÿÿÿ8Ëöı¨ñ1
+n	java:S117í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÀİ8Ëöı¨ñ1
+n	java:S117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¢Èº8Ëöı¨ñ1
 K
-java:S5411í"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8›Åˆığ1
+java:S5411ı"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8Ìöı¨ñ1
 K
-java:S5411ô"(Use a primitive boolean expression here.(ˆö»’ıÿÿÿÿ8›Åˆığ1
-s	java:S1162"RRename this field "aÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ˆÚ¾úÿÿÿÿ8ºÆˆığ1
+java:S5411„"(Use a primitive boolean expression here.(ˆö»’ıÿÿÿÿ8Ìöı¨ñ1
+s	java:S1162"RRename this field "aÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ˆÚ¾úÿÿÿÿ8Œúı¨ñ1
 w
-java:S14506"URemove the "series" field and declare it as a local variable in the relevant methods.(®ÈŒµÿÿÿÿÿ8¼Æˆığ1
+java:S14506"URemove the "series" field and declare it as a local variable in the relevant methods.(®ÈŒµÿÿÿÿÿ8úı¨ñ1
+t
+java:S3776H"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(•‘İŸüÿÿÿÿ8‘úı¨ñ1
 I
-java:S1602o",Remove useless curly braces around statement(ûÄËĞ8ÂÆˆığ1
+java:S1602q",Remove useless curly braces around statement(ûÄËĞ8•úı¨ñ1
 N
-java:S1602s",Remove useless curly braces around statement(ïÖçóûÿÿÿÿ8ÃÆˆığ1
-H	java:S106Õ"+Replace this use of System.out by a logger.(ÌÉô‰8ÎÆˆığ1
-Z
-java:S1117Ö"<Rename "comision" which hides the field declared at line 48.(×Î½¾8ÎÆˆığ1
-p
-java:S3776Ú"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(£³£¡8ÎÆˆığ1
+java:S1602u",Remove useless curly braces around statement(ïÖçóûÿÿÿÿ8•úı¨ñ1
 c
-java:S2147"ECombine this catch with the one at line 255, which has the same body.(ä ¹€8ãÆˆığ1
+java:S2147ß"ECombine this catch with the one at line 221, which has the same body.(ï­£Ä8ú«ª©ñ1
+j
+java:S1871°"MThis branch's code block is the same as the block for the branch on line 131.(µ“Ì-8£™ª©ñ1
+H	java:S106Ğ"+Replace this use of System.out by a logger.(ÔÕ…Ú8¡¬ª©ñ1
+H	java:S106ä"+Replace this use of System.out by a logger.(ÌÉô‰8¢¬ª©ñ1
+Z
+java:S1117å"<Rename "comision" which hides the field declared at line 48.(×Î½¾8¢¬ª©ñ1
+p
+java:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‹¨¦¬8¢¬ª©ñ1
+c
+java:S2147‘"ECombine this catch with the one at line 399, which has the same body.(ä ¹€8³¬ª©ñ1
 |
-java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ãÆˆığ1
+java:S2142‘"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8³¬ª©ñ1
 X
-java:S2209å"5Change this instance-reference to a static reference.(É³Éúøÿÿÿÿ8ãÆˆığ1
-M	java:S106ç"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8äÆˆığ1
+java:S2209õ"5Change this instance-reference to a static reference.(É³Éúøÿÿÿÿ8³¬ª©ñ1
+M	java:S106÷"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8´¬ª©ñ1
 J
-java:S1125ô"'Remove the unnecessary boolean literal.(ˆö»’ıÿÿÿÿ8åÆˆığ1
-^	java:S125ş"<This block of commented-out lines of code should be removed.(õƒ‹õüÿÿÿÿ8åÆˆığ1
+java:S1125„"'Remove the unnecessary boolean literal.(ˆö»’ıÿÿÿÿ8µ¬ª©ñ1
+^	java:S125"<This block of commented-out lines of code should be removed.(õƒ‹õüÿÿÿÿ8µ¬ª©ñ1
 V
-java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8éÆˆığ1
+java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8“‘‡©ñ1
+é
+java:S6541H"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 139 to 64, Complexity from 23 to 14, Nesting Level from 6 to 2, Number of Variables from 49 to 6.(•‘İŸüÿÿÿÿ8—Â©©ñ1
