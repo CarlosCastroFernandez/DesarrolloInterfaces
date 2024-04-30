@@ -75,3 +75,9 @@ k
 fecha-actual.txt,d\b\db284cc3bd82c4c114509a0252096db0b09937f0
 ^
 .src/main/java/Util/EnvioCorreoElectronico.java,a\8\a8c6eda1c26ac747cc788278e52880f33a957a92
+V
+&src/main/java/error/DNIIncorrecto.java,9\b\9b039206257ac91b07b34bb0ce8d9a58cc9ee7e8
+?
+textoCorreo.txt,3\a\3a847f602184f9b1fe4ec0f4fd6c6ac6471f217f
+T
+$src/main/java/Util/HashPassword.java,f\7\f701e8ac2ac5f7ff6cd77f80d60ca135f5cc5c7b

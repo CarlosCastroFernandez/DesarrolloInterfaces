@@ -78,8 +78,6 @@ public class RegistroInstructorController implements Initializable {
     private Path nuevoPath;
     @javafx.fxml.FXML
     private ImageView imagenFlecha;
-    @javafx.fxml.FXML
-    private Button botonGestion;
     private byte[]parseo;
     @javafx.fxml.FXML
     private Button botonAbrir;
@@ -112,7 +110,6 @@ public class RegistroInstructorController implements Initializable {
                 botonAbrir.setVisible(true);
             }
 
-            botonGestion.setVisible(false);
             textNombre.setText(Utilidad.getInstructor().getNombre());
             textApellido1.setText(Utilidad.getInstructor().getApellido1());
             textApellido2.setText(Utilidad.getInstructor().getApellido2());
@@ -345,10 +342,7 @@ public class RegistroInstructorController implements Initializable {
 
     }
 
-    @javafx.fxml.FXML
-    public void gestion(ActionEvent actionEvent) {
-        HelloApplication.cambioVentana("todos-instructor-view.fxml");
-    }
+
 
     @javafx.fxml.FXML
     public void abiriCurriculum(ActionEvent actionEvent) {

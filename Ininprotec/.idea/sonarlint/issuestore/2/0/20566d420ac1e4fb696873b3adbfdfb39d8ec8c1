@@ -1,5 +1,10 @@
 
+r	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ–Á§ÿÿÿÿÿ8Âš£ôò1
+m	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8öÔ¤ôò1
+w	java:S116,"VRename this field "contraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëôŒ¦ÿÿÿÿÿ8º±¢ôò1
 S
 java:S1948+"1Make "cursoInstructor" transient or serializable.(ŞÄáÍûÿÿÿÿ8îúçÃí1
-c	java:S107-"BConstructor has 17 parameters, which is greater than 7 authorized.(¯ãÕìüÿÿÿÿ8ïúçÃí1
-^	java:S107A"BConstructor has 17 parameters, which is greater than 7 authorized.(Ù‹Óà8ïúçÃí1
+c	java:S107."BConstructor has 18 parameters, which is greater than 7 authorized.(Ğ–Á§ÿÿÿÿÿ8ïúçÃí1
+^	java:S107C"BConstructor has 17 parameters, which is greater than 7 authorized.(Ù‹Óà8ïúçÃí1
+j	java:S100o"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú—’8şÔ¤ôò1
+j	java:S100s"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8şÔ¤ôò1

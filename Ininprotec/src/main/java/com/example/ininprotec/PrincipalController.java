@@ -58,6 +58,16 @@ public class PrincipalController implements Initializable {
     private MenuItem botonEditarCurso;
     @FXML
     private MenuItem itemBorrar;
+    @FXML
+    private Button botonGestionAlumno;
+    @FXML
+    private Button botonGestionInst;
+    @FXML
+    private Button botonGestionAdmin;
+    @FXML
+    private Button botonPlantilla;
+    @FXML
+    private ImageView imagenAdmin;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -66,6 +76,7 @@ public class PrincipalController implements Initializable {
         imagenServicios.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoServicio.png").toExternalForm()));
         imagenBolsa.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconoClasificacion.png").toExternalForm()));
         imagenProfe.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconProfe.png").toExternalForm()));
+        imagenAdmin.setImage(new Image(PrincipalController.class.getClassLoader().getResource("imagenes/iconAdministrativa.png").toExternalForm()));
         String ruta = PrincipalController.class.getClassLoader().getResource("imagenes/iconoNombre.png").toExternalForm();
         String rutaEmail = PrincipalController.class.getClassLoader().getResource("imagenes/iconoEmail.png").toExternalForm();
         String rutaDNI = PrincipalController.class.getClassLoader().getResource("imagenes/iconoDNI.png").toExternalForm();
@@ -99,6 +110,15 @@ public class PrincipalController implements Initializable {
 
             CursoDAOImplement daoCurso=new CursoDAOImplement();
         comboCurso.getItems().addAll(daoCurso.getAll());
+        botonGestionAlumno.setOnAction(actionEvent -> {
+            HelloApplication.cambioVentana("todos-alumnos-view.fxml");
+        });
+        botonGestionInst.setOnAction(actionEvent -> {
+            HelloApplication.cambioVentana("todos-instructor-view.fxml");
+        });
+        botonGestionAdmin.setOnAction(actionEvent -> {
+
+        });
 
     }
 
@@ -165,5 +185,9 @@ public class PrincipalController implements Initializable {
         if(comboCurso.getValue()!=null){
             (new CursoDAOImplement()).borrarCurso(comboCurso.getValue());
         }
+    }
+
+    @FXML
+    public void generarPlantilla(ActionEvent actionEvent) {
     }
 }

@@ -1,9 +1,7 @@
 package implement;
 
 import Util.HibernateUtil;
-import clase.AlumnoCurso;
-import clase.Curso;
-import clase.PersonalBolsa;
+import clase.*;
 import dao.DAOAlumnoCurso;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -161,10 +159,32 @@ public class AlumnoCursoDAOImplement implements DAOAlumnoCurso {
                     s.remove(alumnoCurso);
                 }
             }
+            quitarAlumnoModulo(curso,alumno);
+
             s.merge(cursoBBD);
             t.commit();
         }
 
+    }
+    public void quitarAlumnoModulo(Curso curso, PersonalBolsa alumno) {
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Transaction t = s.beginTransaction();
+            PersonalBolsa alumnoBBD = s.get(PersonalBolsa.class, alumno.getId());
+
+            for (Modulo modulo : curso.getModulos()) {
+                Iterator<AlumnoModulo> iterator = alumnoBBD.getModuloAlumno().iterator();
+                while (iterator.hasNext()) {
+                    AlumnoModulo alumnoModulo = iterator.next();
+                    if (modulo.getId() == alumnoModulo.getModuloId().getId()) {
+                        iterator.remove();
+                        s.remove(alumnoModulo);// Usar el método remove del iterator
+                    }
+                }
+            }
+
+            s.merge(alumnoBBD);
+            t.commit();
+        }
     }
 
 }

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="636.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.PrincipalController">
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.PrincipalController">
    <center>
       <BorderPane prefHeight="526.0" prefWidth="754.0">
          <top>
@@ -100,8 +101,40 @@
                         <Insets top="40.0" />
                      </padding>
                   </VBox>
-                  <VBox alignment="CENTER">
+                  <VBox>
                      <children>
+                        <FlowPane hgap="30.0" prefHeight="54.0" prefWidth="546.0">
+                           <children>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="114.0" prefWidth="122.0">
+                                 <children>
+                                    <Button fx:id="botonGestionAlumno" mnemonicParsing="false" text="Gestión Alumno" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="99.0" prefWidth="125.0">
+                                 <children>
+                                    <Button fx:id="botonGestionInst" mnemonicParsing="false" text="Gestión Instr." />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="99.0" prefWidth="130.0">
+                                 <children>
+                                    <Button fx:id="botonGestionAdmin" mnemonicParsing="false" text="Gestión Admins." />
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="162.0">
+                                 <children>
+                                    <Button fx:id="botonPlantilla" mnemonicParsing="false" onAction="#generarPlantilla" prefHeight="94.0" prefWidth="76.0" text="Plantilla" />
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets />
+                                 </FlowPane.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </FlowPane>
+                        <Separator prefHeight="11.0" prefWidth="698.0" />
                         <FlowPane alignment="BOTTOM_CENTER" maxWidth="400.0" prefHeight="99.0" prefWidth="400.0">
                            <children>
                               <VBox alignment="CENTER" maxHeight="200.0" prefHeight="114.0" prefWidth="103.0" spacing="10.0">
@@ -145,6 +178,9 @@
                                  </children>
                               </VBox>
                            </children>
+                           <VBox.margin>
+                              <Insets left="150.0" top="60.0" />
+                           </VBox.margin>
                         </FlowPane>
                         <FlowPane alignment="CENTER" maxWidth="400.0" prefHeight="120.0" prefWidth="521.0">
                            <children>
@@ -188,10 +224,19 @@
                                     <Insets />
                                  </FlowPane.margin>
                               </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="imagenAdmin" fitHeight="62.0" fitWidth="54.0" onMouseClicked="#registro" pickOnBounds="true" preserveRatio="true" />
+                                    <Label text="REGISTRAR ADMINS" />
+                                 </children>
+                              </VBox>
                            </children>
                            <padding>
                               <Insets right="10.0" />
                            </padding>
+                           <VBox.margin>
+                              <Insets left="150.0" />
+                           </VBox.margin>
                         </FlowPane>
                      </children>
                   </VBox>

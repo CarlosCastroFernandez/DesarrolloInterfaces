@@ -1,4 +1,4 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8ŠĞª«è1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8Ôú“óò1
 \
-java:S1118":Add a private constructor to hide the implicit public one.(ø§Š’ÿÿÿÿÿ8Ğª«è1
+java:S1118":Add a private constructor to hide the implicit public one.(ø§Š’ÿÿÿÿÿ8Öú“óò1

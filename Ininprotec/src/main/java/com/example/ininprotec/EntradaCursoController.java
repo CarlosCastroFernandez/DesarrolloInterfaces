@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.EnvioCorreoElectronico;
 import Util.MYSQLUtil;
 import Util.Utilidad;
 import clase.AlumnoCurso;
@@ -36,10 +37,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class EntradaCursoController implements Initializable {
     @javafx.fxml.FXML
@@ -913,6 +911,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -941,6 +946,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -970,6 +982,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1002,6 +1021,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1038,6 +1064,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1076,6 +1109,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1117,6 +1157,13 @@ public class EntradaCursoController implements Initializable {
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
                             personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
+                            if(personalElegido.getNotaFinal()==null){
+                                personalElegido.setNotaFinal(notaCurso);
+                            }else{
+                                Double notaFinal= personalElegido.getNotaFinal();
+                                notaFinal+=notaCurso;
+                                personalElegido.setNotaFinal(notaFinal);
+                            }
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1503,9 +1550,44 @@ public class EntradaCursoController implements Initializable {
 
     @javafx.fxml.FXML
     public void desapuntar(ActionEvent actionEvent) {
+        Double notaCurso=null;
+        AlumnoCurso guardado=null;
         if(personalElegido!=null){
-            (new AlumnoCursoDAOImplement()).quitarAlumnoDelCurso(Utilidad.getCurso(),personalElegido);
-            tablaCurso.getItems().remove(personalElegido);
+            for(AlumnoCurso alumnoCurso:personalElegido.getCursosAlumnos()){
+                if(alumnoCurso.getCursoId().getId()==Utilidad.getCurso().getId()){
+                    notaCurso=alumnoCurso.getNotaCurso();
+                    guardado=alumnoCurso;
+                }
+            }
+            Alert alerta=new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("INFORMACIÓN");
+            alerta.setHeaderText("Desapuntar el alumno del curso");
+            alerta.setContentText("¿Seguro deseas quitar a este alumno del curso? "+(notaCurso!=null?"Ten en cuenta que se bajará la media de la nota del alumno":""));
+            Optional<ButtonType> tipo=alerta.showAndWait();
+            if(tipo.get()==ButtonType.OK){
+                if(notaCurso!=null){
+                    personalElegido.setNotaFinal(personalElegido.getNotaFinal()-notaCurso);
+                    Integer posicion=personalElegido.getCursosAlumnos().indexOf(guardado);
+                    personalElegido.getCursosAlumnos().get(posicion).setNotaCurso(null);
+                    if(personalElegido.getCursosAlumnos().size()==1){
+                        personalElegido.setNotaFinal(null);
+                    }
+                    (new PersonalBolsaDAOImplement()).modNotas(personalElegido);
+                    (new AlumnoCursoDAOImplement()).quitarAlumnoDelCurso(Utilidad.getCurso(),personalElegido);
+                    tablaCurso.getItems().remove(personalElegido);
+                }else{
+                    Integer posicion=personalElegido.getCursosAlumnos().indexOf(guardado);
+                    personalElegido.getCursosAlumnos().get(posicion).setNotaCurso(null);
+                    (new PersonalBolsaDAOImplement()).modNotas(personalElegido);
+                    (new AlumnoCursoDAOImplement()).quitarAlumnoDelCurso(Utilidad.getCurso(),personalElegido);
+                    tablaCurso.getItems().remove(personalElegido);
+                }
+
+
+            }
+
+
+
         }
     }
 }

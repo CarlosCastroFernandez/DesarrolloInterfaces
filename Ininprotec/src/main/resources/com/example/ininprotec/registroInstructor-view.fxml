@@ -83,7 +83,6 @@
                                 <FlowPane alignment="CENTER" hgap="100.0" prefHeight="42.0" prefWidth="390.0" vgap="30.0" />
                                 <VBox alignment="CENTER" prefHeight="35.0" prefWidth="182.0" spacing="10.0">
                                     <children>
-                                        <Button fx:id="botonGestion" mnemonicParsing="false" onAction="#gestion" text="Gestión Instructor" />
                                         <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
                                     </children>
                                 </VBox>

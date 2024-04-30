@@ -1,9 +1,4 @@
 
-L	java:S106="+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8íäº×ğ1
-L	java:S106"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8ôäº×ğ1
-G
-java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8¦ƒÈÜğ1
-K
-java:S1128".Remove this unused import 'clase.AlumnoCurso'.(ñŒĞÒ8¦ƒÈÜğ1
-K
-java:S1128")Remove this unused import 'clase.Modulo'.(–Áó°ıÿÿÿÿ8¦ƒÈÜğ1
+g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8–Á„óò1
+L	java:S106@"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8©Á„óò1
+M	java:S106Œ"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8¬Á„óò1

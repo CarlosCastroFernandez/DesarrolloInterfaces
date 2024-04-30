@@ -100,8 +100,6 @@ public class RegistroAlumnoController implements Initializable {
     @javafx.fxml.FXML
     private ImageView imagenFlecha;
     @javafx.fxml.FXML
-    private Button botonGestion;
-    @javafx.fxml.FXML
     private Label labelRol;
     @javafx.fxml.FXML
     private ComboBox comboRol;
@@ -120,8 +118,6 @@ public class RegistroAlumnoController implements Initializable {
     private byte[]parseo;
     @javafx.fxml.FXML
     private Button botonAbrir;
-    @javafx.fxml.FXML
-    private Button botonPlantilla;
     @javafx.fxml.FXML
     private Button botonCorreo;
     private String recojidaNombre;
@@ -145,9 +141,7 @@ public class RegistroAlumnoController implements Initializable {
             botonEnvio=false;
             HelloApplication.cambioVentana("todos-alumnos-view.fxml");
         });
-        botonPlantilla.setOnAction(actionEvent -> {
 
-        });
         spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
         if(Utilidad.getAlumno()==null){
             botonCorreo.setVisible(false);
@@ -229,7 +223,6 @@ public class RegistroAlumnoController implements Initializable {
             }else{
                 comboCurso.getSelectionModel().select(2);
             }
-            botonGestion.setVisible(false);
             labelCurso.setVisible(false);
             radioTrabajador.setVisible(false);
             radioAlumno.setVisible(false);
@@ -566,11 +559,6 @@ public class RegistroAlumnoController implements Initializable {
         }
 
     @javafx.fxml.FXML
-    public void gestion(ActionEvent actionEvent) {
-        HelloApplication.cambioVentana("todos-alumnos-view.fxml");
-    }
-
-    @javafx.fxml.FXML
     public void abrirCurriculum(ActionEvent actionEvent) {
         try(FileOutputStream fos=new FileOutputStream("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf",false)) {
             fos.write(Utilidad.getAlumno().getCurriculumUrl());
@@ -584,7 +572,7 @@ public class RegistroAlumnoController implements Initializable {
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void generarPlantilla(ActionEvent actionEvent) {
     }
 
