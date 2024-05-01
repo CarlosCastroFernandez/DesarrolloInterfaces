@@ -20,10 +20,23 @@ public class PersonalIIPDAOImplement implements DAOPersonalIIP {
 
 
     @Override
-    public List<PersonalIIP> getAll() {
+    public List<PersonalIIP> getAllInstructores() {
         List<PersonalIIP> listaInstructores = new ArrayList<>();
         try (Session s = HibernateUtil.getSession().openSession()) {
             Query<PersonalIIP> q = s.createQuery("FROM PersonalIIP p where p.instructor=1L or p.instructor=0L", PersonalIIP.class);
+            listaInstructores = q.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listaInstructores;
+    }
+
+    @Override
+    public List<PersonalIIP> getAllAdministradores() {
+        List<PersonalIIP> listaInstructores = new ArrayList<>();
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Query<PersonalIIP> q = s.createQuery("FROM PersonalIIP p where p.instructor=2L", PersonalIIP.class);
             listaInstructores = q.getResultList();
 
         } catch (Exception e) {

@@ -6,7 +6,8 @@ import clase.PersonalIIP;
 import java.util.List;
 
 public interface DAOPersonalIIP {
-    public List<PersonalIIP> getAll();
+    public List<PersonalIIP> getAllInstructores();
+    public List<PersonalIIP>getAllAdministradores();
 
     public void subir(PersonalIIP instructor);
     public void actualizar(PersonalIIP instructor);

@@ -388,7 +388,7 @@ public class CreacionCursoController implements Initializable {
             }
         });
         PersonalIIPDAOImplement dao=new PersonalIIPDAOImplement();
-        List<PersonalIIP>lista=dao.getAll();
+        List<PersonalIIP>lista=dao.getAllInstructores();
         comboInstructor.getItems().addAll(lista);
         comboInstructor2.getItems().addAll(lista);
         comboInstructor3.getItems().addAll(lista);
@@ -740,6 +740,12 @@ public class CreacionCursoController implements Initializable {
                 CursoDAOImplement dao=new CursoDAOImplement();
                 dao.subir(curso);
 
+                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                alerta.setTitle("OK!");
+                alerta.setHeaderText("Curso Realizado con Éxito");
+                alerta.setContentText("El curso "+curso.getNombre()+" ha sido creado.");
+                alerta.showAndWait();
+                HelloApplication.cambioVentana("principal-view.fxml");
         }else{
 
             List<Modulo>modulos=new ArrayList<>();
@@ -975,6 +981,12 @@ public class CreacionCursoController implements Initializable {
             System.out.println("AQUIIIII "+Utilidad.getCurso());
             (new CursoDAOImplement()).editCurso(Utilidad.getCurso(),modulosBorrados);
             modulosBorrados.clear();
+            Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+            alerta.setTitle("OK!");
+            alerta.setHeaderText("Curso Modificado con Éxito");
+            alerta.setContentText("El curso ha sido modifiaco");
+            alerta.showAndWait();
+
         }
 
         }catch (FaltaDeCampoCurso e){

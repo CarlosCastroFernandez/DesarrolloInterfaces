@@ -117,7 +117,7 @@ public class PrincipalController implements Initializable {
             HelloApplication.cambioVentana("todos-instructor-view.fxml");
         });
         botonGestionAdmin.setOnAction(actionEvent -> {
-
+            HelloApplication.cambioVentana("todosAdmin-view.fxml");
         });
 
     }
@@ -189,5 +189,10 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void generarPlantilla(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void entrarAdmin(Event event) {
+        HelloApplication.cambioVentana("registroAdmin-view.fxml");
     }
 }

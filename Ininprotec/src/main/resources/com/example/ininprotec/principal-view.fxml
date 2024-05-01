@@ -226,7 +226,7 @@
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0">
                                  <children>
-                                    <ImageView fx:id="imagenAdmin" fitHeight="62.0" fitWidth="54.0" onMouseClicked="#registro" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imagenAdmin" fitHeight="62.0" fitWidth="54.0" onMouseClicked="#entrarAdmin" pickOnBounds="true" preserveRatio="true" />
                                     <Label text="REGISTRAR ADMINS" />
                                  </children>
                               </VBox>

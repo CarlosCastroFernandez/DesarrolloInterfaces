@@ -1,97 +1,101 @@
 
-h	java:S112Å"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112Ú"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112Õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112ß"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112ä"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112Ä"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
-h	java:S112Æ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112¿"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112ü"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112Ó"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112å"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112”"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112Î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112Ø"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112İ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112¸"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
+h	java:S112º"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¬¸½úò1
 Q
-java:S3740k"/Provide the parametrized type for this generic.(ÚäøÚşÿÿÿÿ8¬¸½úò1
-v
-java:S1192’"XDefine a constant instead of duplicating this literal "todos-alumnos-view.fxml" 3 times.(Šù™˜8­¸½úò1
+java:S3740i"/Provide the parametrized type for this generic.(ÚäøÚşÿÿÿÿ8¬¸½úò1
 ~
-java:S1192´"[Define a constant instead of duplicating this literal "-fx-border-color: #B30909" 14 times.(›…²üÿÿÿÿ8­¸½úò1
+java:S1192­"[Define a constant instead of duplicating this literal "-fx-border-color: #B30909" 14 times.(›…²üÿÿÿÿ8­¸½úò1
 „
-java:S1192¨"aDefine a constant instead of duplicating this literal "imagenes/imagenDefectoPerfil.png" 3 times.(˜µ²¢üÿÿÿÿ8­¸½úò1
+java:S1192¢"aDefine a constant instead of duplicating this literal "imagenes/imagenDefectoPerfil.png" 3 times.(˜µ²¢üÿÿÿÿ8­¸½úò1
 X
-java:S1141é"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
+java:S1141â"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
 X
-java:S1141ü"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
+java:S1141õ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
 X
-java:S1141Ò"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
+java:S1141Ë"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
 X
-java:S1141Û"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
+java:S1141Ô"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
 X
-java:S1141á"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
-n	java:S117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ì±ß8®¸½úò1
+java:S1141Ú"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8®¸½úò1
+n	java:S117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ì±ß8®¸½úò1
 F
-java:S5411¤"(Use a primitive boolean expression here.(ØàŒ8¯¸½úò1
+java:S5411"(Use a primitive boolean expression here.(ØàŒ8¯¸½úò1
 F
-java:S5411…"(Use a primitive boolean expression here.(ØàŒ8¯¸½úò1
+java:S5411ş"(Use a primitive boolean expression here.(ØàŒ8¯¸½úò1
 F
-java:S5411ˆ"(Use a primitive boolean expression here.(´ğù8¯¸½úò1
+java:S5411"(Use a primitive boolean expression here.(´ğù8¯¸½úò1
 K
-java:S5411"(Use a primitive boolean expression here.(ñ”­øÿÿÿÿ8¯¸½úò1
+java:S5411ˆ"(Use a primitive boolean expression here.(ñ”­øÿÿÿÿ8¯¸½úò1
 `
-java:S1163ä"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8¯¸½úò1
+java:S1163İ"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8¯¸½úò1
 W
-java:S1143ä"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8°¸½úò1
+java:S1143İ"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8°¸½úò1
 k
-java:S3655©"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8é¹½úò1
+java:S3655¢"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8é¹½úò1
 Z
-java:S2589º"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8é¹½úò1
+java:S2589³"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8é¹½úò1
 Ÿ
-java:S1186Ì"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÔéÎ¢8ê¹½úò1
+java:S1186À"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÔéÎ¢8ê¹½úò1
 Ÿ
-java:S1186Ğ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ½ü–8ê¹½úò1
+java:S1186Ä"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ½ü–8ê¹½úò1
 u
-java:S3776„"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(•‘İŸüÿÿÿÿ8í¹½úò1
+java:S3776€"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(•‘İŸüÿÿÿÿ8í¹½úò1
 O
-java:S1602¡",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8ğ¹½úò1
+java:S1602›",Remove useless curly braces around statement(æ¹äöøÿÿÿÿ8ğ¹½úò1
 ?
-java:S1116»"Remove this empty statement.(Åñ­õşÿÿÿÿ8ñ¹½úò1
+java:S1116µ"Remove this empty statement.(Åñ­õşÿÿÿÿ8ñ¹½úò1
 O
-java:S1602Ê",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8ó¹½úò1
+java:S1602Ä",Remove useless curly braces around statement(ùîÿÔûÿÿÿÿ8ó¹½úò1
 O
-java:S1602Î",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8ó¹½úò1
-H	java:S106­"+Replace this use of System.out by a logger.(Ô–¿®8ø¹½úò1
-M	java:S106¹"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8ø¹½úò1
+java:S1602È",Remove useless curly braces around statement(¸ÕĞ¯úÿÿÿÿ8ó¹½úò1
+H	java:S106¦"+Replace this use of System.out by a logger.(Ô–¿®8ø¹½úò1
+M	java:S106²"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8ø¹½úò1
 q
-java:S3776à"SRefactor this method to reduce its Cognitive Complexity from 149 to the 15 allowed.(¦ëçÍ8û¹½úò1
+java:S3776Ù"SRefactor this method to reduce its Cognitive Complexity from 149 to the 15 allowed.(¦ëçÍ8û¹½úò1
 g
-java:S3358û"DExtract this nested ternary operation into an independent statement.(ù­“Œùÿÿÿÿ8ı¹½úò1
-H	java:S106ş"+Replace this use of System.out by a logger.(ö›˜¬8ı¹½úò1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(ù­“Œùÿÿÿÿ8ı¹½úò1
+H	java:S106÷"+Replace this use of System.out by a logger.(ö›˜¬8ı¹½úò1
 E
-java:S1125¤"'Remove the unnecessary boolean literal.(ØàŒ8€º½úò1
+java:S1125"'Remove the unnecessary boolean literal.(ØàŒ8€º½úò1
 J
-java:S1125½"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8€º½úò1
+java:S1125¶"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8€º½úò1
 J
-java:S1125½"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8º½úò1
+java:S1125¶"'Remove the unnecessary boolean literal.(òÿÊØÿÿÿÿÿ8º½úò1
 E
-java:S1125Ç"'Remove the unnecessary boolean literal.(ï·Ø8º½úò1
+java:S1125À"'Remove the unnecessary boolean literal.(ï·Ø8º½úò1
 E
-java:S1125Ç"'Remove the unnecessary boolean literal.(ï·Ø8º½úò1
+java:S1125À"'Remove the unnecessary boolean literal.(ï·Ø8º½úò1
 M
-java:S2093Û"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8‚º½úò1
+java:S2093Ô"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8‚º½úò1
 g
-java:S3358ú"DExtract this nested ternary operation into an independent statement.(òû¼şÿÿÿÿ8„º½úò1
+java:S3358ó"DExtract this nested ternary operation into an independent statement.(òû¼şÿÿÿÿ8„º½úò1
 E
-java:S1125…"'Remove the unnecessary boolean literal.(ØàŒ8„º½úò1
+java:S1125ş"'Remove the unnecessary boolean literal.(ØàŒ8„º½úò1
 J
-java:S1125"'Remove the unnecessary boolean literal.(ñ”­øÿÿÿÿ8…º½úò1
+java:S1125ˆ"'Remove the unnecessary boolean literal.(ñ”­øÿÿÿÿ8…º½úò1
 c
-java:S2147Å"ECombine this catch with the one at line 579, which has the same body.(ï­£Ä8†º½úò1
+java:S2147¹"ECombine this catch with the one at line 567, which has the same body.(ï­£Ä8†º½úò1
+f
+java:S6355¿"HAdd 'since' and/or 'forRemoval' arguments to the @Deprecated annotation.(õˆúš8ˆš—‰ó1
+S
+java:S1133À"5Do not forget to remove this deprecated code someday.(ÔéÎ¢8ˆš—‰ó1
+F
+java:S1123À"(Add the missing @deprecated Javadoc tag.(ÔéÎ¢8ˆš—‰ó1
 M
-java:S1128#"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8†º½úò1
+java:S1128#"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8şÏ—‰ó1
 Z
-java:S1128$"=Remove this unused import 'java.nio.file.StandardCopyOption'.(×ÀòÔ8†º½úò1
+java:S1128$"=Remove this unused import 'java.nio.file.StandardCopyOption'.(×ÀòÔ8şÏ—‰ó1
 U
-java:S1128%"8Remove this unused import 'java.security.MessageDigest'.(Œğ²»8‡º½úò1
+java:S1128%"8Remove this unused import 'java.security.MessageDigest'.(Œğ²»8şÏ—‰ó1
 T
-java:S1128("7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8‡º½úò1
+java:S1128("7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8şÏ—‰ó1
 å
-java:S6541à"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 196 to 64, Complexity from 52 to 14, Nesting Level from 7 to 2, Number of Variables from 33 to 6.(¦ëçÍ8ˆº½úò1
+java:S6541Ù"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 196 to 64, Complexity from 52 to 14, Nesting Level from 7 to 2, Number of Variables from 33 to 6.(¦ëçÍ8ˆº½úò1

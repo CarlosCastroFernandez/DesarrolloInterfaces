@@ -416,7 +416,6 @@ public class RegistroAlumnoController implements Initializable {
                     alerta.setHeaderText("Alumno Insertado Con Éxito");
                     Optional<ButtonType> tipo=alerta.showAndWait();
                     if(tipo.get()==ButtonType.OK){
-
                        EnvioCorreoElectronico.enviar(clienteA.getCorreo(), clienteA.getNombre());
 
                     }

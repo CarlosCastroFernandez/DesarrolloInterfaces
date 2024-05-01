@@ -10,6 +10,7 @@ public class Utilidad {
     private static PersonalBolsa alumno;
     private static PersonalIIP instructor;
     private static Boolean comprDNI=false;
+    private static PersonalIIP admin;
 
     public static Curso getCurso() {
         return curso;
@@ -17,6 +18,14 @@ public class Utilidad {
 
     public static Boolean getComprDNI() {
         return comprDNI;
+    }
+
+    public static PersonalIIP getAdmin() {
+        return admin;
+    }
+
+    public static void setAdmin(PersonalIIP admin) {
+        Utilidad.admin = admin;
     }
 
     public static void setComprDNI(Boolean comprDNI) {

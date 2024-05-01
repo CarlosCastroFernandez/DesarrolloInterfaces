@@ -1,10 +1,9 @@
 package com.example.ininprotec;
 
+import Util.EnvioCorreoElectronico;
 import Util.Utilidad;
 import clase.*;
 import implement.CursoDAOImplement;
-import implement.InstructorCursoDAOImplement;
-import implement.PersonalBolsaDAOImplement;
 import implement.PersonalIIPDAOImplement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
@@ -18,6 +17,7 @@ import javafx.scene.input.MouseButton;
 import javafx.util.StringConverter;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class TodosInstructorController implements Initializable {
@@ -127,26 +127,34 @@ public class TodosInstructorController implements Initializable {
         tabla.getSelectionModel().selectedItemProperty().addListener((observableValue, personalIIP, t1) -> {
             instructorSeleccionado=t1;
         });
-        instructores.addAll((new PersonalIIPDAOImplement().getAll()));
+        instructores.addAll((new PersonalIIPDAOImplement().getAllInstructores()));
 
         tabla.setItems(instructores);
-
 
     }
 
     @javafx.fxml.FXML
     public void borrar(ActionEvent actionEvent) {
         if(instructorSeleccionado!=null){
-            (new PersonalIIPDAOImplement()).borrar(instructorSeleccionado);
+            try {
+                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+                alerta.setTitle("INFORMACIÓN!");
+                alerta.setHeaderText("Borrado de Instructor");
+                alerta.setContentText("¿Seguro deseas borrar al Instructor/a?");
+                Optional<ButtonType> tipo = alerta.showAndWait();
+                if (tipo.get() == ButtonType.OK) {
+                    (new PersonalIIPDAOImplement()).borrar(instructorSeleccionado);
+                    Alert alerta2 = new Alert(Alert.AlertType.CONFIRMATION);
+                    alerta2.setTitle("OK!");
+                    alerta2.setHeaderText("Borrado Con Éxito");
+                    alerta2.setContentText("El instructor con nombre " + instructorSeleccionado.getNombre() + " y\n" +
+                            "DNI: " + instructorSeleccionado.getDni() + " Ha sido BORRADO");
+                    alerta2.showAndWait();
+                    tabla.getItems().remove(instructorSeleccionado);
+                }
+            }catch (Exception e){
 
-            Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
-            alerta.setTitle("OK!");
-            alerta.setHeaderText("Borrado Con Éxito");
-            alerta.setContentText("El instructor con nombre "+instructorSeleccionado.getNombre()+" y\n" +
-                    "DNI: "+instructorSeleccionado.getDni()+" Ha sido BORRADO");
-            alerta.showAndWait();
-            tabla.getItems().remove(instructorSeleccionado);
-
+            }
 
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
@@ -184,7 +192,7 @@ public class TodosInstructorController implements Initializable {
     public void quitar(ActionEvent actionEvent) {
         if(comboCurso.getValue()!=null){
             instructores.clear();
-            instructores.addAll((new PersonalIIPDAOImplement().getAll()));
+            instructores.addAll((new PersonalIIPDAOImplement().getAllInstructores()));
             tabla.setItems(instructores);
             comboCurso.getSelectionModel().select(null);
         }

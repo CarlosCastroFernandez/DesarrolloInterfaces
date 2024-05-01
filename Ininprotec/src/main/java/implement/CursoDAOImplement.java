@@ -3,8 +3,10 @@ package implement;
 import Util.HibernateUtil;
 import clase.*;
 import dao.DAOCurso;
+import javafx.scene.control.Alert;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -12,23 +14,30 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CursoDAOImplement implements DAOCurso {
-    public CursoDAOImplement(){
+    public CursoDAOImplement() {
 
     }
 
     public void subir(Curso objeto) {
-        try(Session s= HibernateUtil.getSession().openSession()){
-            Transaction t=s.beginTransaction();
-          s.persist(objeto);
+
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Transaction t = s.beginTransaction();
+            s.persist(objeto);
             t.commit();
-        }catch (Exception e){
-            e.printStackTrace();
+        } catch (Exception e) {
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Nombre Del Curso o Del Modulo Repetido");
+            alerta.setContentText("Lo siento es posible que ya existe un curso o un modulo con ese nombre");
+            alerta.showAndWait();
         }
+
     }
+
     public void borrarCurso(Curso objeto) {
-        try(Session s= HibernateUtil.getSession().openSession()){
-            Transaction t=s.beginTransaction();
-            Curso cursoBBD=s.get(Curso.class,objeto.getId());
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Transaction t = s.beginTransaction();
+            Curso cursoBBD = s.get(Curso.class, objeto.getId());
             s.remove(cursoBBD);
             t.commit();
         }
@@ -36,116 +45,118 @@ public class CursoDAOImplement implements DAOCurso {
 
     @Override
     public List<Curso> getAll() {
-        List<Curso>cursos=new ArrayList<>();
-        try(Session s=HibernateUtil.getSession().openSession()){
-            Query q=s.createQuery("FROM Curso ",Curso.class);
-            cursos=q.getResultList();
-        }catch (Exception e){
+        List<Curso> cursos = new ArrayList<>();
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Query q = s.createQuery("FROM Curso ", Curso.class);
+            cursos = q.getResultList();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return cursos;
     }
 
     @Override
-    public void editCurso(Curso curso,List<Modulo>modulosBorrados) {
-        System.out.println(modulosBorrados);
-        System.out.println(curso);
+    public void editCurso(Curso curso, List<Modulo> modulosBorrados) {
 
-        try(Session s=HibernateUtil.getSession().openSession()){
-            Boolean borrado=false;
-            Transaction t=s.beginTransaction();
-            Curso cursoBBDD=s.get(Curso.class,curso.getId());
 
-            List<Modulo> modulosToRemove = new ArrayList<>();
-            for(Modulo modulo:modulosBorrados){
-                System.out.println(modulo);
-                Query<Modulo>queryM=s.createQuery("select m from Modulo m where m.nombre=:nombre", Modulo.class);
-                queryM.setParameter("nombre",modulo.getNombre());
-                Modulo moduloBBDD=queryM.getSingleResult();
 
-                if(moduloBBDD!=null){
-                    Iterator<Modulo>it=cursoBBDD.getModulos().iterator();
-                    borrado=true;
-                    while (it.hasNext()){
-                        Modulo moduloCurso=it.next();
+            System.out.println(modulosBorrados);
+            System.out.println(curso);
 
-                        if(moduloCurso==moduloBBDD){
-                            modulosToRemove.add(moduloCurso);
-                            s.remove(moduloBBDD);
+            try (Session s = HibernateUtil.getSession().openSession()) {
+                Boolean borrado = false;
+                Transaction t = s.beginTransaction();
+                Curso cursoBBDD = s.get(Curso.class, curso.getId());
 
+                List<Modulo> modulosToRemove = new ArrayList<>();
+                for (Modulo modulo : modulosBorrados) {
+                    System.out.println(modulo);
+                    Query<Modulo> queryM = s.createQuery("select m from Modulo m where m.nombre=:nombre", Modulo.class);
+                    queryM.setParameter("nombre", modulo.getNombre());
+                    Modulo moduloBBDD = queryM.getSingleResult();
+
+                    if (moduloBBDD != null) {
+                        Iterator<Modulo> it = cursoBBDD.getModulos().iterator();
+                        borrado = true;
+                        while (it.hasNext()) {
+                            Modulo moduloCurso = it.next();
+
+                            if (moduloCurso == moduloBBDD) {
+                                modulosToRemove.add(moduloCurso);
+                                s.remove(moduloBBDD);
+
+                            }
                         }
                     }
                 }
+
+                for (Modulo modulo : modulosToRemove) {
+                    cursoBBDD.getModulos().remove(modulo);
                 }
+                if (borrado) {
+                    Query<PersonalIIP> queryIns = s.createQuery("select ins.instructor from InstructorCurso ins where ins.curso.id=:idCurso", PersonalIIP.class);
+                    queryIns.setParameter("idCurso", cursoBBDD.getId());
+                    List<PersonalIIP> instructores = queryIns.getResultList();
 
-            for(Modulo modulo:modulosToRemove){
-                cursoBBDD.getModulos().remove(modulo);
-            }
-            if(borrado) {
-                Query<PersonalIIP> queryIns = s.createQuery("select ins.instructor from InstructorCurso ins where ins.curso.id=:idCurso", PersonalIIP.class);
-                queryIns.setParameter("idCurso", cursoBBDD.getId());
-                List<PersonalIIP> instructores = queryIns.getResultList();
+                    Boolean entrada = false;
+                    PersonalIIP instructorBorrado = null;
+                    for (int i = 0; i < instructores.size(); i++) {
+                        instructorBorrado = instructores.get(i);
+                        entrada = false;
+                        for (Modulo modulos : cursoBBDD.getModulos()) {
+                            PersonalIIP instructor = modulos.getInstructor();
+                            if (instructores.get(i).equals(instructor)) {
+                                entrada = true;
+                                System.out.println("ENTRORORORROR");
+                            } else if (!instructores.get(i).equals(instructor) && cursoBBDD.getModulos().size() == 1) {
+                                Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
+                                ins.setParameter("id", instructorBorrado.getId());
+                                ins.setParameter("idCurso", cursoBBDD.getId());
+                                InstructorCurso instr = ins.getSingleResult();
+                                cursoBBDD.getCursoInstructor().remove(instr);
+                                s.remove(instr);
+                            }
 
-                Boolean entrada = false;
-                PersonalIIP instructorBorrado = null;
-                for (int i = 0; i < instructores.size(); i++) {
-                    instructorBorrado = instructores.get(i);
-                    entrada = false;
-                    for (Modulo modulos : cursoBBDD.getModulos()) {
-                        PersonalIIP instructor = modulos.getInstructor();
-                        if (instructores.get(i).equals(instructor)) {
-                            entrada = true;
-                            System.out.println("ENTRORORORROR");
-                        } else if (!instructores.get(i).equals(instructor) && cursoBBDD.getModulos().size() == 1) {
+                        }
+                        if (entrada == false && cursoBBDD.getModulos().size() > 1) {
                             Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
                             ins.setParameter("id", instructorBorrado.getId());
-                            ins.setParameter("idCurso",cursoBBDD.getId());
+                            ins.setParameter("idCurso", cursoBBDD.getId());
                             InstructorCurso instr = ins.getSingleResult();
                             cursoBBDD.getCursoInstructor().remove(instr);
                             s.remove(instr);
                         }
+                    }
 
-                    }
-                    if (entrada == false && cursoBBDD.getModulos().size() > 1) {
-                        Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
-                        ins.setParameter("id", instructorBorrado.getId());
-                        ins.setParameter("idCurso",cursoBBDD.getId());
-                        InstructorCurso instr = ins.getSingleResult();
-                        cursoBBDD.getCursoInstructor().remove(instr);
-                        s.remove(instr);
-                    }
                 }
 
-            }
-
-            if(curso.getModulos().size()==cursoBBDD.getModulos().size()){
-                for (int i=0;i<curso.getModulos().size();i++) {
-                    InstructorCurso instructorCurso = new InstructorCurso();
-                    System.out.println(curso.getModulos().get(i));
-                    cursoBBDD.getModulos().get(i).setNombre(curso.getModulos().get(i).getNombre());
-                    if (cursoBBDD.getModulos().get(i).getInstructor().getId() != curso.getModulos().get(i).getInstructor().getId()) {
-                        InstructorCurso instructorCursoObtenido = new InstructorCurso();
-                        instructorCursoObtenido.setInstructorId(cursoBBDD.getModulos().get(i).getInstructor());
-                        instructorCursoObtenido.setCursoId(cursoBBDD);
-                        cursoBBDD.getCursoInstructor().remove(instructorCursoObtenido);
-                        cursoBBDD.getModulos().get(i).setInstructor(curso.getModulos().get(i).getInstructor());
-                        instructorCurso.setInstructorId(curso.getModulos().get(i).getInstructor());
-                        instructorCurso.setCursoId(cursoBBDD);
-                        Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
-                        ins.setParameter("id", instructorCurso.getInstructorId().getId());
-                        ins.setParameter("idCurso",cursoBBDD.getId());
-                        List<InstructorCurso>comp=ins.getResultList();
-                        if(comp.isEmpty()){
-                            cursoBBDD.getCursoInstructor().add(instructorCurso);
+                if (curso.getModulos().size() == cursoBBDD.getModulos().size()) {
+                    for (int i = 0; i < curso.getModulos().size(); i++) {
+                        InstructorCurso instructorCurso = new InstructorCurso();
+                        System.out.println(curso.getModulos().get(i));
+                        cursoBBDD.getModulos().get(i).setNombre(curso.getModulos().get(i).getNombre());
+                        if (cursoBBDD.getModulos().get(i).getInstructor().getId() != curso.getModulos().get(i).getInstructor().getId()) {
+                            InstructorCurso instructorCursoObtenido = new InstructorCurso();
+                            instructorCursoObtenido.setInstructorId(cursoBBDD.getModulos().get(i).getInstructor());
+                            instructorCursoObtenido.setCursoId(cursoBBDD);
+                            cursoBBDD.getCursoInstructor().remove(instructorCursoObtenido);
+                            cursoBBDD.getModulos().get(i).setInstructor(curso.getModulos().get(i).getInstructor());
+                            instructorCurso.setInstructorId(curso.getModulos().get(i).getInstructor());
+                            instructorCurso.setCursoId(cursoBBDD);
+                            Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
+                            ins.setParameter("id", instructorCurso.getInstructorId().getId());
+                            ins.setParameter("idCurso", cursoBBDD.getId());
+                            List<InstructorCurso> comp = ins.getResultList();
+                            if (comp.isEmpty()) {
+                                cursoBBDD.getCursoInstructor().add(instructorCurso);
+                            }
                         }
                     }
-                }
 
 
+                } else if (curso.getModulos().size() > cursoBBDD.getModulos().size()) {
 
-            }else if(curso.getModulos().size()>cursoBBDD.getModulos().size()){
-
-                    for (int i=0;i<curso.getModulos().size();i++) {
+                    for (int i = 0; i < curso.getModulos().size(); i++) {
                         InstructorCurso instructorCurso = new InstructorCurso();
                         try {
                             System.out.println(curso.getModulos().get(i));
@@ -160,9 +171,9 @@ public class CursoDAOImplement implements DAOCurso {
                                 instructorCurso.setCursoId(cursoBBDD);
                                 Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
                                 ins.setParameter("id", instructorCurso.getInstructorId().getId());
-                                ins.setParameter("idCurso",cursoBBDD.getId());
-                                List<InstructorCurso>comp=ins.getResultList();
-                                if(comp.isEmpty()){
+                                ins.setParameter("idCurso", cursoBBDD.getId());
+                                List<InstructorCurso> comp = ins.getResultList();
+                                if (comp.isEmpty()) {
                                     cursoBBDD.getCursoInstructor().add(instructorCurso);
                                 }
 
@@ -196,47 +207,47 @@ public class CursoDAOImplement implements DAOCurso {
                     }
 
 
+                }
+                Query<PersonalIIP> queryIns = s.createQuery("select ins.instructor from InstructorCurso ins where ins.curso.id=:idCurso", PersonalIIP.class);
+                queryIns.setParameter("idCurso", cursoBBDD.getId());
+                List<PersonalIIP> instructores = queryIns.getResultList();
 
+                Boolean entrada = false;
+                PersonalIIP instructorBorrado = null;
+                for (int i = 0; i < instructores.size(); i++) {
+                    instructorBorrado = instructores.get(i);
+                    entrada = false;
+                    for (Modulo modulos : cursoBBDD.getModulos()) {
+                        PersonalIIP instructor = modulos.getInstructor();
+                        if (instructores.get(i).equals(instructor)) {
+                            entrada = true;
+                            System.out.println("ENTRORORORROR");
+                        } else if (!instructores.get(i).equals(instructor) && cursoBBDD.getModulos().size() == 1) {
+                            Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id", InstructorCurso.class);
+                            ins.setParameter("id", instructorBorrado.getId());
+                            InstructorCurso instr = ins.getSingleResult();
+                            cursoBBDD.getCursoInstructor().remove(instr);
+                            s.remove(instr);
+                        }
 
-            }
-            Query<PersonalIIP> queryIns = s.createQuery("select ins.instructor from InstructorCurso ins where ins.curso.id=:idCurso", PersonalIIP.class);
-            queryIns.setParameter("idCurso", cursoBBDD.getId());
-            List<PersonalIIP> instructores = queryIns.getResultList();
-
-            Boolean entrada = false;
-            PersonalIIP instructorBorrado = null;
-            for (int i = 0; i < instructores.size(); i++) {
-                instructorBorrado = instructores.get(i);
-                entrada = false;
-                for (Modulo modulos : cursoBBDD.getModulos()) {
-                    PersonalIIP instructor = modulos.getInstructor();
-                    if (instructores.get(i).equals(instructor)) {
-                        entrada = true;
-                        System.out.println("ENTRORORORROR");
-                    } else if (!instructores.get(i).equals(instructor) && cursoBBDD.getModulos().size() == 1) {
+                    }
+                    if (entrada == false && cursoBBDD.getModulos().size() > 1) {
                         Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id", InstructorCurso.class);
                         ins.setParameter("id", instructorBorrado.getId());
                         InstructorCurso instr = ins.getSingleResult();
                         cursoBBDD.getCursoInstructor().remove(instr);
                         s.remove(instr);
                     }
-
                 }
-                if (entrada == false && cursoBBDD.getModulos().size() > 1) {
-                    Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id", InstructorCurso.class);
-                    ins.setParameter("id", instructorBorrado.getId());
-                    InstructorCurso instr = ins.getSingleResult();
-                    cursoBBDD.getCursoInstructor().remove(instr);
-                    s.remove(instr);
-                }
-            }
 
-            s.merge(cursoBBDD);
-            t.commit();
-        }
+                s.merge(cursoBBDD);
+                t.commit();
 
         }
 
 
     }
+
+
+}
 
