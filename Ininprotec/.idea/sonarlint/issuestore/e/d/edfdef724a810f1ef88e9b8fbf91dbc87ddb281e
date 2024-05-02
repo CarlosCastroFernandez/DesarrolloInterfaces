@@ -1,25 +1,26 @@
 
 g
-java:S11927"JDefine a constant instead of duplicating this literal "Sin Curso" 3 times.(ÃüşÁ8®äÔò1
+java:S11927"JDefine a constant instead of duplicating this literal "Sin Curso" 3 times.(ÃüşÁ8æ¹â¥ó1
 9
-java:S1643i"Use a StringBuilder instead.(ÈÃ˜İ8°äÔò1
+java:S1643i"Use a StringBuilder instead.(ÈÃ˜İ8ç¹â¥ó1
+k
+java:S3655‘"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8ºâ¥ó1
 ~
-java:S1450,"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8âäÔò1
+java:S1450,"\Remove the "listenerCurso" field and declare it as a local variable in the relevant methods.(ÇÆî”üÿÿÿÿ8‚ºâ¥ó1
 t
-java:S37764"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(•‘İŸüÿÿÿÿ8çäÔò1
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(•‘İŸüÿÿÿÿ8„ºâ¥ó1
 Z
-java:S1611a"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8ğäÔò1
+java:S1611a"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8Šºâ¥ó1
 U
-java:S1611e"8Remove the parentheses around the "instructor" parameter(åí¾8ñäÔò1
+java:S1611e"8Remove the parentheses around the "instructor" parameter(åí¾8Šºâ¥ó1
 Z
-java:S1611s"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8óäÔò1
+java:S1611s"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8‹ºâ¥ó1
 Z
-java:S1611w"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8ôäÔò1
+java:S1611w"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8‹ºâ¥ó1
 U
-java:S1611{"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8ôäÔò1
+java:S1611{"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8‹ºâ¥ó1
 N
-java:S1602",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8õäÔò1
-d
-java:S1128"BRemove this unused import 'implement.InstructorCursoDAOImplement'.(ÖÄßËùÿÿÿÿ8ò–«Ùò1
-]
-java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8ıäÔò1
+java:S1602",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8Œºâ¥ó1
+F	java:S108›")Either remove or fill this block of code.(”ı¾8ºâ¥ó1
+Z
+java:S1128"8Remove this unused import 'Util.EnvioCorreoElectronico'.(ü¦Ôùÿÿÿÿ8ºâ¥ó1

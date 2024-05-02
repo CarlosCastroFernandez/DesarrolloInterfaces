@@ -364,12 +364,25 @@ public class RegistroAlumnoController implements Initializable {
                 Date fechaFinal=Date.valueOf(fechaFinalLocal);
                 PersonalBolsa clienteA= null;
                 String contraseña="IIP"+textDni.getText().substring(5,8);
+                String titulacion=textTitulacion.getText().toLowerCase();
+                titulacion=titulacion.replace("á","a");
+                titulacion=titulacion.replace("é","e");
+                titulacion=titulacion.replace("í","i");
+                titulacion=titulacion.replace("ó","o");
+                titulacion=titulacion.replace("ú","u");
+                String idioma= textIdioma.getText().toLowerCase();
+                idioma=idioma.replace("á","a");
+                idioma=idioma.replace("é","e");
+                idioma=idioma.replace("í","i");
+                idioma=idioma.replace("ó","o");
+                idioma=idioma.replace("ú","u");
+
 
 
                     clienteA = new PersonalBolsa(textNombre.getText().strip(),textApellido1.getText().strip(),textApellido2.getText().strip(),textEmail.getText().strip(),
                             textDni.getText().strip(),textTelefono.getText().strip(), (dateFecha.getValue()==null?null: Date.valueOf(dateFecha.getValue())),textLicenciaArmas.getText(),
                             textCamiseta.getText().strip(),(parseo==null?null:parseo),textIBAN.getText().strip(),textSegSocial.getText().strip(),(radioAlumno.isSelected()?1L:2L),
-                            textAreaTIP.getText(),imagenCargada,textTitulacion.getText().toLowerCase(),textResidencia.getText().strip(),fechaFinal,textIdioma.getText().toLowerCase(),spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
+                            textAreaTIP.getText(),imagenCargada,titulacion,textResidencia.getText().strip(),fechaFinal,idioma,spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
                 try {
                    clienteA.setContraseña(HashPassword.hashPassword(contraseña));
                     System.out.println(clienteA.getContraseña());
@@ -477,6 +490,18 @@ public class RegistroAlumnoController implements Initializable {
                         }
                     }
                 }
+                String titulacion=textTitulacion.getText().toLowerCase();
+                titulacion=titulacion.replace("á","a");
+                titulacion=titulacion.replace("é","e");
+                titulacion=titulacion.replace("í","i");
+                titulacion=titulacion.replace("ó","o");
+                titulacion=titulacion.replace("ú","u");
+                String idioma= textIdioma.getText().toLowerCase();
+                idioma=idioma.replace("á","a");
+                idioma=idioma.replace("é","e");
+                idioma=idioma.replace("í","i");
+                idioma=idioma.replace("ó","o");
+                idioma=idioma.replace("ú","u");
                 Utilidad.getAlumno().setNombre(textNombre.getText().strip());
                 Utilidad.getAlumno().setApellido1(textApellido1.getText().strip());
                 Utilidad.getAlumno().setApellido2(textApellido2.getText().strip());
@@ -487,14 +512,14 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setTallaCamiseta(textCamiseta.getText().strip());
                 Utilidad.getAlumno().setNumeroCuenta(textIBAN.getText().strip());
                 Utilidad.getAlumno().setNumeroSocial(textSegSocial.getText().strip());
-                Utilidad.getAlumno().setTitulacion(textTitulacion.getText().toLowerCase());
+                Utilidad.getAlumno().setTitulacion(titulacion);
                 Utilidad.getAlumno().setLugarResidencia(textResidencia.getText().strip());
                 Utilidad.getAlumno().setImagenPerfil(imagenCargada);
                 Utilidad.getAlumno().setCurriculumUrl((parseo==null?null:parseo));
                 Utilidad.getAlumno().setDni(textDni.getText().strip());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
                 Utilidad.getAlumno().setAltura(spAltura.getValue());
-                Utilidad.getAlumno().setIdioma(textIdioma.getText().toLowerCase());
+                Utilidad.getAlumno().setIdioma(idioma);
                 Utilidad.getAlumno().setSexo((radioMujer.isSelected()?'m':radioHombre.isSelected()?'h':'x'));
                 Long seleccionado=0L;
                 if(comboRol.getValue().equals("Alumno")){

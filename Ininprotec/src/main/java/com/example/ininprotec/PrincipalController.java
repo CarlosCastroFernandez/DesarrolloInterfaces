@@ -20,6 +20,7 @@ import javafx.util.StringConverter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class PrincipalController implements Initializable {
@@ -182,9 +183,30 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void borrarCurso(ActionEvent actionEvent) {
-        if(comboCurso.getValue()!=null){
-            (new CursoDAOImplement()).borrarCurso(comboCurso.getValue());
+        if(comboCurso.getValue()!=null) {
+            try {
+                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+                alerta.setTitle("INFORMACIÓN!");
+                alerta.setHeaderText("Borrado de Curso");
+                alerta.setContentText("¿Seguro deseas borrar el curso " + comboCurso.getValue().getNombre() + "?");
+                Optional<ButtonType> tipo = alerta.showAndWait();
+                if (tipo.get() == ButtonType.OK) {
+                    (new CursoDAOImplement()).borrarCurso(comboCurso.getValue());
+                    comboCurso.getItems().remove(comboCurso.getValue());
+                }
+
+            } catch (Exception e) {
+
+            }
+        }else{
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Selección de Curso");
+            alerta.setContentText("Por favor asegurese de seleccionar el curso antes de borrarlo.");
+             alerta.showAndWait();
         }
+
+
     }
 
     @FXML

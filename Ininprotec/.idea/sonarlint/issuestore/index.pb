@@ -81,3 +81,7 @@ V
 textoCorreo.txt,3\a\3a847f602184f9b1fe4ec0f4fd6c6ac6471f217f
 T
 $src/main/java/Util/HashPassword.java,f\7\f701e8ac2ac5f7ff6cd77f80d60ca135f5cc5c7b
+r
+Bsrc/main/java/com/example/ininprotec/RegistroAdminControlller.java,a\d\adca568010cc4f52be764dc33815cb2f00c5bac3
+n
+>src/main/java/com/example/ininprotec/TodosAdminController.java,5\2\5238cea0aa74424cb3715849740543b0a89500dc
