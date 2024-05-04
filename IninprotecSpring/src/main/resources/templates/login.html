@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0 auto;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #b1dbff, #b5feed);
+        }
+
+        h1 {
+            margin-right: 20px;
+        }
+
+        #CESURBlue {
+            color: #002858;
+        }
+
+        .CESURYellow {
+            color: #F5C22F;
+        }
+
+        .recuadro {
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            background-color: rgba(248, 248, 248, 0.8);
+        }
+
+        .recuadro input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .recuadro input[type="submit"] {
+            width: auto;
+            padding: 8px 15px;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        .recuadro input[type="submit"] {
+            width: 125px;
+            padding: 8px 15px;
+            margin-bottom: 0;
+            font-size: 16px;
+            background-color: #F5C22F;
+            color: #002858;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<h1 id="CESURBlue">ININPROTEC</h1>
+<br>
+<div class="recuadro">
+    <form action="/succesfull" method="GET">
+        <h2 class="CESURYellow">DNI</h2>
+        <input th:value="${alumno.correo}" name="correo">
+        <br>
+        <h2 class="CESURYellow">Contraseña</h2>
+        <input th:value="${alumno.contrasena}" name="contrasena">
+        <br>
+        <br>
+        <input type="submit" value="Entrar">
+    </form>
+</div>
+</body>
+
+</html>

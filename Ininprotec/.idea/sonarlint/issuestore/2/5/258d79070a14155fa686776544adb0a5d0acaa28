@@ -1,536 +1,602 @@
 
 L
-java:S3740:"/Provide the parametrized type for this generic.(¾ñÂ˜8¦Õªñ1
+java:S3740:"/Provide the parametrized type for this generic.(¾ñÂ˜8ÔÅüĞó1
 L
-java:S3740E"/Provide the parametrized type for this generic.(ğ‡¥Î8¦Õªñ1
+java:S3740E"/Provide the parametrized type for this generic.(ğ‡¥Î8ÔÅüĞó1
 L
-java:S3740M"/Provide the parametrized type for this generic.(ıã8¦Õªñ1
+java:S3740M"/Provide the parametrized type for this generic.(ıã8ÔÅüĞó1
 k
-java:S1192µ"HDefine a constant instead of duplicating this literal ":altura" 6 times.(öºŒÿÿÿÿÿ8¬Õªñ1
+java:S1192µ"HDefine a constant instead of duplicating this literal ":altura" 6 times.(öºŒÿÿÿÿÿ8ÚÅüĞó1
 l
-java:S1192"NDefine a constant instead of duplicating this literal "calificacion" 88 times.(ÿ”ı8­Õªñ1
+java:S1192"NDefine a constant instead of duplicating this literal "calificacion" 88 times.(ÿ”ı8ÚÅüĞó1
 g
-java:S1192®"IDefine a constant instead of duplicating this literal "idioma" 104 times.(ÔÍÏÀ8­Õªñ1
+java:S1192®"IDefine a constant instead of duplicating this literal "idioma" 116 times.(ÔÍÏÀ8ÚÅüĞó1
 h
-java:S1192›"JDefine a constant instead of duplicating this literal " and ca." 15 times.(«íş8­Õªñ1
+java:S1192¡"JDefine a constant instead of duplicating this literal " and ca." 15 times.(«íş8ÚÅüĞó1
 j
-java:S1192¨"LDefine a constant instead of duplicating this literal "formacion" 104 times.(¥áÄ‹8­Õªñ1
+java:S1192¨"LDefine a constant instead of duplicating this literal "formacion" 116 times.(¥áÄ‹8ÛÅüĞó1
 g
-java:S1192˜"IDefine a constant instead of duplicating this literal "ca.sexo" 15 times.(ü˜ı8­Õªñ1
+java:S1192"IDefine a constant instead of duplicating this literal "ca.sexo" 15 times.(ü˜ı8ÛÅüĞó1
 i
-java:S1192µ"FDefine a constant instead of duplicating this literal "ERROR" 3 times.(®æôêıÿÿÿÿ8®Õªñ1
+java:S1192µ"FDefine a constant instead of duplicating this literal "ERROR" 3 times.(®æôêıÿÿÿÿ8ÛÅüĞó1
 v
-java:S1192’"XDefine a constant instead of duplicating this literal "ca.alumnoId.titulacion" 20 times.(ˆ¹©ã8®Õªñ1
+java:S1192˜"XDefine a constant instead of duplicating this literal "ca.alumnoId.titulacion" 20 times.(ˆ¹©ã8ÛÅüĞó1
 x
-java:S1192Ï"ZDefine a constant instead of duplicating this literal "select ca.alumnoId from " 12 times.(Í·ñû8®Õªñ1
+java:S1192Ï"ZDefine a constant instead of duplicating this literal "select ca.alumnoId from " 12 times.(Í·ñû8ÛÅüĞó1
 
-java:S1192Ú"^Define a constant instead of duplicating this literal "alumnoId.fechaRegistro=:fecha" 6 times.(¿õ¯Åøÿÿÿÿ8®Õªñ1
+java:S1192Ú"^Define a constant instead of duplicating this literal "alumnoId.fechaRegistro=:fecha" 6 times.(¿õ¯Åøÿÿÿÿ8ÛÅüĞó1
 Å
-java:S1192É"¦Define a constant instead of duplicating this literal "select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac." 6 times.(¸÷Õ8®Õªñ1
+java:S1192É"¦Define a constant instead of duplicating this literal "select distinct ca from PersonalBolsa ca left join AlumnoCurso ac on ca.id = ac.alumnoId.id where ac." 6 times.(¸÷Õ8ÛÅüĞó1
 i
-java:S1192Œ"KDefine a constant instead of duplicating this literal "ca.cursoId" 5 times.(ğìÙâ8®Õªñ1
+java:S1192’"KDefine a constant instead of duplicating this literal "ca.cursoId" 5 times.(ğìÙâ8ÛÅüĞó1
 k
-java:S1192¼"HDefine a constant instead of duplicating this literal "fecha" 104 times.(ìõêôûÿÿÿÿ8®Õªñ1
+java:S1192¼"HDefine a constant instead of duplicating this literal "fecha" 116 times.(ìõêôûÿÿÿÿ8ÛÅüĞó1
 l
-java:S1192µ"IDefine a constant instead of duplicating this literal "altura" 105 times.(öºŒÿÿÿÿÿ8¯Õªñ1
+java:S1192µ"IDefine a constant instead of duplicating this literal "altura" 117 times.(öºŒÿÿÿÿÿ8ÜÅüĞó1
 k
-java:S1192‹"HDefine a constant instead of duplicating this literal "curso" 128 times.(Ñ‰ĞÎûÿÿÿÿ8¯Õªñ1
+java:S1192‹"HDefine a constant instead of duplicating this literal "curso" 146 times.(Ñ‰ĞÎûÿÿÿÿ8ÜÅüĞó1
 i
-java:S1192Î"FDefine a constant instead of duplicating this literal " and " 5 times.(¨âÈ‚úÿÿÿÿ8¯Õªñ1
+java:S1192à"FDefine a constant instead of duplicating this literal " and " 5 times.(¨âÈ‚úÿÿÿÿ8ÜÅüĞó1
 ‚
-java:S1192×"dDefine a constant instead of duplicating this literal "alumnoId.titulacion like:titulacion" 6 times.(œ¶ÕÇ8¯Õªñ1
+java:S1192×"dDefine a constant instead of duplicating this literal "alumnoId.titulacion like:titulacion" 6 times.(œ¶ÕÇ8ÜÅüĞó1
 
-java:S1192Ô"\Define a constant instead of duplicating this literal "alumnoId.idioma like:idioma" 6 times.(Ñ‹Çøÿÿÿÿ8¯Õªñ1
+java:S1192Ô"\Define a constant instead of duplicating this literal "alumnoId.idioma like:idioma" 6 times.(Ñ‹Çøÿÿÿÿ8ÜÅüĞó1
 s
-java:S1192Æ"PDefine a constant instead of duplicating this literal "AlumnoCurso ca" 25 times.(Ç¦ìüÿÿÿÿ8¯Õªñ1
+java:S1192Æ"PDefine a constant instead of duplicating this literal "AlumnoCurso ca" 31 times.(Ç¦ìüÿÿÿÿ8ÜÅüĞó1
 r
-java:S1192"TDefine a constant instead of duplicating this literal "ca.alumnoId.altura" 15 times.(öİ×ò8¯Õªñ1
+java:S1192”"TDefine a constant instead of duplicating this literal "ca.alumnoId.altura" 15 times.(öİ×ò8ÜÅüĞó1
 o
-java:S1192Æ"LDefine a constant instead of duplicating this literal " where ca." 24 times.(Ç¦ìüÿÿÿÿ8¯Õªñ1
+java:S1192Æ"LDefine a constant instead of duplicating this literal " where ca." 30 times.(Ç¦ìüÿÿÿÿ8ÜÅüĞó1
 p
-java:S1192˜"RDefine a constant instead of duplicating this literal "ca.alumnoId.sexo" 15 times.(ü˜ı8¯Õªñ1
+java:S1192"RDefine a constant instead of duplicating this literal "ca.alumnoId.sexo" 15 times.(ü˜ı8ÜÅüĞó1
 p
-java:S1192–"RDefine a constant instead of duplicating this literal "ca.fechaRegistro" 15 times.(óê˜Â8°Õªñ1
+java:S1192œ"RDefine a constant instead of duplicating this literal "ca.fechaRegistro" 15 times.(óê˜Â8ÜÅüĞó1
 r
-java:S1192"TDefine a constant instead of duplicating this literal "ca.alumnoId.idioma" 15 times.(Ö¦Í¶8°Õªñ1
+java:S1192–"TDefine a constant instead of duplicating this literal "ca.alumnoId.idioma" 15 times.(Ö¦Í¶8ÜÅüĞó1
 u
-java:S1192Æ"RDefine a constant instead of duplicating this literal "PersonalBolsa ca" 24 times.(Ç¦ìüÿÿÿÿ8°Õªñ1
+java:S1192Æ"RDefine a constant instead of duplicating this literal "PersonalBolsa ca" 30 times.(Ç¦ìüÿÿÿÿ8İÅüĞó1
 i
-java:S1192"KDefine a constant instead of duplicating this literal "ca.idioma" 15 times.(Ö¦Í¶8°Õªñ1
-q
-java:S1192Ë"NDefine a constant instead of duplicating this literal "PersonalBolsa" 6 times.(ëÀòÎûÿÿÿÿ8°Õªñ1
+java:S1192–"KDefine a constant instead of duplicating this literal "ca.idioma" 15 times.(Ö¦Í¶8İÅüĞó1
+l
+java:S1192Ë"NDefine a constant instead of duplicating this literal "PersonalBolsa" 6 times.(çôÅ8İÅüĞó1
 y
-java:S1192–"[Define a constant instead of duplicating this literal "ca.alumnoId.fechaRegistro" 15 times.(óê˜Â8°Õªñ1
+java:S1192œ"[Define a constant instead of duplicating this literal "ca.alumnoId.fechaRegistro" 15 times.(óê˜Â8İÅüĞó1
 q
-java:S1192â"NDefine a constant instead of duplicating this literal "ca.notaCurso" 10 times.(‹¯ª±ûÿÿÿÿ8°Õªñ1
+java:S1192ë"NDefine a constant instead of duplicating this literal "ca.notaCurso" 10 times.(‹¯ª±ûÿÿÿÿ8İÅüĞó1
 t
-java:S1192Æ"QDefine a constant instead of duplicating this literal "select ca from " 12 times.(Ç¦ìüÿÿÿÿ8°Õªñ1
+java:S1192Æ"QDefine a constant instead of duplicating this literal "select ca from " 18 times.(Ç¦ìüÿÿÿÿ8İÅüĞó1
 n
-java:S1192Æ"KDefine a constant instead of duplicating this literal "sentencia" 78 times.(Ç¦ìüÿÿÿÿ8°Õªñ1
+java:S1192Æ"KDefine a constant instead of duplicating this literal "sentencia" 84 times.(Ç¦ìüÿÿÿÿ8İÅüĞó1
 h
-java:S1192v"KDefine a constant instead of duplicating this literal "Sin Curso" 22 times.(ÃüşÁ8°Õªñ1
+java:S1192v"KDefine a constant instead of duplicating this literal "Sin Curso" 22 times.(ÃüşÁ8İÅüĞó1
 h
-java:S1192Ú"JDefine a constant instead of duplicating this literal "ca.curso" 10 times.(ÚŸ‡Ã8°Õªñ1
+java:S1192ã"JDefine a constant instead of duplicating this literal "ca.curso" 10 times.(ÚŸ‡Ã8İÅüĞó1
 n
-java:S1192û"PDefine a constant instead of duplicating this literal "alumnoId.altura" 5 times.(ïº¯8°Õªñ1
+java:S1192ş"PDefine a constant instead of duplicating this literal "alumnoId.altura" 5 times.(ïº¯8İÅüĞó1
 i
-java:S1192"KDefine a constant instead of duplicating this literal "ca.altura" 15 times.(öİ×ò8±Õªñ1
+java:S1192”"KDefine a constant instead of duplicating this literal "ca.altura" 15 times.(öİ×ò8İÅüĞó1
 m
-java:S1192’"ODefine a constant instead of duplicating this literal "ca.titulacion" 15 times.(ˆ¹©ã8±Õªñ1
+java:S1192˜"ODefine a constant instead of duplicating this literal "ca.titulacion" 15 times.(ˆ¹©ã8İÅüĞó1
 r
-java:S1192İ"TDefine a constant instead of duplicating this literal "alumnoId.sexo=:sexo" 6 times.(ÜŸê8±Õªñ1
+java:S1192İ"TDefine a constant instead of duplicating this literal "alumnoId.sexo=:sexo" 6 times.(ÜŸê8İÅüĞó1
 :
-java:S1643í"Use a StringBuilder instead.(ÈÃ˜İ8µÕªñ1
+java:S1643í"Use a StringBuilder instead.(ÈÃ˜İ8áÅüĞó1
 K
-java:S5411Å"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8¸Õªñ1
+java:S5411Å"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8äÅüĞó1
 K
-java:S5411Í"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8¸Õªñ1
+java:S5411Í"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8äÅüĞó1
 F
-java:S5411ñ"(Use a primitive boolean expression here.(ìŸ¥¨8¹Õªñ1
+java:S5411ô"(Use a primitive boolean expression here.(ìŸ¥¨8äÅüĞó1
 F
-java:S5411®"(Use a primitive boolean expression here.(ìŸ¥¨8¹Õªñ1
+java:S5411´"(Use a primitive boolean expression here.(ìŸ¥¨8äÅüĞó1
 F
-java:S5411ú"(Use a primitive boolean expression here.(ìŸ¥¨8¹Õªñ1
+java:S5411ƒ"(Use a primitive boolean expression here.(ìŸ¥¨8äÅüĞó1
 F
-java:S5411Ú"(Use a primitive boolean expression here.(ìŸ¥¨8¹Õªñ1
+java:S5411æ"(Use a primitive boolean expression here.(ìŸ¥¨8åÅüĞó1
 F
-java:S5411Í"(Use a primitive boolean expression here.(ìŸ¥¨8¹Õªñ1
+java:S5411Ü"(Use a primitive boolean expression here.(ìŸ¥¨8åÅüĞó1
 t
-java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(•‘İŸüÿÿÿÿ8½ƒÕªñ1
-H	java:S106"+Replace this use of System.out by a logger.(Ã—Û¦8ÂƒÕªñ1
+java:S3776h"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(•‘İŸüÿÿÿÿ8ÄÇüĞó1
+H	java:S106"+Replace this use of System.out by a logger.(Ã—Û¦8ËÇüĞó1
 D
-java:S1110§"!Remove these useless parentheses.(Ëˆ‹—ÿÿÿÿÿ8ÃƒÕªñ1
+java:S1110§"!Remove these useless parentheses.(Ëˆ‹—ÿÿÿÿÿ8ÌÇüĞó1
 D
-java:S1110­"!Remove these useless parentheses.(Àğ»İşÿÿÿÿ8ÃƒÕªñ1
-R
-java:S1611å"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ÈƒÕªñ1
-R
-java:S1611é"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8ÉƒÕªñ1
-W
-java:S1611÷"4Remove the parentheses around the "alumno" parameter(Œ§ÖŠúÿÿÿÿ8ÊƒÕªñ1
-W
-java:S1611û"4Remove the parentheses around the "alumno" parameter(½åÀ«üÿÿÿÿ8ÊƒÕªñ1
-Q
-java:S1611ÿ"4Remove the parentheses around the "alumno" parameter(Ä«Œ-8ËƒÕªñ1
-W
-java:S1611ƒ"4Remove the parentheses around the "alumno" parameter(©Öæüÿÿÿÿ8ÌƒÕªñ1
+java:S1110­"!Remove these useless parentheses.(Àğ»İşÿÿÿÿ8ÍÇüĞó1
 b
-java:S3358„"DExtract this nested ternary operation into an independent statement.(õÌ¹Ç8ÌƒÕªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(ßÃí«8ÍÇüĞó1
+
+java:S1157¯"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(ßÃí«8ÍÇüĞó1
+
+java:S1157¯"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(ßÃí«8ÍÇüĞó1
+R
+java:S1611å"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ÔÇüĞó1
+R
+java:S1611é"4Remove the parentheses around the "alumno" parameter(ãÑÒ˜8ÕÇüĞó1
+W
+java:S1611÷"4Remove the parentheses around the "alumno" parameter(Œ§ÖŠúÿÿÿÿ8ÖÇüĞó1
+W
+java:S1611û"4Remove the parentheses around the "alumno" parameter(½åÀ«üÿÿÿÿ8×ÇüĞó1
+Q
+java:S1611ÿ"4Remove the parentheses around the "alumno" parameter(Ä«Œ-8×ÇüĞó1
+W
+java:S1611ƒ"4Remove the parentheses around the "alumno" parameter(©Öæüÿÿÿÿ8ØÇüĞó1
+b
+java:S3358„"DExtract this nested ternary operation into an independent statement.(õÌ¹Ç8ØÇüĞó1
 J
-java:S1602Š",Remove useless curly braces around statement(œ„Ù8ÍƒÕªñ1
+java:S1602Š",Remove useless curly braces around statement(œ„Ù8ñÇüĞó1
 p
-java:S3776½"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(·À”–8ÒƒÕªñ1
+java:S3776½"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(·À”–8õÇüĞó1
 w
-java:S3776§"TRefactor this method to reduce its Cognitive Complexity from 1980 to the 15 allowed.(à„¡çÿÿÿÿÿ8àƒÕªñ1
+java:S3776§"TRefactor this method to reduce its Cognitive Complexity from 2256 to the 15 allowed.(à„¡çÿÿÿÿÿ8‚ÈüĞó1
 ]
-java:S1854²"@Remove this useless assignment to local variable "personalBBDD".(ÎÒ¾M8æƒÕªñ1
-D	java:S131Ã""Add a default case to this switch.(¿ü£¶úÿÿÿÿ8ôƒÕªñ1
-H	java:S106Å"+Replace this use of System.out by a logger.(€ªâ¶8ôƒÕªñ1
+java:S1854²"@Remove this useless assignment to local variable "personalBBDD".(ÎÒ¾M8‡ÈüĞó1
+D	java:S131Ã""Add a default case to this switch.(¿ü£¶úÿÿÿÿ8•ÈüĞó1
+H	java:S106Å"+Replace this use of System.out by a logger.(€ªâ¶8•ÈüĞó1
 `
-java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8öƒÕªñ1
+java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8–ÈüĞó1
 `
-java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8öƒÕªñ1
+java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8–ÈüĞó1
 `
-java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8öƒÕªñ1
+java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8–ÈüĞó1
 `
-java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8öƒÕªñ1
+java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8—ÈüĞó1
 `
-java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8÷ƒÕªñ1
+java:S3358Í"DExtract this nested ternary operation into an independent statement.(Ğä)8—ÈüĞó1
 b
-java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Í·ñû8÷ƒÕªñ1
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Í·ñû8—ÈüĞó1
 `
-java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8øƒÕªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8˜ÈüĞó1
 `
-java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8øƒÕªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8˜ÈüĞó1
 `
-java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8ùƒÕªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8˜ÈüĞó1
 `
-java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8ùƒÕªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8˜ÈüĞó1
 `
-java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8ùƒÕªñ1
-H	java:S106â"+Replace this use of System.out by a logger.(õ­ªĞ8ùƒÕªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Ğä)8˜ÈüĞó1
+`
+java:S3358ã"DExtract this nested ternary operation into an independent statement.(Ğä)8™ÈüĞó1
+`
+java:S3358ã"DExtract this nested ternary operation into an independent statement.(Ğä)8™ÈüĞó1
+`
+java:S3358ã"DExtract this nested ternary operation into an independent statement.(Ğä)8™ÈüĞó1
+`
+java:S3358ã"DExtract this nested ternary operation into an independent statement.(Ğä)8™ÈüĞó1
+`
+java:S3358ã"DExtract this nested ternary operation into an independent statement.(Ğä)8™ÈüĞó1
+H	java:S106å"+Replace this use of System.out by a logger.(õ­ªĞ8šÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8úƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8šÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8úƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8šÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ûƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8šÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ûƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›ÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ûƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›ÈüĞó1
 g
-java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ûƒÕªñ1
+java:S3358î"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›ÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ıƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8œÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ıƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8œÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ıƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8œÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8şƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8œÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8şƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8œÈüĞó1
 g
-java:S3358÷"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8şƒÕªñ1
+java:S3358ú"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8€„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8€„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8€„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8€„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
 g
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ŸÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ŸÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ŸÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ŸÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ŸÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8ƒ„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8 ÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8ƒ„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8 ÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8ƒ„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8¡ÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8ƒ„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8¡ÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8„„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8¡ÈüĞó1
 b
-java:S3358›"DExtract this nested ternary operation into an independent statement.(«íş8„„Õªñ1
-H	java:S106"+Replace this use of System.out by a logger.(õ­ªĞ8„„Õªñ1
+java:S3358¡"DExtract this nested ternary operation into an independent statement.(«íş8¡ÈüĞó1
+H	java:S106£"+Replace this use of System.out by a logger.(õ­ªĞ8¡ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358¨"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8…„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¢ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8†„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358³"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358¹"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¤ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¥ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‡„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¥ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‰„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¦ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‰„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¦ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‰„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¦ÈüĞó1
 g
-java:S3358Æ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‰„Õªñ1
+java:S3358Ì"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¦ÈüĞó1
+`
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Ğä)8¦ÈüĞó1
+`
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Ğä)8¦ÈüĞó1
+`
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Ğä)8§ÈüĞó1
+`
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Ğä)8§ÈüĞó1
+`
+java:S3358Ï"DExtract this nested ternary operation into an independent statement.(Ğä)8§ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8Š„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8¨ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8Š„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8¨ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8‹„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8¨ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8‹„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8¨ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8‹„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8©ÈüĞó1
 g
-java:S3358×"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8‹„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Øì®Úıÿÿÿÿ8©ÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8Œ„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8ªÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8Œ„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8ªÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8«ÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8«ÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8«ÈüĞó1
 b
-java:S3358é"DExtract this nested ternary operation into an independent statement.(óØÒ8„Õªñ1
-H	java:S106ë"+Replace this use of System.out by a logger.(õ­ªĞ8„Õªñ1
+java:S3358ò"DExtract this nested ternary operation into an independent statement.(óØÒ8«ÈüĞó1
+H	java:S106ô"+Replace this use of System.out by a logger.(õ­ªĞ8«ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ı"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8®ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8®ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8®ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8®ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8®ÈüĞó1
 g
-java:S3358ÿ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¯ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‘„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‘„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‘„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‘„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8‘„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8’„Õªñ1
+java:S3358›"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8°ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8²ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8²ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8²ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8²ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8²ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8²ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8´ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8´ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8´ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8´ÈüĞó1
 a
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üšì8“„Õªñ1
+java:S3358¯"DExtract this nested ternary operation into an independent statement.(üšì8µÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8•„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8´ÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8•„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8¶ÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8–„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8·ÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8–„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8·ÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8–„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8·ÈüĞó1
 g
-java:S3358µ"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8–„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(È±…şüÿÿÿÿ8·ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¶ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¸ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¸ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¸ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¸ÈüĞó1
 b
-java:S3358É"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8˜„Õªñ1
-H	java:S106Ë"+Replace this use of System.out by a logger.(õ­ªĞ8™„Õªñ1
+java:S3358Õ"DExtract this nested ternary operation into an independent statement.(Ô™ëñ8¹ÈüĞó1
+H	java:S106×"+Replace this use of System.out by a logger.(õ­ªĞ8·ÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8™„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¸ÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8™„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8™„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8š„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8š„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358Ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8š„Õªñ1
+java:S3358à"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ºÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8»ÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8»ÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¼ÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¼ÈüĞó1
 g
-java:S3358ß"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8›„Õªñ1
+java:S3358ë"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¼ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8»ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¾ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¾ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¾ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¾ÈüĞó1
 g
-java:S3358ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8„Õªñ1
+java:S3358ş"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¿ÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ÂÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ÂÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ÂÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ÂÈüĞó1
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(Ğä)8ÂÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8½ÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8ÅÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8ÅÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8Ÿ„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8ÅÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8Ÿ„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8ÅÈüĞó1
 a
-java:S3358ƒ"DExtract this nested ternary operation into an independent statement.(‚ù½|8Ÿ„Õªñ1
+java:S3358’"DExtract this nested ternary operation into an independent statement.(‚ù½|8ÅÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8Ÿ„Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÁÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8 „Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÇÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8 „Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÇÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8 „Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÈÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8 „Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÈÈüĞó1
 g
-java:S3358•"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8 „Õªñ1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(İÄ×ıÿÿÿÿ8ÈÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8£„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÅÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8£„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8£„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8£„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8£„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358©"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8¤„Õªñ1
+java:S3358¸"DExtract this nested ternary operation into an independent statement.(·„”Óıÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ÇÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ÊÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ËÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ËÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ËÈüĞó1
 g
-java:S3358¼"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8§„Õªñ1
-H	java:S106¾"+Replace this use of System.out by a logger.(õ­ªĞ8§„Õªñ1
+java:S3358Ë"DExtract this nested ternary operation into an independent statement.(³¿ñÏøÿÿÿÿ8ËÈüĞó1
+H	java:S106Í"+Replace this use of System.out by a logger.(õ­ªĞ8ÈÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8§„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÉÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8§„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÌÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8§„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÍÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¨„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÍÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¨„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÍÈüĞó1
 g
-java:S3358Ç"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¨„Õªñ1
+java:S3358Ö"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÍÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8©„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÊÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8©„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÎÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ª„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÎÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ª„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÏÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ª„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÏÈüĞó1
 g
-java:S3358Ò"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ª„Õªñ1
+java:S3358á"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÏÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÌÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÑÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÑÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÑÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÑÈüĞó1
 g
-java:S3358å"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8¬„Õªñ1
+java:S3358ô"DExtract this nested ternary operation into an independent statement.(¸ÖÃ«ûÿÿÿÿ8ÑÈüĞó1
+`
+java:S3358÷"DExtract this nested ternary operation into an independent statement.(Ğä)8Ù¾ˆÑó1
+`
+java:S3358÷"DExtract this nested ternary operation into an independent statement.(Ğä)8Ù¾ˆÑó1
+`
+java:S3358÷"DExtract this nested ternary operation into an independent statement.(Ğä)8Ù¾ˆÑó1
+`
+java:S3358÷"DExtract this nested ternary operation into an independent statement.(Ğä)8Ú¾ˆÑó1
+`
+java:S3358÷"DExtract this nested ternary operation into an independent statement.(Ğä)8Ú¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8­„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8Ü¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8®„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8Ü¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8®„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8Ü¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8®„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8Ü¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8®„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8Ü¾ˆÑó1
 b
-java:S3358ö"DExtract this nested ternary operation into an independent statement.(öÜÁ”8®„Õªñ1
+java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(öÜÁ”8İ¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8à¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8á¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8â¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8â¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8â¾ˆÑó1
 b
-java:S3358ˆ"DExtract this nested ternary operation into an independent statement.(ÁÑûã8°„Õªñ1
+java:S3358š"DExtract this nested ternary operation into an independent statement.(ÁÑûã8â¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8å¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8å¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8æ¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8æ¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8æ¾ˆÑó1
 g
-java:S3358œ"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8±„Õªñ1
+java:S3358®"DExtract this nested ternary operation into an independent statement.(‰èˆµúÿÿÿÿ8ç¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8é¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8é¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8é¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8ê¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8ê¾ˆÑó1
 b
-java:S3358¯"DExtract this nested ternary operation into an independent statement.(Íªúœ8³„Õªñ1
+java:S3358Á"DExtract this nested ternary operation into an independent statement.(Íªúœ8ê¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8µ„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8í¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8µ„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8ï¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8·„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8ñ¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8·„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8ó¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8·„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8õ¾ˆÑó1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8·„Õªñ1
-H	java:S106Ã"+Replace this use of System.out by a logger.(õ­ªĞ8·„Õªñ1
-H	java:S106Ó"+Replace this use of System.out by a logger.(õ­ªĞ8¸„Õªñ1
-M	java:S106Ö"+Replace this use of System.out by a logger.(ˆÛûøÿÿÿÿ8¹„Õªñ1
+java:S3358Ó"DExtract this nested ternary operation into an independent statement.(ß¢¹Šøÿÿÿÿ8ö¾ˆÑó1
+H	java:S106Õ"+Replace this use of System.out by a logger.(õ­ªĞ8ÚÈüĞó1
+H	java:S106å"+Replace this use of System.out by a logger.(õ­ªĞ8ú¾ˆÑó1
+M	java:S106è"+Replace this use of System.out by a logger.(ˆÛûøÿÿÿÿ8û¾ˆÑó1
 L
-java:S1128"/Remove this unused import 'Util.HibernateUtil'.(í±¡ª8º„Õªñ1
+java:S1128"/Remove this unused import 'Util.HibernateUtil'.(í±¡ª8ƒ—ıĞó1
 R
-java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8º„Õªñ1
+java:S1128"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ƒ—ıĞó1
 [
-java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8º„Õªñ1
+java:S1128"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8ƒ—ıĞó1
 Q
-java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8º„Õªñ1
+java:S1128"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8ƒ—ıĞó1
 T
-java:S1128"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8º„Õªñ1
+java:S1128"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8ƒ—ıĞó1
 X
-java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8º„Õªñ1
+java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8ƒ—ıĞó1
 S
-java:S1068A"1Remove this unused "listenerSigno" private field.(õ—äßúÿÿÿÿ8º„Õªñ1
+java:S1068A"1Remove this unused "listenerSigno" private field.(õ—äßúÿÿÿÿ8ÜÈüĞó1
 F
-java:S1068Q")Remove this unused "signo" private field.(àáœÙ8º„Õªñ1
+java:S1068Q")Remove this unused "signo" private field.(àáœÙ8ÜÈüĞó1
 ë
-java:S6541§"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 552 to 64, Complexity from 570 to 14, Nesting Level from 4 to 2, Number of Variables from 39 to 6.(à„¡çÿÿÿÿÿ8º„Õªñ1
+java:S6541§"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 570 to 64, Complexity from 636 to 14, Nesting Level from 4 to 2, Number of Variables from 39 to 6.(à„¡çÿÿÿÿÿ8İÈüĞó1

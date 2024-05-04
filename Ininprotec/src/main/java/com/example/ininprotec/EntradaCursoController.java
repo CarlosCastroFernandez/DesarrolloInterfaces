@@ -908,16 +908,37 @@ public class EntradaCursoController implements Initializable {
 
                     }
                     notaCurso=notaCurso/Utilidad.getCurso().getModulos().size();
+
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -945,14 +966,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -981,14 +1022,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1020,14 +1081,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1063,14 +1144,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1108,14 +1209,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                                Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1156,14 +1277,34 @@ public class EntradaCursoController implements Initializable {
                     notaCurso=Math.round(notaCurso*10)/10.0;
                     for(int i=0;i<personalElegido.getCursosAlumnos().size();i++){
                         if(personalElegido.getCursosAlumnos().get(i).getCursoId().getNombre().equals(Utilidad.getCurso().getNombre())){
-                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             if(personalElegido.getNotaFinal()==null){
                                 personalElegido.setNotaFinal(notaCurso);
-                            }else{
-                                Double notaFinal= personalElegido.getNotaFinal();
-                                notaFinal+=notaCurso;
+                            }else if(personalElegido.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                               Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                               Double notaDevuelta=numeroCursos*personalElegido.getNotaFinal();
+                               Double resta=null;
+                                if(notaDevuelta>personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=notaDevuelta-personalElegido.getCursosAlumnos().get(i).getNotaCurso();
+                                }else if(notaDevuelta<personalElegido.getCursosAlumnos().get(i).getNotaCurso()){
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }else{
+                                    resta=personalElegido.getCursosAlumnos().get(i).getNotaCurso()-notaDevuelta;
+                                }
+                                resta+=notaCurso;
+                                Double notaCalculada=resta/numeroCursos;
+                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
                                 personalElegido.setNotaFinal(notaFinal);
+
+                            }else{
+                                Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                notaDevuelta+=notaCurso;
+                                Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                personalElegido.setNotaFinal(redondeo);
+
                             }
+                            personalElegido.getCursosAlumnos().get(i).setNotaCurso(notaCurso);
                             LocalDate fechaFinalizacion=LocalDate.now();
                             DateTimeFormatter formato=DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             String fromal=fechaFinalizacion.format(formato);
@@ -1566,7 +1707,12 @@ public class EntradaCursoController implements Initializable {
             Optional<ButtonType> tipo=alerta.showAndWait();
             if(tipo.get()==ButtonType.OK){
                 if(notaCurso!=null){
-                    personalElegido.setNotaFinal(personalElegido.getNotaFinal()-notaCurso);
+                    Integer numeroNotas=numeroCursosConNonta(personalElegido);
+                    Double notaDevuelta=personalElegido.getNotaFinal()*numeroNotas;
+                    Double notaCalculo=notaDevuelta-notaCurso;
+                    Double notaCalculoFinal=notaCalculo/(numeroNotas-1);
+                    Double notaFInal= (double) (Math.round(notaCalculoFinal*10)/10);
+                    personalElegido.setNotaFinal(notaFInal);
                     Integer posicion=personalElegido.getCursosAlumnos().indexOf(guardado);
                     personalElegido.getCursosAlumnos().get(posicion).setNotaCurso(null);
                     if(personalElegido.getCursosAlumnos().size()==1){
@@ -1589,6 +1735,16 @@ public class EntradaCursoController implements Initializable {
 
 
         }
+
+    }
+    private Integer numeroCursosConNonta(PersonalBolsa alumno){
+        Integer contador=0;
+        for(int i=0;i<alumno.getCursosAlumnos().size();i++){
+            if(alumno.getCursosAlumnos().get(i).getNotaCurso()!=null){
+                contador++;
+            }
+        }
+        return contador;
     }
 }
 

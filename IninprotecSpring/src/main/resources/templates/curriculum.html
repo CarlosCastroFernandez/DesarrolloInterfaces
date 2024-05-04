@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curriculum</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+        }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+        width: 20vw;
+        height: 88vh;
+        background-color: black;
+        margin-top: -21px;
+    }
+    ul{
+        font-size: 40px;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .no_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 88vw;
+    }
+    input{
+        font-size: 40px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16vh;
+    }
+        a{
+            text-decoration: none;
+            color:#F5C22F;
+        }
+    </style>
+</head>
+<body>
+<h1 style="display: flex;justify-content: center;color: #F5C22F;background-color: black;height: 10vh;align-items: center;">ININPROTEC</h1>
+<div class="container">
+    <div class="menu">
+        <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/curriculum'}">Subir Curriculum</a></ul>
+        <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/cursos'}">Ver Cursos</a></ul>
+       <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/perfil'}">Perfil</a></ul>
+       <ul><a  th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/contrasena'}">Cambiar Contraseña</a></ul>
+        <ul><a  th:href="@{/cerrar}">Cerrar Sesión</a></ul>
+    </div>
+    <div class="no_menu">
+        <form th:action="@{/subirCV}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="application/pdf">
+            <button type="submit" style="height: 150px; width: 500px; font-size: 40px; border-style: solid; border-radius: 40px;">Subir Curriculum</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

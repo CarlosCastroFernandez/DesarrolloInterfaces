@@ -123,6 +123,14 @@ public class RegistroAlumnoController implements Initializable {
     private String recojidaNombre;
     private String recojidaCorreo;
     private Boolean botonEnvio=false;
+    @javafx.fxml.FXML
+    private FlowPane flowTrabajo;
+    @javafx.fxml.FXML
+    private ComboBox <String>comboCursoTr;
+    @javafx.fxml.FXML
+    private Spinner <Double>spNotaCurso;
+    @javafx.fxml.FXML
+    private Label labelNotaMedia;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -143,7 +151,11 @@ public class RegistroAlumnoController implements Initializable {
         });
 
         spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
+       spNotaCurso.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,10.0,0.0,0.1));
+       comboCursoTr.getItems().add("Sin Cursos");
+        comboCursoTr.getItems().add("Con Cursos");
         if(Utilidad.getAlumno()==null){
+            flowTrabajo.setVisible(false);
             botonCorreo.setVisible(false);
             botonAbrir.setVisible(false);
             labelRol.setVisible(false);
@@ -154,10 +166,22 @@ public class RegistroAlumnoController implements Initializable {
             CursoDAOImplement daoCurso=new CursoDAOImplement();
             radioAlumno.setOnAction(actionEvent -> {
                 flowPaneCurso.setVisible(true);
+                flowTrabajo.setVisible(false);
             });
             radioTrabajador.setOnAction(actionEvent -> {
                 comboCurso.getSelectionModel().select(null);
                 flowPaneCurso.setVisible(false);
+                spNotaCurso.setVisible(false);
+                labelNotaMedia.setVisible(false);
+                flowTrabajo.setVisible(true);
+            });
+            comboCursoTr.getSelectionModel().selectedItemProperty().addListener((observableValue, o, t1) -> {
+                if(t1.equals("Con Cursos")){
+                    labelNotaMedia.setVisible(true);
+                    spNotaCurso.setVisible(true);
+                }else{
+                    spNotaCurso.setVisible(false);
+                }
             });
             String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
             Image imagen=new Image(rutaImagen);
@@ -201,18 +225,12 @@ public class RegistroAlumnoController implements Initializable {
                 labelURL.setStyle("-fx-text-fill: #000000");
             });
         }else{
+            flowTrabajo.setVisible(false);
             labelRol.setVisible(true);
             comboRol.setVisible(true);
             comboRol.getItems().add("Alumno");
             comboRol.getItems().add("Trabajador");
             comboRol.getItems().add("Alumno y Trabajador");
-            if(Utilidad.getAlumno().getCurriculumUrl()!=null){
-                botonAbrir.setVisible(true);
-                botonArchivos.setVisible(false);
-            }else{
-                botonAbrir.setVisible(false);
-                botonArchivos.setVisible(true);
-            }
 
             if(Utilidad.getAlumno().getEsAlumno()==1){
                 radioAlumno.setSelected(true);
@@ -258,7 +276,12 @@ public class RegistroAlumnoController implements Initializable {
                 imagenPerfil.setImage(imagen);
             }
 
-
+            parseo=Utilidad.getAlumno().getCurriculumUrl();
+           if(parseo==null){
+               labelURL.setText("Sin Archivo");
+           }else {
+               labelURL.setText("Con Archivo");
+           }
             textDni.setText(Utilidad.getAlumno().getDni());
             textAreaTIP.setText(Utilidad.getAlumno().getNumeroTip());
             spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,Utilidad.getAlumno().getAltura(),0.1));
@@ -306,11 +329,12 @@ public class RegistroAlumnoController implements Initializable {
         System.out.println(archivo.getName());
         if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
             parseo=documentoToByteArray(archivo);
+            labelURL.setText(archivo.getName());
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
             alerta.setHeaderText("Campos Necesarios");
-            alerta.setContentText("Se necesita rellena rl campo nombre apellido1 y apellido2");
+            alerta.setContentText("Se necesita rellenar ell campo nombre, apellido 1,  apellido 2");
             alerta.showAndWait();
         }
 
@@ -410,8 +434,15 @@ public class RegistroAlumnoController implements Initializable {
                     PersonalBolsaDAOImplement daoAlumno=new PersonalBolsaDAOImplement();
                     daoAlumno.subir(clienteA);
                 }else{
-                    PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
-                    daoTrabajador.subir(clienteA);
+                    if(comboCursoTr.getValue().toString().equals("Con Cursos")){
+                        clienteA.setNotaFinal(spNotaCurso.getValue());
+                        PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
+                        daoTrabajador.subir(clienteA);
+                    }else{
+                        PersonalBolsaDAOImplement daoTrabajador=new PersonalBolsaDAOImplement();
+                        daoTrabajador.subir(clienteA);
+                    }
+
                 }
                 } catch (NoSuchAlgorithmException e) {
                     throw new RuntimeException(e);
@@ -490,6 +521,7 @@ public class RegistroAlumnoController implements Initializable {
                         }
                     }
                 }
+
                 String titulacion=textTitulacion.getText().toLowerCase();
                 titulacion=titulacion.replace("á","a");
                 titulacion=titulacion.replace("é","e");
@@ -515,7 +547,7 @@ public class RegistroAlumnoController implements Initializable {
                 Utilidad.getAlumno().setTitulacion(titulacion);
                 Utilidad.getAlumno().setLugarResidencia(textResidencia.getText().strip());
                 Utilidad.getAlumno().setImagenPerfil(imagenCargada);
-                Utilidad.getAlumno().setCurriculumUrl((parseo==null?null:parseo));
+                Utilidad.getAlumno().setCurriculumUrl((parseo));
                 Utilidad.getAlumno().setDni(textDni.getText().strip());
                 Utilidad.getAlumno().setNumeroTip(textAreaTIP.getText());
                 Utilidad.getAlumno().setAltura(spAltura.getValue());
@@ -589,6 +621,11 @@ public class RegistroAlumnoController implements Initializable {
             File filePath=new File("."+File.separator+"Curriculums"+File.separator+"curriculum.pdf");
             Desktop.getDesktop().open(filePath);
         } catch (FileNotFoundException e) {
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Sin Archivo");
+            alerta.setContentText("Asegurese de que el alumno tenga un archivo pdf de curriculum subido.");
+            alerta.showAndWait();
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);

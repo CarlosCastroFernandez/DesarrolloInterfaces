@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.MYSQLUtil;
 import Util.Utilidad;
 import clase.AlumnoCurso;
 import clase.Curso;
@@ -16,10 +17,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import net.sf.jasperreports.swing.JRViewer;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -211,6 +224,22 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void generarPlantilla(ActionEvent actionEvent) {
+        HashMap<String,Object> parametro=new HashMap<>();
+        try {
+            JasperPrint jasper= JasperFillManager.fillReport("plantillaCV.jasper",parametro,new JREmptyDataSource());
+            JRPdfExporter exp = new JRPdfExporter();
+            exp.setExporterInput(new SimpleExporterInput(jasper));
+            exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Plantilla.pdf"));
+            exp.setConfiguration(new SimplePdfExporterConfiguration());
+            exp.exportReport();
+            Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+            alerta.setTitle("OK!");
+            alerta.setHeaderText("Plantilla Generada");
+            alerta.setContentText("Plantilla generada con éxito");
+            alerta.showAndWait();
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

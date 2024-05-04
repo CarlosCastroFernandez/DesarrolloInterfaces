@@ -58,7 +58,7 @@ public class EnvioCorreoElectronico {
             MimeBodyPart textPart=new MimeBodyPart();
             textPart.setContent(concatenado,"text/html; charset=utf-8");
             MimeBodyPart attachmentPart = new MimeBodyPart();
-            DataSource source = new FileDataSource("./listadoAlumnos.pdf");
+            DataSource source = new FileDataSource("./Plantilla.pdf");
             attachmentPart.setDataHandler(new DataHandler( source));
             attachmentPart.setFileName("listadoAlumnos.pdf");
 
@@ -74,7 +74,7 @@ public class EnvioCorreoElectronico {
             alerta.setTitle("ERROR");
             alerta.setHeaderText("Correo No Enviado");
             alerta.setContentText("Asegurese de que tenga conexión a internet y " +
-                    "que el correo del cliente exista y que la ruta de la plantilla sea correcta.");
+                    "que el correo del cliente exista y que la plantilla se haya generado.");
             alerta.showAndWait();
         }*/
 
