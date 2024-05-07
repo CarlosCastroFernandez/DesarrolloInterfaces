@@ -1,14 +1,16 @@
 
 R
-java:S1066ê"/Merge this if statement with the enclosing one.(î÷°Èÿÿÿÿÿ8—ßóòò1
-m	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Õ£«8ıêôò1
-n	java:S117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8‡ä ôò1
-w	java:S116;"VRename this field "contraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëôŒ¦ÿÿÿÿÿ8íÚôò1
-L
-java:S19481"/Make "cursosAlumnos" transient or serializable.(é„‹±8§ßóòò1
+java:S1066ô"/Merge this if statement with the enclosing one.(î÷°Èÿÿÿÿÿ8‹îïõ1
+m	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Õ£«8‹îïõ1
+n	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8‹îïõ1
+w	java:S116<"VRename this field "contraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëôŒ¦ÿÿÿÿÿ8¦îïõ1
+|
+java:S1210Š"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(ç“¹éøÿÿÿÿ8¦îïõ1
+Q
+java:S19482"/Make "cursosAlumnos" transient or serializable.(ƒÉ‘çúÿÿÿÿ8¨îïõ1
 P
-java:S19483".Make "moduloAlumno" transient or serializable.(“¿¬øÿÿÿÿ8§ßóòò1
-^	java:S107>"BConstructor has 21 parameters, which is greater than 7 authorized.(¦Õ£«8§ßóòò1
-^	java:S107U"BConstructor has 21 parameters, which is greater than 7 authorized.(Óö«°8§ßóòò1
-k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú—’8—ä ôò1
-k	java:S100‘"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8—ä ôò1
+java:S19484".Make "moduloAlumno" transient or serializable.(“¿¬øÿÿÿÿ8¨îïõ1
+^	java:S107@"BConstructor has 21 parameters, which is greater than 7 authorized.(¦Õ£«8©îïõ1
+^	java:S107W"BConstructor has 21 parameters, which is greater than 7 authorized.(Óö«°8©îïõ1
+k	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú—’8¯îïõ1
+k	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8¯îïõ1

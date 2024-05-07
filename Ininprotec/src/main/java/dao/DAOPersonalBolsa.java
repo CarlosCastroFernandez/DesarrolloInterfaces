@@ -16,5 +16,7 @@ public interface DAOPersonalBolsa {
     public List<PersonalBolsa>getAllByCursoIdTerminados(Curso curso);
     public List<PersonalBolsa>getAllNuevos();
     public List<PersonalBolsa>getAllTerminados();
+    public List<PersonalBolsa>getAllBolsa();
+    public void modPosicion(PersonalBolsa alumno);
 
 }

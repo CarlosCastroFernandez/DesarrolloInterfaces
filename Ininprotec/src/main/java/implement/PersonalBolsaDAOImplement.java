@@ -168,6 +168,28 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
         return listaAlumnos;
     }
 
+    @Override
+    public List<PersonalBolsa> getAllBolsa() {
+        List<PersonalBolsa>listaAlumnos=new ArrayList<>();
+
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Query<PersonalBolsa>q=s.createQuery("select a from PersonalBolsa a  where a.notaFinal is not null",PersonalBolsa.class);
+            listaAlumnos=q.getResultList();
+        }
+        return listaAlumnos;
+    }
+
+    @Override
+    public void modPosicion(PersonalBolsa alumno) {
+        try(Session s= HibernateUtil.getSession().openSession()){
+            Transaction t=s.beginTransaction();
+            PersonalBolsa alumnoBBDD=s.get(PersonalBolsa.class,alumno.getId());
+            alumnoBBDD.setPosicion(alumno.getPosicion());
+            t.commit();
+        }
+
+    }
+
 
     public void subir(PersonalBolsa objeto) {
         try(Session s= HibernateUtil.getSession().openSession()){

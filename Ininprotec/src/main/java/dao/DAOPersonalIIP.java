@@ -14,4 +14,5 @@ public interface DAOPersonalIIP {
     public List<PersonalIIP>instructorByCursoId(Curso curso);
     public List<PersonalIIP>instructorSinCursoId();
     public void borrar(PersonalIIP instructor);
+    public PersonalIIP login(String correo);
 }

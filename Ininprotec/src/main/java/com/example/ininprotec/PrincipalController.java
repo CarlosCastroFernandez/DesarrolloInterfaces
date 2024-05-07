@@ -173,6 +173,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void entrarBolsa(Event event) {
+        HelloApplication.cambioVentana("bolsaEmpleo-view.fxml");
     }
 
     @FXML
@@ -229,7 +230,7 @@ public class PrincipalController implements Initializable {
             JasperPrint jasper= JasperFillManager.fillReport("plantillaCV.jasper",parametro,new JREmptyDataSource());
             JRPdfExporter exp = new JRPdfExporter();
             exp.setExporterInput(new SimpleExporterInput(jasper));
-            exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Plantilla.pdf"));
+            exp.setExporterOutput(new SimpleOutputStreamExporterOutput("PlantillaJasper.pdf"));
             exp.setConfiguration(new SimplePdfExporterConfiguration());
             exp.exportReport();
             Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);

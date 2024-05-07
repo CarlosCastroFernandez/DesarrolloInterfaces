@@ -926,15 +926,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -981,15 +985,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1037,15 +1045,18 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
-
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1096,15 +1107,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1159,15 +1174,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1224,15 +1243,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1292,15 +1315,19 @@ public class EntradaCursoController implements Initializable {
                                 }
                                 resta+=notaCurso;
                                 Double notaCalculada=resta/numeroCursos;
-                                Double notaFinal= (double) (Math.round(notaCalculada*10)/10);
+                                Double notaFinal= (double) (Math.round(notaCalculada*10.0)/10.0);
                                 personalElegido.setNotaFinal(notaFinal);
 
                             }else{
                                 Integer numeroCursos=numeroCursosConNonta(personalElegido);
+                                if(numeroCursos==0){
+                                    numeroCursos=1;
+                                }
                                 Double notaDevuelta= personalElegido.getNotaFinal()*numeroCursos;
+                                numeroCursos=numeroCursosConNonta(personalElegido);
                                 notaDevuelta+=notaCurso;
                                 Double notaMediaFinal=notaDevuelta/(numeroCursos+1);
-                                Double redondeo= (double) (Math.round(notaMediaFinal*10)/10);
+                                Double redondeo= (double) (Math.round(notaMediaFinal*10.0)/10.0);
                                 personalElegido.setNotaFinal(redondeo);
 
                             }
@@ -1710,8 +1737,14 @@ public class EntradaCursoController implements Initializable {
                     Integer numeroNotas=numeroCursosConNonta(personalElegido);
                     Double notaDevuelta=personalElegido.getNotaFinal()*numeroNotas;
                     Double notaCalculo=notaDevuelta-notaCurso;
-                    Double notaCalculoFinal=notaCalculo/(numeroNotas-1);
-                    Double notaFInal= (double) (Math.round(notaCalculoFinal*10)/10);
+                    Double notaCalculoFinal=null;
+                    Double notaFInal=null;
+                    if(numeroNotas!=1){
+                         notaCalculoFinal=notaCalculo/(numeroNotas-1);
+                        notaFInal= (double) (Math.round(notaCalculoFinal*10)/10);
+                    }else{
+                        notaFInal=null;
+                    }
                     personalElegido.setNotaFinal(notaFInal);
                     Integer posicion=personalElegido.getCursosAlumnos().indexOf(guardado);
                     personalElegido.getCursosAlumnos().get(posicion).setNotaCurso(null);
@@ -1739,6 +1772,7 @@ public class EntradaCursoController implements Initializable {
     }
     private Integer numeroCursosConNonta(PersonalBolsa alumno){
         Integer contador=0;
+
         for(int i=0;i<alumno.getCursosAlumnos().size();i++){
             if(alumno.getCursosAlumnos().get(i).getNotaCurso()!=null){
                 contador++;

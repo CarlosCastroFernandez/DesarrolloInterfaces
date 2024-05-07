@@ -11,6 +11,7 @@ public class Utilidad {
     private static PersonalIIP instructor;
     private static Boolean comprDNI=false;
     private static PersonalIIP admin;
+    private static PersonalIIP logPersonal;
 
     public static Curso getCurso() {
         return curso;
@@ -22,6 +23,14 @@ public class Utilidad {
 
     public static PersonalIIP getAdmin() {
         return admin;
+    }
+
+    public static PersonalIIP getLogPersonal() {
+        return logPersonal;
+    }
+
+    public static void setLogPersonal(PersonalIIP logPersonal) {
+        Utilidad.logPersonal = logPersonal;
     }
 
     public static void setAdmin(PersonalIIP admin) {

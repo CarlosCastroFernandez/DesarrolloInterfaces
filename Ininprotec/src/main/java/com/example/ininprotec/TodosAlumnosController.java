@@ -3,6 +3,7 @@ package com.example.ininprotec;
 import Util.HibernateUtil;
 import Util.Utilidad;
 import clase.*;
+import error.CursoRegistrado;
 import implement.AlumnoCursoDAOImplement;
 import implement.CursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
@@ -74,7 +75,7 @@ private ChangeListener<String> comboCalificacionListener;
     @javafx.fxml.FXML
     private Button botonBuscar;
     @javafx.fxml.FXML
-    private ComboBox comboFormacion;
+    private ComboBox <String>comboFormacion;
     private HashMap<String, String>copiado=new HashMap<>();
     private HashMap<String,String>sentencia=new HashMap<>();
     private HashMap<String,Object>parametro=new HashMap<>();
@@ -272,45 +273,59 @@ radioMujer.setOnAction(actionEvent -> {
     @javafx.fxml.FXML
     public void agregar(ActionEvent actionEvent) {
         AlumnoCurso alumnoCurso=new AlumnoCurso();
+        Boolean tieneCurso=false;
+        try{
+            if(alumnoElegido!=null&&Utilidad.getCurso()!=null){
+                if(!alumnoElegido.getCursosAlumnos().isEmpty()||alumnoElegido.getCursosAlumnos()!=null){
+                    for(AlumnoCurso alumnoCursos:alumnoElegido.getCursosAlumnos()){
+                        if(alumnoCursos.getCursoId().getId()==Utilidad.getCurso().getId()){
+                            throw new CursoRegistrado("El Curso Ya Lo Tiene El Alumno");
+                        }
+                    }
+                    alumnoCurso.setAlumnoId(alumnoElegido);
+                    alumnoCurso.setCursoId(Utilidad.getCurso());
+                    alumnoElegido.getCursosAlumnos().add(alumnoCurso);
 
-        if(alumnoElegido!=null&&Utilidad.getCurso()!=null){
-            if(!alumnoElegido.getCursosAlumnos().isEmpty()){
-                alumnoCurso.setAlumnoId(alumnoElegido);
-                alumnoCurso.setCursoId(Utilidad.getCurso());
-                alumnoElegido.getCursosAlumnos().add(alumnoCurso);
-
-                for(Modulo m:Utilidad.getCurso().getModulos()){
-                    AlumnoModulo alumnoModulo=new AlumnoModulo();
-                    alumnoModulo.setAlumnoId(alumnoElegido);
-                    alumnoModulo.setModuloId(m);
-                    alumnoElegido.getModuloAlumno().add(alumnoModulo);
+                    for(Modulo m:Utilidad.getCurso().getModulos()){
+                        AlumnoModulo alumnoModulo=new AlumnoModulo();
+                        alumnoModulo.setAlumnoId(alumnoElegido);
+                        alumnoModulo.setModuloId(m);
+                        alumnoElegido.getModuloAlumno().add(alumnoModulo);
+                    }
+                }else if(alumnoElegido.getCursosAlumnos().isEmpty()||alumnoElegido.getCursosAlumnos()==null){
+                    alumnoElegido.setCursosAlumnos(new ArrayList<>());
+                    alumnoElegido.setModuloAlumno(new ArrayList<>());
+                    alumnoCurso.setAlumnoId(alumnoElegido);
+                    alumnoCurso.setCursoId(Utilidad.getCurso());
+                    alumnoElegido.getCursosAlumnos().add(alumnoCurso);
+                    for(Modulo m:Utilidad.getCurso().getModulos()){
+                        AlumnoModulo alumnoModulo=new AlumnoModulo();
+                        alumnoModulo.setAlumnoId(alumnoElegido);
+                        alumnoModulo.setModuloId(m);
+                        alumnoElegido.getModuloAlumno().add(alumnoModulo);
+                    }
                 }
-            }else{
-                alumnoElegido.setCursosAlumnos(new ArrayList<>());
-                alumnoElegido.setModuloAlumno(new ArrayList<>());
-                alumnoCurso.setAlumnoId(alumnoElegido);
-                alumnoCurso.setCursoId(Utilidad.getCurso());
-                alumnoElegido.getCursosAlumnos().add(alumnoCurso);
-                for(Modulo m:Utilidad.getCurso().getModulos()){
-                    AlumnoModulo alumnoModulo=new AlumnoModulo();
-                    alumnoModulo.setAlumnoId(alumnoElegido);
-                    alumnoModulo.setModuloId(m);
-                    alumnoElegido.getModuloAlumno().add(alumnoModulo);
+                if(alumnoElegido.getEsAlumno()==2){
+                    alumnoElegido.setEsAlumno(3L);
                 }
-            }
-            if(alumnoElegido.getEsAlumno()==2){
-                alumnoElegido.setEsAlumno(3L);
-            }
-            (new PersonalBolsaDAOImplement()).agregarAlumnoCurso(alumnoElegido);
-            alumnos.remove(alumnoElegido);
+                (new PersonalBolsaDAOImplement()).agregarAlumnoCurso(alumnoElegido);
+                alumnos.remove(alumnoElegido);
 
-        }else {
+            }else {
+                Alert alerta=new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Alumno No Seleccionado");
+                alerta.setContentText("Selecciona un alumno en la tabla para agregarlo");
+                alerta.showAndWait();
+            }
+        }catch (CursoRegistrado e){
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("ERROR");
-            alerta.setHeaderText("Alumno No Seleccionado");
-            alerta.setContentText("Selecciona un alumno en la tabla para agregarlo");
+            alerta.setHeaderText("Alumno Con Curso");
+            alerta.setContentText("El Alumno ya está en este curso");
             alerta.showAndWait();
         }
+
     }
 
     @javafx.fxml.FXML

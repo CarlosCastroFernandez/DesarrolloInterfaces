@@ -85,3 +85,9 @@ r
 Bsrc/main/java/com/example/ininprotec/RegistroAdminControlller.java,a\d\adca568010cc4f52be764dc33815cb2f00c5bac3
 n
 >src/main/java/com/example/ininprotec/TodosAdminController.java,5\2\5238cea0aa74424cb3715849740543b0a89500dc
+X
+(src/main/java/error/CursoRegistrado.java,8\c\8cd4f0adb39fbc7728f0bea365c95a75a08f698e
+o
+?src/main/java/com/example/ininprotec/BolsaEmpleoController.java,d\3\d3be0be914f8e2292cb84708d584d28c19919928
+i
+9src/main/java/com/example/ininprotec/LogInController.java,0\f\0ffac1e70881d60bf363b00e1887d5d71417d0fc

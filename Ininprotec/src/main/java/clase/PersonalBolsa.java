@@ -5,12 +5,13 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Entity
 @Table(name = "personalbolsa")
-public class PersonalBolsa implements Serializable {
+public class PersonalBolsa implements Serializable,Comparable<PersonalBolsa>{
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -46,7 +47,7 @@ public class PersonalBolsa implements Serializable {
   @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
 
 
-  private List<AlumnoCurso> cursosAlumnos;
+  private List<AlumnoCurso> cursosAlumnos=new ArrayList<>();
   @OneToMany(mappedBy = "alumnoId",fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
   private List<AlumnoModulo> moduloAlumno;
   @Column(name = "nota_final")
@@ -57,6 +58,7 @@ public class PersonalBolsa implements Serializable {
   private Date fechaRegistro;
   private Character sexo;
   private String contraseña;
+  private Integer posicion;
 
 
   public PersonalBolsa(Long id, String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String licenciaArma, String tallaCamiseta, byte[] curriculumUrl, String numeroCuenta, String numeroSocial, Long esAlumno, String numeroTip, byte[] imagenPerfil, String titulacion, String lugarResidencia, List<AlumnoCurso> cursosAlumnos, List<AlumnoModulo> modulos,String contraseña) throws DNIIncorrecto {
@@ -116,6 +118,14 @@ this.contraseña=contraseña;
 
   public Double getNotaFinal() {
     return notaFinal;
+  }
+
+  public Integer getPosicion() {
+    return posicion;
+  }
+
+  public void setPosicion(Integer posicion) {
+    this.posicion = posicion;
   }
 
   public Character getSexo() {
@@ -378,5 +388,36 @@ this.contraseña=contraseña;
             ", modulos=" + moduloAlumno +
             " cursosAlumnos "+cursosAlumnos+
             '}';
+  }
+
+  @Override
+  public int compareTo(PersonalBolsa o) {
+    // Comparación por número de cursos en orden descendente
+    if (this.cursosAlumnos.size() > o.cursosAlumnos.size()) {
+      return -1;
+    } else if (this.cursosAlumnos.size() < o.cursosAlumnos.size()) {
+      return 1;
+    }
+
+    // Prioridad especial para esAlumno == 3
+    boolean thisEsAlumnoEsTres = this.esAlumno == 3;
+    boolean otroEsAlumnoEsTres = o.esAlumno == 3;
+
+    if (thisEsAlumnoEsTres && !otroEsAlumnoEsTres) {
+      return -1;  // Este objeto tiene esAlumno == 3, va primero
+    } else if (!thisEsAlumnoEsTres && otroEsAlumnoEsTres) {
+      return 1;  // Otro objeto tiene esAlumno == 3, este va después
+    }
+
+    // Si esAlumno es igual o ambos son 3, comparar por notaFinal en orden descendente
+    if (this.notaFinal > o.notaFinal) {
+      return -1;
+    } else if (this.notaFinal < o.notaFinal) {
+      return 1;
+    }
+
+    // Si notaFinal es igual, comparar por dni en orden ascendente
+    return this.dni.compareTo(o.dni);
+
   }
 }

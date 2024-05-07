@@ -1,5 +1,6 @@
 package com.example.ininprotecspring.controller;
 
+import com.example.ininprotecspring.clase.AlumnoCurso;
 import com.example.ininprotecspring.clase.PersonalBolsa;
 import com.example.ininprotecspring.repositorio.RepositorioAlumno;
 import com.example.ininprotecspring.servicio.Servicio;
@@ -87,6 +88,7 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
     HttpSession sesion = request.getSession();
     PersonalBolsa alumno = (PersonalBolsa) sesion.getAttribute("alumno");
     if (alumno != null) {
+
         return "cursos";
     } else {
         return "redirect:/login";
@@ -103,7 +105,7 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
             if(alumno!=null){
                  data = utilService.generateReport(alumno);
                  header = new HttpHeaders();
-                header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=report.pdf");
+                header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=IIP Calificaciones.pdf");
                 header.add(HttpHeaders.CONTENT_TYPE, "application/pdf");
 
 

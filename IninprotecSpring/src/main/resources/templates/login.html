@@ -14,7 +14,7 @@
             height: 100vh;
             margin: 0 auto;
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #b1dbff, #b5feed);
+            background: linear-gradient( #927900, #ffd846);
         }
 
         h1 {
@@ -22,21 +22,25 @@
         }
 
         #CESURBlue {
-            color: #002858;
+            color: black;
+            font-size: 50px;
+            margin-left: 15px;
         }
 
         .CESURYellow {
-            color: #F5C22F;
+            color: black;
         }
 
         .recuadro {
             border-radius: 20px;
             padding: 20px;
-            width: 300px;
+            border-style: solid;
+            width: 600px;
+            height: 500px;
             display: flex;
             flex-direction: column;
-            align-items:center;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-start;
             background-color: rgba(248, 248, 248, 0.8);
         }
 
@@ -44,44 +48,48 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid black;
             border-radius: 10px;
+            border-width: 5px;
         }
 
-        .recuadro input[type="submit"] {
-            width: auto;
-            padding: 8px 15px;
-            margin-bottom: 0;
-            font-size: 16px;
-        }
+
 
         .recuadro input[type="submit"] {
             width: 125px;
-            padding: 8px 15px;
             margin-bottom: 0;
-            font-size: 16px;
+            font-size: 30px;
             background-color: #F5C22F;
-            color: #002858;
-            border: none;
+            color: black;
+            border-style: solid;
+            border-width: 5px;
             cursor: pointer;
             font-weight: bold;
+
         }
     </style>
 </head>
 
 <body>
+<img src="/escudo.png" alt="escudo" style="width: 100px; height: 100px">
 <h1 id="CESURBlue">ININPROTEC</h1>
 <br>
 <div class="recuadro">
+    <h3 style="    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    margin-bottom: 5%;">Iniciar Sesión</h3>
     <form action="/succesfull" method="GET">
-        <h2 class="CESURYellow">DNI</h2>
+        <h2 class="CESURYellow" style="    text-align: center;
+    font-size: 30px;">DNI</h2>
         <input th:value="${alumno.correo}" name="correo">
         <br>
-        <h2 class="CESURYellow">Contraseña</h2>
+        <h2 class="CESURYellow" style="text-align: center; font-size: 30px">Contraseña</h2>
         <input th:value="${alumno.contrasena}" name="contrasena">
         <br>
         <br>
-        <input type="submit" value="Entrar">
+        <input style="margin-left: 54px" type="submit" value="Entrar">
     </form>
 </div>
 </body>

@@ -1,8 +1,4 @@
 
-g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8–Á„óò1
-L	java:S106@"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8©Á„óò1
-M	java:S106Œ"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8¬Á„óò1
-K
-java:S1128".Remove this unused import 'clase.AlumnoCurso'.(ñŒĞÒ8‰™‰‡ó1
-K
-java:S1128")Remove this unused import 'clase.Modulo'.(–Áó°ıÿÿÿÿ8‰™‰‡ó1
+g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÙÇÀõ1
+L	java:S106@"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8šÈÀõ1
+M	java:S106Œ"+Replace this use of System.out by a logger.(©èôìûÿÿÿÿ8£ÈÀõ1

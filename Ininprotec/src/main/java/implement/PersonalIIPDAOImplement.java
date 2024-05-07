@@ -6,6 +6,7 @@ import clase.InstructorCurso;
 import clase.Modulo;
 import clase.PersonalIIP;
 import dao.DAOPersonalIIP;
+import jakarta.persistence.NoResultException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -100,6 +101,23 @@ public class PersonalIIPDAOImplement implements DAOPersonalIIP {
             }
             s.remove(instructorBBDD);
             t.commit();
+        }
+    }
+
+    @Override
+    public PersonalIIP login(String correo) {
+        PersonalIIP personalBBDD=null;
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Query<PersonalIIP>q=s.createQuery("select p from PersonalIIP p where p.correo=:correo");
+            q.setParameter("correo",correo);
+            personalBBDD=q.getSingleResult();
+            if(personalBBDD!=null){
+                return personalBBDD;
+            }else{
+                return null;
+            }
+        }catch(NoResultException e){
+            return null;
         }
     }
 }
