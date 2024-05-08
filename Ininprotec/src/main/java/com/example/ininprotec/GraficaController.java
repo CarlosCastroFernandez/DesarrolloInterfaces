@@ -232,7 +232,7 @@ private ArrayList<String>listadoFestivos=new ArrayList<>();
         // Crear el diálogo
         Dialog<HashMap<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Introducir Datos");
-        dialog.setHeaderText("Introduce tres tipos de datos:");
+        dialog.setHeaderText("Introduce todos los datos:");
 
         // Configurar tipos de botones
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -323,6 +323,7 @@ private ArrayList<String>listadoFestivos=new ArrayList<>();
             }
             Double beneficios=calculoComision();
             Servicio servicioNuevo=new Servicio(nombreServicio,horasLV,horasSDF,comision,beneficios,horasTotales,municipio);
+            horasTotales=0;
             servicioNuevo=(new ServicioDAOImplement().subida(servicioNuevo));
             listaInicialTabla.add(servicioNuevo);
             obs.add(new XYChart.Data<>(nombreServicio, beneficios));

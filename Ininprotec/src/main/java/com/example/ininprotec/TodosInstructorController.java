@@ -135,7 +135,7 @@ public class TodosInstructorController implements Initializable {
 
     @javafx.fxml.FXML
     public void borrar(ActionEvent actionEvent) {
-        if(instructorSeleccionado!=null){
+        if(instructorSeleccionado!=null&&instructorSeleccionado.getInstructor()!=0L){
             try {
                 Alert alerta = new Alert(Alert.AlertType.INFORMATION);
                 alerta.setTitle("INFORMACIÓN!");
@@ -156,11 +156,17 @@ public class TodosInstructorController implements Initializable {
 
             }
 
-        }else{
+        }else if(instructorSeleccionado==null){
             Alert alerta=new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("ERROR");
             alerta.setHeaderText("Instructor No Seleccionado");
             alerta.setContentText("Por favor seleccione un instructor de la tabla y luego pulsa borrar");
+            alerta.showAndWait();
+        }else{
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Sin Permisos");
+            alerta.setContentText("Lo sentimos pero no dispones de permisos suficientes para borrar a esta persona");
             alerta.showAndWait();
         }
     }

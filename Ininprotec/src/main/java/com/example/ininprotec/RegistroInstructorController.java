@@ -152,32 +152,42 @@ public class RegistroInstructorController implements Initializable {
     }
     @javafx.fxml.FXML
     public void clickImagen(Event event) {
-        FileChooser archivo=new FileChooser();
-        File ruta=archivo.showOpenDialog(null);
-        if(ruta!=null){
-            archivoImagen=ruta.getPath();
-            System.out.println(ruta.getPath());
-            Image imagen=new Image(ruta.getPath());
-            imagenPerfil.setImage(imagen);
+        try{
+            FileChooser archivo=new FileChooser();
+            File ruta=archivo.showOpenDialog(null);
+            if(ruta!=null){
+                archivoImagen=ruta.getPath();
+                System.out.println(ruta.getPath());
+                Image imagen=new Image(ruta.getPath());
+                imagenPerfil.setImage(imagen);
+            }
+        }catch (Exception e){
+
         }
+
 
 
     }
 
     @javafx.fxml.FXML
     public void openArchivos(ActionEvent actionEvent) {
-        FileChooser openArchivos=new FileChooser();
-        File archivo=openArchivos.showOpenDialog(null);
-        System.out.println(archivo.getName());
-        if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
-            parseo=documentoToByteArray(archivo);
-        }else{
-            Alert alerta=new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error");
-            alerta.setHeaderText("Campos Necesarios");
-            alerta.setContentText("Se necesita rellena rl campo nombre apellido1 y apellido2");
-            alerta.showAndWait();
+        try{
+            FileChooser openArchivos=new FileChooser();
+            File archivo=openArchivos.showOpenDialog(null);
+            System.out.println(archivo.getName());
+            if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
+                parseo=documentoToByteArray(archivo);
+            }else{
+                Alert alerta=new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("Error");
+                alerta.setHeaderText("Campos Necesarios");
+                alerta.setContentText("Se necesita rellena rl campo nombre apellido1 y apellido2");
+                alerta.showAndWait();
+            }
+        }catch (Exception e){
+
         }
+
 
     }
     private byte[] documentoToByteArray(File file){

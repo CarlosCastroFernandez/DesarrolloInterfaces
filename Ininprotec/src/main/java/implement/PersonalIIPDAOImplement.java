@@ -120,4 +120,16 @@ public class PersonalIIPDAOImplement implements DAOPersonalIIP {
             return null;
         }
     }
+
+    @Override
+    public void cambioPassword(PersonalIIP personal) {
+        try (Session s = HibernateUtil.getSession().openSession()) {
+            Transaction t=s.beginTransaction();
+            PersonalIIP personalBBDD=s.get(PersonalIIP.class,personal.getId());
+            personalBBDD.setContraseña(personal.getContraseña());
+            t.commit();
+
+        }
+
+    }
 }
