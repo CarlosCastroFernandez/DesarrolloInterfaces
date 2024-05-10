@@ -12,10 +12,7 @@ import implement.InstructorCursoDAOImplement;
 import implement.PersonalIIPDAOImplement;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -100,6 +97,8 @@ public class CreacionCursoController implements Initializable {
     private Button botonP7;
 
     private List<Modulo>modulosBorrados=new ArrayList<>();
+    @javafx.fxml.FXML
+    private Label labelTitulo;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -403,6 +402,7 @@ public class CreacionCursoController implements Initializable {
         vBoxM6.setVisible(false);
         vBoxM7.setVisible(false);
         if(Utilidad.getCurso()!=null){
+            labelTitulo.setText("EDITAR CURSO");
             switch (Utilidad.getCurso().getModulos().size()){
                 case 1:
                     vBoxM2.setVisible(false);

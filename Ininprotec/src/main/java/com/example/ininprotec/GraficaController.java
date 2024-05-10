@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.Utilidad;
 import clase.Servicio;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +17,8 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
@@ -46,8 +49,6 @@ public class GraficaController implements Initializable {
     private ObservableList obs;
     private String nombreServicio;
     private Double comision;
-    @javafx.fxml.FXML
-    private Label añadir;
     private Integer horasLV;
     private Integer horasSDF;
     private Integer horasTotales=0;
@@ -68,8 +69,18 @@ private  XYChart.Series<String,Number>series;
     private Button botonBorrar;
     private Servicio servicioElegido;
 private ArrayList<String>listadoFestivos=new ArrayList<>();
+    @javafx.fxml.FXML
+    private Button añadir;
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(CreacionCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
 
         cNombre.setCellValueFactory(servicio->{
             String nombre=servicio.getValue().getNombre();
@@ -99,7 +110,6 @@ private ArrayList<String>listadoFestivos=new ArrayList<>();
 
 
         obs= FXCollections.observableArrayList();
-        grafica.setTitle("Grafica de los Servicios");
         List<Servicio>servicios=(new ServicioDAOImplement()).getAll();
         listaInicialTabla.addAll(servicios);
         tabla.setItems(listaInicialTabla);

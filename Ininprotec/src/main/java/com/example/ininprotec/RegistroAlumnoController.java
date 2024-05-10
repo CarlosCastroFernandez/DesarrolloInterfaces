@@ -206,25 +206,7 @@ public class RegistroAlumnoController implements Initializable {
                                         ;
                                     });
                 comboCurso.getItems().addAll(daoCurso.getAll());
-            labelURL.setOnMouseClicked(mouseEvent -> {
-                if(!labelURL.getText().equals("")){
-                    String rutaArchivo=nuevoPath.toString();
-                    File archivo=new File(rutaArchivo);
-                    try {
-                        Desktop.getDesktop().open(archivo);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
 
-                }
-            });
-            labelURL.setOnMouseEntered(evento->{
-
-                labelURL.setStyle("-fx-text-fill: #0124FB");
-            });
-            labelURL.setOnMouseExited(evento->{
-                labelURL.setStyle("-fx-text-fill: #000000");
-            });
         }else{
             flowTrabajo.setVisible(false);
             labelRol.setVisible(true);

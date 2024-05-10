@@ -12,6 +12,7 @@ public class Utilidad {
     private static Boolean comprDNI=false;
     private static PersonalIIP admin;
     private static PersonalIIP logPersonal;
+    private static Boolean miPerfil=false;
 
     public static Curso getCurso() {
         return curso;
@@ -19,6 +20,14 @@ public class Utilidad {
 
     public static Boolean getComprDNI() {
         return comprDNI;
+    }
+
+    public static Boolean getMiPerfil() {
+        return miPerfil;
+    }
+
+    public static void setMiPerfil(Boolean miPerfil) {
+        Utilidad.miPerfil = miPerfil;
     }
 
     public static PersonalIIP getAdmin() {

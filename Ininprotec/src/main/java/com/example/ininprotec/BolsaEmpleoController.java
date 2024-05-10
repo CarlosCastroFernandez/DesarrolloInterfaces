@@ -1,5 +1,6 @@
 package com.example.ininprotec;
 
+import Util.Utilidad;
 import clase.AlumnoCurso;
 import clase.PersonalBolsa;
 import implement.PersonalBolsaDAOImplement;
@@ -11,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,10 +44,18 @@ public class BolsaEmpleoController implements Initializable {
     private TableColumn <PersonalBolsa,String>cNota;
     private ObservableList<PersonalBolsa> obs= FXCollections.observableArrayList();
     private ObservableList<PersonalBolsa>obsFiltro=FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(BolsaEmpleoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
         List<PersonalBolsa> alumnos=(new PersonalBolsaDAOImplement().getAllBolsa());
         List<PersonalBolsa>copiaSinNotaCurso=new ArrayList<>();
         for(PersonalBolsa alumno:alumnos){

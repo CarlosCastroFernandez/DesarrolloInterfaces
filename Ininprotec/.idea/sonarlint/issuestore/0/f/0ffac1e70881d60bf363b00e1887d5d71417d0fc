@@ -1,6 +1,40 @@
 
-g	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ğœÕ˜õ1
-m	java:S117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç«ï8åÑÔ˜õ1
-v	java:S116"ZRename this field "textContraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¿«8úÑÔ˜õ1
+g	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8øŠï¾õ1
+g	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùŠï¾õ1
+g	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùŠï¾õ1
+g	java:S112~"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùŠï¾õ1
+h	java:S112€"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùŠï¾õ1
+h	java:S112é"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùŠï¾õ1
+M
+java:S3740Í"/Provide the parametrized type for this generic.(Ç Í’8ùŠï¾õ1
+n
+java:S11921"QDefine a constant instead of duplicating this literal "check.properties" 5 times.(ÂÌ›Ë8úŠï¾õ1
+h
+java:S1192m"FDefine a constant instead of duplicating this literal "ERROR" 4 times.(®æôêıÿÿÿÿ8úŠï¾õ1
+r	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜºÏÆıÿÿÿÿ8úŠï¾õ1
+m	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç«ï8úŠï¾õ1
+s	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š¡¶÷ıÿÿÿÿ8úŠï¾õ1
+:
+java:S1643¤"Use a StringBuilder instead.(Â¸ñÎ8ûŠï¾õ1
+?
+java:S1643À"Use a StringBuilder instead.(§ûúĞÿÿÿÿÿ8ûŠï¾õ1
+:
+java:S1643È"Use a StringBuilder instead.(½ııÆ8ûŠï¾õ1
+v	java:S116"ZRename this field "textContraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¿«8‹ï¾õ1
+w	java:S116&"[Rename this field "checkContraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îÇÀ™8‹ï¾õ1
+¤
+java:S1186ˆ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×íîıøÿÿÿÿ8‹ï¾õ1
+a
+java:S2147;"DCombine this catch with the one at line 57, which has the same body.(ï­£Ä8¤‹ï¾õ1
+t
+java:S3776C"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¥óš¦üÿÿÿÿ8¨‹ï¾õ1
+b
+java:S2147}"ECombine this catch with the one at line 123, which has the same body.(‹±ÃÆ8©‹ï¾õ1
+b
+java:S2147"ECombine this catch with the one at line 125, which has the same body.(ï­£Ä8©‹ï¾õ1
+p	java:S100ˆ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×íîıøÿÿÿÿ8®‹ï¾õ1
+k	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÷£8®‹ï¾õ1
+M	java:S106Á"+Replace this use of System.out by a logger.(†…Ô€ÿÿÿÿÿ8¸‹ï¾õ1
+H	java:S106É"+Replace this use of System.out by a logger.(Ö»´¼8¸‹ï¾õ1
 W
-java:S1128"5Remove this unused import 'javafx.scene.layout.VBox'.(íÆáÂùÿÿÿÿ8ıËú˜õ1
+java:S1128"5Remove this unused import 'javafx.scene.layout.VBox'.(íÆáÂùÿÿÿÿ8ˆÌû¾õ1

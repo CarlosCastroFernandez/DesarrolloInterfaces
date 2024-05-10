@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 
 import java.net.URL;
@@ -36,8 +38,16 @@ public class TodosAdminController implements Initializable {
     private PersonalIIP administradorSeleccionado;
     private ObservableList<PersonalIIP> administradores = FXCollections.observableArrayList();
     private ObservableList<PersonalIIP> filtroAdmin = FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(CreacionCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
 
         Curso sinCurso=new Curso();
         sinCurso.setNombre("Sin Curso");

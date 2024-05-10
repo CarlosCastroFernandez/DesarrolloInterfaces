@@ -1,12 +1,13 @@
 
-g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8è¤²›õ1
-g	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8è¤²›õ1
+g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß×½õ1
+g	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß×½õ1
+g	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ß×½õ1
 9
-java:S1643("Use a StringBuilder instead.(‰´çÓ8è¤²›õ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8é¤²›õ1
+java:S1643("Use a StringBuilder instead.(‰´çÓ8ß×½õ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8‘ß×½õ1
 W
-java:S1118":Add a private constructor to hide the implicit public one.(Çê”†8±¥²›õ1
+java:S1118":Add a private constructor to hide the implicit public one.(Çê”†8Ôß×½õ1
 a
-java:S21472"DCombine this catch with the one at line 48, which has the same body.(ï­£Ä8¸¥²›õ1
-L	java:S106."+Replace this use of System.out by a logger.(â¥±ûÿÿÿÿ8»¥²›õ1
-L	java:S106G"+Replace this use of System.out by a logger.(¹·õ‰øÿÿÿÿ8Â¥²›õ1
+java:S21472"DCombine this catch with the one at line 48, which has the same body.(ï­£Ä8Ûß×½õ1
+L	java:S106."+Replace this use of System.out by a logger.(â¥±ûÿÿÿÿ8İß×½õ1
+L	java:S106G"+Replace this use of System.out by a logger.(¹·õ‰øÿÿÿÿ8ãß×½õ1

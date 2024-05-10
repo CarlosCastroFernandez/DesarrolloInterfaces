@@ -9,72 +9,101 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="604.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.TodosInstructorController">
+<BorderPane prefHeight="750.0" prefWidth="1206.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.TodosInstructorController">
     <center>
         <BorderPane>
             <center>
-                <TableView fx:id="tabla" prefHeight="447.0" prefWidth="658.0" BorderPane.alignment="CENTER">
-                    <columns>
-                        <TableColumn fx:id="cNombre" prefWidth="124.800048828125" text="Nombre Y Apellidos" />
-                        <TableColumn fx:id="cDNI" prefWidth="75.0" text="DNI" />
-                        <TableColumn fx:id="cCorreo" prefWidth="75.0" text="E-MAIL" />
-                        <TableColumn fx:id="cTelefono" prefWidth="75.0" text="Teléfono" />
-                        <TableColumn fx:id="cCurso" prefWidth="103.99993896484375" text="Cursos" />
-                    </columns>
-                    <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                    </columnResizePolicy>
-                </TableView>
-            </center>
-            <bottom>
-                <FlowPane alignment="CENTER" prefHeight="53.0" prefWidth="766.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <AnchorPane prefHeight="66.0" prefWidth="122.0">
-                            <children>
-                                <Button fx:id="botonBorrar" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#borrar" text="Borrar Instructor" />
-                            </children>
-                        </AnchorPane>
-                    </children>
-                </FlowPane>
-            </bottom>
-            <top>
-                <VBox prefHeight="58.0" prefWidth="574.0" spacing="10.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <FlowPane alignment="TOP_CENTER">
-                            <children>
-                                <Label text="Clientes Registrados">
-                                    <font>
-                                        <Font size="24.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </FlowPane>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
                         <Separator prefHeight="9.0" prefWidth="574.0" />
-                        <FlowPane hgap="10.0" prefHeight="31.0" prefWidth="574.0">
+                        <FlowPane alignment="CENTER" hgap="10.0" prefHeight="31.0" prefWidth="574.0">
                             <children>
-                                <TextField fx:id="textBuscar" onKeyReleased="#filtro" promptText="Buscar..." />
+                                <TextField fx:id="textBuscar" onKeyReleased="#filtro" prefHeight="26.0" prefWidth="284.0" promptText="Buscar..." styleClass="bordes">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                           </font></TextField>
                             </children>
                             <VBox.margin>
                                 <Insets bottom="10.0" left="20.0" />
                             </VBox.margin>
                         </FlowPane>
+                      <TableView fx:id="tabla" prefHeight="626.0" prefWidth="688.0">
+                          <columns>
+                              <TableColumn fx:id="cNombre" maxWidth="1248.00048828125" minWidth="30.0" prefWidth="124.800048828125" text="Nombre Y Apellidos" />
+                              <TableColumn fx:id="cDNI" maxWidth="750.0" minWidth="30.0" prefWidth="75.0" text="DNI" />
+                              <TableColumn fx:id="cCorreo" maxWidth="750.0" minWidth="30.0" prefWidth="75.0" text="E-MAIL" />
+                              <TableColumn fx:id="cTelefono" maxWidth="750.0" minWidth="30.0" prefWidth="75.0" text="Teléfono" />
+                              <TableColumn fx:id="cCurso" maxWidth="1039.9993896484375" minWidth="30.0" prefWidth="103.99993896484375" text="Cursos" />
+                          </columns>
+                          <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                          </columnResizePolicy>
+                      </TableView>
+               </children>
+            </VBox>
+            </center>
+            <bottom>
+                <FlowPane alignment="CENTER" prefHeight="53.0" prefWidth="766.0" BorderPane.alignment="CENTER">
+                    <children>
+                          <Button fx:id="botonBorrar" mnemonicParsing="false" onAction="#borrar" styleClass="bordes" text="Borrar Instructor">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                     </font>
+                  </Button>
                     </children>
-                </VBox>
+                </FlowPane>
+            </bottom>
+            <top>
+            <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.2000122070312" minWidth="10.0" prefWidth="265.6" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="892.8000000000001" minWidth="10.0" prefWidth="892.8000000000001" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox GridPane.columnIndex="1">
+                     <children>
+                                <Label text="Gestión Instructores" textFill="#f4cf07">
+                                    <font>
+                                        <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                                    </font>
+                                </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="412.0">
+                     <children>
+                        <ImageView fx:id="imagenFlecha" fitHeight="41.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
             </top>
             <right>
-                <SplitPane prefHeight="455.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+                <SplitPane prefHeight="480.0" prefWidth="186.0" BorderPane.alignment="CENTER">
                     <items>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                        <VBox alignment="CENTER" prefHeight="469.0" prefWidth="185.0" spacing="10.0" styleClass="fondoDatos">
                             <children>
-                                <Label text="Filtrar Por Curso" />
-                                <ComboBox fx:id="comboCurso" prefWidth="150.0" />
-                                <Button fx:id="botonQuitar" mnemonicParsing="false" onAction="#quitar" text="Quitar" />
+                                <Label text="Filtrar Por Curso">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="12.0" />
+                           </font></Label>
+                                <ComboBox fx:id="comboCurso" prefWidth="150.0" styleClass="bordes" />
+                                <Button fx:id="botonQuitar" mnemonicParsing="false" onAction="#quitar" styleClass="bordes" text="Quitar">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font></Button>
                             </children>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

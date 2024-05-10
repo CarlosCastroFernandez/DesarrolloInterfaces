@@ -99,10 +99,17 @@ private ChangeListener<String> comboCalificacionListener;
     private RadioButton radioHombre;
     @javafx.fxml.FXML
     private ChoiceBox<String> comboSigno;
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(CreacionCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
         comboCurso.setConverter(new StringConverter <Curso>() {
             @Override
             public String toString(Curso o) {

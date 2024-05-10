@@ -57,15 +57,17 @@ public class PersonalIIPDAOImplement implements DAOPersonalIIP {
     }
 
     @Override
-    public void actualizar(PersonalIIP instructor) {
+    public PersonalIIP actualizar(PersonalIIP instructor) {
+        PersonalIIP instructorBBDD =null;
         try (Session s = HibernateUtil.getSession().openSession()) {
             Transaction t = s.beginTransaction();
-            PersonalIIP instructorBBDD = s.get(PersonalIIP.class, instructor.getId());
+             instructorBBDD = s.get(PersonalIIP.class, instructor.getId());
             instructorBBDD = instructor;
             s.merge(instructorBBDD);
             t.commit();
 
         }
+        return instructorBBDD;
     }
 
     @Override

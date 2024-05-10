@@ -95,12 +95,11 @@ public class RegistroAdminControlller implements Initializable {
             imagenPerfil.setImage(imagen);
 
         }else{
+            parseo=Utilidad.getAdmin().getCurriculum();
             if(Utilidad.getAdmin().getCurriculum()==null){
-                botonArchivos.setVisible(true);
-                botonAbrir.setVisible(false);
+                labelURL.setText("Sin Archivo");
             }else{
-                botonArchivos.setVisible(false);
-                botonAbrir.setVisible(true);
+                labelURL.setText("Con Archivo");
             }
 
             textNombre.setText(Utilidad.getAdmin().getNombre());
@@ -170,6 +169,7 @@ public class RegistroAdminControlller implements Initializable {
             System.out.println(archivo.getName());
             if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 parseo=documentoToByteArray(archivo);
+                labelURL.setText(archivo.getName());
             }else{
                 Alert alerta=new Alert(Alert.AlertType.ERROR);
                 alerta.setTitle("Error");
@@ -300,7 +300,7 @@ public class RegistroAdminControlller implements Initializable {
                 Utilidad.getAdmin().setCorreo(textEmail.getText());
                 Utilidad.getAdmin().setTelefono(textTelefono.getText());
                 Utilidad.getAdmin().setLicenciaArma(textLicenciaArmas.getText());
-                Utilidad.getAdmin().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
+                Utilidad.getAdmin().setFechaNacimiento((dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())));
                 Utilidad.getAdmin().setTallaCamiseta(textCamiseta.getText());
                 Utilidad.getAdmin().setNumeroCuenta(textIBAN.getText());
                 Utilidad.getAdmin().setNumeroSocial(textSegSocial.getText());
@@ -311,7 +311,11 @@ public class RegistroAdminControlller implements Initializable {
                 Utilidad.getAdmin().setDni(textDni.getText());
                 Utilidad.getAdmin().setNumeroTip(textAreaTIP.getText());
                 //MODIFICACION INSTRUCOT
-                (new PersonalIIPDAOImplement()).actualizar(Utilidad.getAdmin());
+                PersonalIIP personalMod=(new PersonalIIPDAOImplement()).actualizar(Utilidad.getAdmin());
+                if(Utilidad.getMiPerfil()){
+                    Utilidad.setLogPersonal(personalMod);
+                    Utilidad.setMiPerfil(false);
+                }
                 //-------------------------
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
@@ -321,7 +325,12 @@ public class RegistroAdminControlller implements Initializable {
                     Utilidad.setAlumno(null);
                     Utilidad.setCurso(null);
                     Utilidad.setInstructor(null);
-                    HelloApplication.cambioVentana("registroAdmin-view.fxml");
+                    HelloApplication.cambioVentana("principal-view.fxml");
+                }else{
+                    Utilidad.setAlumno(null);
+                    Utilidad.setCurso(null);
+                    Utilidad.setInstructor(null);
+                    HelloApplication.cambioVentana("principal-view.fxml");
                 }
             }else{
                 if(textNombre.getText().isEmpty()){

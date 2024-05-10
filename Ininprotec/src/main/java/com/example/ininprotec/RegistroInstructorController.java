@@ -102,12 +102,11 @@ public class RegistroInstructorController implements Initializable {
             imagenPerfil.setImage(imagen);
 
         }else{
+            parseo=Utilidad.getInstructor().getCurriculum();
             if(Utilidad.getInstructor().getCurriculum()==null){
-                botonArchivos.setVisible(true);
-                botonAbrir.setVisible(false);
+               labelURL.setText("Sin Archivos");
             }else{
-                botonArchivos.setVisible(false);
-                botonAbrir.setVisible(true);
+                labelURL.setText("Con Archivos");
             }
 
             textNombre.setText(Utilidad.getInstructor().getNombre());
@@ -177,11 +176,12 @@ public class RegistroInstructorController implements Initializable {
             System.out.println(archivo.getName());
             if(archivo!=null&&!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()){
                 parseo=documentoToByteArray(archivo);
+                labelURL.setText(archivo.getName());
             }else{
                 Alert alerta=new Alert(Alert.AlertType.ERROR);
                 alerta.setTitle("Error");
                 alerta.setHeaderText("Campos Necesarios");
-                alerta.setContentText("Se necesita rellena rl campo nombre apellido1 y apellido2");
+                alerta.setContentText("Se necesita rellenar el campo nombre apellido 1 y apellido 2");
                 alerta.showAndWait();
             }
         }catch (Exception e){
@@ -305,7 +305,7 @@ public class RegistroInstructorController implements Initializable {
                 Utilidad.getInstructor().setCorreo(textEmail.getText());
                 Utilidad.getInstructor().setTelefono(textTelefono.getText());
                 Utilidad.getInstructor().setLicenciaArma(textLicenciaArmas.getText());
-                Utilidad.getInstructor().setFechaNacimiento(Date.valueOf(dateFecha.getValue()));
+                Utilidad.getInstructor().setFechaNacimiento((dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())));
                 Utilidad.getInstructor().setTallaCamiseta(textCamiseta.getText());
                 Utilidad.getInstructor().setNumeroCuenta(textIBAN.getText());
                 Utilidad.getInstructor().setNumeroSocial(textSegSocial.getText());
@@ -316,7 +316,11 @@ public class RegistroInstructorController implements Initializable {
                 Utilidad.getInstructor().setDni(textDni.getText());
                 Utilidad.getInstructor().setNumeroTip(textAreaTIP.getText());
                 //MODIFICACION INSTRUCOT
-                (new PersonalIIPDAOImplement()).actualizar(Utilidad.getInstructor());
+                PersonalIIP instructorMod=(new PersonalIIPDAOImplement()).actualizar(Utilidad.getInstructor());
+                if(Utilidad.getMiPerfil()){
+                    Utilidad.setLogPersonal(instructorMod);
+                    Utilidad.setMiPerfil(false);
+                }
                //-------------------------
                 Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("OK!");
@@ -326,7 +330,12 @@ public class RegistroInstructorController implements Initializable {
                     Utilidad.setAlumno(null);
                     Utilidad.setCurso(null);
                     Utilidad.setInstructor(null);
-                    HelloApplication.cambioVentana("registroInstructor-view.fxml");
+                    HelloApplication.cambioVentana("principal-view.fxml");
+                }else{
+                    Utilidad.setAlumno(null);
+                    Utilidad.setCurso(null);
+                    Utilidad.setInstructor(null);
+                    HelloApplication.cambioVentana("principal-view.fxml");
                 }
             }else{
                 if(textNombre.getText().isEmpty()){

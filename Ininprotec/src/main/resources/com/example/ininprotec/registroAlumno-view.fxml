@@ -14,64 +14,117 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="706.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
+<BorderPane prefHeight="764.0" prefWidth="879.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.RegistroAlumnoController">
    <center>
-      <BorderPane>
+      <BorderPane styleClass="fondoDatos">
          <center>
-            <SplitPane dividerPositions="0.3204" prefHeight="619.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.32497721057429346" prefHeight="619.0" prefWidth="879.0" styleClass="fondoDatos" BorderPane.alignment="CENTER">
               <items>
-                  <VBox alignment="TOP_CENTER" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="662.0" prefWidth="260.0" spacing="10.0">
                      <children>
-                        <Label text="FICHA" />
+                        <Label text="FICHA">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                           </font></Label>
+                        <Separator prefWidth="200.0" />
                         <ImageView fx:id="imagenPerfil" fitHeight="106.0" fitWidth="135.0" onMouseClicked="#clickImagen" pickOnBounds="true" preserveRatio="true" />
                         <FlowPane alignment="TOP_CENTER" hgap="30.0" prefHeight="48.0" prefWidth="235.0" vgap="10.0">
                            <children>
-                              <Label text="CURRICULUM VITAE" />
-                              <Button fx:id="botonArchivos" mnemonicParsing="false" onAction="#openArchivos" text="Archivos" />
-                              <Button fx:id="botonAbrir" mnemonicParsing="false" onAction="#abrirCurriculum" text="Abrir" />
+                              <Label text="CURRICULUM VITAE">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <Button fx:id="botonArchivos" mnemonicParsing="false" onAction="#openArchivos" styleClass="bordes" text="Archivos">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="botonAbrir" mnemonicParsing="false" onAction="#abrirCurriculum" styleClass="bordes" text="Abrir">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Button>
                               <Label fx:id="labelURL" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER" />
                            </children>
                         </FlowPane>
                         <Separator prefHeight="11.0" prefWidth="235.0" />
                         <HBox alignment="CENTER" spacing="20.0">
                            <children>
-                              <Button fx:id="botonCorreo" mnemonicParsing="false" onAction="#enviarCorreoNuevo" text="Volver a Enviar Correo" />
+                              <Button fx:id="botonCorreo" mnemonicParsing="false" onAction="#enviarCorreoNuevo" styleClass="bordes" text="Volver a Enviar Correo">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
-                        <Label text="Sexo" />
+                        <Label text="Sexo">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font></Label>
                         <HBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" spacing="20.0">
                            <children>
                               <RadioButton fx:id="radioHombre" mnemonicParsing="false" text="Hombre">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="vale" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton fx:id="radioMujer" mnemonicParsing="false" text="Mujer" toggleGroup="$vale" />
+                              <RadioButton fx:id="radioMujer" mnemonicParsing="false" text="Mujer" toggleGroup="$vale">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></RadioButton>
                            </children>
                         </HBox>
                         <Separator prefWidth="200.0" />
-                        <Label text="DNI" />
-                        <TextField fx:id="textDni" maxWidth="200.0" />
+                        <Label text="DNI">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font></Label>
+                        <TextField fx:id="textDni" maxWidth="200.0" styleClass="bordes">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                           </font></TextField>
                         <Separator prefWidth="200.0" />
-                        <Label text="Nº TIP" />
-                        <TextArea fx:id="textAreaTIP" maxWidth="200.0" prefHeight="0.0" prefWidth="200.0" />
+                        <Label text="Nº TIP">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font></Label>
+                        <TextArea fx:id="textAreaTIP" maxWidth="200.0" prefHeight="0.0" prefWidth="200.0" styleClass="bordes">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                           </font></TextArea>
                         <Separator prefWidth="200.0" />
                         <FlowPane alignment="CENTER" hgap="10.0" prefHeight="73.0" prefWidth="271.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="97.0" prefWidth="127.0">
                                  <children>
-                                    <Label text="Idioma" />
-                                    <TextArea fx:id="textIdioma" maxWidth="200.0" prefHeight="62.0" prefWidth="154.0" />
+                                    <Label text="Idioma">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                       </font></Label>
+                                    <TextArea fx:id="textIdioma" maxWidth="200.0" prefHeight="62.0" prefWidth="154.0" styleClass="bordes">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                       </font></TextArea>
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="78.0" prefWidth="132.0">
                                  <children>
-                                    <Label text="Titulacion" />
-                                    <TextArea fx:id="textTitulacion" maxWidth="200.0" prefHeight="62.0" prefWidth="120.0" />
+                                    <Label text="Titulacion">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                       </font></Label>
+                                    <TextArea fx:id="textTitulacion" maxWidth="200.0" prefHeight="62.0" prefWidth="120.0" styleClass="bordes">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                       </font></TextArea>
                                  </children>
                               </VBox>
                            </children>
@@ -83,36 +136,102 @@
                   </VBox>
                   <FlowPane alignment="CENTER" hgap="100.0" maxWidth="600.0" prefHeight="553.0" prefWidth="577.0" vgap="10.0">
                      <children>
-                        <VBox spacing="5.0">
+                        <VBox prefWidth="126.0" spacing="10.0">
                            <children>
-                              <Label text="Nombre" />
-                              <TextField fx:id="textNombre" />
-                              <Label layoutX="10.0" layoutY="10.0" text="Apellido 1" />
-                              <TextField fx:id="textApellido1" layoutX="10.0" layoutY="28.0" />
-                              <Label layoutX="10.0" layoutY="53.0" text="Apellido 2" />
-                              <TextField fx:id="textApellido2" layoutX="10.0" layoutY="71.0" />
-                              <Label layoutX="10.0" layoutY="96.0" text="E-Mail" />
-                              <TextField fx:id="textEmail" layoutX="10.0" layoutY="114.0" />
-                              <Label layoutX="10.0" layoutY="183.0" text="Telefono" />
-                              <TextField fx:id="textTelefono" layoutX="10.0" layoutY="200.0" />
-                              <Label layoutX="10.0" layoutY="226.0" text="Licencia De Arma" />
-                              <TextField fx:id="textLicenciaArmas" layoutX="10.0" layoutY="244.0" />
+                              <Label text="Nombre">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textNombre" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="10.0" text="Apellido 1">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textApellido1" layoutX="10.0" layoutY="28.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="53.0" text="Apellido 2">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textApellido2" layoutX="10.0" layoutY="71.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="96.0" text="E-Mail">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textEmail" layoutX="10.0" layoutY="114.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="183.0" text="Telefono">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textTelefono" layoutX="10.0" layoutY="200.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="226.0" text="Licencia De Arma">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textLicenciaArmas" layoutX="10.0" layoutY="244.0" prefHeight="15.0" prefWidth="126.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
                            </children>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="10.0" spacing="5.0">
+                        <VBox layoutX="10.0" layoutY="10.0" spacing="9.9">
                            <children>
-                              <Label text="Fecha Nacimiento" />
-                              <DatePicker fx:id="dateFecha" />
-                              <Label layoutX="10.0" layoutY="10.0" text="Talla De Camiseta" />
-                              <TextField fx:id="textCamiseta" layoutX="10.0" layoutY="28.0" />
-                              <Label layoutX="10.0" layoutY="53.0" text="Nº De Cuenta Bancaria" />
-                              <TextField fx:id="textIBAN" layoutX="10.0" layoutY="71.0" />
-                              <Label layoutX="10.0" layoutY="96.0" text="Nº Seguridad Social" />
-                              <TextField fx:id="textSegSocial" layoutX="10.0" layoutY="114.0" />
-                              <Label layoutX="10.0" layoutY="226.0" text="Lugar De Residencia" />
-                              <TextField fx:id="textResidencia" layoutX="10.0" layoutY="244.0" />
-                              <Label text="Altura" />
-                              <Spinner fx:id="spAltura" />
+                              <Label text="Fecha Nacimiento">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <DatePicker fx:id="dateFecha" styleClass="bordes" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Talla De Camiseta">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textCamiseta" layoutX="10.0" layoutY="28.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="53.0" text="Nº De Cuenta Bancaria">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textIBAN" layoutX="10.0" layoutY="71.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="96.0" text="Nº Seguridad Social">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textSegSocial" layoutX="10.0" layoutY="114.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label layoutX="10.0" layoutY="226.0" text="Lugar De Residencia">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="textResidencia" layoutX="10.0" layoutY="244.0" styleClass="bordes">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                                 </font></TextField>
+                              <Label text="Altura">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <Spinner fx:id="spAltura" styleClass="bordes" />
                            </children>
                         </VBox>
                         <FlowPane alignment="CENTER" hgap="100.0" prefHeight="42.0" prefWidth="390.0" vgap="30.0">
@@ -121,14 +240,23 @@
                                  <toggleGroup>
                                     <ToggleGroup fx:id="uno" />
                                  </toggleGroup>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font>
                               </RadioButton>
-                              <RadioButton fx:id="radioTrabajador" mnemonicParsing="false" text="Trabajador // No Alumno" toggleGroup="$uno" />
+                              <RadioButton fx:id="radioTrabajador" mnemonicParsing="false" text="Trabajador" toggleGroup="$uno">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></RadioButton>
                            </children>
                         </FlowPane>
                         <FlowPane alignment="CENTER" hgap="20.0">
                            <children>
-                              <Label fx:id="labelRol" text="Cambiar Rol" />
-                              <ComboBox fx:id="comboRol" maxWidth="200.0" prefWidth="150.0" />
+                              <Label fx:id="labelRol" text="Cambiar Rol">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="comboRol" maxWidth="200.0" prefWidth="150.0" styleClass="bordes" />
                            </children>
                            <padding>
                               <Insets right="26.0" />
@@ -136,21 +264,27 @@
                         </FlowPane>
                         <FlowPane fx:id="flowPaneCurso" alignment="CENTER" hgap="30.0" prefHeight="44.0" prefWidth="346.0">
                            <children>
-                              <Label fx:id="labelCurso" text="Curso" />
-                              <ComboBox fx:id="comboCurso" maxWidth="200.0" prefHeight="26.0" prefWidth="154.0" />
+                              <Label fx:id="labelCurso" text="Curso">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="comboCurso" maxWidth="200.0" prefHeight="26.0" prefWidth="154.0" styleClass="bordes" />
                            </children>
                         </FlowPane>
                         <FlowPane fx:id="flowTrabajo" alignment="CENTER" hgap="20.0" prefHeight="46.0" prefWidth="256.0">
                            <children>
-                              <ComboBox fx:id="comboCursoTr" prefHeight="26.0" prefWidth="124.0" promptText="¿Cursos?">
+                              <ComboBox fx:id="comboCursoTr" prefHeight="26.0" prefWidth="124.0" promptText="¿Cursos?" styleClass="bordes">
                                  <FlowPane.margin>
                                     <Insets top="17.0" />
                                  </FlowPane.margin>
                               </ComboBox>
                               <VBox>
                                  <children>
-                                    <Label fx:id="labelNotaMedia" text="Nota Media" />
-                                    <Spinner fx:id="spNotaCurso" prefHeight="26.0" prefWidth="110.0" />
+                                    <Label fx:id="labelNotaMedia" text="Nota Media">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                       </font></Label>
+                                    <Spinner fx:id="spNotaCurso" prefHeight="26.0" prefWidth="110.0" styleClass="bordes" />
                                  </children>
                               </VBox>
                            </children>
@@ -159,12 +293,18 @@
                            <children>
                               <HBox alignment="CENTER" spacing="20.0">
                                  <children>
-                                    <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                                    <Button fx:id="botonGuardar" mnemonicParsing="false" onAction="#guardar" styleClass="bordes" text="Guardar">
+                                       <font>
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                                       </font></Button>
                                  </children>
                               </HBox>
                            </children>
                         </VBox>
                      </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
                   </FlowPane>
               </items>
             </SplitPane>
@@ -172,15 +312,30 @@
       </BorderPane>
    </center>
    <top>
-      <FlowPane hgap="290.0" prefHeight="11.0" prefWidth="827.0" BorderPane.alignment="CENTER">
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <ImageView fx:id="imagenFlecha" fitHeight="38.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
-               <FlowPane.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </FlowPane.margin>
-            </ImageView>
-            <Label text="REGISTRO" />
+            <HBox alignment="CENTER" styleClass="fondoTitulo">
+               <children>
+                  <ImageView fx:id="imagenFlecha" fitHeight="38.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <HBox styleClass="fondoTitulo" GridPane.columnIndex="1">
+               <children>
+                  <Label text="REGISTRO" textFill="#f4cf07">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
-      </FlowPane>
+      </GridPane>
    </top>
 </BorderPane>

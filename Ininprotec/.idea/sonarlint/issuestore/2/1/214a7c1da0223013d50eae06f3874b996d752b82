@@ -1,49 +1,51 @@
 
-h	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Â‚øò1
-h	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112Û"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112è"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112‘"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112â"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ã‚øò1
-h	java:S112ä"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8§Ò‚øò1
+h	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8â½¡¹õ1
+h	java:S112Ç"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112å"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112ò"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112¥"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112ª"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
+h	java:S112î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ã½¡¹õ1
 }
-java:S1192ú"ZDefine a constant instead of duplicating this literal "-fx-border-color: #B30909" 8 times.(›…²üÿÿÿÿ8Ã‚øò1
+java:S1192„"ZDefine a constant instead of duplicating this literal "-fx-border-color: #B30909" 8 times.(›…²üÿÿÿÿ8ä½¡¹õ1
 ƒ
-java:S1192d"aDefine a constant instead of duplicating this literal "imagenes/imagenDefectoPerfil.png" 3 times.(˜µ²¢üÿÿÿÿ8Ã‚øò1
-n	java:S117Ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ì±ß8Ã‚øò1
+java:S1192d"aDefine a constant instead of duplicating this literal "imagenes/imagenDefectoPerfil.png" 3 times.(˜µ²¢üÿÿÿÿ8ä½¡¹õ1
+n	java:S117è"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ì±ß8å½¡¹õ1
 `
-java:S1163 "=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8Ä‚øò1
+java:S1163ª"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8æ½¡¹õ1
 W
-java:S1143 "4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8Å‚øò1
+java:S1143ª"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8ç½¡¹õ1
 k
-java:S3655»"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8¢÷…øò1
+java:S3655Å"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8Ê¾¡¹õ1
 Z
-java:S2589¬"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8ã‚øò1
-H	java:S106Ÿ"+Replace this use of System.out by a logger.(Ô–¿®8ë‚øò1
-M	java:S106«"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8ì‚øò1
+java:S2589²"7Remove this expression which always evaluates to "true"(¥Ğ¯ÿıÿÿÿÿ8Ë¾¡¹õ1
+H	java:S106 "+Replace this use of System.out by a logger.(Ô–¿®8ç¾¡¹õ1
+F	java:S108¤")Either remove or fill this block of code.(”ı¾8à¾¡¹õ1
+M	java:S106±"+Replace this use of System.out by a logger.(Õ·ĞÀıÿÿÿÿ8ìğ¡¹õ1
+F	java:S108»")Either remove or fill this block of code.(”ı¾8é¾¡¹õ1
 p
-java:S3776Ò"RRefactor this method to reduce its Cognitive Complexity from 72 to the 15 allowed.(¦ëçÍ8î‚øò1
+java:S3776Ü"RRefactor this method to reduce its Cognitive Complexity from 72 to the 15 allowed.(¦ëçÍ8í¾¡¹õ1
 M
-java:S2093—"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ó‚øò1
+java:S2093¡"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8ø¾¡¹õ1
 c
-java:S2147ã"ECombine this catch with the one at line 353, which has the same body.(ï­£Ä8‡Ÿ‚øò1
+java:S2147í"ECombine this catch with the one at line 363, which has the same body.(ï­£Ä8ş¾¡¹õ1
 U
-java:S1128"8Remove this unused import 'implement.CursoDAOImplement'.(ëÂ‡ã8éÕ”‰ó1
+java:S1128"8Remove this unused import 'implement.CursoDAOImplement'.(ëÂ‡ã8ÿ¾¡¹õ1
 ]
-java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8éÕ”‰ó1
+java:S1128"@Remove this unused import 'implement.PersonalBolsaDAOImplement'.(Ë¤Òõ8€¿¡¹õ1
 V
-java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8éÕ”‰ó1
+java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8€¿¡¹õ1
 U
-java:S1128"8Remove this unused import 'javafx.util.StringConverter'.(ûóŠ×8éÕ”‰ó1
+java:S1128"8Remove this unused import 'javafx.util.StringConverter'.(ûóŠ×8€¿¡¹õ1
 M
-java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8éÕ”‰ó1
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8€¿¡¹õ1
 Z
-java:S1128 "=Remove this unused import 'java.nio.file.StandardCopyOption'.(×ÀòÔ8éÕ”‰ó1
+java:S1128 "=Remove this unused import 'java.nio.file.StandardCopyOption'.(×ÀòÔ8€¿¡¹õ1
 M
-java:S1128$"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8éÕ”‰ó1
+java:S1128$"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8€¿¡¹õ1
 O
-java:S1068N"-Remove this unused "nuevoPath" private field.(Ù‡øÿÿÿÿ8ˆŸ‚øò1
+java:S1068N"-Remove this unused "nuevoPath" private field.(Ù‡øÿÿÿÿ8€¿¡¹õ1
 å
-java:S6541Ò"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 116 to 64, Complexity from 24 to 14, Nesting Level from 4 to 2, Number of Variables from 19 to 6.(¦ëçÍ8‰Ÿ‚øò1
+java:S6541Ü"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 116 to 64, Complexity from 24 to 14, Nesting Level from 4 to 2, Number of Variables from 19 to 6.(¦ëçÍ8¿¡¹õ1

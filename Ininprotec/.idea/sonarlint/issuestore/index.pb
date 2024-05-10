@@ -91,3 +91,5 @@ o
 ?src/main/java/com/example/ininprotec/BolsaEmpleoController.java,d\3\d3be0be914f8e2292cb84708d584d28c19919928
 i
 9src/main/java/com/example/ininprotec/LogInController.java,0\f\0ffac1e70881d60bf363b00e1887d5d71417d0fc
+@
+check.properties,0\7\07789c285e830cda784d46fd0aeae14be092076b

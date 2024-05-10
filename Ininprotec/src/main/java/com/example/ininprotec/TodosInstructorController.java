@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.util.StringConverter;
 
@@ -47,9 +49,16 @@ public class TodosInstructorController implements Initializable {
     private PersonalIIP instructorSeleccionado;
     private ObservableList<PersonalIIP> instructores= FXCollections.observableArrayList();
     private ObservableList<PersonalIIP> filtroInstructores= FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private ImageView imagenFlecha;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagenFlechia=new Image(CreacionCursoController.class.getClassLoader().getResource("imagenes/flechita.png").toExternalForm());
+        imagenFlecha.setImage(imagenFlechia);
+        imagenFlecha.setOnMouseClicked(mouseEvent -> {
+            HelloApplication.cambioVentana("principal-view.fxml");
+        });
 
         Curso sinCurso=new Curso();
         sinCurso.setNombre("Sin Curso");

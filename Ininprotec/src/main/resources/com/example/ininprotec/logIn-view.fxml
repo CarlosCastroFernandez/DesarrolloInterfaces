@@ -10,25 +10,47 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="693.0" prefWidth="1012.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.LogInController">
+<BorderPane prefHeight="684.0" prefWidth="993.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.LogInController">
    <center>
-      <BorderPane prefHeight="582.0" prefWidth="144.0">
+      <BorderPane prefHeight="582.0" prefWidth="144.0" styleClass="fondoDatos">
          <center>
-            <VBox alignment="CENTER" maxHeight="421.0" maxWidth="400.0" prefHeight="421.0" prefWidth="290.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="637.0" prefWidth="290.0" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="imageEscudo" fitHeight="86.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label text="Correo Electrónico" />
-                  <TextField fx:id="textCorreo" maxWidth="200.0" />
-                  <Label text="Contraseña" />
-                  <PasswordField fx:id="textContraseña" maxWidth="200.0" />
+                  <Label text="Correo Electrónico">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="textCorreo" maxWidth="200.0">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                     </font></TextField>
+                  <Label text="Contraseña">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                     </font></Label>
+                  <PasswordField fx:id="textContraseña" maxWidth="200.0">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                     </font></PasswordField>
                   <CheckBox fx:id="checkContraseña" mnemonicParsing="false" onAction="#recuerdoContraseña" text="Recordar Contraseña">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <font>
+                        <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                     </font>
                   </CheckBox>
-                  <Label fx:id="labelOlvido" onMouseClicked="#olvidaContraseña" text="¿Olvidaste su contraseña?" />
-                  <Button fx:id="botonIncio" mnemonicParsing="false" onAction="#inicioSesion" text="Iniciar Sesión" />
+                  <Label fx:id="labelOlvido" onMouseClicked="#olvidaContraseña" text="¿Olvidaste su contraseña?">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
+                     </font></Label>
+                  <Button fx:id="botonIncio" mnemonicParsing="false" onAction="#inicioSesion" styleClass="bordes" text="Iniciar Sesión">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                     </font></Button>
                   <ProgressIndicator fx:id="indicator" prefHeight="53.0" prefWidth="92.0" />
                </children>
                <BorderPane.margin>
