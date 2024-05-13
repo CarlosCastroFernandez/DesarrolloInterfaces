@@ -90,6 +90,8 @@ public class PrincipalController implements Initializable {
     private Button botonContraseña;
     @FXML
     private ImageView imagenTitulo;
+    @FXML
+    private Button botonLogOut;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -148,10 +150,36 @@ public class PrincipalController implements Initializable {
             HelloApplication.cambioVentana("todos-alumnos-view.fxml");
         });
         botonGestionInst.setOnAction(actionEvent -> {
-            HelloApplication.cambioVentana("todos-instructor-view.fxml");
+            try{
+            if(Utilidad.getLogPersonal().getInstructor()!=1L){
+                HelloApplication.cambioVentana("todos-instructor-view.fxml");
+            }else{
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Permisos Insuficientes");
+                alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+                alerta.showAndWait();
+            }
+            }catch (Exception e){
+
+            }
+
         });
         botonGestionAdmin.setOnAction(actionEvent -> {
-            HelloApplication.cambioVentana("todosAdmin-view.fxml");
+            try{
+            if(Utilidad.getLogPersonal().getInstructor()==1L||Utilidad.getLogPersonal().getInstructor()==2L){
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Permisos Insuficientes");
+                alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+                alerta.showAndWait();
+            }else{
+                HelloApplication.cambioVentana("todosAdmin-view.fxml");
+            }
+            }catch (Exception e){
+
+            }
+
         });
 
     }
@@ -163,27 +191,67 @@ public class PrincipalController implements Initializable {
             Utilidad.setInstructor(paso);
             Utilidad.setMiPerfil(true);
             HelloApplication.cambioVentana("registroInstructor-view.fxml");
+        }else{
+            PersonalIIP paso = Utilidad.getLogPersonal();
+            Utilidad.setAdmin(paso);
+            Utilidad.setMiPerfil(true);
+            HelloApplication.cambioVentana("registroAdmin-view.fxml");
         }
     }
 
     @FXML
     public void entrar(Event event) {
-        if (comboCurso.getValue() != null) {
+        try{
+        if (comboCurso.getValue() != null && Utilidad.getLogPersonal().getInstructor()==1L) {
+            Boolean tieneCurso=false;
+            for(int i=0;i<Utilidad.getLogPersonal().getCursoInstructor().size();i++){
+                if(Utilidad.getLogPersonal().getCursoInstructor().get(i).getCursoId().getId()==comboCurso.getValue().getId()){
+                   tieneCurso=true;
+                    Utilidad.setCurso(comboCurso.getValue());
+                    HelloApplication.cambioVentana("entradaCurso-view.fxml");
+                }
+            }
+            if(!tieneCurso){
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("ERROR");
+                alerta.setHeaderText("Sin Impartir Curso");
+                alerta.setContentText("No impartes este curso");
+                alerta.showAndWait();
+            }
+
+        } else if(comboCurso.getValue()!=null&&Utilidad.getLogPersonal().getInstructor()!=1L){
             Utilidad.setCurso(comboCurso.getValue());
             HelloApplication.cambioVentana("entradaCurso-view.fxml");
-        } else {
+
+        }else if(comboCurso.getValue()==null){
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("ERROR");
             alerta.setHeaderText("Curso No Seleccionado");
             alerta.setContentText("Por favor seleccione un curso para poder entrar en él.");
             alerta.showAndWait();
         }
+        }catch (Exception e){
+
+        }
 
     }
 
     @FXML
     public void creacionCurso(ActionEvent actionEvent) {
-        HelloApplication.cambioVentana("creacionCurso-view.fxml");
+        try{
+        if(Utilidad.getLogPersonal().getInstructor()!=1L){
+            HelloApplication.cambioVentana("creacionCurso-view.fxml");
+        }else{
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        }
+        }catch (Exception e){
+
+        }
+
     }
 
 
@@ -194,7 +262,22 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void entrarServicios(Event event) {
-        HelloApplication.cambioVentana("grafica-view.fxml");
+        try{
+
+
+        if(Utilidad.getLogPersonal().getInstructor()==0L){
+            HelloApplication.cambioVentana("grafica-view.fxml");
+        }else{
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        }
+        }catch (Exception e){
+
+        }
+
     }
 
     @FXML
@@ -204,27 +287,54 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void entrarInstructor(Event event) {
-        HelloApplication.cambioVentana("registroInstructor-view.fxml");
+        try{
+
+
+        if(Utilidad.getLogPersonal().getInstructor()!=1L){
+            HelloApplication.cambioVentana("registroInstructor-view.fxml");
+        }else{
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        }
+        }catch (Exception e){
+
+        }
+
     }
 
     @FXML
     public void edicionCurso(ActionEvent actionEvent) {
-        if (comboCurso.getValue() != null) {
+        try{
+        if (comboCurso.getValue() != null && (Utilidad.getLogPersonal().getInstructor()==0L||Utilidad.getLogPersonal().getInstructor()==2L)) {
             Utilidad.setCurso(comboCurso.getValue());
             HelloApplication.cambioVentana("creacionCurso-view.fxml");
-        } else {
+        } else if(comboCurso.getValue() != null && Utilidad.getLogPersonal().getInstructor()==1L){
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        }else if(comboCurso.getValue() ==null){
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("ERROR");
             alerta.setHeaderText("Curso No Seleccionado");
             alerta.setContentText("Por favor seleccione un curso para poder editarlo.");
             alerta.showAndWait();
         }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void borrarCurso(ActionEvent actionEvent) {
-        if (comboCurso.getValue() != null) {
-            try {
+        try{
+
+        if (comboCurso.getValue() != null&& (Utilidad.getLogPersonal().getInstructor()==0L||Utilidad.getLogPersonal().getInstructor()==2L)) {
+
                 Alert alerta = new Alert(Alert.AlertType.INFORMATION);
                 alerta.setTitle("INFORMACIÓN!");
                 alerta.setHeaderText("Borrado de Curso");
@@ -235,15 +345,22 @@ public class PrincipalController implements Initializable {
                     comboCurso.getItems().remove(comboCurso.getValue());
                 }
 
-            } catch (Exception e) {
-
-            }
-        } else {
+        } else if(comboCurso.getValue() != null&& Utilidad.getLogPersonal().getInstructor()==1L) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        }else if(comboCurso.getValue()==null){
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             alerta.setTitle("ERROR");
             alerta.setHeaderText("Selección de Curso");
             alerta.setContentText("Por favor asegurese de seleccionar el curso antes de borrarlo.");
             alerta.showAndWait();
+        }
+
+        }catch (Exception e){
+
         }
 
 
@@ -271,7 +388,21 @@ public class PrincipalController implements Initializable {
 
     @FXML
     public void entrarAdmin(Event event) {
-        HelloApplication.cambioVentana("registroAdmin-view.fxml");
+        try{
+
+
+        if (Utilidad.getLogPersonal().getInstructor() == 1L || Utilidad.getLogPersonal().getInstructor() == 2L) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Permisos Insuficientes");
+            alerta.setContentText("No obtienes los permisos suficientes para entrar en esta sección");
+            alerta.showAndWait();
+        } else {
+            HelloApplication.cambioVentana("registroAdmin-view.fxml");
+        }
+        }catch (Exception e){
+
+        }
     }
 
     @FXML
@@ -310,5 +441,11 @@ public class PrincipalController implements Initializable {
         dialog.showAndWait();
 
 
+    }
+
+    @FXML
+    public void logOut(ActionEvent actionEvent) {
+        Utilidad.setLogPersonal(null);
+        HelloApplication.cambioVentana("logIn-view.fxml");
     }
 }

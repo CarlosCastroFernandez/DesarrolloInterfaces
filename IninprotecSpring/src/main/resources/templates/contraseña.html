@@ -29,6 +29,7 @@
         }
         .no_menu{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 88vw;
@@ -100,6 +101,9 @@
         </div>
             <input type="submit" value="Cambiar">
         </form>
+        <div th:if="${error}" style="background-color: red; color: white; text-align: center; margin-top: 10px">
+            <p th:text="${message}" style="font-size: 30px"></p>
+        </div>
     </div>
 
 </div>

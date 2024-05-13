@@ -323,7 +323,7 @@ public class RegistroAlumnoController implements Initializable {
                 Alert alerta=new Alert(Alert.AlertType.ERROR);
                 alerta.setTitle("Error");
                 alerta.setHeaderText("Campos Necesarios");
-                alerta.setContentText("Se necesita rellenar ell campo nombre, apellido 1,  apellido 2");
+                alerta.setContentText("Se necesita rellenar el campo nombre, apellido 1,  apellido 2");
                 alerta.showAndWait();
             }
         }catch (Exception e){

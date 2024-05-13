@@ -97,8 +97,17 @@ public class TodosInstructorController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {
                     PersonalIIP clickedRow = row.getItem();
-                    Utilidad.setInstructor(clickedRow);
-                    HelloApplication.cambioVentana("registroInstructor-view.fxml");
+                    if(clickedRow.getInstructor()!=0L){
+                        Utilidad.setInstructor(clickedRow);
+                        HelloApplication.cambioVentana("registroInstructor-view.fxml");
+                    }else{
+                        Alert alerta = new Alert(Alert.AlertType.ERROR);
+                        alerta.setTitle("ERROR");
+                        alerta.setHeaderText("Permisos Insuficientes");
+                        alerta.setContentText("No obtienes los permisos suficientes.");
+                        alerta.showAndWait();
+                    }
+
                 }
             });
             return row;

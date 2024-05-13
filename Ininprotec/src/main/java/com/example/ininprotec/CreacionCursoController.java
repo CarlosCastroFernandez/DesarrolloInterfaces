@@ -161,7 +161,7 @@ public class CreacionCursoController implements Initializable {
                 Alert alerta=new Alert(Alert.AlertType.ERROR);
                 alerta.setTitle("ERROR");
                 alerta.setHeaderText("Error de ELIMINADO");
-                alerta.setContentText("Por favro elimine primero los modulos posteriores para poder eliminar este");
+                alerta.setContentText("Por favor elimine primero los modulos posteriores para poder eliminar este");
                 alerta.showAndWait();
             }
 

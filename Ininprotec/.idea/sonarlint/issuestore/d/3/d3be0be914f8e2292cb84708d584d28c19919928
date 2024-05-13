@@ -1,2 +1,6 @@
 
-L	java:S106D"+Replace this use of System.out by a logger.(ˆò’‡ÿÿÿÿÿ8½ºÇ‘õ1
+N
+java:S16028",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8”œØüõ1
+L	java:S106O"+Replace this use of System.out by a logger.(ˆò’‡ÿÿÿÿÿ8½ºÇ‘õ1
+G
+java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8šœØüõ1

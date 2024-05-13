@@ -1,16 +1,18 @@
 
 j
-java:S3655]"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8ª÷İ¥ó1
-Z
-java:S16119"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8°÷İ¥ó1
-Z
-java:S1611>"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8°÷İ¥ó1
-Z
-java:S1611B"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8°÷İ¥ó1
-U
-java:S1611F"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8±÷İ¥ó1
+java:S3655g"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8ª÷İ¥ó1
 N
-java:S1602J",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8±÷İ¥ó1
-E	java:S108g")Either remove or fill this block of code.(”ı¾8²÷İ¥ó1
+java:S16020",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8±÷İ¥ó1
+Z
+java:S1611C"8Remove the parentheses around the "instructor" parameter(§Ş°ªıÿÿÿÿ8°÷İ¥ó1
+Z
+java:S1611H"8Remove the parentheses around the "instructor" parameter(¹¹·Œøÿÿÿÿ8°÷İ¥ó1
+Z
+java:S1611L"8Remove the parentheses around the "instructor" parameter(‡÷¢Çşÿÿÿÿ8°÷İ¥ó1
+U
+java:S1611P"8Remove the parentheses around the "instructor" parameter(Ñ‚Áè8±÷İ¥ó1
+N
+java:S1602T",Remove useless curly braces around statement(ÉèÅ¡şÿÿÿÿ8·Â‡şõ1
+E	java:S108q")Either remove or fill this block of code.(”ı¾8²÷İ¥ó1
 Q
-java:S1068""/Remove this unused "filtroCurso" private field.(ş£Îéùÿÿÿÿ8µ÷İ¥ó1
+java:S1068$"/Remove this unused "filtroCurso" private field.(ş£Îéùÿÿÿÿ8µ÷İ¥ó1

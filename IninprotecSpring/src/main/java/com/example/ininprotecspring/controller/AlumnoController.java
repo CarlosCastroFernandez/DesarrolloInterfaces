@@ -39,7 +39,7 @@ public String inicio(){
 }
 
 @GetMapping("/succesfull")
-    public String succesfullLogin(@ModelAttribute PersonalBolsa alumno, HttpServletRequest request){
+    public String succesfullLogin(@ModelAttribute PersonalBolsa alumno, HttpServletRequest request, RedirectAttributes redirectAttributes){
     String contraseñaHash= utilService.cifrado(alumno.getContrasena());
     PersonalBolsa alumnoBBDD=repository.getByCorreo(alumno.getCorreo());
     if(alumnoBBDD!=null&&alumnoBBDD.getContrasena().equals(contraseñaHash)){
@@ -47,6 +47,8 @@ public String inicio(){
         sesion.setAttribute("alumno",alumnoBBDD);
         return "redirect:/"+alumnoBBDD.getNombre()+"/"+alumnoBBDD.getId()+"/curriculum";
     }else if(alumnoBBDD==null){
+        redirectAttributes.addFlashAttribute("error", true);
+        redirectAttributes.addFlashAttribute("message", "Usuario o contraseña incorrectos");
         return "redirect:/login";
     }else{
         return "redirect:/login";
@@ -144,20 +146,26 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
 
     }
     @PostMapping("/cambio")
-    public String cambioCOntraseña(HttpServletRequest request){
+    public String cambioCOntraseña(HttpServletRequest request, RedirectAttributes redirectAttributes){
     String contraseñaActual=request.getParameter("contrasenaActual");
     String contraseñaNueva=request.getParameter("contrasenaNueva");
     String contraseñaConfirm=request.getParameter("contrasenaConfirm");
         HttpSession session=request.getSession();
         PersonalBolsa alumnoBBD= (PersonalBolsa) session.getAttribute("alumno");
-        if(alumnoBBD!=null){
+        if(alumnoBBD!=null &&contraseñaNueva.length()>=5){
             if(alumnoBBD.getContrasena().equals(utilService.cifrado(contraseñaActual))&&contraseñaNueva.equals(contraseñaConfirm)){
                 alumnoBBD.setContrasena(utilService.cifrado(contraseñaNueva));
                 repository.save(alumnoBBD);
                 return "redirect:/"+alumnoBBD.getNombre()+"/"+alumnoBBD.getId()+"/contrasena";
             }else{
+                redirectAttributes.addFlashAttribute("error", true);
+                redirectAttributes.addFlashAttribute("message", "Compruebe de que la contraseña actual sea correcta y que coincida la contraseña nueva con la confirmación");
                 return "redirect:/"+alumnoBBD.getNombre()+"/"+alumnoBBD.getId()+"/contrasena";
             }
+        }else if(alumnoBBD!=null&&contraseñaNueva.length()<5){
+            redirectAttributes.addFlashAttribute("error", true);
+            redirectAttributes.addFlashAttribute("message", "La contraseña nueva debe de contener al menos 5 carácteres");
+            return "redirect:/"+alumnoBBD.getNombre()+"/"+alumnoBBD.getId()+"/contrasena";
         }else{
             return "redirect:/login";
         }

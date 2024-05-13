@@ -7,6 +7,7 @@ import clase.AlumnoCurso;
 import clase.PersonalBolsa;
 import implement.AlumnoCursoDAOImplement;
 import implement.PersonalBolsaDAOImplement;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
@@ -20,6 +21,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -150,6 +152,11 @@ public class EntradaCursoController implements Initializable {
     private RadioButton radioMujer;
     @javafx.fxml.FXML
     private ChoiceBox <String>comboSigno;
+    private String nombreCurso;
+    private String certificadoAño;
+    private String horas;
+    private String dias;
+    private String mes;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -1454,25 +1461,40 @@ public class EntradaCursoController implements Initializable {
     @javafx.fxml.FXML
     public void generarCertificado(ActionEvent actionEvent) {
         if(personalElegido!=null){
+            showDialog();
             Connection c= MYSQLUtil.getConexion();
             HashMap<String,Object> parametro=new HashMap<>();
             parametro.put("alumnoId",personalElegido.getId());
             parametro.put("cursoNombre",Utilidad.getCurso().getNombre());
+            parametro.put("dias",dias);
+            parametro.put("año",certificadoAño);
+            parametro.put("mes",mes);
+            parametro.put("nombreCompleto",nombreCurso);
+            parametro.put("horas",horas);
             try {
-                JasperPrint jasper= JasperFillManager.fillReport("certificadoAlumno.jasper",parametro,c);
-                JRViewer visor=new JRViewer(jasper);
-                JFrame frame = new JFrame("Certificado Del Alumnado");
-                frame.getContentPane().add(visor);
-                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                frame.pack();
-                frame.setVisible(true);
+                if(dias!=null&&certificadoAño!=null&&mes!=null&&nombreCurso!=null&&horas!=null){
+                    JasperPrint jasper= JasperFillManager.fillReport("certificadoAlumno.jasper",parametro,c);
+                    JRViewer visor=new JRViewer(jasper);
+                    JFrame frame = new JFrame("Certificado Del Alumnado");
+                    frame.getContentPane().add(visor);
+                    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    frame.pack();
+                    frame.setVisible(true);
 
-                //GENERA PDF
-                JRPdfExporter exp = new JRPdfExporter();
-                exp.setExporterInput(new SimpleExporterInput(jasper));
-                exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Certificado.pdf"));
-                exp.setConfiguration(new SimplePdfExporterConfiguration());
-                exp.exportReport();
+                    //GENERA PDF
+                    JRPdfExporter exp = new JRPdfExporter();
+                    exp.setExporterInput(new SimpleExporterInput(jasper));
+                    exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Certificado.pdf"));
+                    exp.setConfiguration(new SimplePdfExporterConfiguration());
+                    exp.exportReport();
+                }else{
+                    Alert alerta=new Alert(Alert.AlertType.ERROR);
+                    alerta.setTitle("ERROR");
+                    alerta.setHeaderText("Campos vacíos");
+                    alerta.setContentText("Por favor asegurese de que los campos introducidos no esten vacíos");
+                    alerta.showAndWait();
+                }
+
             } catch (JRException e) {
                 throw new RuntimeException(e);
             }
@@ -1780,5 +1802,79 @@ public class EntradaCursoController implements Initializable {
         }
         return contador;
     }
+
+    private void showDialog(){
+        Dialog<HashMap<String, String>> dialog = new Dialog<>();
+        dialog.setTitle("Introducir Datos");
+        dialog.setHeaderText("Introduce todos los datos:");
+
+        // Configurar tipos de botones
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        // Crear etiquetas y campos de texto
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+
+        TextField textField1 = new TextField();
+        textField1.setPromptText("Nombre Completo Del Curso");
+        TextField textField2 = new TextField();
+        textField2.setPromptText("Horas Totales");
+        TextField textField3 = new TextField();
+        textField3.setPromptText("Mes");
+        TextField textField4 = new TextField(); // Nuevo campo de texto
+        textField4.setPromptText("Año");
+        TextField textField5 = new TextField(); // Nuevo campo de texto
+        textField5.setPromptText("Días");
+
+
+
+        grid.add(new Label("Nombre  Del Curso:"), 0, 0);
+        grid.add(textField1, 1, 0);
+        grid.add(new Label("Horas Totales:"), 0, 1);
+        grid.add(textField2, 1, 1);
+        grid.add(new Label("Mes"),0,2);
+        grid.add(textField3, 1, 2);
+        grid.add(new Label("Año:"), 0, 3);
+        grid.add(textField4, 1, 3);
+        grid.add(new Label("Días:"), 0, 4);
+        grid.add(textField5, 1, 4);
+
+        // Incorporar el grid al diálogo
+        dialog.getDialogPane().setContent(grid);
+
+        // Request focus on the first field by default.
+        Platform.runLater(textField1::requestFocus);
+
+        // Convertir la entrada en un par cuando el botón OK es presionado.
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == ButtonType.OK&&!textField1.getText().isEmpty()&&!textField2.getText().isEmpty()&&
+                    !textField3.getText().isEmpty()&&!textField4.getText().isEmpty()&&!textField5.getText().isEmpty()){
+                HashMap<String, String> data = new HashMap<>();
+                data.put("nombre", textField1.getText());
+                data.put("horas", textField2.getText());
+                data.put("mes", textField3.getText());
+                data.put("año", textField4.getText());
+                data.put("dias", textField5.getText());
+
+                return data;
+            }else{
+                return null;
+            }
+
+        });
+
+        // Mostrar el diálogo y capturar el resultado
+        Optional<HashMap<String, String>> result = dialog.showAndWait();
+
+        result.ifPresent(data -> {
+            nombreCurso= data.get("nombre");
+            horas= data.get("horas");
+            mes=data.get("mes");
+            certificadoAño =data.get("año");
+            dias=data.get("dias");
+
+    });
+}
 }
 

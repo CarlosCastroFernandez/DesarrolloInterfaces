@@ -1,17 +1,17 @@
 
 Q
-java:S3740_"/Provide the parametrized type for this generic.(º¯ÖÂÿÿÿÿÿ8æ¹å¾õ1
+java:S3740a"/Provide the parametrized type for this generic.(º¯ÖÂÿÿÿÿÿ8Ñêğõ1
 †
-java:S1488L"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8ç¹å¾õ1
+java:S1488N"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8Òêğõ1
 †
-java:S1488U"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8è¹å¾õ1
+java:S1488W"dImmediately return this expression instead of assigning it to the temporary variable "instructores".(ÄØ”¿ûÿÿÿÿ8Òêğõ1
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú½ø†ÿÿÿÿÿ8ø¹å¾õ1
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú½ø†ÿÿÿÿÿ8ëêğõ1
 U
-java:S1874_"3Remove this use of "createQuery"; it is deprecated.(º¯ÖÂÿÿÿÿÿ8ı¹å¾õ1
+java:S1874a"3Remove this use of "createQuery"; it is deprecated.(º¯ÖÂÿÿÿÿÿ8õêğõ1
 N
-java:S1481a"1Remove this unused "deletedCount" local variable.(åÜèÿ8ş¹å¾õ1
+java:S1481c"1Remove this unused "deletedCount" local variable.(åÜèÿ8öêğõ1
 Q
-java:S1874d"4Remove this use of "saveOrUpdate"; it is deprecated.(ßÅìÑ8ş¹å¾õ1
+java:S1874f"4Remove this use of "saveOrUpdate"; it is deprecated.(ßÅìÑ8÷êğõ1
 U
-java:S1874o"3Remove this use of "createQuery"; it is deprecated.(ÇÊ„†úÿÿÿÿ8ÿ¹å¾õ1
+java:S1874q"3Remove this use of "createQuery"; it is deprecated.(ÇÊ„†úÿÿÿÿ8øêğõ1

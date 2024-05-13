@@ -92,6 +92,11 @@
                               </HBox>
                            </children>
                         </VBox>
+                        <Button fx:id="botonLogOut" mnemonicParsing="false" onAction="#logOut" prefHeight="98.0" prefWidth="143.0" style="-fx-background-color: red;" styleClass="bordes" text="Cerrar Sesión" textFill="WHITE">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font>
+                        </Button>
                      </children>
                      <padding>
                         <Insets top="40.0" />
