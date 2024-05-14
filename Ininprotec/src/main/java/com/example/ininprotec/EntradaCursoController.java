@@ -1371,7 +1371,7 @@ public class EntradaCursoController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("todos-alumnos-view.fxml"));
         Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 800, 600);
+            scene = new Scene(fxmlLoader.load(), 1000, 700);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

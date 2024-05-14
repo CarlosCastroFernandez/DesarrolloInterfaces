@@ -148,7 +148,15 @@ public class CursoDAOImplement implements DAOCurso {
                             ins.setParameter("idCurso", cursoBBDD.getId());
                             List<InstructorCurso> comp = ins.getResultList();
                             if (comp.isEmpty()) {
-                                cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                Boolean existe=false;
+                                for(InstructorCurso instructorCursoPrueba:cursoBBDD.getCursoInstructor()){
+                                    if(instructorCursoPrueba.getInstructorId().getId()==instructorCurso.getInstructorId().getId()){
+                                        existe=true;
+                                    }
+                                }
+                                if(!existe){
+                                    cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                }
                             }
                         }
                     }
@@ -174,7 +182,16 @@ public class CursoDAOImplement implements DAOCurso {
                                 ins.setParameter("idCurso", cursoBBDD.getId());
                                 List<InstructorCurso> comp = ins.getResultList();
                                 if (comp.isEmpty()) {
-                                    cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                    Boolean existe=false;
+                                    for(InstructorCurso instructorCursoPrueba:cursoBBDD.getCursoInstructor()){
+                                        if(instructorCursoPrueba.getInstructorId().getId()==instructorCurso.getInstructorId().getId()){
+                                            existe=true;
+                                        }
+                                    }
+                                    if(!existe){
+                                        cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                    }
+
                                 }
 
                             }
@@ -188,7 +205,16 @@ public class CursoDAOImplement implements DAOCurso {
                             query.setParameter("cursoId", cursoBBDD.getId());
                             List<InstructorCurso> instructoExistente = query.getResultList();
                             if (instructoExistente.isEmpty()) {
-                                cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                Boolean existe=false;
+                                for(InstructorCurso instructorCursoPrueba:cursoBBDD.getCursoInstructor()){
+                                    if(instructorCursoPrueba.getInstructorId().getId()==instructorCurso.getInstructorId().getId()){
+                                        existe=true;
+                                    }
+                                }
+                                if(!existe){
+                                    cursoBBDD.getCursoInstructor().add(instructorCurso);
+                                }
+
                             }
                             Query<PersonalBolsa> q = s.createQuery("select ca.alumnoId from AlumnoCurso ca where ca.cursoId.id=:idCursito");
                             q.setParameter("idCursito", cursoBBDD.getId());
@@ -223,8 +249,9 @@ public class CursoDAOImplement implements DAOCurso {
                             entrada = true;
                             System.out.println("ENTRORORORROR");
                         } else if (!instructores.get(i).equals(instructor) && cursoBBDD.getModulos().size() == 1) {
-                            Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id", InstructorCurso.class);
+                            Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
                             ins.setParameter("id", instructorBorrado.getId());
+                            ins.setParameter("idCurso",cursoBBDD.getId());
                             InstructorCurso instr = ins.getSingleResult();
                             cursoBBDD.getCursoInstructor().remove(instr);
                             s.remove(instr);
@@ -232,7 +259,8 @@ public class CursoDAOImplement implements DAOCurso {
 
                     }
                     if (entrada == false && cursoBBDD.getModulos().size() > 1) {
-                        Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id", InstructorCurso.class);
+                        Query<InstructorCurso> ins = s.createQuery("select ins from InstructorCurso ins where ins.instructor.id=:id and ins.curso.id=:idCurso", InstructorCurso.class);
+                        ins.setParameter("idCurso",cursoBBDD.getId());
                         ins.setParameter("id", instructorBorrado.getId());
                         InstructorCurso instr = ins.getSingleResult();
                         cursoBBDD.getCursoInstructor().remove(instr);

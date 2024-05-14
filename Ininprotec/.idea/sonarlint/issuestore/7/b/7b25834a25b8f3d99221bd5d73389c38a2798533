@@ -8,25 +8,25 @@ java:S37401"/Provide the parametrized type for this generic.(¥ÙÊÑ8Éöı¨ñ1
 j
 java:S1192–"GDefine a constant instead of duplicating this literal "-08-19" 3 times.(²¿«Œúÿÿÿÿ8—¿©©ñ1
 j
-java:S1192—"GDefine a constant instead of duplicating this literal "-09-09" 3 times.(É»§¸ÿÿÿÿÿ8—¿©©ñ1
-j
 java:S1192"GDefine a constant instead of duplicating this literal "-07-16" 3 times.(êÃà‰úÿÿÿÿ8—¿©©ñ1
 j
 java:S1192Ÿ"GDefine a constant instead of duplicating this literal "-07-17" 3 times.(†şå…şÿÿÿÿ8—¿©©ñ1
-j
-java:S1192"GDefine a constant instead of duplicating this literal "-05-15" 3 times.(Ã“Äùÿÿÿÿ8—¿©©ñ1
 l
 java:S1192˜"IDefine a constant instead of duplicating this literal "marbella" 3 times.(Í“şşÿÿÿÿ8—¿©©ñ1
 j
 java:S1192š"GDefine a constant instead of duplicating this literal "-10-19" 3 times.(àìŞ·úÿÿÿÿ8—¿©©ñ1
-g
-java:S1192œ"IDefine a constant instead of duplicating this literal "estepona" 3 times.(Èé¨Ï8—¿©©ñ1
 j
 java:S1192•"GDefine a constant instead of duplicating this literal "malaga" 3 times.(øŠœÄüÿÿÿÿ8˜¿©©ñ1
-i
-java:S1192‘"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 3 times.(¥Ò˜8˜¿©©ñ1
 j
 java:S1192™"GDefine a constant instead of duplicating this literal "-06-11" 3 times.(Ğş«§ùÿÿÿÿ8˜¿©©ñ1
+j
+java:S1192—"GDefine a constant instead of duplicating this literal "-09-09" 3 times.(É»§¸ÿÿÿÿÿ8—¿©©ñ1
+j
+java:S1192"GDefine a constant instead of duplicating this literal "-05-15" 3 times.(Ã“Äùÿÿÿÿ8—¿©©ñ1
+g
+java:S1192œ"IDefine a constant instead of duplicating this literal "estepona" 3 times.(Èé¨Ï8—¿©©ñ1
+i
+java:S1192‘"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 3 times.(¥Ò˜8˜¿©©ñ1
 s	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úšÎÿÿÿÿÿ8Ëöı¨ñ1
 m	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ƒM8Ëöı¨ñ1
 s	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢àúÿÿÿÿ8Ëöı¨ñ1

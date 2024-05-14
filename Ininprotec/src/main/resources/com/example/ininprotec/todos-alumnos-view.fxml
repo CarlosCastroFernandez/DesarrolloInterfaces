@@ -106,7 +106,7 @@
             </GridPane>
          </top>
          <right>
-            <SplitPane prefHeight="455.0" prefWidth="186.0" BorderPane.alignment="CENTER">
+            <SplitPane prefHeight="640.0" prefWidth="212.0" BorderPane.alignment="CENTER">
                <items>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="fondoDatos">
                      <children>
@@ -142,7 +142,7 @@
                            </font></Label>
                         <ComboBox fx:id="comboCalificacion" prefWidth="150.0" styleClass="bordes" />
                         <Separator prefWidth="200.0" />
-                        <FlowPane hgap="2.0">
+                        <FlowPane alignment="CENTER" hgap="2.0">
                            <children>
                               <Label text="Altura">
                                  <font>
