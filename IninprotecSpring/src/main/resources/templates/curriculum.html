@@ -30,6 +30,7 @@
     .no_menu{
         display: flex;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
         width: 88vw;
         background: linear-gradient( #927900, #ffd846);
@@ -55,6 +56,9 @@
             background-color: black;
             gap: 50px;
         }
+        ul:hover{
+            transform: rotate(-10deg);
+        }
     </style>
 </head>
 <body>
@@ -76,6 +80,12 @@
             <input type="file" name="file" accept="application/pdf">
             <button type="submit" style="height: 150px; width: 500px; font-size: 40px; border-style: solid; border-radius: 40px; border-width: 5px; border-color: black;">Subir Curriculum</button>
         </form>
+        <div th:if="${error}" style="border-radius: 20px; background-color: red; color: white; text-align: center; margin-top: 10px">
+            <p th:text="${message}" style="font-size: 30px"></p>
+        </div>
+        <div th:if="${success}" style="border-radius: 20px; background-color: green; color: white; text-align: center; margin-top: 10px">
+            <p th:text="${message}" style="font-size: 30px"></p>
+        </div>
     </div>
 </div>
 

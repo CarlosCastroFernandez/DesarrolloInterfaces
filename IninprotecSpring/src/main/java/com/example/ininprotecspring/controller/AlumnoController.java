@@ -69,17 +69,21 @@ public String inicio(){
 @PostMapping("/subirCV")
     public String subirCV(@RequestParam("file") MultipartFile file, RedirectAttributes redirect,HttpServletRequest request){
     HttpSession session=request.getSession();
+    System.out.println(file.getOriginalFilename());
     PersonalBolsa alumno= (PersonalBolsa) session.getAttribute("alumno");
-    if (file.isEmpty()) {
+    if (file.getOriginalFilename().isEmpty()) {
+        redirect.addFlashAttribute("error", true);
         redirect.addFlashAttribute("message", "Por favor selecciona un archivo para subir.");
         return "redirect:/"+alumno.getNombre()+"/"+alumno.getId()+"/curriculum";
     }
     try {
         alumno.setCurriculumUrl(file.getBytes());
         repository.save(alumno);
+        redirect.addFlashAttribute("success", true);  // Cambiado de "error"
         redirect.addFlashAttribute("message", "Has subido exitosamente '" + file.getOriginalFilename() + "'");
 
     } catch (Exception e) {
+        redirect.addFlashAttribute("error", true);
         redirect.addFlashAttribute("message", "Error al subir el archivo: " + file.getOriginalFilename() + "!");
     }
     return "redirect:/"+alumno.getNombre()+"/"+alumno.getId()+"/curriculum";
@@ -138,6 +142,7 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
         HttpSession session=request.getSession();
         PersonalBolsa alumno= (PersonalBolsa) session.getAttribute("alumno");
         if(alumno!=null){
+            modelo.addAttribute("alumnito",new PersonalBolsa());
             return "contraseña";
         }else{
             return "redirect:/login";
@@ -155,6 +160,8 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
             if(alumnoBBD.getContrasena().equals(utilService.cifrado(contraseñaActual))&&contraseñaNueva.equals(contraseñaConfirm)){
                 alumnoBBD.setContrasena(utilService.cifrado(contraseñaNueva));
                 repository.save(alumnoBBD);
+                redirectAttributes.addFlashAttribute("success", true);  // Cambiado de "error"
+                redirectAttributes.addFlashAttribute("message", "Contraseña Modificada con éxito");
                 return "redirect:/"+alumnoBBD.getNombre()+"/"+alumnoBBD.getId()+"/contrasena";
             }else{
                 redirectAttributes.addFlashAttribute("error", true);

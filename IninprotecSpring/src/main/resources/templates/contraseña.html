@@ -70,6 +70,9 @@
             background-color: black;
             gap: 50px;
         }
+        ul:hover{
+            transform: rotate(-10deg);
+        }
     </style>
 </head>
 <body>
@@ -89,19 +92,22 @@
         <form action="/cambio" method="post">
         <div class="componente">
             <label>Contraseña Actual</label>
-            <input th:value="${alumno.contrasena}" type="password"  name="contrasenaActual" placeholder="Ingrese contraseña actual"/>
+            <input th:value="${alumnito.contrasena}" type="password"  name="contrasenaActual" placeholder="Ingrese contraseña actual"/>
         </div>
         <div class="componente">
             <label>Nueva Contraseña</label>
-            <input th:value="${alumno.contrasena}" type="password"  name="contrasenaNueva" placeholder="Ingrese nueva contraseña"/>
+            <input th:value="${alumnito.contrasena}" type="password"  name="contrasenaNueva" placeholder="Ingrese nueva contraseña"/>
         </div>
         <div class="componente">
             <label>Confirma Contraseña</label>
-            <input th:value="${alumno.contrasena}" type="password" name="contrasenaConfirm" placeholder="Confirme nueva contraseña"/>
+            <input th:value="${alumnito.contrasena}" type="password" name="contrasenaConfirm" placeholder="Confirme nueva contraseña"/>
         </div>
             <input type="submit" value="Cambiar">
         </form>
-        <div th:if="${error}" style="background-color: red; color: white; text-align: center; margin-top: 10px">
+        <div th:if="${error}" style="border-radius: 20px; background-color: red; color: white; text-align: center; margin-top: 10px">
+            <p th:text="${message}" style="font-size: 30px"></p>
+        </div>
+        <div th:if="${success}" style="border-radius: 20px;background-color: green; color: white; text-align: center; margin-top: 10px">
             <p th:text="${message}" style="font-size: 30px"></p>
         </div>
     </div>

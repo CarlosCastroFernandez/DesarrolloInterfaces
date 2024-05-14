@@ -71,6 +71,9 @@
             background-color: black;
             gap: 50px;
         }
+        ul:hover{
+            transform: rotate(-10deg);
+        }
     </style>
 </head>
 <body>
@@ -89,43 +92,43 @@
     <div class="no_menu">
         <div class="componente">
             <label>Nombre</label>
-            <input th:value="${alumno.getNombre()}"/>
+            <input th:value="${alumno.getNombre()}"readonly/>
         </div>
         <div class="componente">
             <label>Primer Apellido</label>
-            <input th:value="${alumno.getApellido1()}"/>
+            <input th:value="${alumno.getApellido1()}"readonly/>
         </div>
         <div class="componente">
             <label>Segundo Apellido</label>
-            <input th:value="${alumno.getApellido1()}"/>
+            <input th:value="${alumno.getApellido1()}"readonly/>
         </div>
         <div class="componente">
             <label>Correo Electrónico</label>
-            <input th:value="${alumno.getCorreo()}"/>
+            <input th:value="${alumno.getCorreo()}"readonly/>
         </div>
         <div class="componente">
             <label>Teléfono</label>
-            <input th:value="${alumno.getTelefono()}"/>
+            <input th:value="${alumno.getTelefono()}"readonly/>
         </div>
         <div class="componente">
             <label>Licencia De Armas</label>
-            <input th:value="${alumno.getLicenciaArma()}"/>
+            <input th:value="${alumno.getLicenciaArma()}"readonly/>
         </div>
         <div class="componente">
             <label>Fecha De Nacimiento</label>
-            <input th:value="${alumno.getFechaNacimiento()}"/>
+            <input th:value="${alumno.getFechaNacimiento()}"readonly/>
         </div>
         <div class="componente">
             <label>Talla De Camiseta</label>
-            <input th:value="${alumno.getTallaCamiseta()}"/>
+            <input th:value="${alumno.getTallaCamiseta()}"readonly/>
         </div>
         <div class="componente">
             <label>Lugar De Residencia</label>
-            <input th:value="${alumno.getLugarResidencia()}"/>
+            <input th:value="${alumno.getLugarResidencia()}"readonly/>
         </div>
         <div class="componente">
             <label>Altura</label>
-            <input th:value="${alumno.getAltura()}"/>
+            <input th:value="${alumno.getAltura()}" readonly/>
         </div>
 
     </div>
