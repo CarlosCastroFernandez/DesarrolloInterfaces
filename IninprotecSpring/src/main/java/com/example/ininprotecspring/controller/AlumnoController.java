@@ -138,7 +138,6 @@ public String vistaCursos(HttpServletRequest request,Model modelo) {
         HttpSession session=request.getSession();
         PersonalBolsa alumno= (PersonalBolsa) session.getAttribute("alumno");
         if(alumno!=null){
-            modelo.addAttribute("alumno",new PersonalBolsa());
             return "contraseña";
         }else{
             return "redirect:/login";

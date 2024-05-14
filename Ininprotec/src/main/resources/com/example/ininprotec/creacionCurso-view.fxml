@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="626.0" prefWidth="1201.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.CreacionCursoController">
+<BorderPane prefHeight="751.0" prefWidth="1199.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.CreacionCursoController">
    <center>
       <BorderPane styleClass="fondoDatos">
          <center>
@@ -298,7 +298,7 @@
             </VBox>
          </center>
          <top>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane prefHeight="45.0" prefWidth="1199.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="416.8000122070313" minWidth="10.0" prefWidth="416.8000122070313" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.3999786376953" minWidth="10.0" prefWidth="455.1999877929687" />

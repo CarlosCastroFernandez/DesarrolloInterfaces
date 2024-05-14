@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="688.0" prefWidth="865.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.GraficaController">
+<BorderPane prefHeight="688.0" prefWidth="1203.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ininprotec.GraficaController">
    <center>
       <BorderPane>
          <center>
@@ -42,7 +42,7 @@
                     </yAxis>
                   </BarChart>
                   <Separator prefHeight="0.0" prefWidth="866.0" />
-                  <FlowPane hgap="285.0" prefHeight="50.0" prefWidth="866.0">
+                  <FlowPane hgap="455.0" prefHeight="50.0" prefWidth="866.0">
                      <children>
                         <Button fx:id="añadir" mnemonicParsing="false" prefHeight="21.0" prefWidth="38.0" styleClass="bordes">
                            <graphic>
