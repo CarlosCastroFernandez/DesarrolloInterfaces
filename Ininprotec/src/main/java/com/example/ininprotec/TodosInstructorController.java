@@ -199,6 +199,7 @@ public class TodosInstructorController implements Initializable {
         }else if(filtro.isEmpty()&&comboCurso.getValue()==null){
             tabla.setItems(instructores);
         }
+
         else{
           filtroInstructores.clear();
             for(PersonalIIP a:instructores){

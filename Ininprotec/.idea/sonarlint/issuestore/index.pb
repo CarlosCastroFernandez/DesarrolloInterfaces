@@ -93,3 +93,5 @@ i
 9src/main/java/com/example/ininprotec/LogInController.java,0\f\0ffac1e70881d60bf363b00e1887d5d71417d0fc
 @
 check.properties,0\7\07789c285e830cda784d46fd0aeae14be092076b
+b
+2src/main/java/com/example/ininprotec/Launcher.java,f\9\f9419db2c26efdc8a8b9364e4a82de96997875bf

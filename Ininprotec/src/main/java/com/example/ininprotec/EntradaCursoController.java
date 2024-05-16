@@ -1389,7 +1389,12 @@ public class EntradaCursoController implements Initializable {
         filtro= filtro.replace("ó","o");
         filtro= filtro.replace("ú","u");
         if(filtro.isEmpty()){
-            tablaCurso.setItems(alumnos);
+            if(otroBoleano){
+                tablaCurso.setItems(filtrado);
+            }else{
+                tablaCurso.setItems(alumnos);
+            }
+
         }else{
             filtroAlumnos.clear();
             if(otroBoleano){
