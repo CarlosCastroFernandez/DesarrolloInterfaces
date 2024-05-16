@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cursos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bd12597e-de7c-4d64-ad57-1a7de329c8fd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="397"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="594"/>
+	<parameter name="idAlumno" class="java.lang.Long"/>
+	<parameter name="nombreAlumno" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 
+    c.nombre,
+    ac.nota_curso,
+    m.nombre,
+    am.nota_modulo
+FROM
+    personalbolsa a
+INNER JOIN
+    alumno_curso ac ON a.id = ac.alumno_id
+INNER JOIN
+    curso c ON ac.curso_id = c.id
+INNER JOIN
+    alumno_modulo am ON a.id = am.alumno_id
+INNER JOIN
+    modulo m ON am.modulo_id = m.id AND c.id = m.curso_id
+WHERE
+    a.id = $P{idAlumno}
+    AND ac.nota_curso IS NOT NULL]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="curso"/>
+	</field>
+	<field name="nota_curso" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nota_curso"/>
+		<property name="com.jaspersoft.studio.field.label" value="nota_curso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="alumno_curso"/>
+	</field>
+	<field name="COLUMN_3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="modulo"/>
+	</field>
+	<field name="nota_modulo" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="nota_modulo"/>
+		<property name="com.jaspersoft.studio.field.label" value="nota_modulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="alumno_modulo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="80" forecolor="#F4CF07" backcolor="#050000" uuid="f1aae2fe-2466-4757-97fa-3199a62d827b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="26" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOTAS DEL ALUMNADO ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="170" y="10" width="220" height="30" uuid="b7830e14-da84-40d0-af5c-1e28b8d0f132"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreAlumno}]]></textFieldExpression>
+				<patternExpression><![CDATA[$P{nombreAlumno}]]></patternExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="21" width="160" height="20" uuid="b365d40d-1405-4703-a00d-44cf25a06fbd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Del Curso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="21" width="100" height="20" uuid="652b8119-70ae-422c-8c00-9c7f52ea7b06">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b2110fe-d438-410b-97ce-825aaff1ff25"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="21" width="120" height="20" uuid="ab55513f-2068-46de-8eb3-cf50aa5ea3a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nota Del Curso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="15" width="120" height="30" uuid="fb05a262-b3c3-4173-af42-cdd6fefe823e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3edb82a-bd4e-41ae-820a-b50c5ca53353"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nota_curso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="25" y="64" width="100" height="30" backcolor="#F7E707" uuid="00acb547-e019-46c5-9e76-bca3a1bdf0c2"/>
+				<box>
+					<pen lineWidth="1.5"/>
+					<topPen lineWidth="1.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Módulos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="125" y="64" width="100" height="30" backcolor="#F7E707" uuid="e1fc23eb-58b5-42ed-b6c0-c2743ed157c5"/>
+				<box>
+					<pen lineWidth="1.5"/>
+					<topPen lineWidth="1.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nota Del Módulo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="25" y="0" width="100" height="30" backcolor="#E3E3E3" uuid="6e035744-aa8b-48e5-8d14-ce2003092153">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="14f1de85-9e3f-4b57-9f95-06f40a9da91e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="125" y="0" width="100" height="30" backcolor="#E3E3E3" uuid="ab158f4b-0aa7-438d-b9b7-25a6fd1eb182">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65ab26c4-317e-4639-ab2e-2a3bcc12104f"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nota_modulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="56" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="73" splitType="Stretch">
+			<image>
+				<reportElement x="260" y="10" width="50" height="50" uuid="c647e8c0-56f7-402e-b814-11e09175cafb"/>
+				<imageExpression><![CDATA["https://ininprotec.com/wp-content/uploads/2021/12/cropped-ININPROTEC.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="25" y="10" width="205" height="50" uuid="80dd3032-54bf-4503-91fe-b92823fd0ddd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="26" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ININPROTEC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="10" width="124" height="30" uuid="5cea73fe-60ce-4189-a3dc-2615471c26c0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Firma Del Director:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

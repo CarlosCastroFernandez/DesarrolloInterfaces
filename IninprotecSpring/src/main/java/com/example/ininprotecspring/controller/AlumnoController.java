@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.SecureRandom;
+import java.util.HashMap;
+
 
 @Controller
 
@@ -27,6 +30,8 @@ public class AlumnoController {
     private RepositorioAlumno repository;
 @Autowired
 private Servicio utilService;
+private String concatenado;
+
 @GetMapping("/")
 public String inicio(){
     return "redirect:/login";
@@ -183,6 +188,69 @@ public String logout(HttpServletRequest request){
     session.invalidate();
     return "redirect:/login";
 }
+
+@GetMapping("/olvido")
+public String olvidoContraseña(Model modelo){
+    modelo.addAttribute("alumno",new PersonalBolsa());
+    return "olvidoCorreo";
+}
+@PostMapping("/envioCorreo")
+public String envioCorreo(@ModelAttribute PersonalBolsa alumno, RedirectAttributes redirectAttributes){
+    PersonalBolsa alumnoBBDD=repository.getByCorreo(alumno.getCorreo());
+    if(alumnoBBDD!=null){
+         concatenado="";
+        SecureRandom ran=new SecureRandom();
+        for(int i=0;i<6;i++){
+            concatenado+=(char)(ran.nextInt('A','Z'+1));
+        }
+        utilService.enviarVerificacion(alumno.getCorreo(), concatenado);
+
+      Servicio.setAlumno(alumnoBBDD);
+
+        return "redirect:/nueva";
+    }else{
+        redirectAttributes.addFlashAttribute("error",true);
+        redirectAttributes.addFlashAttribute("message","No encontramos este correo en nuestro sistema");
+        return "redirect:/olvido";
+    }
+
+}
+    @GetMapping("/nueva")
+    public String confirmacionContraseña(RedirectAttributes redirectAttributes){
+    redirectAttributes.addAttribute("contrasena","");
+        redirectAttributes.addAttribute("verificacion","");
+   return "nuevaContraseña";
+
+    }
+    @PostMapping("/nuevaPassword")
+    public String nuevaPassword(HttpServletRequest request, RedirectAttributes redirectAttributes){
+        String contraseñaNueva=request.getParameter("contrasena");
+        String codigo=request.getParameter("verificacion");
+        if(contraseñaNueva.length()>=5&&codigo.equals(concatenado)){
+         String contraseñaCifrada=utilService.cifrado(contraseñaNueva);
+           Servicio.getAlumno().setContrasena(contraseñaCifrada);
+            repository.save(Servicio.getAlumno());
+            Servicio.setAlumno(null);
+            concatenado=null;
+
+
+            return "redirect:/felicitacion";
+        }else if(contraseñaNueva.length()<5){
+            redirectAttributes.addFlashAttribute("error",true);
+            redirectAttributes.addFlashAttribute("message","La contraseña debe de tener al menos 5 carácteres");
+            return "redirect:/nueva";
+
+        }else{
+            redirectAttributes.addFlashAttribute("error",true);
+            redirectAttributes.addFlashAttribute("message","Código inválido");
+            return "redirect:/nueva";
+        }
+    }
+    @GetMapping("/felicitacion")
+    public String felicitacion(){
+    return "felicitacion";
+    }
+
     @ModelAttribute("alumno")
     public PersonalBolsa getAlumnoActual(HttpServletRequest request) {
         HttpSession session = request.getSession(false); // false para no crear una nueva sesión

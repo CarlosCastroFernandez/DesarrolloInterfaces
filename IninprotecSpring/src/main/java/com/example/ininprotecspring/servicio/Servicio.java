@@ -5,6 +5,9 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.util.JRLoader;
 import org.springframework.stereotype.Service;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -20,6 +23,16 @@ import java.util.Properties;
 
 public class Servicio {
     private static  Connection conexion;
+    private static PersonalBolsa alumno;
+
+    public static PersonalBolsa getAlumno() {
+        return alumno;
+    }
+
+    public static void setAlumno(PersonalBolsa alumno) {
+        Servicio.alumno = alumno;
+    }
+
     public  String cifrado(String password){
         MessageDigest md = null;
         try {
@@ -50,7 +63,7 @@ public class Servicio {
         // Obtener los datos, probablemente necesites ajustar esto según tus necesidades
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("idAlumno",alumno.getId());
-        parameters.put("nombreAlumno",alumno.getNombre());
+        parameters.put("nombreAlumno",alumno.getNombre()+" "+alumno.getApellido1()+" "+alumno.getApellido2());
 
         // Rellenar el reporte
         JasperPrint jasperPrint = JasperFillManager.fillReport("cursos.jasper", parameters, getConexion());
@@ -73,6 +86,34 @@ public class Servicio {
             throw new RuntimeException(e);
         }
         return conexion;
+
+    }
+    public void enviarVerificacion(String correo,String verificacion){
+        final String EMAILFROM="bubachico@gmail.com";
+        final String PASSWORDFROM="ryxu zohb jtco fsqr";
+
+        Properties prop=new Properties();
+        prop.put("mail.smtp.host","smtp.gmail.com");
+        prop.put("mail.smtp.port","587");
+        prop.put("mail.smtp.auth","true");
+        prop.put("mail.smtp.starttls.enable","true");
+        Session session=Session.getDefaultInstance(prop, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(EMAILFROM,PASSWORDFROM);
+            }
+        });
+
+        MimeMessage message=new MimeMessage(session);
+        try {
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo,true));
+            message.setSubject("Prueba Verficacion");
+            message.setText("Has solicitado una contraseña, su código de verificación es "+verificacion);
+            Transport.send(message);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 }

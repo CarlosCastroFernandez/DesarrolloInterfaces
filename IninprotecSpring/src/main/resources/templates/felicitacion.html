@@ -56,7 +56,6 @@
 
 
         .recuadro input[type="submit"] {
-            width: 125px;
             margin-bottom: 0;
             font-size: 30px;
             background-color: #F5C22F;
@@ -84,29 +83,19 @@
 <h1 id="CESURBlue">ININPROTEC</h1>
 <br>
 <div class="recuadro">
-    <h3 style="    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    color: black;
-    margin-bottom: 5%;">Iniciar Sesión</h3>
-    <form action="/succesfull" method="GET">
-        <h2 class="CESURYellow" style="    text-align: center;
-    font-size: 30px;">E-MAIL</h2>
-        <input th:value="${alumno.correo}" name="correo" class="text">
-        <br>
-        <h2 class="CESURYellow" style="text-align: center; font-size: 30px">Contraseña</h2>
-        <input th:value="${alumno.contrasena}" type="password" name="contrasena" class="text">
-        <br>
-        <br>
-        <a th:href="@{/olvido}" style="text-align: center;font-size: 20px; text-decoration: none; padding-bottom: 10px;">¿olvidaste su contraseña?</a>
-        <input  type="submit" value="Entrar">
+    <h2 class="CESURYellow" style="    text-align: center;
+    font-size: 40px;">¡¡Felicitaciones!!</h2>
+    <form action="/login" method="GET">
+
+        <p class="CESURYellow" style="text-align: center;
+    font-size: 20px;">Has cambiado su contraseña con éxito. Por favor pinche en el botón de Iniciar Sesión para redirigirse al inicio de sesión introduciendo sus nuevos datos</p>
+
+        <input  type="submit" value="Iniciar Sesión">
     </form>
 
 
 </div>
-<div th:if="${error}" style="background-color: red; color: white; text-align: center; margin-top: 10px">
-    <p th:text="${message}" style="font-size: 30px"></p>
-</div>
+
 </body>
 
 </html>

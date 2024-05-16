@@ -88,23 +88,24 @@
     font-weight: bold;
     font-size: 40px;
     color: black;
-    margin-bottom: 5%;">Iniciar Sesión</h3>
-    <form action="/succesfull" method="GET">
+    margin-bottom: 5%;">Introduce Los Datos</h3>
+    <form action="/nuevaPassword" method="POST">
         <h2 class="CESURYellow" style="    text-align: center;
-    font-size: 30px;">E-MAIL</h2>
-        <input th:value="${alumno.correo}" name="correo" class="text">
+    font-size: 30px;">Nueva Contraseña</h2>
+        <input th:value="${contrasena}" type="password" name="contrasena" class="text">
         <br>
-        <h2 class="CESURYellow" style="text-align: center; font-size: 30px">Contraseña</h2>
-        <input th:value="${alumno.contrasena}" type="password" name="contrasena" class="text">
+        <h2 class="CESURYellow" style="text-align: center; font-size: 30px">Código De Verificación</h2>
+        <input th:value="${verificacion}"  name="verificacion" class="text">
         <br>
         <br>
-        <a th:href="@{/olvido}" style="text-align: center;font-size: 20px; text-decoration: none; padding-bottom: 10px;">¿olvidaste su contraseña?</a>
         <input  type="submit" value="Entrar">
     </form>
 
-
 </div>
-<div th:if="${error}" style="background-color: red; color: white; text-align: center; margin-top: 10px">
+<div th:if="${error}" style=" border-radius: 20px; background-color: red; color: white; text-align: center; margin-top: 10px">
+    <p th:text="${message}" style="font-size: 30px"></p>
+</div>
+<div th:if="${success}" style="border-radius: 20px; background-color: green; color: white; text-align: center; margin-top: 10px">
     <p th:text="${message}" style="font-size: 30px"></p>
 </div>
 </body>

@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum</title>
     <style>
-        body{
-            box-sizing: border-box;
+        html, body {
+            width: 100%;
+            height: 100%;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
         }
         .menu{
             display: flex;
@@ -14,7 +19,7 @@
             margin-left: 0px;
             justify-content: space-evenly;
             align-items: center;
-            width: 20vw;
+            width: 25vw;
             background-color: black;
             margin-top: -21px;
         }
@@ -29,8 +34,10 @@
         .no_menu{
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
-            width: 88vw;
+            width: 100%;
+            height: 100%;
             background: linear-gradient( #927900, #ffd846);
         }
         input{
@@ -57,12 +64,60 @@
         ul:hover{
             transform: rotate(-10deg);
         }
+        .menu-button {
+            display: none;
+            background-color: #F5C22F;
+            border: none;
+            font-size: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            left: 0;
+        }
+        .botonNormal{
+            height: 150px;
+            width: 500px;
+            font-size: 40px;
+            border-style: solid;
+            border-radius: 40px;
+            border-width: 5px;
+            border-color: black;
+        }
+
+        @media (max-width: 800px) {
+            .botonNormal{
+                height: 100px; !important;
+                width: 200px; !important;
+                font-size: 15px;!important;
+                border-style: solid;!important;
+                border-radius: 40px;!important;
+                border-width: 5px;!important;
+                border-color: black;!important;
+            }
+            .menu {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="container_titulo">
-    <h1 style="text-align: center; color: #F5C22F">ININPROTEC</h1>
-    <img src="/escudo.png" alt="escudo" style="width: 100px; height: 100px">
+    <p style="color:#F5C22F; margin-left: 20px" th:text="@{${alumno.nombre} +' '+ ${alumno.apellido1}+' '+ ${alumno.apellido2}}"></p>
+    <img src="/escudo.png" alt="escudo" style="margin:0 auto; width: 100px; height: 100px">
+    <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
 </div>
 <div class="container">
     <div class="menu">
@@ -74,12 +129,29 @@
     </div>
     <div class="no_menu">
         <form th:action="@{/download}" method="post">
-            <button type="submit" style="height: 150px; width: 500px; font-size: 40px; border-style: solid; border-radius: 40px; border-width: 5px; border-color: black;">Descargar Notas</button>
+            <button class="botonNormal" type="submit">Descargar Notas</button>
         </form>
 
     </div>
 
 </div>
+<div class="mobile-menu" id="mobileMenu">
+    <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/curriculum'}">Subir Curriculum</a></ul>
+    <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/cursos'}">Ver Cursos</a></ul>
+    <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/perfil'}">Perfil</a></ul>
+    <ul><a th:href="@{'/' + ${alumno.nombre} + '/' + ${alumno.id}+'/contrasena'}">Cambiar Contraseña</a></ul>
+    <ul><a th:href="@{/cerrar}">Cerrar Sesión</a></ul>
+</div>
+<script>
+    function toggleMenu() {
+        var mobileMenu = document.getElementById("mobileMenu");
+        if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
+            mobileMenu.style.display = "flex";
+        } else {
+            mobileMenu.style.display = "none";
+        }
+    }
+</script>
 
 
 

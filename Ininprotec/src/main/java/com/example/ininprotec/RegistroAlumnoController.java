@@ -446,7 +446,8 @@ public class RegistroAlumnoController implements Initializable {
                 String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
                 imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText(""); radioMujer.setSelected(false); radioHombre.setSelected(false);
                 spAltura.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0,2.10,0.0,0.1));
-                textDni.clear();textAreaTIP.clear();
+                textDni.clear();textAreaTIP.clear(); radioAlumno.setSelected(false); radioTrabajador.setSelected(false); flowTrabajo.setVisible(false);
+                flowPaneCurso.setVisible(false);
                 if(Utilidad.getComprDNI()==false){
                     Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
                     alerta.setTitle("OK!");
