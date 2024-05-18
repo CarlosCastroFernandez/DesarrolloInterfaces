@@ -3,6 +3,7 @@ package com.example.ininprotec;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -11,11 +12,12 @@ public class HelloApplication extends Application {
     private static Stage miStage; //
     @Override
     public void start(Stage stage) throws IOException {
-        miStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("logIn-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
-        stage.setTitle("Hello!");
+        stage.setTitle("ININPROTEC");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(HelloApplication.class.getClassLoader().getResource("imagenes/escudo.png").toExternalForm()));
+        miStage = stage;
         stage.show();
     }
     public static void cambioVentana(String ruta) {

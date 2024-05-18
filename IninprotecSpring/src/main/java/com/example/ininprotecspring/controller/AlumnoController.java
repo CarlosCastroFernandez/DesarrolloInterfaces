@@ -56,6 +56,8 @@ public String inicio(){
         redirectAttributes.addFlashAttribute("message", "Usuario o contraseña incorrectos");
         return "redirect:/login";
     }else{
+        redirectAttributes.addFlashAttribute("error", true);
+        redirectAttributes.addFlashAttribute("message", "Contraseña incorrecta");
         return "redirect:/login";
     }
 }

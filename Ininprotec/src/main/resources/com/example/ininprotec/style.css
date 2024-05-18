@@ -51,6 +51,10 @@
 .table-view:row-selection .table-row-cell:filled:selected:hover {
     -fx-background-color: #f4cf07;
 }
+.table-row-cell:filled:selected {
+    -fx-background-color: #f4cf07;
+    -fx-text-background-color: black;
+}
 .table-view .column-header .label{
     -fx-text-fill: #333333;
     -fx-alignment: CENTER;
@@ -60,11 +64,11 @@
 }
 /* archivo style.css */
 .default-color0.chart-bar {
-    -fx-bar-fill:#f4cf07; /* Cambia el color de las barras de la primera serie a rojo */
+    -fx-bar-fill:#f4cf07;
 }
 
 .default-color1.chart-bar {
-    -fx-bar-fill:red;  /* Cambia el color de las barras de la segunda serie a azul */
+    -fx-bar-fill:red;
 }
 .vboxFondo{
     -fx-background-image: url("../../../imagenes/soldado.png");
