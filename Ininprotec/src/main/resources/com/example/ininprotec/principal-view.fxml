@@ -56,7 +56,7 @@
                                     <ImageView fx:id="imagenNombre" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
                                     <Label fx:id="labelNombre" text="Nombre">
                                        <font>
-                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="12.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -69,7 +69,7 @@
                                     <ImageView fx:id="imagenEmail" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
                                     <Label fx:id="labelEmail" text="E-mail">
                                        <font>
-                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="12.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -82,7 +82,7 @@
                                     <ImageView fx:id="imagenDni" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
                                     <Label fx:id="labelDNI" text="DNI">
                                        <font>
-                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="18.0" />
+                                          <Font name="Lucida Sans Typewriter Bold Oblique" size="12.0" />
                                        </font>
                                     </Label>
                                  </children>

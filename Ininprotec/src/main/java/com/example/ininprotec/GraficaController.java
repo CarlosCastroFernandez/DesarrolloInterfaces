@@ -447,15 +447,28 @@ private ArrayList<String>listaFechaFestivos(ArrayList<String>listadoFestivos){
     @javafx.fxml.FXML
     public void borrarServicio(ActionEvent actionEvent) {
         if(servicioElegido!=null){
-            for (int i=0;i<obs.size();i++){
-                if(obs.get(i).toString().contains(servicioElegido.getNombre())){
-                    (new ServicioDAOImplement()).borrar(servicioElegido);
-                    obs.remove(obs.get(i));
-                    listaInicialTabla.remove(servicioElegido);
-
-                    break;
+            Alert alerta=new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("INFORMACIÓN");
+            alerta.setHeaderText("Borrado de Servicio");
+            alerta.setContentText("¿Seguro que deseas borrar el servicio "+servicioElegido.getNombre()+"?");
+            Optional<ButtonType> tipo=alerta.showAndWait();
+            if(tipo.get()==ButtonType.OK){
+                for (int i=0;i<obs.size();i++){
+                    if(obs.get(i).toString().contains(servicioElegido.getNombre())){
+                        (new ServicioDAOImplement()).borrar(servicioElegido);
+                        obs.remove(obs.get(i));
+                        listaInicialTabla.remove(servicioElegido);
+                        break;
+                    }
                 }
             }
+
+        }else{
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("Selección de Servicio");
+            alerta.setContentText("Por favor assegurese de seleccionar primero un servicio en la tabla");
+            alerta.showAndWait();
         }
 
     }
