@@ -50,7 +50,10 @@
                                  <font>
                                     <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
                                  </font></Button>
-                              <Label fx:id="labelURL" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER" />
+                              <Label fx:id="labelURL" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Bold Oblique" size="12.0" />
+                                 </font></Label>
                            </children>
                         </FlowPane>
                         <Separator prefHeight="11.0" prefWidth="235.0" />

@@ -87,7 +87,31 @@
 }
 
 
-/* tamaño, bordes y color de fondo de los titulos*/
+.combo-box-popup .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-family: "Lucida Sans Typewriter";
+}
 
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #f4cf07;
+    -fx-text-fill: black;
+    -fx-font-family: "Lucida Sans Typewriter";
+}
+.menu-item {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-family: "Lucida Sans Typewriter";
+}
 
-/* hacer transparente el fondo de los titulos*/
+.menu-item:hover {
+    -fx-background-color: #f4cf07;
+    -fx-text-fill: black;
+    -fx-font-family: "Lucida Sans Typewriter";
+}
+
+.labelOlvido:hover{
+    -fx-text-fill: white;
+    -fx-cursor: pointer;
+}
+

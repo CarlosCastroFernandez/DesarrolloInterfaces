@@ -43,7 +43,7 @@
                         <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
                      </font>
                   </CheckBox>
-                  <Label fx:id="labelOlvido" onMouseClicked="#olvidaContraseña" text="¿Olvidaste su contraseña?">
+                  <Label fx:id="labelOlvido" onMouseClicked="#olvidaContraseña" styleClass="labelOlvido" text="¿Olvidaste su contraseña?">
                      <font>
                         <Font name="Lucida Sans Typewriter Oblique" size="12.0" />
                      </font></Label>
