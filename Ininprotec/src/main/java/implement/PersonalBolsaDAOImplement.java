@@ -104,6 +104,7 @@ public class PersonalBolsaDAOImplement implements DAOPersonalBolsa {
             personalBBDD.setAltura(personal.getAltura());
             personalBBDD.setSexo(personal.getSexo());
             personalBBDD.setIdioma(personal.getIdioma());
+            personalBBDD.setEsAlumno(personal.getEsAlumno());
             t.commit();
         } catch (DNIIncorrecto e) {
             throw new RuntimeException(e);

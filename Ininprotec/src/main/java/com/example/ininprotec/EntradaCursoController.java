@@ -1375,7 +1375,8 @@ public class EntradaCursoController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        stage.setTitle("Alumnos");
+        stage.setTitle("ININPROTEC");
+        stage.getIcons().add(new Image(EntradaCursoController.class.getClassLoader().getResource("imagenes/escudo.png").toExternalForm()));
         stage.setScene(scene);
         stage.show();
     }
