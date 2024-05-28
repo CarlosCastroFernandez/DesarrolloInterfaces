@@ -1,326 +1,326 @@
 
 h	java:S112à
-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8íÊŒ‘÷1
-h	java:S112¶"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8îÊŒ‘÷1
-h	java:S112à"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8îÊŒ‘÷1
+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Å‹—±û1
+h	java:S112·"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Æ‹—±û1
+h	java:S112á"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Æ‹—±û1
 Q
-java:S3740F"/Provide the parametrized type for this generic.(Á³Éôÿÿÿÿÿ8îÊŒ‘÷1
+java:S3740F"/Provide the parametrized type for this generic.(Á³Éôÿÿÿÿÿ8È‹—±û1
 Q
-java:S3740J"/Provide the parametrized type for this generic.(Åêµ²úÿÿÿÿ8îÊŒ‘÷1
+java:S3740J"/Provide the parametrized type for this generic.(Åêµ²úÿÿÿÿ8È‹—±û1
 Q
-java:S3740N"/Provide the parametrized type for this generic.(Ä¬¾”ÿÿÿÿÿ8îÊŒ‘÷1
+java:S3740N"/Provide the parametrized type for this generic.(Ä¬¾”ÿÿÿÿÿ8È‹—±û1
 Q
-java:S3740R"/Provide the parametrized type for this generic.(ôûİøÿÿÿÿ8îÊŒ‘÷1
+java:S3740R"/Provide the parametrized type for this generic.(ôûİøÿÿÿÿ8È‹—±û1
 L
-java:S3740V"/Provide the parametrized type for this generic.(êˆ‚µ8îÊŒ‘÷1
+java:S3740V"/Provide the parametrized type for this generic.(êˆ‚µ8È‹—±û1
 Q
-java:S3740Z"/Provide the parametrized type for this generic.(ÊÃÕ£ıÿÿÿÿ8îÊŒ‘÷1
+java:S3740Z"/Provide the parametrized type for this generic.(ÊÃÕ£ıÿÿÿÿ8È‹—±û1
 L
-java:S3740^"/Provide the parametrized type for this generic.(¿ÚŒã8îÊŒ‘÷1
+java:S3740^"/Provide the parametrized type for this generic.(¿ÚŒã8È‹—±û1
 L
-java:S3740u"/Provide the parametrized type for this generic.(ğ‡¥Î8ïÊŒ‘÷1
+java:S3740u"/Provide the parametrized type for this generic.(ğ‡¥Î8È‹—±û1
 L
-java:S3740w"/Provide the parametrized type for this generic.(ıã8ïÊŒ‘÷1
+java:S3740w"/Provide the parametrized type for this generic.(ıã8È‹—±û1
 p
-java:S1192"MDefine a constant instead of duplicating this literal "calificacion" 3 times.(á¶Õ‰ûÿÿÿÿ8üÊŒ‘÷1
+java:S1192"MDefine a constant instead of duplicating this literal "calificacion" 3 times.(á¶Õ‰ûÿÿÿÿ8Ö‹—±û1
 ‰
-java:S1192…"fDefine a constant instead of duplicating this literal " where ca.cursoId.id=:idCurso and ca." 4 times.(¶€®ˆüÿÿÿÿ8üÊŒ‘÷1
+java:S1192†"fDefine a constant instead of duplicating this literal " where ca.cursoId.id=:idCurso and ca." 4 times.(¶€®ˆüÿÿÿÿ8Ö‹—±û1
 f
-java:S1192Î"HDefine a constant instead of duplicating this literal "idioma" 31 times.(Š† °8üÊŒ‘÷1
+java:S1192Î"HDefine a constant instead of duplicating this literal "idioma" 31 times.(Š† °8Ö‹—±û1
 l
-java:S1192£"IDefine a constant instead of duplicating this literal " and ca." 6 times.(üÀÚòøÿÿÿÿ8üÊŒ‘÷1
+java:S1192¤"IDefine a constant instead of duplicating this literal " and ca." 6 times.(üÀÚòøÿÿÿÿ8Ö‹—±û1
 i
-java:S1192È"KDefine a constant instead of duplicating this literal "formacion" 31 times.(ÕÙî£8üÊŒ‘÷1
+java:S1192È"KDefine a constant instead of duplicating this literal "formacion" 31 times.(ÕÙî£8×‹—±û1
 z
-java:S1192š"WDefine a constant instead of duplicating this literal "ca.alumnoId.titulacion" 9 times.(·ÈÙßşÿÿÿÿ8üÊŒ‘÷1
+java:S1192›"WDefine a constant instead of duplicating this literal "ca.alumnoId.titulacion" 9 times.(·ÈÙßşÿÿÿÿ8×‹—±û1
 j
-java:S1192"LDefine a constant instead of duplicating this literal "ca.fechaFin" 3 times.(ûœ¥Õ8üÊŒ‘÷1
+java:S1192Ÿ"LDefine a constant instead of duplicating this literal "ca.fechaFin" 3 times.(ûœ¥Õ8×‹—±û1
 e
-java:S1192ş"GDefine a constant instead of duplicating this literal "fecha" 30 times.(ÙÓï˜8ıÊŒ‘÷1
+java:S1192ÿ"GDefine a constant instead of duplicating this literal "fecha" 30 times.(ÙÓï˜8×‹—±û1
 f
-java:S1192ö"HDefine a constant instead of duplicating this literal "altura" 31 times.(ïº¯8ıÊŒ‘÷1
+java:S1192÷"HDefine a constant instead of duplicating this literal "altura" 31 times.(ïº¯8Ø‹—±û1
 q
-java:S1192–"SDefine a constant instead of duplicating this literal "ca.alumnoId.altura" 6 times.(¬Âìâ8ıÊŒ‘÷1
+java:S1192—"SDefine a constant instead of duplicating this literal "ca.alumnoId.altura" 6 times.(¬Âìâ8Ø‹—±û1
 d
-java:S1192Æ"FDefine a constant instead of duplicating this literal "horas" 3 times.(¯Úñì8şÊŒ‘÷1
+java:S1192Ç"FDefine a constant instead of duplicating this literal "horas" 3 times.(¯Úñì8Ø‹—±û1
 t
-java:S1192 "QDefine a constant instead of duplicating this literal "ca.alumnoId.sexo" 6 times.(êÿøÑÿÿÿÿÿ8şÊŒ‘÷1
+java:S1192¡"QDefine a constant instead of duplicating this literal "ca.alumnoId.sexo" 6 times.(êÿøÑÿÿÿÿÿ8Ø‹—±û1
 v
-java:S1192˜"SDefine a constant instead of duplicating this literal "ca.alumnoId.idioma" 6 times.(¬Ù·£úÿÿÿÿ8şÊŒ‘÷1
+java:S1192™"SDefine a constant instead of duplicating this literal "ca.alumnoId.idioma" 6 times.(¬Ù·£úÿÿÿÿ8Ø‹—±û1
 n
-java:S1192…"KDefine a constant instead of duplicating this literal "sentencia" 23 times.(¶€®ˆüÿÿÿÿ8şÊŒ‘÷1
+java:S1192†"KDefine a constant instead of duplicating this literal "sentencia" 23 times.(¶€®ˆüÿÿÿÿ8Ø‹—±û1
 g
-java:S1192Ë"IDefine a constant instead of duplicating this literal "ca.fecha" 3 times.(Ô·èè8şÊŒ‘÷1
+java:S1192Ì"IDefine a constant instead of duplicating this literal "ca.fecha" 3 times.(Ô·èè8Ø‹—±û1
 n
-java:S1192º"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 8 times.(šÆÔüüÿÿÿÿ8şÊŒ‘÷1
+java:S1192º"KDefine a constant instead of duplicating this literal "dd/MM/yyyy" 8 times.(šÆÔüüÿÿÿÿ8Ù‹—±û1
 Š
-java:S1192…"gDefine a constant instead of duplicating this literal "select ca.alumnoId from AlumnoCurso ca" 4 times.(¶€®ˆüÿÿÿÿ8şÊŒ‘÷1
+java:S1192†"gDefine a constant instead of duplicating this literal "select ca.alumnoId from AlumnoCurso ca" 4 times.(¶€®ˆüÿÿÿÿ8Ù‹—±û1
 K
 java:S5411Î
-"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8‘ËŒ‘÷1
+"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8ô‹—±û1
 F
-java:S5411ğ
-"(Use a primitive boolean expression here.(í‹ï8’ËŒ‘÷1
+java:S5411ñ
+"(Use a primitive boolean expression here.(í‹ï8ô‹—±û1
 F
-java:S5411ø
-"(Use a primitive boolean expression here.(í‹ï8áıÂ‹ø1
+java:S5411ù
+"(Use a primitive boolean expression here.(í‹ï8ô‹—±û1
 Z
-java:S4973ù"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8˜ËŒ‘÷1
+java:S4973ù"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ü‹—±û1
 Z
-java:S4973¹"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8˜ËŒ‘÷1
+java:S4973¹"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ı‹—±û1
 Z
-java:S4973ƒ"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8˜ËŒ‘÷1
+java:S4973ƒ"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ı‹—±û1
 Z
-java:S4973×"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8˜ËŒ‘÷1
+java:S4973×"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ı‹—±û1
 Z
-java:S4973¶"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8˜ËŒ‘÷1
+java:S4973¶"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ÿ‹—±û1
 Z
-java:S4973"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8™ËŒ‘÷1
+java:S4973"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8ÿ‹—±û1
 Z
-java:S4973"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8™ËŒ‘÷1
+java:S4973"<Strings and Boxed types should be compared using "equals()".(¥Ò¢À8€Œ—±û1
 Z
-java:S4973Ø"<Strings and Boxed types should be compared using "equals()".(‹ä‰Ê8šËŒ‘÷1
+java:S4973Ù"<Strings and Boxed types should be compared using "equals()".(‹ä‰Ê8Œ—±û1
 ]
-java:S2184ë"@Cast one of the operands of this integer division to a "double".(ÜùÇ58ËŒ‘÷1
+java:S2184ì"@Cast one of the operands of this integer division to a "double".(ÜùÇ58‰Œ—±û1
 ¨
-java:S1862œ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(·ÈÙßşÿÿÿÿ8¡ËŒ‘÷1
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(·ÈÙßşÿÿÿÿ8Œ—±û1
 £
-java:S1862º"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(œÀûü8¡ËŒ‘÷1
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(œÀûü8Œ—±û1
 £
-java:S1862å"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(åÇéÆ8¢ËŒ‘÷1
+java:S1862æ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(åÇéÆ8Œ—±û1
 e
-java:S3518§"BMake sure "numeroCursos" can't be zero before doing this division.(ı¡±Æùÿÿÿÿ8ÑÎŒ‘÷1
+java:S3518§"BMake sure "numeroCursos" can't be zero before doing this division.(ı¡±Æùÿÿÿÿ8´”—±û1
 k
-java:S3655â"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8ÑÎŒ‘÷1
-w	java:S116œ"ZRename this field "certificadoAÃ±o" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÄªÕ8ÔÎŒ‘÷1
+java:S3655ã"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8´”—±û1
+w	java:S116œ"ZRename this field "certificadoAÃ±o" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÄªÕ8¸”—±û1
 v
-java:S3776¢"SRefactor this method to reduce its Cognitive Complexity from 378 to the 15 allowed.(•‘İŸüÿÿÿÿ8àÎŒ‘÷1
+java:S3776¢"SRefactor this method to reduce its Cognitive Complexity from 378 to the 15 allowed.(•‘İŸüÿÿÿÿ8Ó”—±û1
 D
-java:S1110Ç"!Remove these useless parentheses.(Ëˆ‹—ÿÿÿÿÿ8çÎŒ‘÷1
+java:S1110Ç"!Remove these useless parentheses.(Ëˆ‹—ÿÿÿÿÿ8Ş”—±û1
 D
-java:S1110Í"!Remove these useless parentheses.(Àğ»İşÿÿÿÿ8çÎŒ‘÷1
-D	java:S131Ó""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8èÎŒ‘÷1
+java:S1110Í"!Remove these useless parentheses.(Àğ»İşÿÿÿÿ8Ş”—±û1
+D	java:S131Ó""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8à”—±û1
 R
-java:S1611ÿ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ëÎŒ‘÷1
+java:S1611ÿ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ä”—±û1
 W
-java:S1611ƒ"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8ëÎŒ‘÷1
+java:S1611ƒ"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8å”—±û1
 W
-java:S1611‰"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8ëÎŒ‘÷1
+java:S1611‰"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8å”—±û1
 R
-java:S1611¿"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ïÎŒ‘÷1
+java:S1611¿"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ë”—±û1
 W
-java:S1611Ã"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8ïÎŒ‘÷1
+java:S1611Ã"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8ì”—±û1
 W
-java:S1611É"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8ÏŒ‘÷1
+java:S1611É"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8í”—±û1
 W
-java:S1611Ó"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8ÏŒ‘÷1
+java:S1611Ó"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8î”—±û1
 R
-java:S1611‰"4Remove the parentheses around the "alumno" parameter(±Úâ‚8“ÏŒ‘÷1
+java:S1611‰"4Remove the parentheses around the "alumno" parameter(±Úâ‚8ô”—±û1
 W
-java:S1611"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8“ÏŒ‘÷1
+java:S1611"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8ô”—±û1
 W
-java:S1611“"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8”ÏŒ‘÷1
+java:S1611“"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8õ”—±û1
 W
-java:S1611"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8•ÏŒ‘÷1
+java:S1611"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8ö”—±û1
 W
-java:S1611§"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8•ÏŒ‘÷1
+java:S1611§"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8ø”—±û1
 R
-java:S1611İ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8™ÏŒ‘÷1
+java:S1611İ"4Remove the parentheses around the "alumno" parameter(±Úâ‚8€•—±û1
 W
-java:S1611á"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8™ÏŒ‘÷1
+java:S1611á"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8•—±û1
 W
-java:S1611ç"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8šÏŒ‘÷1
+java:S1611ç"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8‚•—±û1
 W
-java:S1611ñ"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8šÏŒ‘÷1
+java:S1611ñ"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8„•—±û1
 W
-java:S1611û"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8›ÏŒ‘÷1
+java:S1611û"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8…•—±û1
 W
-java:S1611…"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8œÏŒ‘÷1
+java:S1611…"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8‡•—±û1
 R
-java:S1611¼"4Remove the parentheses around the "alumno" parameter(±Úâ‚8 ÏŒ‘÷1
+java:S1611¼"4Remove the parentheses around the "alumno" parameter(±Úâ‚8•—±û1
 W
-java:S1611À"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8 ÏŒ‘÷1
+java:S1611À"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8•—±û1
 W
-java:S1611Æ"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8 ÏŒ‘÷1
+java:S1611Æ"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8•—±û1
 W
-java:S1611Ğ"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8¡ÏŒ‘÷1
+java:S1611Ğ"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8‘•—±û1
 W
-java:S1611Ú"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¢ÏŒ‘÷1
+java:S1611Ú"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8’•—±û1
 W
-java:S1611ä"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8£ÏŒ‘÷1
+java:S1611ä"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8”•—±û1
 W
-java:S1611î"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8¤ÏŒ‘÷1
+java:S1611î"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8••—±û1
 R
-java:S1611¤"4Remove the parentheses around the "alumno" parameter(±Úâ‚8¨ÏŒ‘÷1
+java:S1611¤"4Remove the parentheses around the "alumno" parameter(±Úâ‚8•—±û1
 W
-java:S1611¨"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8¨ÏŒ‘÷1
+java:S1611¨"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8•—±û1
 W
-java:S1611®"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8©ÏŒ‘÷1
+java:S1611®"4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8•—±û1
 W
-java:S1611¸"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8ªÏŒ‘÷1
+java:S1611¸"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8 •—±û1
 W
-java:S1611Â"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8ªÏŒ‘÷1
+java:S1611Â"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¢•—±û1
 W
-java:S1611Ì"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8«ÏŒ‘÷1
+java:S1611Ì"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8¤•—±û1
 W
-java:S1611Ö"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8¬ÏŒ‘÷1
+java:S1611Ö"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8¦•—±û1
 R
-java:S1611à"4Remove the parentheses around the "alumno" parameter(§“¹¯8­ÏŒ‘÷1
+java:S1611à"4Remove the parentheses around the "alumno" parameter(§“¹¯8¨•—±û1
 R
-java:S1611–"4Remove the parentheses around the "alumno" parameter(±Úâ‚8±ÏŒ‘÷1
+java:S1611–"4Remove the parentheses around the "alumno" parameter(±Úâ‚8²•—±û1
 W
-java:S1611š"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8±ÏŒ‘÷1
+java:S1611š"4Remove the parentheses around the "alumno" parameter(€ØéŠùÿÿÿÿ8²•—±û1
 W
-java:S1611 "4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8²ÏŒ‘÷1
+java:S1611 "4Remove the parentheses around the "alumno" parameter(µÜ±ûÿÿÿÿ8³•—±û1
 W
-java:S1611ª"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8³ÏŒ‘÷1
+java:S1611ª"4Remove the parentheses around the "alumno" parameter(ê™°úÿÿÿÿ8´•—±û1
 W
-java:S1611´"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8³ÏŒ‘÷1
+java:S1611´"4Remove the parentheses around the "alumno" parameter(Àäã•ûÿÿÿÿ8¶•—±û1
 W
-java:S1611¾"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8´ÏŒ‘÷1
+java:S1611¾"4Remove the parentheses around the "alumno" parameter(º¼’Üÿÿÿÿÿ8·•—±û1
 W
-java:S1611È"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8µÏŒ‘÷1
+java:S1611È"4Remove the parentheses around the "alumno" parameter(ÉÚùÍúÿÿÿÿ8¸•—±û1
 R
-java:S1611Ò"4Remove the parentheses around the "alumno" parameter(§“¹¯8¶ÏŒ‘÷1
+java:S1611Ò"4Remove the parentheses around the "alumno" parameter(§“¹¯8¹•—±û1
 W
-java:S1611Ü"4Remove the parentheses around the "alumno" parameter(„Û–úÿÿÿÿ8·ÏŒ‘÷1
+java:S1611Ü"4Remove the parentheses around the "alumno" parameter(„Û–úÿÿÿÿ8»•—±û1
 v
-java:S3776‡"SRefactor this method to reduce its Cognitive Complexity from 307 to the 15 allowed.(—Ô­‰ÿÿÿÿÿ8»ÏŒ‘÷1
+java:S3776‡"SRefactor this method to reduce its Cognitive Complexity from 307 to the 15 allowed.(—Ô­‰ÿÿÿÿÿ8Â•—±û1
 P
-java:S1481Š"2Remove this unused "posicionCurso" local variable.(ÊïÉ§8¿ÏŒ‘÷1
-D	java:S131‹""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8ÀÏŒ‘÷1
+java:S1481Š"2Remove this unused "posicionCurso" local variable.(ÊïÉ§8È•—±û1
+D	java:S131‹""Add a default case to this switch.(ùÚÓíøÿÿÿÿ8Ë•—±û1
 H	java:S106Ì
-"+Replace this use of System.out by a logger.(¹˜®©8¯ĞŒ‘÷1
+"+Replace this use of System.out by a logger.(¹˜®©8Ÿ–—±û1
 u
-java:S3776è
-"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(‹Á„ûÿÿÿÿ8ÇĞŒ‘÷1
+java:S3776é
+"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(‹Á„ûÿÿÿÿ8¾–—±û1
 a
-java:S1117£">Rename "parametro" which hides the field declared at line 130.(Û™ÿ½şÿÿÿÿ8ÎĞŒ‘÷1
+java:S1117¤">Rename "parametro" which hides the field declared at line 130.(Û™ÿ½şÿÿÿÿ8Æ–—±û1
 `
-java:S3252«"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8ÒĞŒ‘÷1
+java:S3252¬"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8Ë–—±û1
 a
-java:S1117¿">Rename "parametro" which hides the field declared at line 130.(Û™ÿ½şÿÿÿÿ8ÜĞŒ‘÷1
+java:S1117À">Rename "parametro" which hides the field declared at line 130.(Û™ÿ½şÿÿÿÿ8Ø–—±û1
 `
-java:S3252Í"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8È‘÷1
+java:S3252Î"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ê¤³ñúÿÿÿÿ8Û–—±û1
 v
-java:S3776æ"SRefactor this method to reduce its Cognitive Complexity from 320 to the 15 allowed.(à„¡çÿÿÿÿÿ8áĞŒ‘÷1
+java:S3776ç"SRefactor this method to reduce its Cognitive Complexity from 320 to the 15 allowed.(à„¡çÿÿÿÿÿ8ß–—±û1
 ]
-java:S1854ó"@Remove this useless assignment to local variable "personalBBDD".(ÎÒ¾M8äĞŒ‘÷1
-H	java:S106ı"+Replace this use of System.out by a logger.(™Ä»”8èĞŒ‘÷1
-D	java:S131ƒ""Add a default case to this switch.(¿ü£¶úÿÿÿÿ8éĞŒ‘÷1
+java:S1854ô"@Remove this useless assignment to local variable "personalBBDD".(ÎÒ¾M8â–—±û1
+H	java:S106ş"+Replace this use of System.out by a logger.(™Ä»”8è–—±û1
+D	java:S131„""Add a default case to this switch.(¿ü£¶úÿÿÿÿ8é–—±û1
 D
-java:S1110†"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8êĞŒ‘÷1
+java:S1110‡"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8é–—±û1
 g
-java:S3358†"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8êĞŒ‘÷1
+java:S3358‡"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8é–—±û1
 g
-java:S3358†"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8êĞŒ‘÷1
+java:S3358‡"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ë–—±û1
 g
-java:S3358†"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8êĞŒ‘÷1
+java:S3358‡"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ë–—±û1
 g
-java:S3358†"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ëĞŒ‘÷1
-H	java:S106ˆ"+Replace this use of System.out by a logger.(õ­ªĞ8ëĞŒ‘÷1
+java:S3358‡"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ë–—±û1
+H	java:S106‰"+Replace this use of System.out by a logger.(õ­ªĞ8ë–—±û1
 D
-java:S1110’"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8ìĞŒ‘÷1
+java:S1110“"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8ì–—±û1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ìĞŒ‘÷1
+java:S3358“"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ì–—±û1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ìĞŒ‘÷1
+java:S3358“"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ì–—±û1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ìĞŒ‘÷1
+java:S3358“"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8í–—±û1
 g
-java:S3358’"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8íĞŒ‘÷1
+java:S3358“"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8í–—±û1
 D
-java:S1110£"!Remove these useless parentheses.(üÀÚòøÿÿÿÿ8îĞŒ‘÷1
+java:S1110¤"!Remove these useless parentheses.(üÀÚòøÿÿÿÿ8î–—±û1
 g
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8îĞŒ‘÷1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8î–—±û1
 g
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8ïĞŒ‘÷1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8î–—±û1
 g
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8ïĞŒ‘÷1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8î–—±û1
 g
-java:S3358£"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8ïĞŒ‘÷1
-H	java:S106¥"+Replace this use of System.out by a logger.(õ­ªĞ8ğĞŒ‘÷1
+java:S3358¤"DExtract this nested ternary operation into an independent statement.(üÀÚòøÿÿÿÿ8î–—±û1
+H	java:S106¦"+Replace this use of System.out by a logger.(õ­ªĞ8ï–—±û1
 D
-java:S1110°"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8ñĞŒ‘÷1
+java:S1110±"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8ğ–—±û1
 g
-java:S3358°"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ñĞŒ‘÷1
+java:S3358±"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ğ–—±û1
 g
-java:S3358°"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ñĞŒ‘÷1
+java:S3358±"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ğ–—±û1
 g
-java:S3358°"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ñĞŒ‘÷1
+java:S3358±"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ğ–—±û1
 g
-java:S3358°"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ñĞŒ‘÷1
+java:S3358±"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ğ–—±û1
 D
-java:S1110Á"!Remove these useless parentheses.(µ®ü†ıÿÿÿÿ8óĞŒ‘÷1
+java:S1110Â"!Remove these useless parentheses.(µ®ü†ıÿÿÿÿ8ñ–—±û1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8óĞŒ‘÷1
+java:S3358Â"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ñ–—±û1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ôĞŒ‘÷1
+java:S3358Â"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ò–—±û1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ôĞŒ‘÷1
+java:S3358Â"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ò–—±û1
 g
-java:S3358Á"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ôĞŒ‘÷1
+java:S3358Â"DExtract this nested ternary operation into an independent statement.(µ®ü†ıÿÿÿÿ8ò–—±û1
 ?
-java:S1110Ğ"!Remove these useless parentheses.(úº¼–8öĞŒ‘÷1
+java:S1110Ñ"!Remove these useless parentheses.(úº¼–8ó–—±û1
 b
-java:S3358Ğ"DExtract this nested ternary operation into an independent statement.(úº¼–8öĞŒ‘÷1
+java:S3358Ñ"DExtract this nested ternary operation into an independent statement.(úº¼–8ó–—±û1
 b
-java:S3358Ğ"DExtract this nested ternary operation into an independent statement.(úº¼–8öĞŒ‘÷1
+java:S3358Ñ"DExtract this nested ternary operation into an independent statement.(úº¼–8ô–—±û1
 b
-java:S3358Ğ"DExtract this nested ternary operation into an independent statement.(úº¼–8÷ĞŒ‘÷1
+java:S3358Ñ"DExtract this nested ternary operation into an independent statement.(úº¼–8ô–—±û1
 b
-java:S3358Ğ"DExtract this nested ternary operation into an independent statement.(úº¼–8÷ĞŒ‘÷1
-H	java:S106Ò"+Replace this use of System.out by a logger.(õ­ªĞ8÷ĞŒ‘÷1
+java:S3358Ñ"DExtract this nested ternary operation into an independent statement.(úº¼–8ô–—±û1
+H	java:S106Ó"+Replace this use of System.out by a logger.(õ­ªĞ8ô–—±û1
 D
-java:S1110Û"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8øĞŒ‘÷1
+java:S1110Ü"!Remove these useless parentheses.(ïÁç¿ùÿÿÿÿ8õ–—±û1
 g
-java:S3358Û"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8øĞŒ‘÷1
+java:S3358Ü"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8õ–—±û1
 g
-java:S3358Û"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ùĞŒ‘÷1
+java:S3358Ü"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8õ–—±û1
 g
-java:S3358Û"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ùĞŒ‘÷1
+java:S3358Ü"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8õ–—±û1
 g
-java:S3358Û"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ùĞŒ‘÷1
+java:S3358Ü"DExtract this nested ternary operation into an independent statement.(ïÁç¿ùÿÿÿÿ8ö–—±û1
 ?
-java:S1110ì"!Remove these useless parentheses.(ıŞ½À8ûĞŒ‘÷1
+java:S1110í"!Remove these useless parentheses.(ıŞ½À8÷–—±û1
 b
-java:S3358ì"DExtract this nested ternary operation into an independent statement.(ıŞ½À8ûĞŒ‘÷1
+java:S3358í"DExtract this nested ternary operation into an independent statement.(ıŞ½À8÷–—±û1
 b
-java:S3358ì"DExtract this nested ternary operation into an independent statement.(ıŞ½À8ûĞŒ‘÷1
+java:S3358í"DExtract this nested ternary operation into an independent statement.(ıŞ½À8÷–—±û1
 b
-java:S3358ì"DExtract this nested ternary operation into an independent statement.(ıŞ½À8üĞŒ‘÷1
+java:S3358í"DExtract this nested ternary operation into an independent statement.(ıŞ½À8÷–—±û1
 b
-java:S3358ì"DExtract this nested ternary operation into an independent statement.(ıŞ½À8ıĞŒ‘÷1
+java:S3358í"DExtract this nested ternary operation into an independent statement.(ıŞ½À8÷–—±û1
 ?
-java:S1110û"!Remove these useless parentheses.(ÎÈä8ÑŒ‘÷1
+java:S1110ü"!Remove these useless parentheses.(ÎÈä8ù–—±û1
 b
-java:S3358û"DExtract this nested ternary operation into an independent statement.(ÎÈä8ÑŒ‘÷1
+java:S3358ü"DExtract this nested ternary operation into an independent statement.(ÎÈä8ù–—±û1
 b
-java:S3358û"DExtract this nested ternary operation into an independent statement.(ÎÈä8‚ÑŒ‘÷1
+java:S3358ü"DExtract this nested ternary operation into an independent statement.(ÎÈä8ù–—±û1
 b
-java:S3358û"DExtract this nested ternary operation into an independent statement.(ÎÈä8‚ÑŒ‘÷1
+java:S3358ü"DExtract this nested ternary operation into an independent statement.(ÎÈä8ù–—±û1
 b
-java:S3358û"DExtract this nested ternary operation into an independent statement.(ÎÈä8‚ÑŒ‘÷1
+java:S3358ü"DExtract this nested ternary operation into an independent statement.(ÎÈä8ù–—±û1
 ?
-java:S1110Š"!Remove these useless parentheses.(ãÊ¼É8‡ÑŒ‘÷1
+java:S1110‹"!Remove these useless parentheses.(ãÊ¼É8û–—±û1
 b
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8‡ÑŒ‘÷1
+java:S3358‹"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8û–—±û1
 b
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8‡ÑŒ‘÷1
+java:S3358‹"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8û–—±û1
 b
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8‡ÑŒ‘÷1
+java:S3358‹"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8û–—±û1
 b
-java:S3358Š"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8‡ÑŒ‘÷1
-H	java:S106Œ"+Replace this use of System.out by a logger.(õ­ªĞ8ˆÑŒ‘÷1
-H	java:S106–"+Replace this use of System.out by a logger.(õ­ªĞ8ˆÑŒ‘÷1
-M	java:S106™"+Replace this use of System.out by a logger.(ˆÛûøÿÿÿÿ8ˆÑŒ‘÷1
+java:S3358‹"DExtract this nested ternary operation into an independent statement.(ãÊ¼É8û–—±û1
+H	java:S106"+Replace this use of System.out by a logger.(õ­ªĞ8ü–—±û1
+H	java:S106—"+Replace this use of System.out by a logger.(õ­ªĞ8ü–—±û1
+M	java:S106š"+Replace this use of System.out by a logger.(ˆÛûøÿÿÿÿ8ı–—±û1
 p
-java:S3776Ó"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Âº¾µ8ŒÑŒ‘÷1
+java:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Âº¾µ8——±û1
 Z
-java:S1128"8Remove this unused import 'Util.EnvioCorreoElectronico'.(ü¦Ôùÿÿÿÿ8¤ÍÓ‹ø1
+java:S1128"8Remove this unused import 'Util.EnvioCorreoElectronico'.(ü¦Ôùÿÿÿÿ8“——±û1
 G
-java:S1128'"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8¥ÍÓ‹ø1
+java:S1128'"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8“——±û1
 ì
-java:S6541‡"ÈA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 428 to 64, Complexity from 101 to 14, Nesting Level from 6 to 2, Number of Variables from 101 to 6.(—Ô­‰ÿÿÿÿÿ8™ÑŒ‘÷1
+java:S6541‡"ÈA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 428 to 64, Complexity from 101 to 14, Nesting Level from 6 to 2, Number of Variables from 101 to 6.(—Ô­‰ÿÿÿÿÿ8•——±û1
 ë
-java:S6541æ"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 172 to 64, Complexity from 109 to 14, Nesting Level from 3 to 2, Number of Variables from 19 to 6.(à„¡çÿÿÿÿÿ8™ÑŒ‘÷1
+java:S6541ç"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 172 to 64, Complexity from 109 to 14, Nesting Level from 3 to 2, Number of Variables from 19 to 6.(à„¡çÿÿÿÿÿ8•——±û1
