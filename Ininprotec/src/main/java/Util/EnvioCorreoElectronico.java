@@ -50,7 +50,7 @@ public class EnvioCorreoElectronico {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-/*
+
         try {
 
            message.addRecipient(Message.RecipientType.TO, new InternetAddress(correo,true));
@@ -76,7 +76,7 @@ public class EnvioCorreoElectronico {
             alerta.setContentText("Asegurese de que tenga conexión a internet y " +
                     "que el correo del cliente exista y que la plantilla se haya generado.");
             alerta.showAndWait();
-        }*/
+        }
 
     }
     public static void enviarVerificacion(String correo,String verificacion){

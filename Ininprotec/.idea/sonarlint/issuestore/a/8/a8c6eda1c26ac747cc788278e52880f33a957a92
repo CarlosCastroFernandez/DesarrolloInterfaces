@@ -7,19 +7,7 @@ java:S1643("Use a StringBuilder instead.(‰´çÓ8È÷ğõ1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê§ö8È÷ğõ1
 W
 java:S1118":Add a private constructor to hide the implicit public one.(Çê”†8È÷ğõ1
-J
-java:S1172"-Remove this unused method parameter "correo".(İî–8 È÷ğõ1
-I
-java:S1481"",Remove this unused "message" local variable.(Áò¨Õ8¥È÷ğõ1
 a
 java:S21472"DCombine this catch with the one at line 48, which has the same body.(ï­£Ä8¥È÷ğõ1
 L	java:S106."+Replace this use of System.out by a logger.(â¥±ûÿÿÿÿ8§È÷ğõ1
-]	java:S1256"<This block of commented-out lines of code should be removed.(¡»¢üùÿÿÿÿ8¨È÷ğõ1
-S
-java:S1128"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8«È÷ğõ1
-U
-java:S1128"9Remove this unused import 'javax.activation.DataHandler'.(ßÕˆ>8«È÷ğõ1
-Y
-java:S1128"<Remove this unused import 'javax.activation.FileDataSource'.(¬Ï”ë8«È÷ğõ1
-U
-java:S1128"8Remove this unused import 'javax.activation.DataSource'.(ÊÌâó8«È÷ğõ1
+L	java:S106G"+Replace this use of System.out by a logger.(¹·õ‰øÿÿÿÿ8æôËü1

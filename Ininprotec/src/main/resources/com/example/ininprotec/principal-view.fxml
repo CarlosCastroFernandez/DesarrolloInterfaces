@@ -109,7 +109,7 @@
                               <Insets />
                            </VBox.margin>
                            <children>
-                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="210.0" styleClass="vboxFondo3">
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="301.0" styleClass="vboxFondo3">
                                  <children>
                                     <Button fx:id="botonGestionAlumno" mnemonicParsing="false" styleClass="bordes" text="Gestión Alumno">
                                        <font>
@@ -118,7 +118,7 @@
                                     </Button>
                                  </children>
                               </VBox>
-                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="198.0" styleClass="vboxFondo">
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="197.0" styleClass="vboxFondo">
                                  <children>
                                     <Button fx:id="botonGestionInst" mnemonicParsing="false" styleClass="bordes" text="Gestión Instr.">
                                        <font>
@@ -127,7 +127,7 @@
                                     </Button>
                                  </children>
                               </VBox>
-                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="194.0" styleClass="vboxFondo2">
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="186.0" styleClass="vboxFondo2">
                                  <children>
                                     <Button fx:id="botonGestionAdmin" mnemonicParsing="false" styleClass="bordes" text="Gestión Admins.">
                                        <font>
@@ -137,7 +137,7 @@
                                  </children>
                               </VBox>
                               <Separator orientation="VERTICAL" prefHeight="200.0" />
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="294.0">
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="222.0">
                                  <children>
                                     <ImageView fx:id="imagenTitulo" fitHeight="131.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>

@@ -1,5 +1,5 @@
 .fondo{
-    -fx-background-image: url("../../../imagenes/fotoIIP.png");
+    -fx-background-image: url("../../../imagenes/fotoPortada.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
@@ -71,17 +71,17 @@
     -fx-bar-fill:red;
 }
 .vboxFondo{
-    -fx-background-image: url("../../../imagenes/soldado.png");
+    -fx-background-image: url("../../../imagenes/buba.PNG");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
 .vboxFondo2{
-    -fx-background-image: url("../../../imagenes/administrativa.png");
+    -fx-background-image: url("../../../imagenes/administrativa2.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
 .vboxFondo3{
-    -fx-background-image: url("../../../imagenes/vigilante.png");
+    -fx-background-image: url("../../../imagenes/alumnos.PNG");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
