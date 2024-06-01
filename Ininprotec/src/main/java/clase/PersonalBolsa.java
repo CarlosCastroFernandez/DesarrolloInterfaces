@@ -238,7 +238,7 @@ this.contraseña=contraseña;
     String letras="abcdefghijklmnñopqrstuvwxyz".toUpperCase();
     String dniMin=dni.toUpperCase();
 
-    if(dniMin.length()==9&&(letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0))){
+    if((letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0))&&dniMin.length()==9){
       for(int i=0;i<dniMin.length();i++){
         if(i==1&&i!=dniMin.length()-1){
           if(!numeros.contains(""+dniMin.charAt(i))){
@@ -400,8 +400,8 @@ this.contraseña=contraseña;
     }
 
     // Prioridad especial para esAlumno == 3
-    boolean thisEsAlumnoEsTres = this.esAlumno == 3;
-    boolean otroEsAlumnoEsTres = o.esAlumno == 3;
+    boolean thisEsAlumnoEsTres = this.esAlumno == 1;
+    boolean otroEsAlumnoEsTres = o.esAlumno == 1;
 
     if (thisEsAlumnoEsTres && !otroEsAlumnoEsTres) {
       return -1;  // Este objeto tiene esAlumno == 3, va primero

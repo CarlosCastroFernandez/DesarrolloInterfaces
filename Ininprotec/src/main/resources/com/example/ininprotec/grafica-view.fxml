@@ -77,6 +77,13 @@
                   <TableView fx:id="tabla" prefHeight="280.0" prefWidth="845.0">
                     <columns>
                       <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="cDireccion" prefWidth="75.0" text="Dirección" />
+                        <TableColumn fx:id="cEscoltas" prefWidth="75.0" text="Nº Escoltas" />
+                        <TableColumn fx:id="cPrecio" prefWidth="75.0" text="Precio" />
+                        <TableColumn fx:id="cIva" prefWidth="75.0" text="IVA" />
+                        <TableColumn fx:id="cSalario" prefWidth="75.0" text="Salario" />
+                        <TableColumn fx:id="cFechaInicio" prefWidth="75.0" text="Fecha Inicio" />
+                        <TableColumn fx:id="cFechaFin" prefWidth="75.0" text="Fecha Fin" />
                         <TableColumn fx:id="cLaboral" prefWidth="75.0" text="Horas L-V" />
                         <TableColumn fx:id="cFestivos" prefWidth="75.0" text="Horas S-D-Festv" />
                         <TableColumn fx:id="cHorasTotales" prefWidth="75.0" text="Horas Totales/Mes" />

@@ -380,7 +380,7 @@ public class RegistroAlumnoController implements Initializable {
                 LocalDate fechaFinalLocal=LocalDate.parse(fechaTexto,formato);
                 Date fechaFinal=Date.valueOf(fechaFinalLocal);
                 PersonalBolsa clienteA= null;
-                String contraseña="IIP"+textDni.getText().substring(5,8);
+
                 String titulacion=textTitulacion.getText().toLowerCase();
                 titulacion=titulacion.replace("á","a");
                 titulacion=titulacion.replace("é","e");
@@ -401,6 +401,7 @@ public class RegistroAlumnoController implements Initializable {
                             textCamiseta.getText().strip(),(parseo==null?null:parseo),textIBAN.getText().strip(),textSegSocial.getText().strip(),(radioAlumno.isSelected()?1L:2L),
                             textAreaTIP.getText(),imagenCargada,titulacion,textResidencia.getText().strip(),fechaFinal,idioma,spAltura.getValue(),(radioHombre.isSelected()?'h':(radioMujer.isSelected()?'m':'x')));
                 try {
+                    String contraseña="IIP"+textDni.getText().substring(5,8);
                    clienteA.setContraseña(HashPassword.hashPassword(contraseña));
                     System.out.println(clienteA.getContraseña());
 

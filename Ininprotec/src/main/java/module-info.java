@@ -14,7 +14,7 @@ module com.example.ininprotec {
     requires java.mail;
     requires activation;
 
-
+    opens fonts;
     opens imagenes;
     opens clase;
     opens com.example.ininprotec to javafx.fxml;

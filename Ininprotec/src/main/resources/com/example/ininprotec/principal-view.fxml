@@ -19,11 +19,11 @@
    <center>
       <BorderPane prefHeight="526.0" prefWidth="754.0">
          <top>
-            <FlowPane alignment="CENTER" hgap="10.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="44.0" prefWidth="241.0" text="ININPROTEC" textFill="#f4cf07">
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="405.0" text="ININPROTEC" textAlignment="CENTER" textFill="#f4cf07">
                      <font>
-                        <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                        <Font name="Airstrike" size="36.0" />
                      </font>
                   </Label>
                </children>
@@ -137,7 +137,7 @@
                                  </children>
                               </VBox>
                               <Separator orientation="VERTICAL" prefHeight="200.0" />
-                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="222.0">
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="222.0" styleClass="fondoTitulo">
                                  <children>
                                     <ImageView fx:id="imagenTitulo" fitHeight="131.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
