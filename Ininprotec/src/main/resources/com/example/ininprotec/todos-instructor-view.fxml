@@ -64,7 +64,7 @@
                 </FlowPane>
             </bottom>
             <top>
-            <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="54.0" prefWidth="1206.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.2000122070312" minWidth="10.0" prefWidth="265.6" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="892.8000000000001" minWidth="10.0" prefWidth="892.8000000000001" />
@@ -73,7 +73,7 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <HBox GridPane.columnIndex="1">
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
                      <children>
                                 <Label text="Gestión Instructores" textFill="#f4cf07">
                                     <font>

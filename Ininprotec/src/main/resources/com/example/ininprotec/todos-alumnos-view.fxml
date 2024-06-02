@@ -68,7 +68,10 @@
                <children>
                   <AnchorPane prefHeight="66.0" prefWidth="122.0">
                      <children>
-                        <Button fx:id="botonBorrar" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#borrar" text="Borrar Alumno/Trabajador" />
+                        <Button fx:id="botonBorrar" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#borrar" styleClass="bordes" text="Borrar Alumno/Trabajador">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
+                           </font></Button>
                         <Button fx:id="botonAgregar" layoutX="16.0" layoutY="19.0" mnemonicParsing="false" onAction="#agregar" prefHeight="26.0" prefWidth="160.0" styleClass="bordes" text="Agregar">
                            <font>
                               <Font name="Lucida Sans Typewriter Bold Oblique" size="13.0" />
@@ -79,7 +82,7 @@
             </FlowPane>
          </bottom>
          <top>
-            <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="54.0" prefWidth="1203.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="416.0" minWidth="10.0" prefWidth="342.80003662109374" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="869.600015258789" minWidth="10.0" prefWidth="859.5999633789063" />
@@ -93,7 +96,7 @@
                         <ImageView fx:id="imagenFlecha" fitHeight="40.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-                  <HBox GridPane.columnIndex="1">
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
                      <children>
                         <Label text="Gestión Alumnos" textFill="#f4cf07">
                            <font>

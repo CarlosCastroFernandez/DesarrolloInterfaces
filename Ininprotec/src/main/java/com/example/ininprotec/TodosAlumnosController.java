@@ -388,11 +388,25 @@ radioMujer.setOnAction(actionEvent -> {
     @javafx.fxml.FXML
     public void borrar(ActionEvent actionEvent) {
         if(Utilidad.getCurso()==null&&alumnoElegido!=null){
-            (new PersonalBolsaDAOImplement()).borradoAlumno(alumnoElegido);
-            alumnos.remove(alumnoElegido);
-            if(!filtroALumnos.isEmpty()){
-                filtroALumnos.remove(alumnoElegido);
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setTitle("INFORMACIÓN!");
+            alerta.setHeaderText("Borrado de Alumno");
+            alerta.setContentText("¿Seguro deseas borrar al Alumno/a. Se perderán todos los datos del alumno.");
+            Optional<ButtonType> tipo = alerta.showAndWait();
+            if(tipo.get()==ButtonType.OK){
+                PersonalBolsa alumno=alumnoElegido;
+                (new PersonalBolsaDAOImplement()).borradoAlumno(alumnoElegido);
+                alumnos.remove(alumnoElegido);
+                if(!filtroALumnos.isEmpty()){
+                    filtroALumnos.remove(alumnoElegido);
+                }
+                Alert alerta2 = new Alert(Alert.AlertType.CONFIRMATION);
+                alerta2.setTitle("OK!");
+                alerta2.setHeaderText("Borrado Con Éxito");
+                alerta2.setContentText("Alumno borrado con nombre: "+alumno.getNombre()+" "+alumno.getApellido1()+" "+alumno.getApellido2());
+                alerta2.showAndWait();
             }
+
 
         }else{
             Alert alerta=new Alert(Alert.AlertType.ERROR);

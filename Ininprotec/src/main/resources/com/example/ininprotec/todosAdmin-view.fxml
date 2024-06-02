@@ -65,7 +65,7 @@
                 </FlowPane>
             </bottom>
             <top>
-            <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="54.0" prefWidth="1208.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.8" minWidth="10.0" prefWidth="380.00001220703126" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="754.4000366210937" minWidth="10.0" prefWidth="665.5999877929687" />
@@ -79,7 +79,7 @@
                         <ImageView fx:id="imagenFlecha" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-                  <HBox GridPane.columnIndex="1">
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
                      <children>
                                 <Label prefHeight="44.0" prefWidth="563.0" text="Gestión Admin." textFill="#f4cf07">
                                     <font>
