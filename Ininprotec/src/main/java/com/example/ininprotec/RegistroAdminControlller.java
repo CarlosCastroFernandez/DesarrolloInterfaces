@@ -3,6 +3,7 @@ package com.example.ininprotec;
 import Util.HashPassword;
 import Util.Utilidad;
 import clase.PersonalIIP;
+import error.DNIIncorrecto;
 import implement.PersonalIIPDAOImplement;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -211,144 +212,170 @@ public class RegistroAdminControlller implements Initializable {
 
     @javafx.fxml.FXML
     public void guardar(ActionEvent actionEvent) {
-        if(Utilidad.getAdmin()==null){
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
-                byte[]imagenCargada=null;
-                if(archivoImagen!=null){
-                    File archivo=new File(archivoImagen);
-                    try {
-                        imagenCargada=imageToByteArray(archivo);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                String contraseña="IIP"+textDni.getText().substring(5,8);
-
-                PersonalIIP clienteA=new PersonalIIP(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
-                        textDni.getText(),textTelefono.getText(),  (dateFecha.getValue()==null?null: Date.valueOf(dateFecha.getValue())),textCamiseta.getText(),
-                        (parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 2L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
-                try {
-                    clienteA.setContraseña(HashPassword.hashPassword(contraseña));
-                    (new PersonalIIPDAOImplement()).subir(clienteA);
-
-                } catch (NoSuchAlgorithmException e) {
-                    Logger log=Logger.getLogger(RegistroAdminControlller.class.getClassLoader().getName());
-                    log.severe("Algo a ocurrido mal en el hasheo de la contraseña");
-                    throw new RuntimeException(e);
-                }
-
-
-
-                textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
-                textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
-                textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
-                String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
-                imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText("");
-                textDni.clear();textAreaTIP.clear();
-                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
-                alerta.setTitle("OK!");
-                alerta.setHeaderText("Administrativo/a Insertado/a Con Éxito");
-                alerta.showAndWait();
-
-            }else{
-                if(textNombre.getText().isEmpty()){
-                    textNombre.setStyle("-fx-border-color: #B30909");
-                }
-                if(textApellido2.getText().isEmpty()){
-                    textApellido2.setStyle("-fx-border-color: #B30909");
-                }
-                if(textApellido1.getText().isEmpty()){
-                    textApellido1.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
-
-
-
-            }
-        }else{
-            if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
-                byte[]imagenCargada=null;
-                if(archivoImagen!=null){
-                    File archivo=new File(archivoImagen);
-                    try {
-                        imagenCargada=imageToByteArray(archivo);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }else{
-                    Image imagenCojida=imagenPerfil.getImage();
-                    BufferedImage image= SwingFXUtils.fromFXImage(imagenCojida,null);
-                    ByteArrayOutputStream biImagen=new ByteArrayOutputStream();
-                    try {
-                        ImageIO.write(image,"png",biImagen);
-                        imagenCargada=biImagen.toByteArray();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }finally {
+        try{
+            if(Utilidad.getAdmin()==null){
+                if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
+                    byte[]imagenCargada=null;
+                    if(archivoImagen!=null){
+                        File archivo=new File(archivoImagen);
                         try {
-                            biImagen.close();
+                            imagenCargada=imageToByteArray(archivo);
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
-                }
-                Utilidad.getAdmin().setNombre(textNombre.getText());
-                Utilidad.getAdmin().setApellido1(textApellido1.getText());
-                Utilidad.getAdmin().setApellido2(textApellido2.getText());
-                Utilidad.getAdmin().setCorreo(textEmail.getText());
-                Utilidad.getAdmin().setTelefono(textTelefono.getText());
-                Utilidad.getAdmin().setLicenciaArma(textLicenciaArmas.getText());
-                Utilidad.getAdmin().setFechaNacimiento((dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())));
-                Utilidad.getAdmin().setTallaCamiseta(textCamiseta.getText());
-                Utilidad.getAdmin().setNumeroCuenta(textIBAN.getText());
-                Utilidad.getAdmin().setNumeroSocial(textSegSocial.getText());
-                Utilidad.getAdmin().setTitulacion(textTitulacion.getText());
-                Utilidad.getAdmin().setLugarResidencia(textResidencia.getText());
-                Utilidad.getAdmin().setImagenPerfil(imagenCargada);
-                Utilidad.getAdmin().setCurriculum((parseo==null?null:parseo));
-                Utilidad.getAdmin().setDni(textDni.getText());
-                Utilidad.getAdmin().setNumeroTip(textAreaTIP.getText());
-                //MODIFICACION INSTRUCOT
-                PersonalIIP personalMod=(new PersonalIIPDAOImplement()).actualizar(Utilidad.getAdmin());
-                if(Utilidad.getMiPerfil()){
-                    Utilidad.setLogPersonal(personalMod);
-                    Utilidad.setMiPerfil(false);
-                }
-                //-------------------------
-                Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
-                alerta.setTitle("OK!");
-                alerta.setHeaderText("Administrativo/a Modificado/a Con Éxito");
-                Optional<ButtonType> tipo=alerta.showAndWait();
-                if(tipo.get()==ButtonType.OK){
-                    Utilidad.setAlumno(null);
-                    Utilidad.setCurso(null);
-                    Utilidad.setInstructor(null);
-                    HelloApplication.cambioVentana("principal-view.fxml");
+
+
+                    PersonalIIP clienteA=new PersonalIIP(textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textEmail.getText(),
+                            textDni.getText(),textTelefono.getText(),  (dateFecha.getValue()==null?null: Date.valueOf(dateFecha.getValue())),textCamiseta.getText(),
+                            (parseo==null?null:parseo),textIBAN.getText(),textSegSocial.getText(),textAreaTIP.getText(), 2L,imagenCargada,textResidencia.getText(),textTitulacion.getText(),textLicenciaArmas.getText());
+                    try {
+                        String contraseña="IIP"+textDni.getText().substring(5,8);
+                        clienteA.setContraseña(HashPassword.hashPassword(contraseña));
+                        (new PersonalIIPDAOImplement()).subir(clienteA);
+
+                    } catch (NoSuchAlgorithmException e) {
+                        Logger log=Logger.getLogger(RegistroAdminControlller.class.getClassLoader().getName());
+                        log.severe("Algo a ocurrido mal en el hasheo de la contraseña");
+                        throw new RuntimeException(e);
+                    }
+
+
+
+                    textNombre.clear();  textApellido1.clear(); textApellido2.clear();  textEmail.clear();
+                    textTelefono.clear(); textLicenciaArmas.clear();dateFecha.setValue(null);  textCamiseta.clear();
+                    textIBAN.clear();   textSegSocial.clear();  textTitulacion.clear();  textResidencia.clear();
+                    String rutaImagen=RegistroAlumnoController.class.getClassLoader().getResource("imagenes/imagenDefectoPerfil.png").toExternalForm();
+                    imagenPerfil.setImage(new Image(rutaImagen));    labelURL.setText("");
+                    textDni.clear();textAreaTIP.clear();
+                    Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                    alerta.setTitle("OK!");
+                    alerta.setHeaderText("Administrativo/a Insertado/a Con Éxito");
+                    alerta.showAndWait();
+
                 }else{
-                    Utilidad.setAlumno(null);
-                    Utilidad.setCurso(null);
-                    Utilidad.setInstructor(null);
-                    HelloApplication.cambioVentana("principal-view.fxml");
+                    if(textNombre.getText().isEmpty()){
+                        textNombre.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textNombre.setStyle("-fx-border-color: black");
+                    }
+                    if(textApellido2.getText().isEmpty()){
+                        textApellido2.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textApellido2.setStyle("-fx-border-color: black");
+                    }
+                    if(textApellido1.getText().isEmpty()){
+                        textApellido1.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textApellido1.setStyle("-fx-border-color: black");
+                    }
+                    if(textDni.getText().isEmpty()){
+                        textDni.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textDni.setStyle("-fx-border-color: black");
+                    }
+
+
+
                 }
             }else{
-                if(textNombre.getText().isEmpty()){
-                    textNombre.setStyle("-fx-border-color: #B30909");
-                }
-                if(textApellido2.getText().isEmpty()){
-                    textApellido2.setStyle("-fx-border-color: #B30909");
-                }
-                if(textApellido1.getText().isEmpty()){
-                    textApellido1.setStyle("-fx-border-color: #B30909");
-                }
-                if(textDni.getText().isEmpty()){
-                    textDni.setStyle("-fx-border-color: #B30909");
-                }
+                if(!textNombre.getText().isEmpty()&&!textApellido1.getText().isEmpty()&&!textApellido2.getText().isEmpty()&&!textDni.getText().isEmpty()){
+                    byte[]imagenCargada=null;
+                    if(archivoImagen!=null){
+                        File archivo=new File(archivoImagen);
+                        try {
+                            imagenCargada=imageToByteArray(archivo);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }else{
+                        Image imagenCojida=imagenPerfil.getImage();
+                        BufferedImage image= SwingFXUtils.fromFXImage(imagenCojida,null);
+                        ByteArrayOutputStream biImagen=new ByteArrayOutputStream();
+                        try {
+                            ImageIO.write(image,"png",biImagen);
+                            imagenCargada=biImagen.toByteArray();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }finally {
+                            try {
+                                biImagen.close();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    }
+                    Utilidad.getAdmin().setNombre(textNombre.getText());
+                    Utilidad.getAdmin().setApellido1(textApellido1.getText());
+                    Utilidad.getAdmin().setApellido2(textApellido2.getText());
+                    Utilidad.getAdmin().setCorreo(textEmail.getText());
+                    Utilidad.getAdmin().setTelefono(textTelefono.getText());
+                    Utilidad.getAdmin().setLicenciaArma(textLicenciaArmas.getText());
+                    Utilidad.getAdmin().setFechaNacimiento((dateFecha.getValue()==null?null:Date.valueOf(dateFecha.getValue())));
+                    Utilidad.getAdmin().setTallaCamiseta(textCamiseta.getText());
+                    Utilidad.getAdmin().setNumeroCuenta(textIBAN.getText());
+                    Utilidad.getAdmin().setNumeroSocial(textSegSocial.getText());
+                    Utilidad.getAdmin().setTitulacion(textTitulacion.getText());
+                    Utilidad.getAdmin().setLugarResidencia(textResidencia.getText());
+                    Utilidad.getAdmin().setImagenPerfil(imagenCargada);
+                    Utilidad.getAdmin().setCurriculum((parseo==null?null:parseo));
+                    Utilidad.getAdmin().setDni(textDni.getText());
+                    Utilidad.getAdmin().setNumeroTip(textAreaTIP.getText());
+                    //MODIFICACION INSTRUCOT
+                    PersonalIIP personalMod=(new PersonalIIPDAOImplement()).actualizar(Utilidad.getAdmin());
+                    if(Utilidad.getMiPerfil()){
+                        Utilidad.setLogPersonal(personalMod);
+                        Utilidad.setMiPerfil(false);
+                    }
+                    //-------------------------
+                    Alert alerta=new Alert(Alert.AlertType.CONFIRMATION);
+                    alerta.setTitle("OK!");
+                    alerta.setHeaderText("Administrativo/a Modificado/a Con Éxito");
+                    Optional<ButtonType> tipo=alerta.showAndWait();
+                    if(tipo.get()==ButtonType.OK){
+                        Utilidad.setAlumno(null);
+                        Utilidad.setCurso(null);
+                        Utilidad.setInstructor(null);
+                        HelloApplication.cambioVentana("principal-view.fxml");
+                    }else{
+                        Utilidad.setAlumno(null);
+                        Utilidad.setCurso(null);
+                        Utilidad.setInstructor(null);
+                        HelloApplication.cambioVentana("principal-view.fxml");
+                    }
+                }else{
+                    if(textNombre.getText().isEmpty()){
+                        textNombre.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textNombre.setStyle("-fx-border-color: black");
+                    }
+                    if(textApellido2.getText().isEmpty()){
+                        textApellido2.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textApellido2.setStyle("-fx-border-color: black");
+                    }
+                    if(textApellido1.getText().isEmpty()){
+                        textApellido1.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textApellido1.setStyle("-fx-border-color: black");
+                    }
+                    if(textDni.getText().isEmpty()){
+                        textDni.setStyle("-fx-border-color: #B30909");
+                    }else{
+                        textDni.setStyle("-fx-border-color: black");
+                    }
 
+
+                }
 
             }
 
+        }catch (DNIIncorrecto e){
+            Alert alerta=new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("ERROR");
+            alerta.setHeaderText("DNI Incorrecto");
+            alerta.setContentText("Asegurese de que el dni esta en formato correcto");
+            alerta.showAndWait();
         }
 
 

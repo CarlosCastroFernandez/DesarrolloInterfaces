@@ -101,7 +101,7 @@
             </VBox>
          </center>
          <top>
-            <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="54.0" prefWidth="1203.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="742.4" minWidth="10.0" prefWidth="258.4000305175781" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="811.9999465942383" minWidth="10.0" prefWidth="607.9999694824219" />
@@ -115,11 +115,11 @@
                         <ImageView fx:id="imagenFlecha" fitHeight="46.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-                  <HBox GridPane.columnIndex="1">
+                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
                      <children>
                         <Label prefHeight="78.0" prefWidth="608.0" text="GRAFICA SERVICIOS" textFill="#f4cf07">
                            <font>
-                              <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                              <Font name="Airstrike" size="36.0" />
                            </font>
                         </Label>
                      </children>

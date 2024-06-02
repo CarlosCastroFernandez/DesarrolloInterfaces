@@ -194,7 +194,7 @@
         </BorderPane>
     </center>
     <top>
-      <GridPane styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="54.0" prefWidth="794.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -208,11 +208,11 @@
                       <ImageView fx:id="imagenFlecha" fitHeight="38.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </HBox>
-            <HBox GridPane.columnIndex="1">
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
                <children>
                       <Label text="REGISTRO" textFill="#f4cf07">
                      <font>
-                        <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                        <Font name="Airstrike" size="36.0" />
                      </font>
                   </Label>
                </children>

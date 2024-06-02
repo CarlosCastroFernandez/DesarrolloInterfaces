@@ -237,17 +237,20 @@ this.contraseña=contraseña;
     String numeros="0123456789";
     String letras="abcdefghijklmnñopqrstuvwxyz".toUpperCase();
     String dniMin=dni.toUpperCase();
-
-    if((letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0))&&dniMin.length()==9){
-      for(int i=0;i<dniMin.length();i++){
-        if(i==1&&i!=dniMin.length()-1){
-          if(!numeros.contains(""+dniMin.charAt(i))){
-            throw new DNIIncorrecto("DNI incorrecto");
+    if(dniMin.length()==9){
+      if((letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||(letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0)))){
+        for(int i=0;i<dniMin.length();i++){
+          if(i==1&&i!=dniMin.length()-1){
+            if(!numeros.contains(""+dniMin.charAt(i))){
+              throw new DNIIncorrecto("DNI incorrecto");
+            }
           }
         }
-      }
-      this.dni=dniMin;
+        this.dni=dniMin;
 
+      }else{
+        throw new DNIIncorrecto("DNI Incorrecto");
+      }
     }else{
       throw new DNIIncorrecto("DNI Incorrecto");
     }

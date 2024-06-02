@@ -48,7 +48,7 @@
             </VBox>
          </center>
          <top>
-            <GridPane prefHeight="44.0" prefWidth="794.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="54.0" prefWidth="794.0" styleClass="fondoTitulo" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="442.20001220703125" minWidth="10.0" prefWidth="135.80000762939454" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="678.3999862670898" minWidth="10.0" prefWidth="658.1999923706055" />
@@ -66,7 +66,7 @@
                      <children>
                         <Label text="BOLSA DE EMPLEO" textFill="#f4cf07">
                            <font>
-                              <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                              <Font name="Airstrike" size="36.0" />
                            </font>
                         </Label>
                      </children>

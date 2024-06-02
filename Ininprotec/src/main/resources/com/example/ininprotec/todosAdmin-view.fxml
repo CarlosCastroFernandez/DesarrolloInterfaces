@@ -83,7 +83,7 @@
                      <children>
                                 <Label prefHeight="44.0" prefWidth="563.0" text="Gestión Admin." textFill="#f4cf07">
                                     <font>
-                                        <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                                        <Font name="Airstrike" size="36.0" />
                                     </font>
                                 </Label>
                      </children>

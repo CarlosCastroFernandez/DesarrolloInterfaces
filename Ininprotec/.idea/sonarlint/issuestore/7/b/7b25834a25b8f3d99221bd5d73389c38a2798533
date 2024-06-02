@@ -1,77 +1,204 @@
 
-h	java:S112è"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8û‰“€ú1
-h	java:S112ê"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ü‰“€ú1
-h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ü‰“€ú1
-h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ü‰“€ú1
+h	java:S112“"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ï ¤¬ı1
+h	java:S112•"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ï ¤¬ı1
+h	java:S112ú"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ï ¤¬ı1
+h	java:S112ü"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ï ¤¬ı1
 L
-java:S37401"/Provide the parametrized type for this generic.(¥ÙÊÑ8ü‰“€ú1
+java:S37401"/Provide the parametrized type for this generic.(¥ÙÊÑ8ğ ¤¬ı1
 j
-java:S1192–"GDefine a constant instead of duplicating this literal "-08-19" 3 times.(²¿«Œúÿÿÿÿ8ÿ‰“€ú1
+java:S1192Ì"GDefine a constant instead of duplicating this literal "-08-19" 3 times.(²¿«Œúÿÿÿÿ8ó ¤¬ı1
+n
+java:S1192Ê"KDefine a constant instead of duplicating this literal "horasLunes" 3 times.(’Ş´ƒøÿÿÿÿ8ó ¤¬ı1
 j
-java:S1192—"GDefine a constant instead of duplicating this literal "-09-09" 3 times.(É»§¸ÿÿÿÿÿ8ÿ‰“€ú1
+java:S1192Ô"GDefine a constant instead of duplicating this literal "-07-16" 3 times.(êÃà‰úÿÿÿÿ8ó ¤¬ı1
 j
-java:S1192"GDefine a constant instead of duplicating this literal "-07-16" 3 times.(êÃà‰úÿÿÿÿ8ÿ‰“€ú1
-j
-java:S1192Ÿ"GDefine a constant instead of duplicating this literal "-07-17" 3 times.(†şå…şÿÿÿÿ8ÿ‰“€ú1
-j
-java:S1192"GDefine a constant instead of duplicating this literal "-05-15" 3 times.(Ã“Äùÿÿÿÿ8ÿ‰“€ú1
-l
-java:S1192˜"IDefine a constant instead of duplicating this literal "marbella" 3 times.(Í“şşÿÿÿÿ8ÿ‰“€ú1
-j
-java:S1192š"GDefine a constant instead of duplicating this literal "-10-19" 3 times.(àìŞ·úÿÿÿÿ8ÿ‰“€ú1
-g
-java:S1192œ"IDefine a constant instead of duplicating this literal "estepona" 3 times.(Èé¨Ï8ÿ‰“€ú1
-j
-java:S1192•"GDefine a constant instead of duplicating this literal "malaga" 3 times.(øŠœÄüÿÿÿÿ8ÿ‰“€ú1
-i
-java:S1192‘"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 3 times.(¥Ò˜8ÿ‰“€ú1
-j
-java:S1192™"GDefine a constant instead of duplicating this literal "-06-11" 3 times.(Ğş«§ùÿÿÿÿ8€Š“€ú1
-s	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úšÎÿÿÿÿÿ8€Š“€ú1
-m	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ƒM8Š“€ú1
-s	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢àúÿÿÿÿ8Š“€ú1
-n	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÀİ8Š“€ú1
-n	java:S117ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¢Èº8Š“€ú1
-K
-java:S5411ˆ"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8‚Š“€ú1
-K
-java:S5411"(Use a primitive boolean expression here.(ˆö»’ıÿÿÿÿ8‚Š“€ú1
+java:S1192Õ"GDefine a constant instead of duplicating this literal "-07-17" 3 times.(†şå…şÿÿÿÿ8ó ¤¬ı1
 k
-java:S3655Ç"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8…“€ú1
-n	java:S116I"RRename this field "aÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ îğ8†“€ú1
-w
-java:S14507"URemove the "series" field and declare it as a local variable in the relevant methods.(®ÈŒµÿÿÿÿÿ8‹“€ú1
-t
-java:S3776N"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(•‘İŸüÿÿÿÿ8“€ú1
-N
-java:S1602Q",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8•“€ú1
-I
-java:S1602{",Remove useless curly braces around statement(ûÄËĞ8›“€ú1
-N
-java:S1602",Remove useless curly braces around statement(ïÖçóûÿÿÿÿ8œ“€ú1
-c
-java:S2147é"ECombine this catch with the one at line 231, which has the same body.(ï­£Ä8“€ú1
+java:S1192Î"MDefine a constant instead of duplicating this literal "horasViernes" 3 times.(›¤–µ8ó ¤¬ı1
+l
+java:S1192Î"IDefine a constant instead of duplicating this literal "marbella" 3 times.(Í“şşÿÿÿÿ8ó ¤¬ı1
 j
-java:S1871º"MThis branch's code block is the same as the block for the branch on line 141.(µ“Ì-8 “€ú1
-H	java:S106Û"+Replace this use of System.out by a logger.(ÔÕ…Ú8»“€ú1
-H	java:S106ï"+Replace this use of System.out by a logger.(ÌÉô‰8½“€ú1
-Z
-java:S1117ğ"<Rename "comision" which hides the field declared at line 51.(×Î½¾8½“€ú1
+java:S1192Ğ"GDefine a constant instead of duplicating this literal "-10-19" 3 times.(àìŞ·úÿÿÿÿ8ó ¤¬ı1
+g
+java:S1192Ó"JDefine a constant instead of duplicating this literal "municipio" 3 times.(÷¢‹8ó ¤¬ı1
+h
+java:S1192Ô"JDefine a constant instead of duplicating this literal "direccion" 3 times.(ğÿÇË8ó ¤¬ı1
+j
+java:S1192Ë"GDefine a constant instead of duplicating this literal "malaga" 3 times.(øŠœÄüÿÿÿÿ8ó ¤¬ı1
+g
+java:S1192Ú"IDefine a constant instead of duplicating this literal "fechaFin" 3 times.(ËêÈÜ8ó ¤¬ı1
+m
+java:S1192É"ODefine a constant instead of duplicating this literal "nombreServicio" 3 times.(¥óú¬8ó ¤¬ı1
+j
+java:S1192Ï"GDefine a constant instead of duplicating this literal "-06-11" 3 times.(Ğş«§ùÿÿÿÿ8ó ¤¬ı1
+j
+java:S1192Í"GDefine a constant instead of duplicating this literal "-09-09" 3 times.(É»§¸ÿÿÿÿÿ8ó ¤¬ı1
+o
+java:S1192Ë"LDefine a constant instead of duplicating this literal "horasMartes" 3 times.(’Ê®úÿÿÿÿ8ó ¤¬ı1
+j
+java:S1192Ö"GDefine a constant instead of duplicating this literal "precio" 3 times.(‰Ôª¤ıÿÿÿÿ8ó ¤¬ı1
+o
+java:S1192Ù"LDefine a constant instead of duplicating this literal "fechaInicio" 3 times.(Öñê–ûÿÿÿÿ8ó ¤¬ı1
+g
+java:S1192Õ"IDefine a constant instead of duplicating this literal "escoltas" 3 times.(¾ÜŒÚ8ó ¤¬ı1
+l
+java:S1192Ò"IDefine a constant instead of duplicating this literal "comision" 3 times.(ü§’ğúÿÿÿÿ8ó ¤¬ı1
+o
+java:S1192Í"LDefine a constant instead of duplicating this literal "horasJueves" 3 times.(âã–úÿÿÿÿ8ó ¤¬ı1
+j
+java:S1192Ó"GDefine a constant instead of duplicating this literal "-05-15" 3 times.(Ã“Äùÿÿÿÿ8ó ¤¬ı1
+h
+java:S1192Ù"KDefine a constant instead of duplicating this literal "Indefinido" 8 times.(šß®S8ó ¤¬ı1
+l
+java:S1192Û"IDefine a constant instead of duplicating this literal "aceptada" 3 times.(‚¦ÉËøÿÿÿÿ8ó ¤¬ı1
+k
+java:S1192Ø"HDefine a constant instead of duplicating this literal "salario" 3 times.(ç„Õùÿÿÿÿ8ó ¤¬ı1
+l
+java:S1192Ì"ODefine a constant instead of duplicating this literal "horasMiercoles" 3 times.(«¥â8ó ¤¬ı1
+g
+java:S1192Ò"IDefine a constant instead of duplicating this literal "estepona" 3 times.(Èé¨Ï8ó ¤¬ı1
+j
+java:S1192Ï"LDefine a constant instead of duplicating this literal "horasSabado" 3 times.(ÀÑØ½8ó ¤¬ı1
+l
+java:S1192Ñ"NDefine a constant instead of duplicating this literal "horasFestivos" 3 times.(ù…êˆ8ó ¤¬ı1
 p
-java:S3776õ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‹¨¦¬8¾“€ú1
-c
-java:S2147œ"ECombine this catch with the one at line 410, which has the same body.(ä ¹€8Ø“€ú1
+java:S1192Ğ"MDefine a constant instead of duplicating this literal "horasDomingo" 3 times.(·‰®šøÿÿÿÿ8ó ¤¬ı1
+i
+java:S1192Ç"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 4 times.(¥Ò˜8ó ¤¬ı1
+s	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úšÎÿÿÿÿÿ8õ ¤¬ı1
+m	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ƒM8õ ¤¬ı1
+s	java:S117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢àúÿÿÿÿ8õ ¤¬ı1
+n	java:S117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÀİ8õ ¤¬ı1
+n	java:S117Ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¢Èº8õ ¤¬ı1
+K
+java:S5411Î"(Use a primitive boolean expression here.(ì°Ñşÿÿÿÿ8ø ¤¬ı1
+K
+java:S5411ç"(Use a primitive boolean expression here.(¾·Õ„ùÿÿÿÿ8ø ¤¬ı1
+K
+java:S5411î"(Use a primitive boolean expression here.(ˆö»’ıÿÿÿÿ8ø ¤¬ı1
+k
+java:S3655¦"HCall "tipo.isPresent()" or "!tipo.isEmpty()" before accessing the value.(ÀÂ›¾ùÿÿÿÿ8×¨¬ı1
+n	java:S116U"RRename this field "aÃ±adir" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ îğ8³¤¤¬ı1
+y
+java:S1450R"WRemove the "checkBox" field and declare it as a local variable in the relevant methods.(ÿÎıÿÿÿÿ8¶¤¤¬ı1
+y
+java:S1450@"\Remove the "datePickerFin" field and declare it as a local variable in the relevant methods.(İôØ·8¶¤¤¬ı1
 |
-java:S2142œ"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8Ø“€ú1
-X
-java:S2209€"5Change this instance-reference to a static reference.(É³Éúøÿÿÿÿ8Û“€ú1
-M	java:S106‚"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8Û“€ú1
+java:S1450?"_Remove the "datePickerInicio" field and declare it as a local variable in the relevant methods.(ö„È¬8¶¤¤¬ı1
+w
+java:S1450B"URemove the "series" field and declare it as a local variable in the relevant methods.(®ÈŒµÿÿÿÿÿ8º¤¤¬ı1
+u
+java:S3776h"SRefactor this method to reduce its Cognitive Complexity from 192 to the 15 allowed.(•‘İŸüÿÿÿÿ8¿¤¤¬ı1
+N
+java:S1602l",Remove useless curly braces around statement(şÕØ­üÿÿÿÿ8Å¤¤¬ı1
 J
-java:S1125"'Remove the unnecessary boolean literal.(ˆö»’ıÿÿÿÿ8á“€ú1
-^	java:S125™"<This block of commented-out lines of code should be removed.(õƒ‹õüÿÿÿÿ8â“€ú1
+java:S1602±",Remove useless curly braces around statement(ûÄËĞ8È¤¤¬ı1
+O
+java:S1602µ",Remove useless curly braces around statement(ïÖçóûÿÿÿÿ8²×¨¬ı1
+c
+java:S2147”"ECombine this catch with the one at line 530, which has the same body.(ï­£Ä8³×¨¬ı1
+j
+java:S1871ë"MThis branch's code block is the same as the block for the branch on line 195.(µ“Ì-8µ×¨¬ı1
+k
+java:S1871ñ"MThis branch's code block is the same as the block for the branch on line 225.(§ÉÍË8·×¨¬ı1
+p
+java:S1871"MThis branch's code block is the same as the block for the branch on line 225.(”€ûšùÿÿÿÿ8·×¨¬ı1
+k
+java:S1871‰"MThis branch's code block is the same as the block for the branch on line 225.(†ã¡8·×¨¬ı1
+p
+java:S1871é"MThis branch's code block is the same as the block for the branch on line 225.(¾èºúÿÿÿÿ8·×¨¬ı1
+k
+java:S1871‘"MThis branch's code block is the same as the block for the branch on line 225.(ŸŒ‚é8·×¨¬ı1
+p
+java:S1871ù"MThis branch's code block is the same as the block for the branch on line 225.(‡Æıøÿÿÿÿ8·×¨¬ı1
+k
+java:S1871±"MThis branch's code block is the same as the block for the branch on line 289.(§ÉÍË8º×¨¬ı1
+k
+java:S1871É"MThis branch's code block is the same as the block for the branch on line 289.(†ã¡8º×¨¬ı1
+k
+java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 289.(ŸŒ‚é8º×¨¬ı1
+p
+java:S1871©"MThis branch's code block is the same as the block for the branch on line 289.(¾èºúÿÿÿÿ8º×¨¬ı1
+p
+java:S1871¹"MThis branch's code block is the same as the block for the branch on line 289.(‡Æıøÿÿÿÿ8º×¨¬ı1
+p
+java:S1871Á"MThis branch's code block is the same as the block for the branch on line 289.(”€ûšùÿÿÿÿ8º×¨¬ı1
+p
+java:S1871¡"MThis branch's code block is the same as the block for the branch on line 393.(‡Æıøÿÿÿÿ8¿×¨¬ı1
+k
+java:S1871¹"MThis branch's code block is the same as the block for the branch on line 393.(ŸŒ‚é8¾×¨¬ı1
+p
+java:S1871©"MThis branch's code block is the same as the block for the branch on line 393.(”€ûšùÿÿÿÿ8¾×¨¬ı1
+p
+java:S1871‘"MThis branch's code block is the same as the block for the branch on line 393.(¾èºúÿÿÿÿ8¾×¨¬ı1
+k
+java:S1871™"MThis branch's code block is the same as the block for the branch on line 393.(§ÉÍË8¾×¨¬ı1
+k
+java:S1871±"MThis branch's code block is the same as the block for the branch on line 393.(†ã¡8¾×¨¬ı1
+k
+java:S1871ù"MThis branch's code block is the same as the block for the branch on line 457.(ŸŒ‚é8Á×¨¬ı1
+p
+java:S1871á"MThis branch's code block is the same as the block for the branch on line 457.(‡Æıøÿÿÿÿ8Á×¨¬ı1
+k
+java:S1871Ù"MThis branch's code block is the same as the block for the branch on line 457.(§ÉÍË8Á×¨¬ı1
+k
+java:S1871ñ"MThis branch's code block is the same as the block for the branch on line 457.(†ã¡8Á×¨¬ı1
+p
+java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 457.(¾èºúÿÿÿÿ8Á×¨¬ı1
+p
+java:S1871é"MThis branch's code block is the same as the block for the branch on line 457.(”€ûšùÿÿÿÿ8Á×¨¬ı1
+u
+java:S3776œ"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(Ò»ß¸úÿÿÿÿ8Å×¨¬ı1
+k
+java:S1871ã"MThis branch's code block is the same as the block for the branch on line 703.(¹ÿ—®8Í×¨¬ı1
+F
+java:S1125›"(Remove the unnecessary boolean literals.(£ ÇÄ8Ó×¨¬ı1
+p
+java:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 66 to the 15 allowed.(ò”¯©8Ö×¨¬ı1
+H	java:S106Ç"+Replace this use of System.out by a logger.(ÔÕ…Ú8××¨¬ı1
+p
+java:S1871÷"MThis branch's code block is the same as the block for the branch on line 855.(”€ûšùÿÿÿÿ8Û×¨¬ı1
+p
+java:S1871ß"MThis branch's code block is the same as the block for the branch on line 855.(¾èºúÿÿÿÿ8Ü×¨¬ı1
+p
+java:S1871ï"MThis branch's code block is the same as the block for the branch on line 855.(‡Æıøÿÿÿÿ8Ü×¨¬ı1
+k
+java:S1871‡"MThis branch's code block is the same as the block for the branch on line 855.(ŸŒ‚é8××¨¬ı1
+k
+java:S1871ç"MThis branch's code block is the same as the block for the branch on line 855.(§ÉÍË8Û×¨¬ı1
+k
+java:S1871ÿ"MThis branch's code block is the same as the block for the branch on line 855.(†ã¡8Û×¨¬ı1
+k
+java:S1871¿"MThis branch's code block is the same as the block for the branch on line 919.(†ã¡8Ş×¨¬ı1
+p
+java:S1871·"MThis branch's code block is the same as the block for the branch on line 919.(”€ûšùÿÿÿÿ8á×¨¬ı1
+k
+java:S1871§"MThis branch's code block is the same as the block for the branch on line 919.(§ÉÍË8á×¨¬ı1
+k
+java:S1871Ç"MThis branch's code block is the same as the block for the branch on line 919.(ŸŒ‚é8á×¨¬ı1
+p
+java:S1871Ÿ"MThis branch's code block is the same as the block for the branch on line 919.(¾èºúÿÿÿÿ8â×¨¬ı1
+p
+java:S1871¯"MThis branch's code block is the same as the block for the branch on line 919.(‡Æıøÿÿÿÿ8â×¨¬ı1
+Z
+java:S1117Ï"<Rename "comision" which hides the field declared at line 51.(×Î½¾8æ×¨¬ı1
+p
+java:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‹¨¦¬8æ×¨¬ı1
+d
+java:S2147û"FCombine this catch with the one at line 1017, which has the same body.(ä ¹€8ö×¨¬ı1
+|
+java:S2142û"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ö×¨¬ı1
+X
+java:S2209ß"5Change this instance-reference to a static reference.(É³Éúøÿÿÿÿ8ö×¨¬ı1
+M	java:S106á"+Replace this use of System.out by a logger.(€¢£Áÿÿÿÿÿ8÷×¨¬ı1
+J
+java:S1125î"'Remove the unnecessary boolean literal.(ˆö»’ıÿÿÿÿ8ø×¨¬ı1
+^	java:S125ø"<This block of commented-out lines of code should be removed.(õƒ‹õüÿÿÿÿ8ø×¨¬ı1
 G
-java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8õ“€ú1
+java:S1128"*Remove this unused import 'Util.Utilidad'.(Ø©ß³8ÎŠ©¬ı1
 V
-java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8õ“€ú1
-é
-java:S6541N"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 143 to 64, Complexity from 23 to 14, Nesting Level from 6 to 2, Number of Variables from 51 to 6.(•‘İŸüÿÿÿÿ8ö“€ú1
+java:S1128"9Remove this unused import 'javafx.scene.layout.FlowPane'.(‹Íç8ÎŠ©¬ı1
+ê
+java:S6541h"ÇA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 361 to 64, Complexity from 135 to 14, Nesting Level from 7 to 2, Number of Variables from 73 to 6.(•‘İŸüÿÿÿÿ8ˆ¥¤¬ı1
+å
+java:S6541Â"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 111 to 64, Complexity from 60 to 14, Nesting Level from 3 to 2, Number of Variables from 16 to 6.(ò”¯©8ü×¨¬ı1

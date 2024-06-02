@@ -465,12 +465,18 @@ public class RegistroAlumnoController implements Initializable {
             }else{
                 if(textNombre.getText().isEmpty()){
                     textNombre.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textNombre.setStyle("-fx-border-color: black");
                 }
                 if(textApellido2.getText().isEmpty()){
                     textApellido2.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textApellido2.setStyle("-fx-border-color: black");
                 }
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textApellido1.setStyle("-fx-border-color: black");
                 }
 
                 if(radioAlumno.isSelected()==false&&radioTrabajador.isSelected()==false){
@@ -479,9 +485,13 @@ public class RegistroAlumnoController implements Initializable {
                 }
                 if(textDni.getText().isEmpty()){
                     textDni.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textDni.setStyle("-fx-border-color: black");
                 }
                 if(textEmail.getText().isEmpty()){
                     textEmail.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textEmail.setStyle("-fx-border-color: black");
                 }
                 if(radioMujer.isSelected()==false&&radioHombre.isSelected()==false){
                     radioMujer.setStyle("-fx-border-color: #B30909");
@@ -579,18 +589,28 @@ public class RegistroAlumnoController implements Initializable {
             }else{
                 if(textNombre.getText().isEmpty()){
                     textNombre.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textNombre.setStyle("-fx-border-color: black");
                 }
                 if(textApellido2.getText().isEmpty()){
                     textApellido2.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textApellido2.setStyle("-fx-border-color: black");
                 }
                 if(textApellido1.getText().isEmpty()){
                     textApellido1.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textApellido1.setStyle("-fx-border-color: black");
                 }
                 if(textDni.getText().isEmpty()){
                     textDni.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textDni.setStyle("-fx-border-color: black");
                 }
                 if(textEmail.getText().isEmpty()){
                     textEmail.setStyle("-fx-border-color: #B30909");
+                }else{
+                    textEmail.setStyle("-fx-border-color: black");
                 }
 
             }

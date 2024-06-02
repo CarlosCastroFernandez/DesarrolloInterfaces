@@ -1,5 +1,6 @@
 package clase;
 
+import error.DNIIncorrecto;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -64,13 +65,13 @@ public class PersonalIIP implements Serializable {
     this.contraseña=contraseña;
 
   }
-  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) {
+  public PersonalIIP(String nombre, String apellido1, String apellido2, String correo, String dni, String telefono, Date fechaNacimiento, String tallaCamiseta, byte[] curriculum, String numeroCuenta, String numeroSocial, String numeroTip, Long instructor, byte[] imagenPerfil, String lugarResidencia, String titulacion,String licenciaArma) throws DNIIncorrecto {
     this.nombre = nombre;
     this.apellido1 = apellido1;
     this.apellido2 = apellido2;
     this.licenciaArma=licenciaArma;
     this.correo = correo;
-    this.dni = dni;
+    this.setDni(dni);
     this.telefono = telefono;
     this.fechaNacimiento = fechaNacimiento;
     this.tallaCamiseta = tallaCamiseta;
@@ -171,8 +172,28 @@ public class PersonalIIP implements Serializable {
     return dni;
   }
 
-  public void setDni(String dni) {
-    this.dni = dni;
+  public void setDni(String dni) throws DNIIncorrecto {
+    String numeros="0123456789";
+    String letras="abcdefghijklmnñopqrstuvwxyz".toUpperCase();
+    String dniMin=dni.toUpperCase();
+    if(dniMin.length()==9){
+      if((letras.contains(""+dniMin.charAt(0))&&letras.contains(""+dniMin.charAt(dniMin.length()-1)))||(letras.contains(""+dniMin.charAt(dniMin.length()-1))&&numeros.contains(""+dniMin.charAt(0)))){
+        for(int i=0;i<dniMin.length();i++){
+          if(i==1&&i!=dniMin.length()-1){
+            if(!numeros.contains(""+dniMin.charAt(i))){
+              throw new DNIIncorrecto("DNI incorrecto");
+            }
+          }
+        }
+        this.dni=dniMin;
+
+      }else{
+        throw new DNIIncorrecto("DNI Incorrecto");
+      }
+    }else{
+      throw new DNIIncorrecto("DNI Incorrecto");
+    }
+
   }
 
 

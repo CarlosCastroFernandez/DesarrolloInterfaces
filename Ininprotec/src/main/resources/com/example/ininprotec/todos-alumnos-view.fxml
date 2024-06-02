@@ -97,7 +97,7 @@
                      <children>
                         <Label text="Gestión Alumnos" textFill="#f4cf07">
                            <font>
-                              <Font name="Lucida Sans Typewriter Bold Oblique" size="36.0" />
+                              <Font name="Airstrike" size="36.0" />
                            </font>
                         </Label>
                      </children>
