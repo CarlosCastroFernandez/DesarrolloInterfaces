@@ -1,11 +1,11 @@
 
 R
-java:S1066τ"/Merge this if statement with the enclosing one.(ξχ°Θÿÿÿÿÿ8‹ξου1
+java:S1066τ"/Merge this if statement with the enclosing one.(ξχ°Θÿÿÿÿÿ8ΆωθΚύ1
 m	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Υ£«8‹ξου1
 n	java:S117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(τν‡8‹ξου1
 w	java:S116<"VRename this field "contraseΓ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(λτ¦ÿÿÿÿÿ8¦ξου1
 |
-java:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(η“Ήιψÿÿÿÿ8¦ξου1
+java:S1210"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(η“Ήιψÿÿÿÿ8¦ξου1
 Q
 java:S19482"/Make "cursosAlumnos" transient or serializable.(ƒΙ‘ηϊÿÿÿÿ8¨ξου1
 P
@@ -14,3 +14,5 @@ java:S19484".Make "moduloAlumno" transient or serializable.(“Ώ¬ψÿÿÿÿ8¨ξου1
 ^	java:S107W"BConstructor has 21 parameters, which is greater than 7 authorized.(Σφ«°8©ξου1
 k	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ϊ—’8―ξου1
 k	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(τν‡8―ξου1
+p
+java:S3776μ"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ΐό―£8ΖωθΚύ1

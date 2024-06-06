@@ -99,12 +99,6 @@ c
 java:S2147”"ECombine this catch with the one at line 530, which has the same body.(ï­£Ä8³×¨¬ı1
 j
 java:S1871ë"MThis branch's code block is the same as the block for the branch on line 195.(µ“Ì-8µ×¨¬ı1
-k
-java:S1871ñ"MThis branch's code block is the same as the block for the branch on line 225.(§ÉÍË8·×¨¬ı1
-p
-java:S1871"MThis branch's code block is the same as the block for the branch on line 225.(”€ûšùÿÿÿÿ8·×¨¬ı1
-k
-java:S1871‰"MThis branch's code block is the same as the block for the branch on line 225.(†ã¡8·×¨¬ı1
 p
 java:S1871é"MThis branch's code block is the same as the block for the branch on line 225.(¾èºúÿÿÿÿ8·×¨¬ı1
 k
@@ -112,41 +106,47 @@ java:S1871‘"MThis branch's code block is the same as the block for the branch 
 p
 java:S1871ù"MThis branch's code block is the same as the block for the branch on line 225.(‡Æıøÿÿÿÿ8·×¨¬ı1
 k
-java:S1871±"MThis branch's code block is the same as the block for the branch on line 289.(§ÉÍË8º×¨¬ı1
-k
-java:S1871É"MThis branch's code block is the same as the block for the branch on line 289.(†ã¡8º×¨¬ı1
-k
-java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 289.(ŸŒ‚é8º×¨¬ı1
+java:S1871‰"MThis branch's code block is the same as the block for the branch on line 225.(†ã¡8·×¨¬ı1
 p
-java:S1871©"MThis branch's code block is the same as the block for the branch on line 289.(¾èºúÿÿÿÿ8º×¨¬ı1
+java:S1871"MThis branch's code block is the same as the block for the branch on line 225.(”€ûšùÿÿÿÿ8·×¨¬ı1
+k
+java:S1871ñ"MThis branch's code block is the same as the block for the branch on line 225.(§ÉÍË8·×¨¬ı1
 p
 java:S1871¹"MThis branch's code block is the same as the block for the branch on line 289.(‡Æıøÿÿÿÿ8º×¨¬ı1
+k
+java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 289.(ŸŒ‚é8º×¨¬ı1
+k
+java:S1871É"MThis branch's code block is the same as the block for the branch on line 289.(†ã¡8º×¨¬ı1
+p
+java:S1871©"MThis branch's code block is the same as the block for the branch on line 289.(¾èºúÿÿÿÿ8º×¨¬ı1
+k
+java:S1871±"MThis branch's code block is the same as the block for the branch on line 289.(§ÉÍË8º×¨¬ı1
 p
 java:S1871Á"MThis branch's code block is the same as the block for the branch on line 289.(”€ûšùÿÿÿÿ8º×¨¬ı1
 p
-java:S1871¡"MThis branch's code block is the same as the block for the branch on line 393.(‡Æıøÿÿÿÿ8¿×¨¬ı1
+java:S1871‘"MThis branch's code block is the same as the block for the branch on line 393.(¾èºúÿÿÿÿ8¾×¨¬ı1
 k
 java:S1871¹"MThis branch's code block is the same as the block for the branch on line 393.(ŸŒ‚é8¾×¨¬ı1
 p
 java:S1871©"MThis branch's code block is the same as the block for the branch on line 393.(”€ûšùÿÿÿÿ8¾×¨¬ı1
 p
-java:S1871‘"MThis branch's code block is the same as the block for the branch on line 393.(¾èºúÿÿÿÿ8¾×¨¬ı1
-k
-java:S1871™"MThis branch's code block is the same as the block for the branch on line 393.(§ÉÍË8¾×¨¬ı1
+java:S1871¡"MThis branch's code block is the same as the block for the branch on line 393.(‡Æıøÿÿÿÿ8¿×¨¬ı1
 k
 java:S1871±"MThis branch's code block is the same as the block for the branch on line 393.(†ã¡8¾×¨¬ı1
 k
-java:S1871ù"MThis branch's code block is the same as the block for the branch on line 457.(ŸŒ‚é8Á×¨¬ı1
+java:S1871™"MThis branch's code block is the same as the block for the branch on line 393.(§ÉÍË8¾×¨¬ı1
+p
+java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 457.(¾èºúÿÿÿÿ8Á×¨¬ı1
 p
 java:S1871á"MThis branch's code block is the same as the block for the branch on line 457.(‡Æıøÿÿÿÿ8Á×¨¬ı1
+p
+java:S1871é"MThis branch's code block is the same as the block for the branch on line 457.(”€ûšùÿÿÿÿ8Á×¨¬ı1
+k
+java:S1871ù"MThis branch's code block is the same as the block for the branch on line 457.(ŸŒ‚é8Á×¨¬ı1
 k
 java:S1871Ù"MThis branch's code block is the same as the block for the branch on line 457.(§ÉÍË8Á×¨¬ı1
 k
 java:S1871ñ"MThis branch's code block is the same as the block for the branch on line 457.(†ã¡8Á×¨¬ı1
-p
-java:S1871Ñ"MThis branch's code block is the same as the block for the branch on line 457.(¾èºúÿÿÿÿ8Á×¨¬ı1
-p
-java:S1871é"MThis branch's code block is the same as the block for the branch on line 457.(”€ûšùÿÿÿÿ8Á×¨¬ı1
 u
 java:S3776œ"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(Ò»ß¸úÿÿÿÿ8Å×¨¬ı1
 k
@@ -156,30 +156,30 @@ java:S1125›"(Remove the unnecessary boolean literals.(£ ÇÄ8Ó×¨¬ı1
 p
 java:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 66 to the 15 allowed.(ò”¯©8Ö×¨¬ı1
 H	java:S106Ç"+Replace this use of System.out by a logger.(ÔÕ…Ú8××¨¬ı1
+k
+java:S1871ÿ"MThis branch's code block is the same as the block for the branch on line 855.(†ã¡8Û×¨¬ı1
+p
+java:S1871ï"MThis branch's code block is the same as the block for the branch on line 855.(‡Æıøÿÿÿÿ8Ü×¨¬ı1
 p
 java:S1871÷"MThis branch's code block is the same as the block for the branch on line 855.(”€ûšùÿÿÿÿ8Û×¨¬ı1
 p
 java:S1871ß"MThis branch's code block is the same as the block for the branch on line 855.(¾èºúÿÿÿÿ8Ü×¨¬ı1
-p
-java:S1871ï"MThis branch's code block is the same as the block for the branch on line 855.(‡Æıøÿÿÿÿ8Ü×¨¬ı1
 k
 java:S1871‡"MThis branch's code block is the same as the block for the branch on line 855.(ŸŒ‚é8××¨¬ı1
 k
 java:S1871ç"MThis branch's code block is the same as the block for the branch on line 855.(§ÉÍË8Û×¨¬ı1
 k
-java:S1871ÿ"MThis branch's code block is the same as the block for the branch on line 855.(†ã¡8Û×¨¬ı1
-k
-java:S1871¿"MThis branch's code block is the same as the block for the branch on line 919.(†ã¡8Ş×¨¬ı1
-p
-java:S1871·"MThis branch's code block is the same as the block for the branch on line 919.(”€ûšùÿÿÿÿ8á×¨¬ı1
-k
 java:S1871§"MThis branch's code block is the same as the block for the branch on line 919.(§ÉÍË8á×¨¬ı1
+p
+java:S1871¯"MThis branch's code block is the same as the block for the branch on line 919.(‡Æıøÿÿÿÿ8â×¨¬ı1
 k
 java:S1871Ç"MThis branch's code block is the same as the block for the branch on line 919.(ŸŒ‚é8á×¨¬ı1
 p
-java:S1871Ÿ"MThis branch's code block is the same as the block for the branch on line 919.(¾èºúÿÿÿÿ8â×¨¬ı1
+java:S1871·"MThis branch's code block is the same as the block for the branch on line 919.(”€ûšùÿÿÿÿ8á×¨¬ı1
 p
-java:S1871¯"MThis branch's code block is the same as the block for the branch on line 919.(‡Æıøÿÿÿÿ8â×¨¬ı1
+java:S1871Ÿ"MThis branch's code block is the same as the block for the branch on line 919.(¾èºúÿÿÿÿ8â×¨¬ı1
+k
+java:S1871¿"MThis branch's code block is the same as the block for the branch on line 919.(†ã¡8Ş×¨¬ı1
 Z
 java:S1117Ï"<Rename "comision" which hides the field declared at line 51.(×Î½¾8æ×¨¬ı1
 p

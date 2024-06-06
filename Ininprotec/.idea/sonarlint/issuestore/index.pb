@@ -95,3 +95,6 @@ i
 check.properties,0\7\07789c285e830cda784d46fd0aeae14be092076b
 b
 2src/main/java/com/example/ininprotec/Launcher.java,f\9\f9419db2c26efdc8a8b9364e4a82de96997875bf
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

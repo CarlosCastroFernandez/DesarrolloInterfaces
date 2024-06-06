@@ -1,10 +1,14 @@
 
-r	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ–Á§ÿÿÿÿÿ8Âš£ôò1
-m	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8öÔ¤ôò1
-w	java:S116,"VRename this field "contraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëôŒ¦ÿÿÿÿÿ8º±¢ôò1
+R
+java:S1066·"/Merge this if statement with the enclosing one.(î÷°Èÿÿÿÿÿ8¸¤òÌı1
+r	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ–Á§ÿÿÿÿÿ8¹¤òÌı1
+m	java:S117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8¹¤òÌı1
+w	java:S116-"VRename this field "contraseÃ±a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëôŒ¦ÿÿÿÿÿ8á¤òÌı1
 S
-java:S1948+"1Make "cursoInstructor" transient or serializable.(ŞÄáÍûÿÿÿÿ8îúçÃí1
-c	java:S107."BConstructor has 18 parameters, which is greater than 7 authorized.(Ğ–Á§ÿÿÿÿÿ8ïúçÃí1
-^	java:S107C"BConstructor has 17 parameters, which is greater than 7 authorized.(Ù‹Óà8ïúçÃí1
-j	java:S100o"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú—’8şÔ¤ôò1
-j	java:S100s"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8şÔ¤ôò1
+java:S1948,"1Make "cursoInstructor" transient or serializable.(ŞÄáÍûÿÿÿÿ8ä¤òÌı1
+c	java:S107/"BConstructor has 18 parameters, which is greater than 7 authorized.(Ğ–Á§ÿÿÿÿÿ8å¤òÌı1
+^	java:S107D"BConstructor has 17 parameters, which is greater than 7 authorized.(Áşûğ8å¤òÌı1
+j	java:S100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú—’8é¤òÌı1
+j	java:S100t"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôí‡8é¤òÌı1
+p
+java:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Àü¯£8ë¤òÌı1

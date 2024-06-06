@@ -23,10 +23,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.fonts.SimpleFontFamily;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
@@ -157,6 +156,7 @@ public class EntradaCursoController implements Initializable {
     private String horas;
     private String dias;
     private String mes;
+    private Boolean sinSello;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -1479,7 +1479,8 @@ public class EntradaCursoController implements Initializable {
             parametro.put("horas",horas);
             try {
                 if(dias!=null&&certificadoAño!=null&&mes!=null&&nombreCurso!=null&&horas!=null){
-                    JasperPrint jasper= JasperFillManager.fillReport("certificadoAlumno.jasper",parametro,c);
+
+                    JasperPrint jasper= JasperFillManager.fillReport((sinSello?"certificadoAlumno.jasper":"certificadoSinSello.jasper"),parametro,c);
                     JRViewer visor=new JRViewer(jasper);
                     JFrame frame = new JFrame("Certificado Del Alumnado");
                     frame.getContentPane().add(visor);
@@ -1488,10 +1489,15 @@ public class EntradaCursoController implements Initializable {
                     frame.setVisible(true);
 
                     //GENERA PDF
+
+
                     JRPdfExporter exp = new JRPdfExporter();
                     exp.setExporterInput(new SimpleExporterInput(jasper));
                     exp.setExporterOutput(new SimpleOutputStreamExporterOutput("Certificado.pdf"));
-                    exp.setConfiguration(new SimplePdfExporterConfiguration());
+
+                    SimplePdfExporterConfiguration configuration = new SimplePdfExporterConfiguration();
+
+                    exp.setConfiguration(configuration);
                     exp.exportReport();
                 }else{
                     Alert alerta=new Alert(Alert.AlertType.ERROR);
@@ -1832,19 +1838,21 @@ public class EntradaCursoController implements Initializable {
         textField4.setPromptText("Año");
         TextField textField5 = new TextField(); // Nuevo campo de texto
         textField5.setPromptText("Días");
+        CheckBox sello=new CheckBox();
 
 
-
-        grid.add(new Label("Nombre  Del Curso:"), 0, 0);
-        grid.add(textField1, 1, 0);
-        grid.add(new Label("Horas Totales:"), 0, 1);
-        grid.add(textField2, 1, 1);
-        grid.add(new Label("Mes"),0,2);
-        grid.add(textField3, 1, 2);
-        grid.add(new Label("Año:"), 0, 3);
-        grid.add(textField4, 1, 3);
-        grid.add(new Label("Días:"), 0, 4);
-        grid.add(textField5, 1, 4);
+        grid.add(new Label("¿Sello?"),0,0 );
+        grid.add(sello,1,0);
+        grid.add(new Label("Nombre  Del Curso:"), 0, 1);
+        grid.add(textField1, 1, 1);
+        grid.add(new Label("Horas Totales:"), 0, 2);
+        grid.add(textField2, 1, 2);
+        grid.add(new Label("Mes"),0,3);
+        grid.add(textField3, 1, 3);
+        grid.add(new Label("Año:"), 0, 4);
+        grid.add(textField4, 1, 4);
+        grid.add(new Label("Días:"), 0, 5);
+        grid.add(textField5, 1, 5);
 
         // Incorporar el grid al diálogo
         dialog.getDialogPane().setContent(grid);
@@ -1863,6 +1871,7 @@ public class EntradaCursoController implements Initializable {
                 data.put("año", textField4.getText());
                 data.put("dias", textField5.getText());
 
+
                 return data;
             }else{
                 return null;
@@ -1879,6 +1888,7 @@ public class EntradaCursoController implements Initializable {
             mes=data.get("mes");
             certificadoAño =data.get("año");
             dias=data.get("dias");
+            sinSello=sello.isSelected();
 
     });
 }
